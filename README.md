@@ -143,9 +143,69 @@ I have used Balsamic to create low-fidelity wireframes and used Figma to create 
 
 - The custom 404 Page contains ..., and two buttons to return the user to the Growth Club Home page or Resources page.
 
-## Features to be implemented
+### Features to be implemented
 - Have a 'forget password' functionality.
 - Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc
 - Events in the form of a calendar
 
+## Technologies Used
 
+## Testing
+
+## Deployment
+This project was developed using the Gitpod IDE, committed to git and pushed to GitHub using the built-in function within Gitpod. After writing the code, committing and pushing it to GitHub. I've deployed this project to Heroku and used "git push Heroku master" to make sure my pushes to GitHub were also made to Heroku.
+
+This project can be run locally by following the following steps: ( I used Gitpod for development, so the following steps will be specific to Gitpod. You will need to adjust them depending on your IDE
+
+The following **must be installed** on your IDE:
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [Python 3](https://www.python.org/downloads/)
+
+You have to create an account with MongoDB.
+- You can see [here](https://docs.atlas.mongodb.com/) how to set up your MongoDB Atlas account.
+
+**To clone the project:**
+- From the application's repository, click the "code" button and download the zip of the repository. Alternatively, you can clone the repository using the following line in your terminal: git clone https://github.com/byIlsa/story-chain.git
+- Access the folder in your terminal window and install the application's required modules using the following command: pip3 install -r requirements.txt
+- Sign-in or sign-up to MongoDB and create a new cluster
+- ◦ Within the Sandbox, click the collections button and after click Create Database (Add My Own Data) called story_chain
+- ◦ Set up the following collections: users, stories and chains. Click [here](https://github.com/byIlsa/story-chain#database-structure) to see the exact Database Structure
+- ◦ Under the Security menu on the left, select Database Access.
+- ◦ Add a new database user, and keep the credentials secure
+- ◦ Within the Network Access option, add IP Address 0.0.0.0
+- In your IDE, create a file containing your environmental variables called [env.py](http://env.py/) at the root level of the application. It will need to contain the following lines and variables: import os
+    ```
+    - os.environ["PORT"] = "5000"
+    - os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+    - os.environ["DEBUG"] = "True"
+    - os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+    - os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
+- Please note that you will need to update the SECRET_KEY with your secret key, as well as the MONGO_URI and MONGO_DBNAME variables with those provided by MongoDB. Tip for your SECRET_KEY, you can use a Password Generator to have a secure secret key. I recommend a length of 24 characters and exclude symbols. To find your MONGO_URI, go to your clusters and click on connect. Choose connect your application and copy the link provided. Don't forget to update the necessary fields like password and database name. If you plan on pushing this application to a public repository, ensure that [env.py](http://env.py/) is added to your .gitignore file.
+- The application can now be run locally. In your terminal, type the following command python3 [app.py](http://app.py/).
+
+**To deploy your project on Heroku, use the following steps:**
+
+- Login to your Heroku account and create a new app. Choose your region.
+- Ensure the Procfile and requirements.txt files exist are present and up-to-date in your local repository.
+**Requirements:**
+
+`pip3 freeze --local > requirements.txt`
+
+**Procfile:**
+
+`echo web: python app.py > Procfile`
+
+- The Procfile should contain the following line:
+
+`web: python app.py`
+
+**Final steps:**
+- Scroll down to the "deployment method"-section. Choose "Github" for automatic deployment.
+- From the inputs below, make sure your GitHub user is selected, and then enter the name for your repo. Click "search". When it finds the repo, click the "connect" button.
+- Scroll back up and click "settings".
+    - Scroll down and click "Reveal config vars".
+- Set up the same variables as in your [env.py](http://env.py/) (IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME): !You shouldn't set the DEBUG variable is under config vars, only in your [env.py](http://env.py/) to prevent DEBUG from being active on the live website.
+    - PORT = 5000 SECRET_KEY = YOUR_SECRET_KEY MONGO_URI = YOUR_MONGODB_URI MONGO_DBNAME = DATABASE_NAME
+- Scroll back up and click "Deploy". Scroll down and click "Enable automatic deployment".
+- click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
+- To commit your changes to the branch, use git push to push your changes.
