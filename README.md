@@ -57,3 +57,31 @@ I created a User flow to determine the main paths the user might take on the web
 
 ### Log In & Sign Up Flow
 [image]
+
+## UI Design
+### Font
+- I used Google Fonts to explore the various options.
+- The project has a main font of Roboto as it is easy to read and modern
+- “Sans-Serif” is used as the default backup font in cases where these fonts have difficulty loading.
+
+### Colour Scheme
+- The colour scheme is based on creating an environment with energy, excitement and warmth.
+- I used Coolors to map out my colour scheme.
+- The logo was created with Off-Black and underlined with Orange
+- The navbar is created with cream
+- The call to action buttons black
+- All colours were checked with WebAIM [https://webaim.org/resources/contrastchecker/](https://webaim.org/resources/contrastchecker/) to check the accessibility of the colours and present a pass
+[image]
+
+### Icons
+I used icons from Font Awesome library. The icons that were used were are all .... themed or used to give meaning to a certain section.
+
+## Wireframes
+I have used Balsamic to create low-fidelity wireframes and used Figma to create medium-fidelity wireframes. First I created a basic wireframe for mobile, for tablet and desktop. The website will be easy to navigate by using the navigation bar or by scrolling down the page. I have included a scroll-up button for user convenience.There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
+### Wireframe images:
+**Sketches**
+[image]
+**Low Fidelity**
+[image]
+**Medium Fidelity**
+[image]
