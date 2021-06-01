@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Growth Club</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
     <!-- Loop over all of the items that the .find() function from the resource collection-->
     {% for resource in resources %}
         {{ resource.resource_name }}<br>
@@ -17,5 +10,6 @@
         {{ resource.link }}<br>
         {{ resource.created_by }}<br>
     {% endfor %}
-</body>
-</html>
+    
+{% endblock %}
+    
