@@ -1,59 +1,59 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Growth Club
 
-Welcome Franciskadtt,
+This project is part of my Code Institute Full Stack Software Development studies, specifically the Data-Centric Development module. The objective for this milestone project is to "Create a web application that allows users to view and share info on events, tools, articles and videos about UX, Software Development and Tech ", using the CRUD operations of Create, Read, Update, and Delete for info.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## User Experience
+This website project will target users who are interested in viewing and sharing information about UX, Design, Software Development and Tech. The priority focus is on providing an easy to navigate and responsive website that allows users to be a part of a community with collection of resources such as articles, tools, videos and events.
 
-## Gitpod Reminders
+### User Goals
+- View featured **resource posts per month** created by the Growth Club
+- View **resource posts** created by the Growth Club community
+- View, edit, search, delete **resource posts** created by them
+- View, edit, search, delete **resource posts** created by them
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Site Owners Goals
+- Be the “go-to” place for users in the UX, design, software and tech industry for resources
+- To create a community for users in the UX, design, software and tech industry.
 
-`python3 -m http.server`
+### User Requirements and Expectations
+#### Requirements
+- Easy to navigate by using the navigation menu.
+- Relevant content for each category.
+- Appealing visual elements.
+- Easy way to find resources relevant to the user.
 
-A blue button should appear to click: _Make Public_,
+#### Expectations
+- When clicking on links (resource and social media links), expect the page to open in a separate browser.
+- Expect that the navigation links work properly to take the user where they intended to go.
+- Expect to be able to add, edit or delete items added by the user.
+- Feedback whether or not registered, logged in, logged out.
 
-Another blue button should appear to click: _Open Browser_.
+### User Stories
+*Guest User:*
+- As a Generic User, I want to view the featured **resource posts** of the month to get a sense of the value if I sign up as a registered user and they don't have to search for it.
+- As a Guest User, I want to be met with a visually appealing and easy to read layout of created items.
+- As a Guest user, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering.
+- As a Guest User, I want to be able to sign-up to create and edit my own **resource posts**.
+- As a Guest User, I want to be able to contact someone in the event something is wrong with the app.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+*Registered User*
+- As a Registered User, I want to view the featured items of the month so that I don't have to search for them.
+- As a Registered User, I want to be met with a visually appealing and easy to read layout of created items.
+- As a Guest user, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering
+- As a Registered User, I want to be able to create, edit and delete the **resource posts** I have added
+- As a Registered User, I want to be able to view **resource posts** added by other members of the community
+- As a Registered user, I would like to be able to search the site so that I can easily find resources that I am looking for
+- As a Registered User, I want to be able to log out of my account.
+- As a Registered User, I want to have a method of contacting someone in the event something is not functioning as expected in the application.
 
-A blue button should appear to click: _Make Public_,
+*Admin User*
+- As an Admin I would like the ability to **log in to an admin account** so that I can **create resource posts**
+- As an Admin I would like the ability to **edit any resource posts** so that I can **maintain the site to stay updated**
+- As an Admin I would like the ability to **delete any resource posts** so that I can **remove outdated information.**
 
-Another blue button should appear to click: _Open Browser_.
+### User flow
+I created a User flow to determine the main paths the user might take on the web app.
+[image]
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
----
-
-Happy coding!
+### Log In & Sign Up Flow
+[image]
