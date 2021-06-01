@@ -209,3 +209,14 @@ You have to create an account with MongoDB.
 - Scroll back up and click "Deploy". Scroll down and click "Enable automatic deployment".
 - click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
 - To commit your changes to the branch, use git push to push your changes.
+
+## Credits
+
+### Content
+- The copy and text for this website was created by Franciska Du Toit
+
+### Media
+- Images used are from Undraw
+
+### Code
+Acknowledgements
