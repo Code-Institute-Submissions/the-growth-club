@@ -85,3 +85,67 @@ I have used Balsamic to create low-fidelity wireframes and used Figma to create 
 [image]
 **Medium Fidelity**
 [image]
+
+## Features
+- There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
+
+### Elements on every page
+#### Header
+
+1. Logo
+
+- Allows the user to easily recognise the brand of “Growth Club”. If the user clicks on the logo, it will return the users to the “Home” section as they would expect..
+
+2. Navbar
+- Navigation Bar - Allows the user to easily navigate the website's sections and find what they are looking for with ease and speed.
+- The navigation bar features the Growth Club logo in the top left corner.
+- For visitors to the site who are not logged in, list items links are available for them to use.
+    - Home
+    - Log in
+    - Sign Up
+- For users who are logged in, the list items are as follows:
+    - Home
+    - Resources
+    - Profile (this option is a dropdown menu)
+        - Log out
+- Python determines if the user is logged in or not by checking if 'user' in session and passes this data to Jinja to display the correct navbar for the user.
+- The navbar is collapsed into a burger icon on small screens
+
+3. Floating to top button:
+- A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. I added this feature because some pages can be quite long and the navbar is not fixed to the top of the page.
+
+4. Footer
+- The footer features:
+    - A brief description of the purpose and mission of the site.
+    - A list of useful links users might need when viewing the footer.
+    - Copyright information.
+    - Links to social media for Admin -Social Icons - Allows the user to access the social platforms that the designer & creator of the website use.
+
+### Landing Page
+
+### Favourite Section
+
+### Resources Page
+
+### Log in Page
+- The login page features a simple **form** where the user can enter either their username or their email address and their password.
+
+### Sign Up Page
+- The sign-up page features a simple form, where the user can input a username, email address and password. The form was kept deliberately simple so that signup has minimum barriers.
+
+### Add Resource Page
+- The add resources page features a simple form, where the user can input the basic required information. The form was kept deliberately simple so that signup has minimum barriers.
+
+### Edit Resource Page
+- The edit resources page features a simple form, where the user can edit only a resource added by them. The form was kept deliberately simple so that signup has minimum barriers.
+
+### 404 Page
+
+- The custom 404 Page contains ..., and two buttons to return the user to the Growth Club Home page or Resources page.
+
+## Features to be implemented
+- Have a 'forget password' functionality.
+- Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc
+- Events in the form of a calendar
+
+
