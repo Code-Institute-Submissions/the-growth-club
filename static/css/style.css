@@ -49,7 +49,7 @@
     /* color: var(--Orange); */
     --Orange: #FE9902;
     /* color: var(--Cream); */
-    --Orange: #F9F5F1;
+    --Cream: #F9F5F1;
     /* text-align: center; */
     --center: center;
     
@@ -74,3 +74,23 @@
 nav ul a {
     color: var(--Black);
 }
+
+button{
+    background-color: var(--Black);;
+}
+
+/* --------------------------------------------------- Forms */
+
+/* input field color */
+.input-field {
+    background-color: var(--Cream);
+    border-style: solid;
+    border-radius: 10px;
+    border-color: var(--Cream);
+  }
+
+  /* icon prefix focus color */
+  .input-field .prefix {
+    color: #000;
+  }
+      

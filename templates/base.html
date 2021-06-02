@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom Style Sheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
@@ -41,7 +43,7 @@
               <li><a href="#">Manage Resources</a></li>
               <li><a href="#">Log Out</a></li>
               <li><a href="">Log In</a></li>
-              <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+              <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn">Sign Up</a></li>
             </ul>
           </div>
         </nav>
@@ -56,7 +58,7 @@
           <li><a href="#">Manage Resources</a></li>
           <li><a href="#">Log Out</a></li>
           <li><a href="">Log In</a></li>
-          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+          <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn">Sign Up</a></li>
         </ul>      
     </header>
     {% block content %}

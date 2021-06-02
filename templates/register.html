@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Join the Growth Club for Free!</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <div>
+            <!-- Username -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">person_outline</i>
+                    <input id="username" name="username" type="text" class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <!-- Username end-->
+            <!-- Email -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="far fa-envelope prefix"></i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+              </div>
+            <!-- Email end-->
+            <!-- Password -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock_outline</i>
+                    <input id="password" name="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <!-- Password end -->
+        </div>
+    </form>
+</div>
+<!-- Register -->
+<div class="row center-align">
+    <button type="submit" class="waves-effect waves-light btn-large ">
+      Sign Up 
+     </button>
+  </div>
+ <!-- Register end-->
+ <!-- Info -->
+ <div class="row center-align">
+     <p>We will never share your information with anyone! </p>
+ </div>
+<!-- Info end-->
+{% endblock %}
