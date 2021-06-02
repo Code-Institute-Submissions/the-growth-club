@@ -61,6 +61,15 @@ body{
 
 h1 {
     font-weight: 700;
+    font-size: 72px;
+}
+h2 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+p{
+    font-size: 24px;
 }
 
 /* -------------------------------------------------- Navbar Styles*/
@@ -110,4 +119,10 @@ button{
     min-width: 100vw;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 50px;
+    background-color: var(--Cream);
+}
+
+.landing-img {
+    width: 100%;
 }
