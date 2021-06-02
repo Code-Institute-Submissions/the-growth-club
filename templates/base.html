@@ -27,8 +27,36 @@
 
 <body>
     <header>
-        <!-- Navbar -->
-       
+        <!-- top navbar -->
+        <nav class="nav-extended">
+          <div class="nav-wrapper">
+            <a href="{{ url_for('get_resources') }}" class="brand-logo">Growth Club</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right "><i class="fas fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="{{ url_for('get_resources') }}">Home</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Manage Resources</a></li>
+              <li><a href="#">Log Out</a></li>
+              <li><a href="">Log In</a></li>
+              <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- mobile sidenav -->
+        <ul class="sidenav slider fullscreen" id="mobile-demo">
+          <li><a class="sidenav-close" href="{{ url_for('get_resources') }}"><i class="fas fa-times"></i></a></li>
+          <li><h4 class="center-align light-blue-text text-darken-4">Growth Club</h4></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Manage Resources</a></li>
+          <li><a href="#">Log Out</a></li>
+          <li><a href="">Log In</a></li>
+          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+        </ul>      
     </header>
     {% block content %}
     
