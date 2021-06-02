@@ -1,0 +1,76 @@
+/* -------------------------------------------------- General Styles */
+.light-background {
+    background-color: var(--bgWhite);
+}
+
+.primary-btn {
+    background-color: var(--bgBlack);
+}
+
+.main-text-color{
+    color: var(--Black) ;
+}
+
+.dark-btn-text-color{
+    color: var(--bgWhite) ;
+}
+
+.highlight-color{
+    color: var(--Orange) ;
+}
+
+.darker-background{
+    background-color: var(--Cream);
+}
+
+.font-roboto {
+    font-family: var(--Roboto);
+}
+
+.text.center {
+    text-align: var(--center);
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* -------------------------------------------------- Root Variables*/
+:root {
+    /* font-family: var(--Roboto); */
+    --Roboto: 'Roboto', sans-serif;
+    /* color: var(--bgWhite); 
+       background-color: var(--bgWhite);*/
+    --bgWhite: #FFFEFC;
+    /* color: var(--bgBlack); 
+       background-color: var(--bgBlack);*/
+    --bgBlack: #000000;
+    /* color: var(--Black); */
+    --Black: #1A222D;
+    /* color: var(--Orange); */
+    --Orange: #FE9902;
+    /* color: var(--Cream); */
+    --Orange: #F9F5F1;
+    /* text-align: center; */
+    --center: center;
+    
+}
+
+/* -------------------------------------------------- Navbar Styles*/
+
+#logo{
+    padding-left: 13px;
+    color: var(--bgBlack);
+}
+
+#navbar-style{
+    background-color: var(--bgWhite);
+    color: var(--bgBlack);
+}
+
+#navbar-menu{
+    color: var(--bgBlack);
+}
+
+nav ul a {
+    color: var(--Black);
+}
