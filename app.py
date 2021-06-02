@@ -18,13 +18,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
-@app.route("/get_resources")
-# find all documents from the resources collection, and assign them the
-# 'resources' variable
-def get_resources():
-    resources = list(mongo.db.resources.find())
-    return render_template("resources.html", resources=resources)
+@app.route('/')
+@app.route('/index')
+def index():
+    """Landing page render"""
+    return render_template('index.html')
 
 
 ## Registration Functionality
