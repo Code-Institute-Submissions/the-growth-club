@@ -25,6 +25,12 @@ def index():
     return render_template('index.html')
 
 
+@app.route("/get_resources")
+def get_resources():
+    resources = list(mongo.db.resources.find())
+    return render_template("resources.html", resources=resources)
+
+
 # Sign Up/Register Functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -112,9 +118,26 @@ def profile(username):
     username = mongo.db.users.find_one(
         # take the session user's username from Mongo
         {"username": session["user"]})["username"]
-    # return profile page with user's unique name
-    return render_template("profile.html", username=username)
 
+    # check if session['user'] cookie is truthy
+    if session["user"]:
+        # render appropriate profile template
+        return render_template("profile.html", username=username)
+
+    # return profile page with user's unique name
+    return redirect(url_for("login"))
+
+# Log out Functionality
+@app.route("/logout")
+def logout():
+    """User Log Out. Send message to user, remove session and go back to the
+    log in page."""
+    # show message to user
+    flash("You have been logged out")
+    # remove user from session cookies
+    session.pop("clear")
+    # return to log in page
+    return redirect(url_for("login"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
