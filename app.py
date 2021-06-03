@@ -25,9 +25,41 @@ def index():
     return render_template('index.html')
 
 
-## Registration Functionality
+# Registration Functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """User Registration. Check if the username from the form element already
+    exists within the Mongo database. If it does, then a message is sent to
+    the user. If it does not exist then the new user is inserted in the
+    dictionary."""
+    # if the requested method is equal to "POST"
+    if request.method == "POST":
+        # then check if the username exists within the database
+        existing_user = mongo.db.users.find_one(
+            # check if Mongo username matches input for username in form
+            {"username": request.form.get("username").lower()})
+
+        # if match with exisiting user then give message
+        if existing_user:
+            flash("Username already exists", "error")
+            # take the user back to the sign up page
+            return redirect(url_for("register"))
+
+        # if no user is found, then insert data in the dictionary
+        register = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        # to replace with modal
+        flash("Registration successful! You can now view or share resources!")
+        # take user to the profile page
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 

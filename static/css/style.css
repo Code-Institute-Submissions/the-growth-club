@@ -126,3 +126,9 @@ button{
 .landing-img {
     width: 100%;
 }
+
+/* --------------------------------------------------- Flash Messages */
+
+.flashes h4{
+    line-height: 2;
+}
