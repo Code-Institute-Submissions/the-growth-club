@@ -25,7 +25,7 @@ def index():
     return render_template('index.html')
 
 
-# Sign Up Functionality
+# Sign Up/Register Functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """User Registration. Check if the username from the form element already
@@ -41,14 +41,14 @@ def register():
 
         # if match with exisiting user then give message
         if existing_user:
-            flash("Username already exists", "error")
+            flash("Username already exists")
             # take the user back to the sign up page
             return redirect(url_for("register"))
 
         # if no user is found, then insert data in the dictionary
         register = {
             "username": request.form.get("username").lower(),
-            "email": request.form.get("email").lower(),
+            "email": request.form.get("email"),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
@@ -87,6 +87,9 @@ def login():
                     session["user"] = request.form.get("username").lower()
                     # if user password matches hashed password show message
                     flash("Hi, {}".format(request.form.get("username")))
+                    # take user to the profile page
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
             else:
                 # if password does not match show message
                 flash("Incorrect Username and/or Password")
@@ -98,6 +101,19 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+# Profile Functionality
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    """User Profile. Find username in the database and retrieve the
+    username. Then render the profile template with the user's name"""
+    # find the user in the database
+    username = mongo.db.users.find_one(
+        # take the session user's username from Mongo
+        {"username": session["user"]})["username"]
+    # return profile page with user's unique name
+    return render_template("profile.html", username=username)
 
 
 if __name__ == "__main__":
