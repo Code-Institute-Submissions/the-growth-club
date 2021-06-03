@@ -25,7 +25,7 @@ def index():
     return render_template('index.html')
 
 
-# Registration Functionality
+# Sign Up Functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """User Registration. Check if the username from the form element already
@@ -61,6 +61,43 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
+
+
+# Log In Functionality
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    """User Log In. Check if the username from the form element already
+    exists within the Mongo database. If it does, then the password is checked
+    if it matches the user input. If the password matches then a success
+    message is shown. If password does not match then message is shown and user
+    is return to log in page. If username does not exist then message is shown
+    to user and user is returned to the log in page."""
+    # if the requested method is equal to "POST"
+    if request.method == "POST":
+        # then check if the username exists within the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        # if match with exisiting user then check password
+        if existing_user:
+            # ensure hashed password matches user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    # if user password matches hashed password log in user
+                    session["user"] = request.form.get("username").lower()
+                    # if user password matches hashed password show message
+                    flash("Hi, {}".format(request.form.get("username")))
+            else:
+                # if password does not match show message
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            # if username doesn't exist show message
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
 
 
 if __name__ == "__main__":

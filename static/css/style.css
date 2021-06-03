@@ -127,8 +127,19 @@ button{
     width: 100%;
 }
 
+/* --------------------------------------------------- Log In & Sign Up Pages */
+
+.note-p{
+    font-size: 15px;
+}
+
+.redirect-p{
+    color: var(--Orange)
+}
+
 /* --------------------------------------------------- Flash Messages */
 
 .flashes h4{
     line-height: 2;
+    color: var(--Orange)
 }

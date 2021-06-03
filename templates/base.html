@@ -42,7 +42,7 @@
               <li><a href="#">Profile</a></li>
               <li><a href="#">Manage Resources</a></li>
               <li><a href="#">Log Out</a></li>
-              <li><a href="">Log In</a></li>
+              <li><a href="{{ url_for('login') }}">Log In</a></li>
               <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn">Sign Up</a></li>
             </ul>
           </div>
@@ -57,7 +57,7 @@
           <li><a href="#">Profile</a></li>
           <li><a href="#">Manage Resources</a></li>
           <li><a href="#">Log Out</a></li>
-          <li><a href="">Log In</a></li>
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
           <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn">Sign Up</a></li>
         </ul>      
     </header>
@@ -67,16 +67,17 @@
           {% if messages %}
               {% for message in messages %}
                   <div class="row flashes">
-                      <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+                      <h4 class="center-align">{{ message }}</h4>
                   </div>
               {% endfor %}
           {% endif %}
       {% endwith %}
   </section>
-    <main class="container">
-      {% block content %}
-      {% endblock %}
-    </main>
+  
+  <main >
+    {% block content %}
+    {% endblock %}
+  </main>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Materialize Script-->
