@@ -135,7 +135,7 @@ def logout():
     # show message to user
     flash("You have been logged out")
     # remove user from session cookies
-    session.pop("clear")
+    session.pop("user")
     # return to log in page
     return redirect(url_for("login"))
 
