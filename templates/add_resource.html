@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="center-align">Add a Resource to share with the Club</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="">
+        <div>
+            <!--  -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">person_outline</i>
+                    <input id="username" name="username" type="text" class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <!--  end-->
+        <!-- Submit btn-->
+        <div class="row center-align">
+            <button type="submit" class="waves-effect waves-light btn-large ">
+            Sign Up 
+            </button>
+        </div>
+        <!-- Submit btn end-->
+    </form>
+</div>
+    
+{% endblock %}

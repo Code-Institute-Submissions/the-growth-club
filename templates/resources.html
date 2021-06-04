@@ -2,6 +2,11 @@
 {% block content %}
 
 <h3 class="center-align">Club Resources</h3>
+
+<div class="center-align resource-add-btn">
+    <a href="{{ url_for('add_resource') }}" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Item</a>
+</div>
+
     <div class="container">
         <div class="row">
             <!-- Loop over all of the items that the .find() function from the resource collection-->

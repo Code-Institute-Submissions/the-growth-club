@@ -127,6 +127,7 @@ def profile(username):
     # return profile page with user's unique name
     return redirect(url_for("login"))
 
+
 # Log out Functionality
 @app.route("/logout")
 def logout():
@@ -138,6 +139,12 @@ def logout():
     session.pop("user")
     # return to log in page
     return redirect(url_for("login"))
+
+
+@app.route("/add_resource")
+def add_resource():
+    return render_template("add_resource.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
