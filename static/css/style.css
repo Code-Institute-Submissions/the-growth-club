@@ -134,7 +134,7 @@ button{
 /* --------------------------------------------------- Landing Page */
 
 .landing {
-    min-height: 100vh;
+    height: 100vh;
     background-repeat: no-repeat, no-repeat;
     min-width: 100vw;
     padding-left: 20px;
@@ -206,6 +206,42 @@ button{
 
 .topic-p{
     font-size: 15px;
+}
+
+#delete-btn{
+    background-color: var(--Cream);
+    color: var(--Black);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--Orange);
+    text-transform: unset;
+}
+
+#edit-btn{
+    background-color: var(--Cream);
+    color: var(--Black);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--Orange);
+    text-transform: unset;
+}
+
+i.left {
+    margin-right: unset;
+}
+
+#save-btn{
+    background-color: var(--Cream);
+}
+
+.btn-floating i {
+    color: var(--Black);
+}
+
+.resources{
+    height: 100vh;
 }
 
 /* --------------------------------------------------- Add Resources Page*/
