@@ -4,6 +4,20 @@
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="">
+        <!-- category selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">folder_open</i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select for="category_name">
+                <label>Resource Category</label>
+            </div>
+        </div>
+        <!-- category selection end -->
         <div class="row">
             <!-- Resource Name -->
             <div class="input-field col s12">
@@ -18,7 +32,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">format_align_left</i>
                     <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="resource_description">Task Description</label>
+                    <label for="resource_description">Resource Description</label>
                 </div>
             </div>
             <!-- Resource Description end -->

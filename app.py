@@ -25,6 +25,7 @@ def index():
     return render_template('index.html')
 
 
+# Resources List Functionality
 @app.route("/get_resources")
 def get_resources():
     resources = list(mongo.db.resources.find())
@@ -141,9 +142,16 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Add a Resource Functionality
 @app.route("/add_resource")
 def add_resource():
-    return render_template("add_resource.html")
+    """Add Resounce. First find the category in the database then sort
+    the categories by the category_name key. Then pass this new 'categories'
+    variable over to the HTML template. """
+    # find category in database
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    # render the add_resources template
+    return render_template("add_resource.html", categories=categories)
 
 
 if __name__ == "__main__":
