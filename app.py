@@ -145,13 +145,15 @@ def logout():
 # Add a Resource Functionality
 @app.route("/add_resource")
 def add_resource():
-    """Add Resounce. First find the category in the database then sort
-    the categories by the category_name key. Then pass this new 'categories'
-    variable over to the HTML template. """
+    """Add Resource. First find the category and topic in the database then sort
+    the them by the name key. Then pass the new variables over to the HTML
+    template. """
     # find category in database
     categories = mongo.db.categories.find().sort("category_name", 1)
+    topics = mongo.db.topics.find().sort("topic_name", 1)
     # render the add_resources template
-    return render_template("add_resource.html", categories=categories)
+    return render_template("add_resource.html", categories=categories,
+                           topics=topics)
 
 
 if __name__ == "__main__":

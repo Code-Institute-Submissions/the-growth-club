@@ -54,6 +54,20 @@
                 </div>
             </div>
             <!-- Resource Description end -->
+            <!-- Topic selection -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">label_outline</i>
+                    <select id="topic_name" name="topic_name" class="validate" required>
+                        <option value="" disabled selected>Choose Topic</option>
+                        {% for topic in topics %}
+                            <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
+                        {% endfor %}
+                    </select for="topic_name">
+                    <label>Resource Topic</label>
+                </div>
+            </div>
+            <!-- Topic selection end -->
             <!-- Submit btn-->
             <div class="row center-align">
                 <button type="submit" class="waves-effect waves-light btn-large ">
