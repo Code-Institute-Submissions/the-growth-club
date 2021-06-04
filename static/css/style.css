@@ -30,9 +30,7 @@
 .text.center {
     text-align: var(--center);
 }
-.text-uppercase {
-    text-transform: uppercase;
-}
+
 
 /* -------------------------------------------------- Root Variables*/
 :root {
@@ -75,6 +73,23 @@ h3{
 
 p{
     font-size: 24px;
+}
+
+.btn{
+    text-align: center;
+    background-color: var(--bgBlack);
+    text-transform: unset;
+    border-radius: 10px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.btn:hover{
+    color: var(--bgBlack);
+    font-weight: 600;
+    border-color: var(--bgBlack);
+    border-style: solid;
+    background-color: var(--bgWhite);
 }
 
 /* -------------------------------------------------- Navbar Styles*/
