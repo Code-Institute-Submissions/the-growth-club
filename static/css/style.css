@@ -178,6 +178,16 @@ button{
     font-size: 14px;
 }
 
+.resource-topic{
+    background-color: var(--Orange);
+    border-radius: 10px;
+    max-width: fit-content;
+}
+
+.topic-p{
+    font-size: 15px;
+}
+
 /* --------------------------------------------------- Footer */
 
 .footer-bg{

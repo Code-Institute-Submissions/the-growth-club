@@ -1,25 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-    <!-- Loop over all of the items that the .find() function from the resource collection-->
-    {% for resource in resources %}
-        {{ resource.resource_name }}<br>
-        {{ resource.category_name }}<br>
-        {{ resource.topic_name }}<br> 
-        {{ resource.description }}<br>
-        {{ resource.date }}<br>
-        {{ resource.link }}<br>
-        {{ resource.created_by }}<br>
-    {% endfor %}
     <div class="container">
         <div class="row">
+            <!-- Loop over all of the items that the .find() function from the resource collection-->
+            {% for resource in resources %}
             <div class="col s12 m6">
                 <div class="card resources-card">
                     <div class="card-content resource-content">
                         <a class="btn-floating right"><i class="material-icons">bookmark_border</i></a>
-                        <h3 class="resource-title">Resource Title</h3>
-                        <p class="resource-p">date</p>
-                        <p class="resource-p">description</p>
-                        <a href="#">This is a link</a>
+                        <h3 class="resource-title">{{ resource.resource_name }}</h3>
+                        <strong>{{ resource.category_name }}</strong>
+                        <p class="resource-p">{{ resource.date }}</p>
+                        <p class="resource-p">{{ resource.description }}</p>
+                        <a href="{{ resource.link }}">This is a link</a>
+                        <div class="resource-topic">
+                            <p class="topic-p">{{ resource.topic_name }}</p>
+                        </div>
+                        <p class="resource-p">{{ resource.created_by }}</p>
                     </div>
                     <div class="card-action resource-btn right-align">
                         <a class="waves-effect waves-light btn"><i class="material-icons left">delete_outline</i>Delete</a>
@@ -27,6 +24,7 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
