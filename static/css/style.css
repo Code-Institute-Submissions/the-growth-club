@@ -193,6 +193,40 @@ button{
     font-size: 15px;
 }
 
+/* --------------------------------------------------- Add Resources Page*/
+
+.datepicker-date-display {
+    background-color: var(--Cream);
+    color: var(--Black)
+}
+
+.datepicker-calendar-container {
+    color: var(--Black);
+}
+
+.is-today {
+    color: var(--Orange); 
+}
+
+.datepicker-table td.is-selected {
+    background: var(--Orange) ;
+}
+
+.datepicker-cancel, .datepicker-done {
+    color: var(--Orange);
+    font-weight: 600;
+}
+
+.datepicker-clear {
+    background-color: var(--bgBlack);
+    color: var(--Cream);
+    border-radius: 10px;
+}
+
+.datepicker-date-display .year-text {
+    color: var(--Orange);
+}
+
 /* --------------------------------------------------- Footer */
 
 .footer-bg{

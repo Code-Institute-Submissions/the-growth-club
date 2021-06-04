@@ -4,24 +4,50 @@
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="">
-        <div>
-            <!--  -->
+        <div class="row">
+            <!-- Resource Name -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">create</i>
+                <input id="resource_name" name="resource_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                <label for="resource_name">Resource Name</label>
+            </div>
+            </div>
+            <!-- Resource Name end-->
+            <!-- Resource Description -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">person_outline</i>
-                    <input id="username" name="username" type="text" class="validate">
-                    <label for="username">Username</label>
+                    <i class="material-icons prefix">format_align_left</i>
+                    <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="resource_description">Task Description</label>
                 </div>
             </div>
-            <!--  end-->
-        <!-- Submit btn-->
-        <div class="row center-align">
-            <button type="submit" class="waves-effect waves-light btn-large ">
-            Sign Up 
-            </button>
-        </div>
-        <!-- Submit btn end-->
-    </form>
-</div>
+            <!-- Resource Description end -->
+            <!-- Date picker -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">event</i>
+                    <input id="resource_date" name="resource_date" type="text" class="datepicker validate">
+                    <label for="resource_date">Date</label>
+                </div>
+            </div>
+            <!-- Date picker end -->
+            <!-- Resource Link -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">link</i>
+                    <input id="resource_link" name="resource_link" minlength="5" type="url" class="validate" required>
+                    <label for="resource_link">Link to Resource</label>
+                </div>
+            </div>
+            <!-- Resource Description end -->
+            <!-- Submit btn-->
+            <div class="row center-align">
+                <button type="submit" class="waves-effect waves-light btn-large ">
+                Sign Up 
+                </button>
+            </div>
+            <!-- Submit btn end-->
+        </form>
+    </div>
     
 {% endblock %}
