@@ -144,6 +144,28 @@ button{
     color: var(--Orange)
 }
 
+/* --------------------------------------------------- Resources */
+.resources-card{
+    background-color: var(--Cream);
+}
+
+.resource-content{
+    color: var(--Black);
+}
+
+.resource-title{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.resource-p{
+    font-size: 14px;
+}
+
+.resource-btn{
+    
+}
+
 /* --------------------------------------------------- Footer */
 
 .footer-bg{
