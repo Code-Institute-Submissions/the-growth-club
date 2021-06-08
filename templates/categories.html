@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Manage Categories</h3>
+
+<div class="container resources">
+    <h4 class="categories-h center-align">Current Categories</h4>
+    <div class="row">
+        {% for category in categories %}
+        <div class="col s12 m6">
+            <div class="card categories-card center-align">
+                    <div class="card-content">
+                        <span class="resource-title">{{ category.category_name }}</span>
+                    </div>
+                    <div class="card-action right-align">
+                        <a href="#" class="waves-effect waves-light btn-small" id="delete-btn"><i class="material-icons left">delete_outline</i>Delete</a>
+                        <a href="#" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

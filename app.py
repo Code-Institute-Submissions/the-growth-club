@@ -212,6 +212,15 @@ def delete_resource(resource_id):
     return redirect(url_for("get_resources"))
 
 
+@app.route("/get_categories")
+def get_categories():
+    """Get Categories from the database. Find the categories, then convert
+    into a list and sort alphabetically by by the category_name. """
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    # return the categories template
+    return render_template("categories.html", categories=categories)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

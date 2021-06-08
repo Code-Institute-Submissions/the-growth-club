@@ -278,6 +278,15 @@ i.left {
     color: var(--Orange);
 }
 
+/* --------------------------------------------------- Manage Categories Page */
+.categories-h{
+    font-size: 24px;
+}
+
+.categories-card{
+    background-color: var(--Cream);
+}
+
 /* --------------------------------------------------- Footer */
 
 .footer-bg{
