@@ -34,6 +34,14 @@ def get_resources():
     return render_template("resources.html", resources=resources)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """ Search Functionality."""
+    query = request.form.get("query")
+    resources = list(mongo.db.resources.find({"$text": {"$search": query}}))
+    return render_template("resources.html", resources=resources)
+
+
 # Sign Up/Register Functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
