@@ -241,9 +241,10 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    """ Edit Category. If the user submits an edit request, then the
-    Category is retrieved from the database, updated in the database and after
-    the user receives a message, they are taken back to the manage page. """
+    """ Edit Category Functionality. If the user submits an edit request, then
+    the Category is retrieved from the database, updated in the database and
+    after the user receives a message, they are taken back to the manage page.
+    """
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name")
@@ -257,6 +258,16 @@ def edit_category(category_id):
     # method is used on the categories collection
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    """ Delete Category Functionality. If the user wants to delete a category,
+    then using the remove() method, it is deleted in the database. Thereafter,
+    the user receives a message and they are taken back to the manage page. """
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category Successfully Deleted")
+    return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":
