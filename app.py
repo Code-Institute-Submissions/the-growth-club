@@ -239,6 +239,26 @@ def add_category():
     return render_template("add_category.html")
 
 
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    """ Edit Category. If the user submits an edit request, then the
+    Category is retrieved from the database, updated in the database and after
+    the user receives a message, they are taken back to the manage page. """
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+        # update the category in the database
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Category Successfully Updated")
+        # user returned to the categories page
+        return redirect(url_for("get_categories"))
+    # Using the category ID being sent into this function, the .find_one()
+    # method is used on the categories collection
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
