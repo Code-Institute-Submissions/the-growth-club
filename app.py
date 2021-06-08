@@ -221,6 +221,24 @@ def get_categories():
     return render_template("categories.html", categories=categories)
 
 
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    """ Add Category. If the function is called using the POST method, then
+    the data from the form is retrieved, and inserted into the database.
+    Otherwise it will display the empty form."""
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        # insert the category in the database
+        mongo.db.categories.insert_one(category)
+        flash("The new Category was Added")
+        # return to the manage categories page
+        return redirect(url_for("get_categories"))
+    # return to the add_category page
+    return render_template("add_category.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

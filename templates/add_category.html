@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="center-align">Add Category</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_category') }}">
+        <!-- category name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">folder_open</i>
+                <input id="category_name" name="category_name" minlength="3" maxlength="25"
+                        type="text" class="validate" required>
+                <label for="category_name">Category Name</label>
+            </div>
+        </div>
+        <!-- category name end -->
+        <!-- Submit btn-->
+        <div class="row center-align">
+            <div class="col s12 center-align">
+                <button type="submit" class="waves-effect waves-light btn-large ">
+                    Add Category
+                </button>
+            </div>
+        </div>
+        <!-- Submit btn end-->
+    </form>
+</div>
+
+{% endblock %}
