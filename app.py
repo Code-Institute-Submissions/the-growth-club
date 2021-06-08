@@ -174,7 +174,21 @@ def add_resource():
 def edit_resource(resource_id):
     """ Edit Resource. First, retrieve the resource from the database to be
     edited by using the id. Then the ID needs to be converted into a BSON
-    data-type. """
+    data-type. Use the Post method to update the resource in the
+    database."""
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "resource_name": request.form.get("resource_name"),
+            "resource_description": request.form.get("resource_description"),
+            "resource_date": request.form.get("resource_date"),
+            "resource_link": request.form.get("resource_link"),
+            "topic_name": request.form.get("topic_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.resources.update({"_id": ObjectId(resource_id)}, submit)
+        flash("The resource was successfully edited and updated")
+        return redirect(url_for("get_resources"))
     # retrieve the resource from the database by id
     resource = mongo.db.resources.find_one({"_id": ObjectId(resource_id)})
     # find the category & topic from the database
