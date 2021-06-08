@@ -21,14 +21,16 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    """Landing page render"""
+    """Render Landing page"""
     return render_template('index.html')
 
 
 # Resources List Functionality
 @app.route("/get_resources")
 def get_resources():
+    # find resources in the the database
     resources = list(mongo.db.resources.find())
+    # render the resources template
     return render_template("resources.html", resources=resources)
 
 
@@ -188,22 +190,25 @@ def edit_resource(resource_id):
         }
         mongo.db.resources.update({"_id": ObjectId(resource_id)}, submit)
         flash("The resource was successfully edited and updated")
+        # return to the resources page
         return redirect(url_for("get_resources"))
     # retrieve the resource from the database by id
     resource = mongo.db.resources.find_one({"_id": ObjectId(resource_id)})
     # find the category & topic from the database
     categories = mongo.db.categories.find().sort("category_name", 1)
     topics = mongo.db.topics.find().sort("topic_name", 1)
+    # render the edit_resources template
     return render_template("edit_resource.html", resource=resource,
                            categories=categories, topics=topics)
 
 
 @app.route("/delete_resource/<resource_id>")
 def delete_resource(resource_id):
-    """Delete Task. Find the resource by id and remove it from the
+    """Delete Resource. Find the resource by id and remove it from the
     database. The present a message to confirm that it has been deleted."""
     mongo.db.resources.remove({"_id": ObjectId(resource_id)})
     flash("The resource was successfully deleted")
+    # return to the resources page
     return redirect(url_for("get_resources"))
 
 
