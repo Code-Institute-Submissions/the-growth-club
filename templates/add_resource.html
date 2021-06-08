@@ -3,7 +3,7 @@
 <h3 class="center-align">Add a Resource to share with the Club</h3>
 
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_resource') }}">
         <!-- category selection -->
         <div class="row">
             <div class="input-field col s12">
@@ -31,8 +31,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">format_align_left</i>
-                    <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="resource_description">Resource Description</label>
+                    <textarea id="description" name="description" minlength="5" maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="description">Resource Description</label>
                 </div>
             </div>
             <!-- Resource Description end -->
@@ -53,7 +53,7 @@
                     <label for="resource_link">Link to Resource</label>
                 </div>
             </div>
-            <!-- Resource Description end -->
+            <!-- Resource link end -->
             <!-- Topic selection -->
             <div class="row">
                 <div class="input-field col s12">
@@ -71,7 +71,7 @@
             <!-- Submit btn-->
             <div class="row center-align">
                 <button type="submit" class="waves-effect waves-light btn-large ">
-                Sign Up 
+                Add Resource 
                 </button>
             </div>
             <!-- Submit btn end-->

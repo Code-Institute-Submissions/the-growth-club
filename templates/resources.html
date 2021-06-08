@@ -4,7 +4,7 @@
 <h3 class="center-align">Club Resources</h3>
 
 <div class="center-align resource-add-btn">
-    <a href="{{ url_for('add_resource') }}" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Item</a>
+    <a href="{{ url_for('add_resource') }}" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Resource</a>
 </div>
 
     <div class="container resources">
@@ -17,13 +17,13 @@
                         <a class="btn-floating right" id="save-btn"><i class="material-icons save-icon">bookmark_border</i></a>
                         <h3 class="resource-title">{{ resource.resource_name }}</h3>
                         <strong>{{ resource.category_name }}</strong>
-                        <p class="resource-p">{{ resource.date }}</p>
-                        <p class="resource-p">{{ resource.description }}</p>
-                        <a href="{{ resource.link }}">This is a link</a>
+                        <p class="resource-p">{{ resource.resource_date }}</p>
+                        <p class="resource-p">{{ resource.resource_description }}</p>
+                        <a href="{{ resource.link }}">View resource</a>
                         <div class="resource-topic">
                             <p class="topic-p">{{ resource.topic_name }}</p>
                         </div>
-                        <p class="resource-p">{{ resource.created_by }}</p>
+                        <p class="resource-p">by: {{ resource.created_by }}</p>
                     </div>
                     <div class="card-action right-align">
                         <a class="waves-effect waves-light btn-small" id="delete-btn"><i class="material-icons left">delete_outline</i>Delete</a>

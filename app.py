@@ -143,11 +143,25 @@ def logout():
 
 
 # Add a Resource Functionality
-@app.route("/add_resource")
+@app.route("/add_resource", methods=["GET", "POST"])
 def add_resource():
     """Add Resource. First find the category and topic in the database then sort
     the them by the name key. Then pass the new variables over to the HTML
     template. """
+    if request.method == "POST":
+        # create dictionary for items in form
+        resource = {
+            "category_name": request.form.get("category_name"),
+            "resource_name": request.form.get("resource_name"),
+            "resource_description": request.form.get("resource_description"),
+            "resource_date": request.form.get("resource_date"),
+            "resource_link": request.form.get("resource_link"),
+            "topic_name": request.form.get("topic_name"),
+            "created_by": session["user"]
+            }
+        mongo.db.resources.insert_one(resource)
+        flash("Resource Successfully Added")
+        return redirect(url_for("get_resources"))
     # find category in database
     categories = mongo.db.categories.find().sort("category_name", 1)
     topics = mongo.db.topics.find().sort("topic_name", 1)
