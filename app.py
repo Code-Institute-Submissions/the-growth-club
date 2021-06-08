@@ -198,6 +198,15 @@ def edit_resource(resource_id):
                            categories=categories, topics=topics)
 
 
+@app.route("/delete_resource/<resource_id>")
+def delete_resource(resource_id):
+    """Delete Task. Find the resource by id and remove it from the
+    database. The present a message to confirm that it has been deleted."""
+    mongo.db.resources.remove({"_id": ObjectId(resource_id)})
+    flash("The resource was successfully deleted")
+    return redirect(url_for("get_resources"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
