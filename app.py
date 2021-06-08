@@ -162,12 +162,26 @@ def add_resource():
         mongo.db.resources.insert_one(resource)
         flash("Resource Successfully Added")
         return redirect(url_for("get_resources"))
-    # find category in database
+    # find category & topic in database
     categories = mongo.db.categories.find().sort("category_name", 1)
     topics = mongo.db.topics.find().sort("topic_name", 1)
     # render the add_resources template
     return render_template("add_resource.html", categories=categories,
                            topics=topics)
+
+
+@app.route("/edit_resource/<resource_id>", methods=["GET", "POST"])
+def edit_resource(resource_id):
+    """ Edit Resource. First, retrieve the resource from the database to be
+    edited by using the id. Then the ID needs to be converted into a BSON
+    data-type. """
+    # retrieve the resource from the database by id
+    resource = mongo.db.resources.find_one({"_id": ObjectId(resource_id)})
+    # find the category & topic from the database
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    topics = mongo.db.topics.find().sort("topic_name", 1)
+    return render_template("edit_resource.html", resource=resource,
+                           categories=categories, topics=topics)
 
 
 if __name__ == "__main__":
