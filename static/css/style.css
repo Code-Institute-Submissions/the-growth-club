@@ -290,6 +290,32 @@ i.left {
     height: 100vh;
 }
 
+#search-btn{
+    background-color: var(--Orange);
+    color: var(--bgBlack);
+    font-weight: 700;
+}
+
+#search-btn:hover{
+    background-color: var(--Orange);
+    border: none;
+}
+
+#reset-btn{
+    background-color: var(--Cream);
+    color: var(--Black);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--Orange);
+    text-transform: unset;
+    width: max-content;
+}
+
+#reset-btn:hover{
+    font-weight: 400;
+}
+
 /* --------------------------------------------------- Add Resources Page*/
 
 .datepicker-date-display {
