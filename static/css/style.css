@@ -61,6 +61,8 @@ h1 {
     font-weight: 700;
     font-size: 72px;
 }
+
+
 h2 {
     font-size: 36px;
     font-weight: 500;
@@ -95,13 +97,19 @@ p{
 /* -------------------------------------------------- Navbar Styles*/
 
 #logo{
-    padding-left: 13px;
-    color: var(--bgBlack);
+    padding-left: 2rem;
+    color: var(--Black) ;
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: underline 10px solid var(--Orange);
 }
 
 #navbar-style{
-    background-color: var(--bgWhite);
-    color: var(--bgBlack);
+    background-color: var(--Cream);
+    color: var(--Black) ;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
 }
 
 #navbar-menu{
@@ -110,10 +118,24 @@ p{
 
 nav ul a {
     color: var(--Black);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 601px){
+nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    color: var(--Black);
+    font-size: 50px;
+}
+}
+
+nav ul li.active {
+    border-bottom: 3px solid var(--Orange);
+    background-color: var(--Cream);
 }
 
 button{
-    background-color: var(--Black);;
+    background-color: var(--Black);
 }
 
 /* --------------------------------------------------- Forms */
@@ -133,6 +155,17 @@ button{
 
 /* --------------------------------------------------- Landing Page */
 
+.home-heading{
+    font-weight: 700;
+    font-size: 72px;
+}
+
+@media only screen and (min-width: 768px){
+.home-heading {
+    font-size: 80px;
+}
+}
+
 .landing {
     height: 100vh;
     background-repeat: no-repeat, no-repeat;
@@ -145,6 +178,19 @@ button{
 
 .landing-img {
     width: 100%;
+}
+
+.landing-row {
+    padding-top: 15%;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+/* For desktop: */
+    .home-intro {
+        font-size: 30px;
+    }
 }
 
 #featured-section{

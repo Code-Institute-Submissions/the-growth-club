@@ -30,11 +30,11 @@
 <body class="light-background font-roboto main-text-color">
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended" id="navbar-style">
-          <div class="nav-wrapper ">
-            <a href="{{url_for('index')}}" class="brand-logo black-text"
+        <nav class="nav-extended z-depth-0" id="navbar-style">
+          <div class="nav-wrapper">
+            <a href="{{url_for('index')}}" class="brand-logo black-text left"
             id="logo">Growth Club</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right "><i class="fas fa-bars"></i></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right "><i class="material-icons prefix">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li><a href="{{url_for('index')}}">Home</a></li>
               {% if session.user %}
@@ -52,7 +52,7 @@
         <!-- mobile sidenav -->
         <ul class="sidenav slider fullscreen" id="mobile-demo">
           <li><a class="sidenav-close" href="{{url_for('index')}}"><i class="fas fa-times"></i></a></li>
-          <li><h4 class="center-align">Growth Club</h4></li>
+          <li><h4 class="">Growth Club</h4></li>
           <li><a class="black-text" href="{{url_for('index')}}">Home</a></li>
           {% if session.user %}
             <li><a href="{{ url_for('get_resources') }}">Resources</a></li>
