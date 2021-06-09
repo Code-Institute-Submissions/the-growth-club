@@ -122,6 +122,13 @@ nav ul a {
     font-size: 20px;
 }
 
+nav .sidenav-trigger i {
+    height: 56px;
+    line-height: 56px;
+    color: var(--Black);
+    font-size: 50px;
+}
+
 @media only screen and (min-width: 601px){
 nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
     color: var(--Black);
@@ -167,13 +174,13 @@ button{
 }
 
 .landing {
-    height: 100vh;
     background-repeat: no-repeat, no-repeat;
     min-width: 100vw;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 50px;
+    padding-top: 20px;
     background-color: var(--Cream);
+    padding-bottom: 20px;
 }
 
 .landing-img {
@@ -181,10 +188,8 @@ button{
 }
 
 .landing-row {
-    padding-top: 15%;
+    padding-top: 10px;
 }
-
-
 
 @media only screen and (min-width: 768px) {
 /* For desktop: */
@@ -379,19 +384,32 @@ i.left {
 
 .footer-h{
     font-size: 24px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+/* For desktop: */
+.footer-h{
     text-align: left;
+    }
 }
 
 .footer-p{
     font-size: 15px;
-    text-align: left;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .footer-p{
+        text-align: left;
+    }
 }
 
 .footer-img{
     height: 50px;
     width: 50px;
 }
-
 
 .social-links li a i {
     width: 32px;

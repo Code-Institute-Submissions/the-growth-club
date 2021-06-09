@@ -1,15 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h3 class="center-align">
-                    {{ username }}'s Profile
-                </h3>
+    <h3 class="center-align">{{ username }}'s Profile</h3>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col s12 m12 l6">
+                <img src="static/images/growth-club-home.png" alt="people working together">
+            </div>
+            <div class="col s12 m12 l6">
+                <div class="row">
+                    <div class="col s12">
+                      <ul class="tabs">
+                        <li class="tab col s3"><a href="#test1">Saved</a></li>
+                        <li class="tab col s3"><a class="active" href="#test2">Posts</a></li>
+                      </ul>
+                    </div>
+                    <div id="test1" class="col s12">Here you will see all the posts you have saved</div>
+                    <div id="test2" class="col s12">Here you will see all the posts you have added to the club</div>
+                  </div>
             </div>
         </div>
     </div>
 
 
-{% endblock %}
+    {% endblock %}

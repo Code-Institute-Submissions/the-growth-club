@@ -3,6 +3,8 @@ $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     // Form select
     $("select").formSelect();
+    // Tabs for profile
+    $('.tabs').tabs();
     // Date Picker
     $(".datepicker").datepicker({
         format: "dd mmmm, yyyy",
