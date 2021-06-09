@@ -33,7 +33,7 @@
         <nav class="nav-extended z-depth-0" id="navbar-style">
           <div class="nav-wrapper">
             <a href="{{url_for('index')}}" class="brand-logo black-text left"
-            id="logo">Growth Club</a>
+            id="logo">GrowthClub</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right "><i class="material-icons prefix">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li><a href="{{url_for('index')}}">Home</a></li>
@@ -51,8 +51,9 @@
         </nav>
         <!-- mobile sidenav -->
         <ul class="sidenav slider fullscreen" id="mobile-demo">
-          <li><a class="sidenav-close" href="{{url_for('index')}}"><i class="fas fa-times"></i></a></li>
-          <li><h4 class="">Growth Club</h4></li>
+          <li><a class="sidenav-close" href="{{url_for('index')}}">
+            <i class="material-icons">close</i></a></li>
+          <li><h4 class="sidenav-logo">GrowthClub</h4></li>
           <li><a class="black-text" href="{{url_for('index')}}">Home</a></li>
           {% if session.user %}
             <li><a href="{{ url_for('get_resources') }}">Resources</a></li>
@@ -61,7 +62,7 @@
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
           {% else %}
             <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn">Sign Up</a></li>
+            <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn" id="sidenav-btn">Sign Up</a></li>
           {% endif %}
         </ul>      
     </header>

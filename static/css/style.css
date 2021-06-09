@@ -145,6 +145,43 @@ button{
     background-color: var(--Black);
 }
 
+.sidenav{
+    background-color: var(--Cream);
+}
+
+.sidenav-close{
+    background-color: var(--Cream);
+}
+
+.sidenav-logo{
+    padding-left: 30px;
+    text-decoration: underline 5px solid var(--Orange);
+}
+
+.close-icon{
+    color: var(--Black);
+}
+
+.sidenav li>a>i.material-icons {
+    float: right;
+    color: var(--Black);
+    font-size: 40px;
+}
+
+.sidenav-close {
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+.sidenav-close:hover {
+    background-color: var(--Cream);
+}
+
+#sidenav-btn:hover{
+    background-color: var(--Cream);
+    color: var(--bgBlack);
+    border: 1px solid var(--Black) ;
+}
+
 /* --------------------------------------------------- Forms */
 
 /* input field color */
