@@ -198,6 +198,18 @@ button{
     }
 }
 
+#home-features-btn{
+    background-color: var(--Black);
+    color: var(--Cream);
+    font-weight: 700;
+}
+
+#home-features-btn:hover{
+    background-color: var(--Cream);
+    color: var(--bgBlack);
+    border: 1px solid var(--Black) ;
+}
+
 #featured-section{
     margin-top: 60px;
 }
@@ -206,6 +218,18 @@ button{
     font-size: 20px;
     color: #BABABA;
     font-weight: 600;
+}
+
+#home-login-btn{
+    background-color: var(--Black);
+    color: var(--Cream);
+    font-weight: 700;
+}
+    
+#home-login-btn:hover{
+    background-color: var(--Cream);
+    color: var(--bgBlack);
+    border: 1px solid var(--Black) ;
 }
 
 
