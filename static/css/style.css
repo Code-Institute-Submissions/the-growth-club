@@ -354,10 +354,6 @@ i.left {
     color: var(--Black);
 }
 
-.resources{
-    height: 100vh;
-}
-
 #search-btn{
     background-color: var(--Orange);
     color: var(--bgBlack);

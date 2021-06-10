@@ -30,10 +30,10 @@
     {% if resources|length > 0 %}
     <div class="container resources">
         <div class="row">
-            <!-- Loop over all of the items that the .find() function from the resource collection-->
+            <!-- Loop over all of the items from the resource collection-->
             {% for resource in resources %}
-            <div class="col s12 m6">
-                <div class="card resources-card">
+            <div class="col s12 m6 card-container" > 
+                <div class="card resources-card" >
                     <div class="card-content resource-content">
                         <a class="btn-floating right" id="save-btn"><i class="material-icons save-icon">bookmark_border</i></a>
                         <h3 class="resource-title">{{ resource.resource_name }}</h3>
