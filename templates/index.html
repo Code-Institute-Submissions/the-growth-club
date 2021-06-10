@@ -1,76 +1,75 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="container landing">
-    <div class="row landing-row ">
-        <div class="col s12 m12 l6">
-            <h1 class="home-heading">Welcome to the Growth Club!</h1>
-            <h2>Where you can find & share resources to learn, attend, read, watch</h2>
-            <p >A platform related to all things UX, UI , Development and Tech. It is collection of things you can use, read, watch and focus on. Also, add your resources to share with the community.</p>
-            <a href="#featured-section" class="waves-effect waves-light btn" id="home-features-btn">See Features of the month</a>
-        </div>
-        <div class="col s12 m12 l6">
-            <img src="static/images/growth-club-home.png" alt="people working together" class="landing-img">
-        </div>
-    </div>
-</div>
-
-<main id="featured-section">
-    <h3 class="center-align" >Featured Resources of the Month</h3>
-    <div class="container">
-        <div class="row">
-            <div class="col s6">
-                <div class="card resources-card">
-                    <div class="card-content resource-content">
-                        <p class="featured-cat right">EVENT</p>
-                        <h3 class="resource-title">Resource Title</h3>
-                        <p class="resource-p">date</p>
-                        <p class="resource-p">description</p>
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
+    <!-- Landing Section -->
+    <div class="container landing">
+        <div class="row landing-row ">
+            <div class="col s12 m12 l6">
+                <h1 class="home-heading">Welcome to the Growth Club!</h1>
+                <h2>Where you can find & share resources to learn, attend, read, watch</h2>
+                <p >A platform related to all things UX, UI , Development and Tech. It is collection of things you can use, read, watch and focus on. Also, add your resources to share with the community.</p>
+                <a href="#featured-section" class="waves-effect waves-light btn" id="home-features-btn">See Features of the month</a>
             </div>
-            <div class="col s6">
-                <div class="card resources-card">
-                    <div class="card-content resource-content">
-                        <p class="featured-cat right">READ</p>
-                        <h3 class="resource-title">Resource Title</h3>
-                        <p class="resource-p">date</p>
-                        <p class="resource-p">description</p>
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <div class="card resources-card">
-                    <div class="card-content resource-content">
-                        <p class="featured-cat right">VIDEO</p>
-                        <h3 class="resource-title">Resource Title</h3>
-                        <p class="resource-p">date</p>
-                        <p class="resource-p">description</p>
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="card resources-card">
-                    <div class="card-content resource-content">
-                        <p class="featured-cat right">TOOL</p>
-                        <h3 class="resource-title">Resource Title</h3>
-                        <p class="resource-p">date</p>
-                        <p class="resource-p">description</p>
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
+            <div class="col s12 m12 l6">
+                <img src="static/images/growth-club-home.png" alt="people working together" class="landing-img">
             </div>
         </div>
     </div>
-    <div class="center-align">
-        <a href="{{ url_for('login') }}" class="waves-effect waves-light btn" id="home-login-btn">Log In to View All</a>
-    </div>
-</main>
-
-
+    <!-- Featured Section -->
+    <main id="featured-section">
+        <h3 class="center-align" >Featured Resources of the Month</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <div class="card resources-card">
+                        <div class="card-content resource-content">
+                            <p class="featured-cat right">EVENT</p>
+                            <h3 class="resource-title">Resource Title</h3>
+                            <p class="resource-p">date</p>
+                            <p class="resource-p">description</p>
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="card resources-card">
+                        <div class="card-content resource-content">
+                            <p class="featured-cat right">READ</p>
+                            <h3 class="resource-title">Resource Title</h3>
+                            <p class="resource-p">date</p>
+                            <p class="resource-p">description</p>
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <div class="card resources-card">
+                        <div class="card-content resource-content">
+                            <p class="featured-cat right">VIDEO</p>
+                            <h3 class="resource-title">Resource Title</h3>
+                            <p class="resource-p">date</p>
+                            <p class="resource-p">description</p>
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="card resources-card">
+                        <div class="card-content resource-content">
+                            <p class="featured-cat right">TOOL</p>
+                            <h3 class="resource-title">Resource Title</h3>
+                            <p class="resource-p">date</p>
+                            <p class="resource-p">description</p>
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Log In button -->
+        <div class="center-align">
+            <a href="{{ url_for('login') }}" class="waves-effect waves-light btn" id="home-login-btn">Log In to View All</a>
+        </div>
+    </main>
 {% endblock %}

@@ -313,7 +313,7 @@ button{
 }
 
 .resource-topic{
-    background-color: var(--Orange);
+    /*background-color: var(--Orange);  Remeber to remove */ 
     border-radius: 10px;
     max-width: fit-content;
 }

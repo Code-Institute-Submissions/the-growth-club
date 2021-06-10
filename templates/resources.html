@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-
     <h3 class="center-align">Club Resources</h3>
-
+    <!-- Search Form & Buttons-->
     <div class="container">
         <div class="row ">
             <form action="{{ url_for('search') }}" method="post" class="col s12">
                 <div class="row valign-wrapper center-align">
+                    <!-- Search Input-->
                     <div class="input-field col s12 m8">
                         <i class="material-icons prefix">search</i>
                         <input type="text" name="query" id="query" minlength="2" class="validate" required>
                         <label for="query">Search Resources</label>
                     </div>
+                    <!-- Buttons-->
                     <div class="col s12 m4">
                         <button type="submit" class="waves-effect waves-light btn" id="search-btn">
                             <i class="material-icons prefix left">search</i> Search
@@ -22,11 +23,11 @@
             </form>
         </div>
     </div>
-
+    <!-- Add resource Button-->
     <div class="center-align resource-add-btn">
         <a href="{{ url_for('add_resource') }}" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Resource</a>
     </div>
-
+    <!-- Resources Cards-->
     {% if resources|length > 0 %}
     <div class="container resources">
         <div class="row">
@@ -35,15 +36,23 @@
             <div class="col s12 m6 card-container" > 
                 <div class="card resources-card" >
                     <div class="card-content resource-content">
+                        <!-- Save Button -->
                         <a class="btn-floating right" id="save-btn"><i class="material-icons save-icon">bookmark_border</i></a>
+                        <!-- Title -->
                         <h3 class="resource-title">{{ resource.resource_name }}</h3>
+                        <!-- Category -->
                         <strong>{{ resource.category_name }}</strong>
+                        <!-- Category -->
                         <p class="resource-p">{{ resource.resource_date }}</p>
+                        <!-- Description -->
                         <p class="resource-p">{{ resource.resource_description }}</p>
+                        <!-- Link -->
                         <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer">View resource</a>
+                        <!-- Topic -->
                         <div class="resource-topic">
                             <p class="topic-p">{{ resource.topic_name }}</p>
                         </div>
+                        <!-- Created by -->
                         <p class="resource-p">by: {{ resource.created_by }}</p>
                     </div>
                     <div class="card-action right-align">
@@ -55,6 +64,7 @@
             {% endfor %}
         </div>
     </div>
+    <!-- Message if no search results found-->
     {% else %}
         <h3 class="center-align">No Results Found</h3>
     {% endif %}

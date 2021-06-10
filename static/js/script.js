@@ -44,6 +44,7 @@ $(document).ready(function () {
     }
 });
 
+// Menu items: show active page
 // From https://www.infoworld.com/article/3304440/setting-an-active-menu-item-based-on-the-current-url-with-jquery.html
 $(function () {
     setNavigation();
