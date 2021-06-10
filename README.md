@@ -74,7 +74,7 @@ I created a User flow to determine the main paths the user might take on the web
 [image]
 
 ### Icons
-I used icons from Font Awesome library. The icons that were used were are all .... themed or used to give meaning to a certain section.
+I used icons from Materialized and Font Awesome library. The icons that were used were are all .... themed or used to give meaning to a certain section.
 
 ## Wireframes
 I have used Balsamic to create low-fidelity wireframes and used Figma to create medium-fidelity wireframes. First I created a basic wireframe for mobile, for tablet and desktop. The website will be easy to navigate by using the navigation bar or by scrolling down the page. I have included a scroll-up button for user convenience.There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
