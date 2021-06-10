@@ -71,6 +71,8 @@ h2 {
 h3{
     font-weight: 600;
     font-size: 34px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 p{
@@ -415,6 +417,43 @@ i.left {
 .datepicker-date-display .year-text {
     color: var(--Orange);
 }
+
+/* --------------------------------------------------- Profile Page */
+.profile-container{
+    height: 100vh;
+    width: 100vw;
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+.profile-row{
+    width: 100%;
+}
+
+.profile-h{
+    background-color: var(--Cream);
+    border-radius: 5px;
+    color: var(--Black);
+}
+
+.tabs .tab a{
+    color: var(--Black);
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: var(--Orange);
+}
+
+.tabs .indicator {
+    background-color:  var(--Orange);
+}
+
+.tab-p{
+    padding-top: 10px;
+}
+
+
 
 /* --------------------------------------------------- Manage Categories Page */
 .categories-h{

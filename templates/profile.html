@@ -3,25 +3,23 @@
 
     <h3 class="center-align">{{ username }}'s Profile</h3>
 
-    <div class="container">
-        <div class="row ">
-            <div class="col s12 m12 l6">
-                <img src="static/images/growth-club-home.png" alt="people working together">
-            </div>
-            <div class="col s12 m12 l6">
-                <div class="row">
-                    <div class="col s12">
-                      <ul class="tabs">
-                        <li class="tab col s3"><a href="#test1">Saved</a></li>
-                        <li class="tab col s3"><a class="active" href="#test2">Posts</a></li>
-                      </ul>
-                    </div>
-                    <div id="test1" class="col s12">Here you will see all the posts you have saved</div>
-                    <div id="test2" class="col s12">Here you will see all the posts you have added to the club</div>
-                  </div>
-            </div>
+    <div class="container profile-container ">
+      <div class="row ">
+        <div class="col s12 m12 l6 center-align">
+          <img src="static/images/growth-club-home.png" alt="people working together">
         </div>
+        <div class="col s12 m12 l6">
+          <ul class="tabs">
+            <li class="tab col s3 profile-h"><a href="#saved_resources">Saved</a></li>
+            <li class="tab col s3 profile-h"><a class="active" href="#posted_resources">Posts</a></li>
+          </ul>
+          <div>
+            <div id="saved_resources" class="col s12 ">Here you will see all the posts you have saved</div>
+            <div id="posted_resources" class="col s12">Here you will see all the posts you have added to the club</div>
+          </div>
+        </div>
+      </div>
     </div>
-
+    
 
     {% endblock %}
