@@ -14,8 +14,15 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
+
+# ============================================ #
+
+
 # setup an instance of PyMongo
 mongo = PyMongo(app)
+
+
+# ============================================ #
 
 
 @app.route('/')
@@ -23,6 +30,9 @@ mongo = PyMongo(app)
 def index():
     """Render Landing page"""
     return render_template('index.html')
+
+
+# ============================================ #
 
 
 # Resources List Functionality
@@ -34,6 +44,9 @@ def get_resources():
     return render_template("resources.html", resources=resources)
 
 
+# ============================================ #
+
+
 # Search Functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -41,6 +54,8 @@ def search():
     query = request.form.get("query")
     resources = list(mongo.db.resources.find({"$text": {"$search": query}}))
     return render_template("resources.html", resources=resources)
+
+# ============================================ #
 
 
 # Sign Up/Register Functionality
@@ -79,6 +94,9 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
+
+
+# ============================================ #
 
 
 # Log In Functionality
@@ -121,6 +139,9 @@ def login():
     return render_template("login.html")
 
 
+# ============================================ #
+
+
 # Profile Functionality
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -140,6 +161,9 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# ============================================ #
+
+
 # Log out Functionality
 @app.route("/logout")
 def logout():
@@ -151,6 +175,9 @@ def logout():
     session.pop("user")
     # return to log in page
     return redirect(url_for("login"))
+
+
+# ============================================ #
 
 
 # Add a Resource Functionality
@@ -181,6 +208,9 @@ def add_resource():
                            topics=topics)
 
 
+# ============================================ #
+
+# Edit Resources
 @app.route("/edit_resource/<resource_id>", methods=["GET", "POST"])
 def edit_resource(resource_id):
     """ Edit Resource. First, retrieve the resource from the database to be
@@ -211,6 +241,10 @@ def edit_resource(resource_id):
                            categories=categories, topics=topics)
 
 
+# ============================================ #
+
+
+# Delete Resources
 @app.route("/delete_resource/<resource_id>")
 def delete_resource(resource_id):
     """Delete Resource. Find the resource by id and remove it from the
@@ -221,6 +255,10 @@ def delete_resource(resource_id):
     return redirect(url_for("get_resources"))
 
 
+# ============================================ #
+
+
+# Get Categories
 @app.route("/get_categories")
 def get_categories():
     """Get Categories from the database. Find the categories, then convert
@@ -230,6 +268,10 @@ def get_categories():
     return render_template("categories.html", categories=categories)
 
 
+# ============================================ #
+
+
+# Add Category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     """ Add Category. If the function is called using the POST method, then
@@ -248,6 +290,10 @@ def add_category():
     return render_template("add_category.html")
 
 
+# ============================================ #
+
+
+# Edit Category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     """ Edit Category Functionality. If the user submits an edit request, then
@@ -269,6 +315,10 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# ============================================ #
+
+
+# Delete Category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     """ Delete Category Functionality. If the user wants to delete a category,
@@ -277,6 +327,9 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
+
+# ============================================ #
 
 
 if __name__ == "__main__":
