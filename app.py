@@ -34,6 +34,7 @@ def get_resources():
     return render_template("resources.html", resources=resources)
 
 
+# Search Functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """ Search Functionality."""
