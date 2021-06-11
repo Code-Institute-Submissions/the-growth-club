@@ -189,7 +189,7 @@ def add_resource():
     if request.method == "POST":
         # create dictionary for items in form
         resource = {
-            "category_name": request.form.get("category_name"),
+            "category_name": request.form.get("category_id"),
             "resource_name": request.form.get("resource_name"),
             "resource_description": request.form.get("resource_description"),
             "resource_date": request.form.get("resource_date"),
@@ -330,6 +330,33 @@ def delete_category(category_id):
 
 
 # ============================================ #
+
+
+# Add Featured Resource Functionality
+@app.route("/add_featured", methods=["GET", "POST"])
+def add_featured():
+    """Add Featured Resource. First find the category and topic in the database
+    then sort the them by the name key. Then pass the new variables over to the
+    HTML template. """
+    if request.method == "POST":
+        # create dictionary for items in form
+        featured_resource = {
+            "category_name": request.form.get("category_name"),
+            "resource_name": request.form.get("resource_name"),
+            "resource_description": request.form.get("resource_description"),
+            "resource_date": request.form.get("resource_date"),
+            "resource_link": request.form.get("resource_link"),
+            "topic_name": request.form.get("topic_name"),
+            }
+        mongo.db.resources.insert_one(featured_resource)
+        flash("Featured Resource Successfully Added")
+        return redirect(url_for("get_categories"))
+    # find category & topic in database
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    topics = mongo.db.topics.find().sort("topic_name", 1)
+    # render the add_resources template
+    return render_template("add_featured.html", categories=categories,
+                           topics=topics)
 
 
 if __name__ == "__main__":

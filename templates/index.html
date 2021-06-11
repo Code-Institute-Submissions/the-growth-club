@@ -16,55 +16,28 @@
     </div>
     <!-- Featured Section -->
     <main id="featured-section">
-        <h3 class="center-align" >Featured Resources of the Month</h3>
+        <h3 class="center-align">Featured Resources of the Month</h3>
         <div class="container">
             <div class="row">
-                <div class="col s6">
+                <!-- Loop over all of the items from the resource collection-->
+                {% for resource in resources %}
+                <div class="col s12 m6 card-container">
                     <div class="card resources-card">
                         <div class="card-content resource-content">
-                            <p class="featured-cat right">EVENT</p>
-                            <h3 class="resource-title">Resource Title</h3>
-                            <p class="resource-p">date</p>
-                            <p class="resource-p">description</p>
-                            <a href="#">This is a link</a>
+                            <!-- Category -->
+                            <p class="featured-cat right">{{ resource.category_name }}</p>
+                            <!-- Title -->
+                            <h3 class="resource-title">{{ resource.resource_name }}</h3>
+                            <!-- Date -->
+                            <p class="resource-p">{{ resource.resource_date }}</p>
+                            <!-- Description -->
+                            <p class="resource-p">{{ resource.resource_description }}</p>
+                            <!-- Link -->
+                            <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer">View resource</a>View resource</a>
                         </div>
                     </div>
                 </div>
-                <div class="col s6">
-                    <div class="card resources-card">
-                        <div class="card-content resource-content">
-                            <p class="featured-cat right">READ</p>
-                            <h3 class="resource-title">Resource Title</h3>
-                            <p class="resource-p">date</p>
-                            <p class="resource-p">description</p>
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <div class="card resources-card">
-                        <div class="card-content resource-content">
-                            <p class="featured-cat right">VIDEO</p>
-                            <h3 class="resource-title">Resource Title</h3>
-                            <p class="resource-p">date</p>
-                            <p class="resource-p">description</p>
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s6">
-                    <div class="card resources-card">
-                        <div class="card-content resource-content">
-                            <p class="featured-cat right">TOOL</p>
-                            <h3 class="resource-title">Resource Title</h3>
-                            <p class="resource-p">date</p>
-                            <p class="resource-p">description</p>
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <!-- Log In button -->

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- This page will only be visible to the admin -->
+<h3 class="center-align">Add Featured Item of the Month</h3>
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_featured') }}">
+        <!-- category selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">folder_open</i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select for="category_name">
+                <label>Resource Category</label>
+            </div>
+        </div>
+        <!-- category selection end -->
+        <!-- Resource Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">create</i>
+                <input id="resource_name" name="resource_name" minlength="5" maxlength="50" type="text" class="validate"
+                    required>
+                <label for="resource_name">Resource Name</label>
+            </div>
+        </div>
+        <!-- Resource Name end-->
+        <!-- Resource Description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_align_left</i>
+                <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="resource_description">Resource Description</label>
+            </div>
+        </div>
+        <!-- Resource Description end -->
+        <!-- Date picker -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">event</i>
+                <input id="resource_date" name="resource_date" type="text" class="datepicker validate">
+                <label for="resource_date">Date</label>
+            </div>
+        </div>
+        <!-- Date picker end -->
+        <!-- Resource Link -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">link</i>
+                <input id="resource_link" name="resource_link" minlength="5" type="url" class="validate" required>
+                <label for="resource_link">Link to Resource</label>
+            </div>
+        </div>
+        <!-- Resource link end -->
+        <!-- Topic selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">label_outline</i>
+                <select id="topic_name" name="topic_name" class="validate" required>
+                    <option value="" disabled selected>Choose Topic</option>
+                    {% for topic in topics %}
+                    <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
+                    {% endfor %}
+                </select for="topic_name">
+                <label>Resource Topic</label>
+            </div>
+        </div>
+        <!-- Topic selection end -->
+        <!-- Submit btn-->
+        <div class="row center-align">
+            <button type="submit" class="waves-effect waves-light btn-large ">
+                Add Featured Item
+            </button>
+        </div>
+        <!-- Submit btn end-->
+    </form>
+</div>
+
+
+    
+{% endblock %}
