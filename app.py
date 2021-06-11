@@ -38,8 +38,32 @@ def index():
 # Resources List Functionality
 @app.route("/get_resources")
 def get_resources():
+    """Get resources function. To find all the resources in the database
+    and list them. The ObjectId is used to find the items to ensure it
+    can be updated correctly. The ObjectId needs to be translated in a
+    way so that it does not show the log id number by the name.
+    """
     # find resources in the the database
     resources = list(mongo.db.resources.find())
+    # loop through all resources
+    for resource in resources:
+        try:
+            user = mongo.db.users.find_one({
+                '_id': ObjectId(resource['created_by'])
+            })
+            category = mongo.db.categories.find_one({
+                '_id': ObjectId(resource['category_name'])
+            })
+            topic = mongo.db.topics.find_one({
+                '_id': ObjectId(resource['topic_name'])
+            })
+            resource['created_by'] = user['username']
+            resource['category_name'] = category['category_name']
+            resource['topic_name'] = topic['topic_name']
+
+        except Exception as e:
+            print('problem with resource %s' % resource['resource_name'])  # check if we need to remove
+            pass
     # render the resources template
     return render_template("resources.html", resources=resources)
 
@@ -183,19 +207,26 @@ def logout():
 # Add a Resource Functionality
 @app.route("/add_resource", methods=["GET", "POST"])
 def add_resource():
-    """Add Resource. First find the category and topic in the database then sort
-    the them by the name key. Then pass the new variables over to the HTML
-    template. """
+    """Add Resource. When user submits a new request, we want to find
+    what is in the database and add the new items to the database. If this was
+    successful, the user is notified and returned to the resources page. """
     if request.method == "POST":
-        # create dictionary for items in form
+        # find the collections and the keys
+        user = mongo.db.users.find_one({'username': session["user"]})
+        category = mongo.db.categories.find_one({'category_name':
+                                                request.form.get(
+                                                    "category_name")})
+        topic = mongo.db.topics.find_one({'topic_name': request.form.get(
+                                                    "topic_name")})
+        # create dictionary for items in form by ObjectId
         resource = {
-            "category_name": request.form.get("category_id"),
+            "category_name": ObjectId(category['_id']),
             "resource_name": request.form.get("resource_name"),
             "resource_description": request.form.get("resource_description"),
             "resource_date": request.form.get("resource_date"),
             "resource_link": request.form.get("resource_link"),
-            "topic_name": request.form.get("topic_name"),
-            "created_by": session["user"]
+            "topic_name": ObjectId(topic['_id']),
+            "created_by": ObjectId(user['_id'])
             }
         mongo.db.resources.insert_one(resource)
         flash("Resource Successfully Added")
