@@ -408,13 +408,28 @@ def edit_topic(topic_id):
         }
         # update the topic in the database
         mongo.db.topics.update({"_id": ObjectId(topic_id)}, submit)
-        flash("Category Successfully Updated")
+        flash("Topic Successfully Updated")
         # user returned to the admin dashboard page
         return redirect(url_for("admin_dashboard"))
     # Using the topic ID being sent into this function, the .find_one()
     # method is used on the topics collection
     topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
     return render_template("edit_topic.html", topic=topic)
+
+
+# ============================================ #
+
+
+# Delete Topic
+@app.route("/delete_topic/<topic_id>")
+def delete_topic(topic_id):
+    """ Delete Topic Functionality. If the user wants to delete a topic,
+    then using the remove() method, it is deleted in the database. Thereafter,
+    the user receives a message and they are taken back to the admin dahboard
+    page. """
+    mongo.db.topics.remove({"_id": ObjectId(topic_id)})
+    flash("Topic Successfully Deleted")
+    return redirect(url_for("admin_dashboard"))
 
 
 # ============================================ #
