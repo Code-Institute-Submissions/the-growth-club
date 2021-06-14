@@ -69,6 +69,48 @@
                     </div>
                 </div>
             </div>
+            <!-- Topic section -->
+            <div class="col s12 m12 l12">
+                <div class="card manage-resources-c">
+                    <h4 class="manage-resources-h">Topic Section 
+                        <span>
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn-floating modal-trigger right" id="modal-btn" href="#modal-topic"><i class="material-icons">info_outline</i></a>
+                            <!-- Modal Structure -->
+                            <div id="modal-topic" class="modal info-modal">
+                                <div class="modal-content">
+                                <h4 class="info-modal-h"> 🧐 What is a Topic?</h4>
+                                <p class="info-modal-p">A Topic is the sub-type of the resource. It tells you what topic the resource is about for instance it could be about UX, UI, Development or Technology.</p>
+                                </div>
+                            </div>
+                        </span>
+                    </h4>
+                    <p class="manage-featured-p">Here you can manage the current topics of resources.</p>
+                    <!-- Add topics button -->
+                    <div class=" resource-add-btn">
+                        <a href="{{ url_for('add_topic') }}" class="waves-effect waves-light btn manage-resources-btn center-align"><i class="material-icons left">add</i>Add Topic</a>
+                    </div>
+                    <!-- Current Categories -->
+                    <div class="container container-manage-cat">
+                        <div class="row" >
+                            <h4 class="manage-categories-h">Current Topics</h4>
+                            {% for topic in topics %}
+                            <div class="col s12 m6" >
+                                <div class="card manage-card">
+                                        <div class="card-content">
+                                            <p class="cat-name-p" >{{ topic.topic_name }}</p>
+                                        <!-- Delete & Edit Buttons -->
+                                        <div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

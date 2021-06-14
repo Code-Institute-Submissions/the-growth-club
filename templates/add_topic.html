@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="center-align">Add Topic</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_topic') }}">
+        <!-- Topic name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">folder_open</i>
+                <input id="topic_name" name="topic_name" minlength="2" maxlength="25" type="text" class="validate" required>
+                <label for="topic_name">Topic Name</label>
+            </div>
+        </div>
+        <!-- topic name end -->
+        <!-- Submit btn-->
+        <div class="row center-align">
+            <div class="col s12 center-align">
+                <button type="submit" class="waves-effect waves-light btn-large ">
+                    Add Topic
+                </button>
+            </div>
+        </div>
+        <!-- Submit btn end-->
+    </form>
+</div>
+
+{% endblock %}

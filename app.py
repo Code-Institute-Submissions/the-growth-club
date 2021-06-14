@@ -298,13 +298,15 @@ def delete_resource(resource_id):
 
 
 # Get Categories
-@app.route("/get_categories")
-def get_categories():
+@app.route("/admin_dashboard")
+def admin_dashboard():
     """Get Categories from the database. Find the categories, then convert
     into a list and sort alphabetically by by the category_name. """
     categories = list(mongo.db.categories.find().sort("category_name", 1))
+    topics = list(mongo.db.topics.find().sort("topic_name", 1))
     # return the categories template
-    return render_template("categories.html", categories=categories)
+    return render_template("admin_dashboard.html", categories=categories,
+                           topics=topics)
 
 
 # ============================================ #
@@ -324,7 +326,7 @@ def add_category():
         mongo.db.categories.insert_one(category)
         flash("The new Category was Added")
         # return to the manage categories page
-        return redirect(url_for("get_categories"))
+        return redirect(url_for("admin_dashboard"))
     # return to the add_category page
     return render_template("add_category.html")
 
@@ -347,7 +349,7 @@ def edit_category(category_id):
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
         # user returned to the categories page
-        return redirect(url_for("get_categories"))
+        return redirect(url_for("admin_dashboard"))
     # Using the category ID being sent into this function, the .find_one()
     # method is used on the categories collection
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
@@ -365,7 +367,29 @@ def delete_category(category_id):
     the user receives a message and they are taken back to the manage page. """
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
-    return redirect(url_for("get_categories"))
+    return redirect(url_for("admin_dashboard"))
+
+
+# ============================================ #
+
+
+# Add Topic
+@app.route("/add_topic", methods=["GET", "POST"])
+def add_topic():
+    """ Add Topic. If the function is called using the POST method, then
+    the data from the form is retrieved, and inserted into the database.
+    Otherwise it will display the empty form."""
+    if request.method == "POST":
+        topic = {
+            "topic_name": request.form.get("topic_name")
+        }
+        # insert the category in the database
+        mongo.db.topics.insert_one(topic)
+        flash("The new Category was Added")
+        # return to the manage categories page
+        return redirect(url_for("admin_dashboard"))
+    # return to the add_category page
+    return render_template("add_topic.html")
 
 
 # ============================================ #
@@ -389,7 +413,7 @@ def add_featured():
             }
         mongo.db.resources.insert_one(featured_resource)
         flash("Featured Resource Successfully Added")
-        return redirect(url_for("get_categories"))
+        return redirect(url_for("admin_dashboard"))
     # find category & topic in database
     categories = mongo.db.categories.find().sort("category_name", 1)
     topics = mongo.db.topics.find().sort("topic_name", 1)
