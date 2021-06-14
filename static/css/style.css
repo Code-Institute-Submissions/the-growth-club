@@ -461,8 +461,28 @@ i.left {
     padding-left: 30px;
     background-color: var(--Cream);
     padding-right: 30px;
-    justify-content: space-between
 }
+
+#modal-btn{
+    background-color: var(--Orange);
+}
+
+.info-modal{
+    border-radius: 8px;
+    background-color: var(--bgWhite);
+}
+
+.info-modal-h{
+    color:var(--Black);
+    font-size: 24px;
+    font-weight: 700 ;
+}
+
+.info-modal-p{
+    color:var(--Black);
+    font-size: 18px;
+}
+
 
 .manage-resources-h{
     font-size: 24px;

@@ -5,6 +5,8 @@ $(document).ready(function () {
     $("select").formSelect();
     // Tabs for profile
     $('.tabs').tabs();
+    // Modal
+    $('.modal').modal();
     // Date Picker
     $(".datepicker").datepicker({
         format: "dd mmmm, yyyy",
