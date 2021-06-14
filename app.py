@@ -297,14 +297,14 @@ def delete_resource(resource_id):
 # ============================================ #
 
 
-# Get Categories
+# Admin dashboard
 @app.route("/admin_dashboard")
 def admin_dashboard():
-    """Get Categories from the database. Find the categories, then convert
-    into a list and sort alphabetically by by the category_name. """
+    """Get Categories from the database. Find the categories & topics,
+    then convert into a list and sort alphabetically the name."""
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     topics = list(mongo.db.topics.find().sort("topic_name", 1))
-    # return the categories template
+    # return the admin dashboard template
     return render_template("admin_dashboard.html", categories=categories,
                            topics=topics)
 
@@ -325,7 +325,7 @@ def add_category():
         # insert the category in the database
         mongo.db.categories.insert_one(category)
         flash("The new Category was Added")
-        # return to the manage categories page
+        # return to the admin dashboard page
         return redirect(url_for("admin_dashboard"))
     # return to the add_category page
     return render_template("add_category.html")
@@ -348,7 +348,7 @@ def edit_category(category_id):
         # update the category in the database
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
-        # user returned to the categories page
+        # user returned to the admin dashboard page
         return redirect(url_for("admin_dashboard"))
     # Using the category ID being sent into this function, the .find_one()
     # method is used on the categories collection
@@ -386,10 +386,35 @@ def add_topic():
         # insert the category in the database
         mongo.db.topics.insert_one(topic)
         flash("The new Category was Added")
-        # return to the manage categories page
+        # return to the manage admin dashboard page
         return redirect(url_for("admin_dashboard"))
     # return to the add_category page
     return render_template("add_topic.html")
+
+
+# ============================================ #
+
+
+# Edit Topic
+@app.route("/edit_topic/<topic_id>", methods=["GET", "POST"])
+def edit_topic(topic_id):
+    """ Edit Topic Functionality. If the user submits an edit request, then
+    the Category is retrieved from the database, updated in the database and
+    after the user receives a message, they are taken back to the manage page.
+    """
+    if request.method == "POST":
+        submit = {
+            "topic_name": request.form.get("topic_name")
+        }
+        # update the topic in the database
+        mongo.db.topics.update({"_id": ObjectId(topic_id)}, submit)
+        flash("Category Successfully Updated")
+        # user returned to the admin dashboard page
+        return redirect(url_for("admin_dashboard"))
+    # Using the topic ID being sent into this function, the .find_one()
+    # method is used on the topics collection
+    topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+    return render_template("edit_topic.html", topic=topic)
 
 
 # ============================================ #
