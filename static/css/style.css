@@ -295,8 +295,18 @@ button{
     margin-bottom: 30px;
 }
 
+#card-col{
+    width: 80%;
+    margin: auto;
+}
+
 .resources-card{
     background-color: var(--Cream);
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 30px;
 }
 
 .resource-content{
@@ -305,15 +315,27 @@ button{
 
 .resource-title{
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
 }
+
 
 .resource-p{
     font-size: 14px;
 }
 
+.resource-cat{
+    padding: 2px 10px;
+    border-radius: 1000px;
+    border: 1px solid var(--Black);
+    background-color: var(--Cream);
+    color: var(--Black);
+    font-size: 18px;
+    line-height: 20px;
+    width:fit-content;
+}
+
 .resource-topic{
-    /*background-color: var(--Orange);  Remeber to remove */ 
+    /*background-color: var(--Orange);  Remember to remove */ 
     padding: 2px 10px;
     border-radius: 1000px;
     background-color: #FFC795;

@@ -27,40 +27,41 @@
     <div class="center-align resource-add-btn">
         <a href="{{ url_for('add_resource') }}" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Resource</a>
     </div>
-    <!-- Resources Cards-->
+    <!-- For searching Cards-->
     {% if resources|length > 0 %}
-    <div class="container resources">
+    <!-- Resources Cards-->
+    <div class="container">
         <div class="row">
-            <!-- Loop over all of the items from the resource collection-->
-            {% for resource in resources %}
-            <div class="col s12 m6 card-container" > 
-                <div class="card resources-card" >
-                    <div class="card-content resource-content">
-                        <!-- Save Button -->
-                        <a class="btn-floating right" id="save-btn"><i class="material-icons save-icon">bookmark_border</i></a>
-                        <!-- Title -->
-                        <h3 class="resource-title">{{ resource.resource_name }}</h3>
-                        <!-- Category -->
-                        <strong>{{ resource.category_name }}</strong>
-                        <!-- Date -->
-                        <p class="resource-p">{{ resource.resource_date }}</p>
-                        <!-- Description -->
-                        <p class="resource-p">{{ resource.resource_description }}</p>
-                        <!-- Link -->
-                        <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer">View resource</a>
-                        <!-- Topic -->
-                        <div class="resource-topic">{{ resource.topic_name }}
-                        </div>
-                        <!-- Created by -->
-                        <p class="resource-p">by: {{ resource.created_by }}</p>
-                    </div>
-                    <div class="card-action right-align">
-                            <a href="{{ url_for('delete_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="delete-btn"><i class="material-icons left">delete_outline</i>Delete</a>
-                            <a href="{{ url_for('edit_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
+            <div class="col s12 m12 l12">
+                 <!-- Loop over all of the items from the resource collection-->
+                {% for resource in resources %}
+                <div class="card manage-resources-c">
+                    <!-- Title -->
+                    <h3 class=" resource-title">{{ resource.resource_name }}
+                        <span>
+                            <!-- Save Button -->
+                            <a class="waves-effect waves-light btn-floating right" id="save-btn"><i class="material-icons save-icon">bookmark_border</i></a>
+                        </span>
+                    </h3>
+                    <!-- Category -->
+                    <p class="resource-cat"> {{ resource.category_name }}</p>
+                    <!-- Topic -->
+                    <p class="resource-topic">{{ resource.topic_name }}</p>
+                    <!-- Date -->
+                    <p class="resource-p">{{ resource.resource_date }}</p>
+                    <!-- Created by -->
+                    <p class="resource-p">added by: {{ resource.created_by }}</p>
+                    <!-- Link -->
+                    <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer">View resource</a>
+                    <!-- Description -->
+                    <p class="resource-p">{{ resource.resource_description }}</p>
+                    <div class="card-action d-flex ">
+                        <a href="{{ url_for('delete_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="delete-btn"><i class="material-icons left">delete_outline</i>Delete</a>
+                        <a href="{{ url_for('edit_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
+            </div>   
         </div>
     </div>
     <!-- Message if no search results found-->
