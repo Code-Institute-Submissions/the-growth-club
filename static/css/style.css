@@ -448,8 +448,31 @@ i.left {
 
 .tab-p{
     padding-top: 10px;
+    background-color: var(--Cream);
 }
 
+.change-pw-btn{
+   background-color: var(--Cream);
+   border: 1px solid var(--Black);
+   color: var(--Black);
+}
+.change-pw-btn:hover{
+    background-color: var(--Cream);
+    border: 1px solid var(--Orange);
+    color: var(--Black);
+    font-weight: initial;
+ }
+
+ .delete-p{
+     font-size: 18px;
+     color: var(--Black);
+ }
+
+ .delete-link{
+    color: var(--Black);
+    border-bottom: 5px solid var(--Orange);
+     
+ }
 
 
 /* --------------------------------------------------- Manage Resources Page */

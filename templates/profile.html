@@ -4,16 +4,36 @@
     <div class="container profile-container ">
       <div class="row ">
         <div class="col s12 m12 l6 center-align">
+          <!-- Go to resource page btn -->
+          <div class="center-align">
+            <a href="{{ url_for('get_resources') }}" class="waves-effect waves-light btn manage-resources-btn">View Club Resources</a>
+          </div>
+          <!-- Image -->
           <img src="/static/images/growth-club-home.png" alt="people working together" class="landing-img">
         </div>
         <div class="col s12 m12 l6">
+          <!-- Tabs -->
           <ul class="tabs">
             <li class="tab col s3 profile-h"><a href="#saved_resources">Saved</a></li>
             <li class="tab col s3 profile-h"><a class="active" href="#posted_resources">Posts</a></li>
           </ul>
-          <div>
-            <div id="saved_resources" class="col s12 ">Here you will see all the posts you have saved</div>
+          <div class="tab-wrapper">
+            <div id="saved_resources" class="col s12 tab-wrapper">Here you will see all the posts you have saved</div>
             <div id="posted_resources" class="col s12">Here you will see all the posts you have added to the club</div>
+          </div>
+        </div>
+      </div>
+      <div class="row center-align">
+        <div class="col s12 m12 l12 center-align">
+          <!-- Change password -->
+          <div class="center-align">
+            <a href="" class="waves-effect waves-light btn change-pw-btn"> <i class="material-icons left">lock_outline</i>Change Password</a>
+          </div>
+          <!-- Delete account -->
+          <div class="center-align">
+            <p class="delete-p">Don’t want access to Community resources? <br>
+              <a href="" class="delete-link"> Click here to delete your profile.</a>
+             </p>
           </div>
         </div>
       </div>
