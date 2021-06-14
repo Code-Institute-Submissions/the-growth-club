@@ -41,7 +41,7 @@ def get_resources():
     """Get resources function. To find all the resources in the database
     and list them. The ObjectId is used to find the items to ensure it
     can be updated correctly. The ObjectId needs to be translated in a
-    way so that it does not show the log id number by the name.
+    way so that it does not show the id number but the name.
     """
     # find resources in the the database
     resources = list(mongo.db.resources.find())
@@ -207,8 +207,8 @@ def logout():
 # Add a Resource Functionality
 @app.route("/add_resource", methods=["GET", "POST"])
 def add_resource():
-    """Add Resource. When user submits a new request, we want to find
-    what is in the database and add the new items to the database. If this was
+    """Add Resource. When user submits a new request, find the resources
+    in the database and add the new items to the database. If this was
     successful, the user is notified and returned to the resources page. """
     if request.method == "POST":
         # find the collections and the keys
@@ -249,15 +249,23 @@ def edit_resource(resource_id):
     data-type. Use the Post method to update the resource in the
     database."""
     if request.method == "POST":
+        # find the collections and the keys
+        user = mongo.db.users.find_one({'username': session["user"]})
+        category = mongo.db.categories.find_one({'category_name':
+                                                request.form.get(
+                                                    "category_name")})
+        topic = mongo.db.topics.find_one({'topic_name': request.form.get(
+                                                    "topic_name")})
         submit = {
-            "category_name": request.form.get("category_name"),
+            "category_name": ObjectId(category['_id']),
             "resource_name": request.form.get("resource_name"),
             "resource_description": request.form.get("resource_description"),
             "resource_date": request.form.get("resource_date"),
             "resource_link": request.form.get("resource_link"),
-            "topic_name": request.form.get("topic_name"),
-            "created_by": session["user"]
+            "topic_name": ObjectId(topic['_id']),
+            "created_by": ObjectId(user['_id'])
         }
+        # update resource in database
         mongo.db.resources.update({"_id": ObjectId(resource_id)}, submit)
         flash("The resource was successfully edited and updated")
         # return to the resources page
