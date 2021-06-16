@@ -21,6 +21,7 @@ $(document).ready(function () {
         resource_id = $(this).attr('data-resource')
         url = "/bookmark/" + resource_id
         $.post(url);
+        $(this).css('background-color','var(--Orange)');
     });
 
 

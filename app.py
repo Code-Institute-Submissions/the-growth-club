@@ -15,107 +15,16 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 
-# ============================================ #
-
-
 # setup an instance of PyMongo
 mongo = PyMongo(app)
 
 
-# ============================================ #
+# ------------------------------------------- #
+#    USER: REGISTRATION | LOG IN | LOG OUT    #
+# ------------------------------------------- #
 
 
-@app.route('/')
-@app.route('/index')
-def index():
-    """Render Landing page"""
-    return render_template("index.html")
-
-
-# ============================================ #
-
-
-# Resources List Functionality
-@app.route("/get_resources")
-def get_resources():
-    """Get resources function. To find all the resources in the database
-    and list them. The ObjectId is used to find the items to ensure it
-    can be updated correctly. The ObjectId needs to be translated in a
-    way so that it does not show the id number but the name.
-    """
-    # find resources in the the database
-    resources = list(mongo.db.resources.find())
-    # loop through all resources
-    for resource in resources:
-        try:
-            user = mongo.db.users.find_one({
-                '_id': ObjectId(resource['created_by'])
-            })
-            category = mongo.db.categories.find_one({
-                '_id': ObjectId(resource['category_name'])
-            })
-            topic = mongo.db.topics.find_one({
-                '_id': ObjectId(resource['topic_name'])
-            })
-            resource['created_by'] = user['username']
-            resource['category_name'] = category['category_name']
-            resource['topic_name'] = topic['topic_name']
-
-        except Exception as e:
-            print('problem with resource %s' % resource['resource_name'])  # check if we need to remove
-            pass
-    # render the resources template
-    return render_template("resources.html", resources=resources)
-
-
-# ============================================ #
-
-
-# Featured Resources List Functionality
-@app.route("/get_featured_resources")
-def get_featured_resources():
-    """Get featured resources function. To find all the resources in the
-    database and list them. The ObjectId is used to find the items to ensure it
-    can be updated correctly. The ObjectId needs to be translated in a
-    way so that it does not show the id number but the name.
-    """
-    # find featured resources in the the database
-    featured_resources = list(mongo.db.featured_resources.find())
-    # loop through all resources
-    for featured_resource in featured_resources:
-        try:
-            category = mongo.db.categories.find_one({
-                '_id': ObjectId(featured_resource['category_name'])
-            })
-            topic = mongo.db.topics.find_one({
-                '_id': ObjectId(featured_resource['topic_name'])
-            })
-            featured_resource['category_name'] = category['category_name']
-            featured_resource['topic_name'] = topic['topic_name']
-
-        except Exception as e:
-            print('problem with resource %s' % featured_resource
-                  ['featured_name'])  # check if we need to remove
-            pass
-    # render the index template
-    return render_template("index.html", featured_resources=featured_resources)
-
-
-# ============================================ #
-
-
-# Search Functionality
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    """ Search Functionality."""
-    query = request.form.get("query")
-    resources = list(mongo.db.resources.find({"$text": {"$search": query}}))
-    return render_template("resources.html", resources=resources)
-
-# ============================================ #
-
-
-# Sign Up/Register Functionality
+# --- SIGN UP / REGISTER FUNCTIONALITY --- #
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """User Registration. Check if the username from the form element already
@@ -153,10 +62,7 @@ def register():
     return render_template("register.html")
 
 
-# ============================================ #
-
-
-# Log In Functionality
+# --- LOG IN FUNCTIONALITY --- #
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """User Log In. Check if the username from the form element already
@@ -196,32 +102,7 @@ def login():
     return render_template("login.html")
 
 
-# ============================================ #
-
-
-# Profile Functionality
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    """User Profile. Find username in the database and retrieve the
-    username. Then render the profile template with the user's name"""
-    # find the user in the database
-    username = mongo.db.users.find_one(
-        # take the session user's username from Mongo
-        {"username": session["user"]})["username"]
-
-    # check if session['user'] cookie is truthy
-    if session["user"]:
-        # render appropriate profile template
-        return render_template("profile.html", username=username)
-
-    # return profile page with user's unique name
-    return redirect(url_for("login"))
-
-
-# ============================================ #
-
-
-# Log out Functionality
+# --- LOG OUT FUNCTIONALITY --- #
 @app.route("/logout")
 def logout():
     """User Log Out. Send message to user, remove session and go back to the
@@ -234,10 +115,11 @@ def logout():
     return redirect(url_for("login"))
 
 
-# ============================================ #
+# --------------------------------------------------- #
+# RESOURCE: CREATE | READ | UPDATE | DELETE | SEARCH  #
+# --------------------------------------------------- #
 
-
-# Add a Resource Functionality
+# --- CREATE A RESOURCE FUNCTIONALITY --- #
 @app.route("/add_resource", methods=["GET", "POST"])
 def add_resource():
     """Add Resource. When user submits a new request, find the resources
@@ -272,9 +154,40 @@ def add_resource():
                            topics=topics)
 
 
-# ============================================ #
+# --- READ RESOURCE FUNCTIONALITY --- #
+@app.route("/get_resources")
+def get_resources():
+    """Get resources function. To find all the resources in the database
+    and list them. The ObjectId is used to find the items to ensure it
+    can be updated correctly. The ObjectId needs to be translated in a
+    way so that it does not show the id number but the name.
+    """
+    # find resources in the the database
+    resources = list(mongo.db.resources.find())
+    # loop through all resources
+    for resource in resources:
+        try:
+            user = mongo.db.users.find_one({
+                '_id': ObjectId(resource['created_by'])
+            })
+            category = mongo.db.categories.find_one({
+                '_id': ObjectId(resource['category_name'])
+            })
+            topic = mongo.db.topics.find_one({
+                '_id': ObjectId(resource['topic_name'])
+            })
+            resource['created_by'] = user['username']
+            resource['category_name'] = category['category_name']
+            resource['topic_name'] = topic['topic_name']
 
-# Edit Resources
+        except Exception as e:
+            print('problem with resource %s' % resource['resource_name'])  # check if we need to remove
+            pass
+    # render the resources template
+    return render_template("resources.html", resources=resources)
+
+
+# --- EDIT A RESOURCE FUNCTIONALITY --- #
 @app.route("/edit_resource/<resource_id>", methods=["GET", "POST"])
 def edit_resource(resource_id):
     """ Edit Resource. First, retrieve the resource from the database to be
@@ -313,10 +226,7 @@ def edit_resource(resource_id):
                            categories=categories, topics=topics)
 
 
-# ============================================ #
-
-
-# Delete Resources
+# --- DELETE A RESOURCE FUNCTIONALITY --- #
 @app.route("/delete_resource/<resource_id>")
 def delete_resource(resource_id):
     """Delete Resource. Find the resource by id and remove it from the
@@ -327,10 +237,21 @@ def delete_resource(resource_id):
     return redirect(url_for("get_resources"))
 
 
-# ============================================ #
+# --- SEARCH FOR A RESOURCE FUNCTIONALITY --- #
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """ Search Functionality."""
+    query = request.form.get("query")
+    resources = list(mongo.db.resources.find({"$text": {"$search": query}}))
+    return render_template("resources.html", resources=resources)
 
 
-# Admin dashboard
+# --------------------------------------------------- #
+#   ADMIN MANAGEMENT: FEATURED | CATEGORIES | TOPICS  #
+# --------------------------------------------------- #
+
+
+# --- ADMIN DASHBOARD FUNCTIONALITY --- #
 @app.route("/admin_dashboard")
 def admin_dashboard():
     """Get Categories from the database. Find the categories & topics,
@@ -342,133 +263,37 @@ def admin_dashboard():
                            topics=topics)
 
 
-# ============================================ #
-
-
-# Add Category
-@app.route("/add_category", methods=["GET", "POST"])
-def add_category():
-    """ Add Category. If the function is called using the POST method, then
-    the data from the form is retrieved, and inserted into the database.
-    Otherwise it will display the empty form."""
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name")
-        }
-        # insert the category in the database
-        mongo.db.categories.insert_one(category)
-        flash("The new Category was Added")
-        # return to the admin dashboard page
-        return redirect(url_for("admin_dashboard"))
-    # return to the add_category page
-    return render_template("add_category.html")
-
-
-# ============================================ #
-
-
-# Edit Category
-@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
-def edit_category(category_id):
-    """ Edit Category Functionality. If the user submits an edit request, then
-    the Category is retrieved from the database, updated in the database and
-    after the user receives a message, they are taken back to the manage page.
+# --- VIEW FEATURED RESOURCE FUNCTIONALITY --- #
+@app.route("/get_featured_resources")
+def get_featured_resources():
+    """Get featured resources function. To find all the resources in the
+    database and list them. The ObjectId is used to find the items to ensure it
+    can be updated correctly. The ObjectId needs to be translated in a
+    way so that it does not show the id number but the name.
     """
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
-        }
-        # update the category in the database
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-        flash("Category Successfully Updated")
-        # user returned to the admin dashboard page
-        return redirect(url_for("admin_dashboard"))
-    # Using the category ID being sent into this function, the .find_one()
-    # method is used on the categories collection
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category)
+    # find featured resources in the the database
+    featured_resources = list(mongo.db.featured_resources.find())
+    # loop through all resources
+    for featured_resource in featured_resources:
+        try:
+            category = mongo.db.categories.find_one({
+                '_id': ObjectId(featured_resource['category_name'])
+            })
+            topic = mongo.db.topics.find_one({
+                '_id': ObjectId(featured_resource['topic_name'])
+            })
+            featured_resource['category_name'] = category['category_name']
+            featured_resource['topic_name'] = topic['topic_name']
+
+        except Exception as e:
+            print('problem with resource %s' % featured_resource
+                  ['featured_name'])  # check if we need to remove
+            pass
+    # render the index template
+    return render_template("index.html", featured_resources=featured_resources)
 
 
-# ============================================ #
-
-
-# Delete Category
-@app.route("/delete_category/<category_id>")
-def delete_category(category_id):
-    """ Delete Category Functionality. If the user wants to delete a category,
-    then using the remove() method, it is deleted in the database. Thereafter,
-    the user receives a message and they are taken back to the manage page. """
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category Successfully Deleted")
-    return redirect(url_for("admin_dashboard"))
-
-
-# ============================================ #
-
-
-# Add Topic
-@app.route("/add_topic", methods=["GET", "POST"])
-def add_topic():
-    """ Add Topic. If the function is called using the POST method, then
-    the data from the form is retrieved, and inserted into the database.
-    Otherwise it will display the empty form."""
-    if request.method == "POST":
-        topic = {
-            "topic_name": request.form.get("topic_name")
-        }
-        # insert the category in the database
-        mongo.db.topics.insert_one(topic)
-        flash("The new Category was Added")
-        # return to the manage admin dashboard page
-        return redirect(url_for("admin_dashboard"))
-    # return to the add_category page
-    return render_template("add_topic.html")
-
-
-# ============================================ #
-
-
-# Edit Topic
-@app.route("/edit_topic/<topic_id>", methods=["GET", "POST"])
-def edit_topic(topic_id):
-    """ Edit Topic Functionality. If the user submits an edit request, then
-    the Category is retrieved from the database, updated in the database and
-    after the user receives a message, they are taken back to the manage page.
-    """
-    if request.method == "POST":
-        submit = {
-            "topic_name": request.form.get("topic_name")
-        }
-        # update the topic in the database
-        mongo.db.topics.update({"_id": ObjectId(topic_id)}, submit)
-        flash("Topic Successfully Updated")
-        # user returned to the admin dashboard page
-        return redirect(url_for("admin_dashboard"))
-    # Using the topic ID being sent into this function, the .find_one()
-    # method is used on the topics collection
-    topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
-    return render_template("edit_topic.html", topic=topic)
-
-
-# ============================================ #
-
-
-# Delete Topic
-@app.route("/delete_topic/<topic_id>")
-def delete_topic(topic_id):
-    """ Delete Topic Functionality. If the user wants to delete a topic,
-    then using the remove() method, it is deleted in the database. Thereafter,
-    the user receives a message and they are taken back to the admin dahboard
-    page. """
-    mongo.db.topics.remove({"_id": ObjectId(topic_id)})
-    flash("Topic Successfully Deleted")
-    return redirect(url_for("admin_dashboard"))
-
-
-# ============================================ #
-
-
-# Add a Featured Resource Functionality
+# --- ADD A FEATURED RESOURCE FUNCTIONALITY --- #
 @app.route("/add_featured_resource", methods=["GET", "POST"])
 def add_featured_resource():
     """Add Featured Resource. When user submits a new request, find the
@@ -502,10 +327,7 @@ def add_featured_resource():
                            topics=topics)
 
 
-# ============================================ #
-
-
-# Edit Featured Resources
+# --- EDIT A FEATURED RESOURCE FUNCTIONALITY --- #
 @app.route("/edit_featured_resource/<featured_resource_id>",
            methods=["GET", "POST"])
 def edit_featured_resource(featured_resource_id):
@@ -547,10 +369,135 @@ def edit_featured_resource(featured_resource_id):
                            categories=categories, topics=topics)
 
 
-# ============================================ #
+# --- ADD A CATEGORY FUNCTIONALITY --- #
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    """ Add Category. If the function is called using the POST method, then
+    the data from the form is retrieved, and inserted into the database.
+    Otherwise it will display the empty form."""
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        # insert the category in the database
+        mongo.db.categories.insert_one(category)
+        flash("The new Category was Added")
+        # return to the admin dashboard page
+        return redirect(url_for("admin_dashboard"))
+    # return to the add_category page
+    return render_template("add_category.html")
 
 
-# Bookmark Functionality
+# --- EDIT A CATEGORY FUNCTIONALITY --- #
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    """ Edit Category Functionality. If the user submits an edit request, then
+    the Category is retrieved from the database, updated in the database and
+    after the user receives a message, they are taken back to the manage page.
+    """
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+        # update the category in the database
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Category Successfully Updated")
+        # user returned to the admin dashboard page
+        return redirect(url_for("admin_dashboard"))
+    # Using the category ID being sent into this function, the .find_one()
+    # method is used on the categories collection
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
+
+
+# --- DELETE A CATEGORY FUNCTIONALITY --- #
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    """ Delete Category Functionality. If the user wants to delete a category,
+    then using the remove() method, it is deleted in the database. Thereafter,
+    the user receives a message and they are taken back to the manage page. """
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category Successfully Deleted")
+    return redirect(url_for("admin_dashboard"))
+
+
+# --- ADD A TOPIC FUNCTIONALITY --- #
+@app.route("/add_topic", methods=["GET", "POST"])
+def add_topic():
+    """ Add Topic. If the function is called using the POST method, then
+    the data from the form is retrieved, and inserted into the database.
+    Otherwise it will display the empty form."""
+    if request.method == "POST":
+        topic = {
+            "topic_name": request.form.get("topic_name")
+        }
+        # insert the category in the database
+        mongo.db.topics.insert_one(topic)
+        flash("The new Category was Added")
+        # return to the manage admin dashboard page
+        return redirect(url_for("admin_dashboard"))
+    # return to the add_category page
+    return render_template("add_topic.html")
+
+
+# --- EDIT A TOPIC FUNCTIONALITY --- #
+@app.route("/edit_topic/<topic_id>", methods=["GET", "POST"])
+def edit_topic(topic_id):
+    """ Edit Topic Functionality. If the user submits an edit request, then
+    the Category is retrieved from the database, updated in the database and
+    after the user receives a message, they are taken back to the manage page.
+    """
+    if request.method == "POST":
+        submit = {
+            "topic_name": request.form.get("topic_name")
+        }
+        # update the topic in the database
+        mongo.db.topics.update({"_id": ObjectId(topic_id)}, submit)
+        flash("Topic Successfully Updated")
+        # user returned to the admin dashboard page
+        return redirect(url_for("admin_dashboard"))
+    # Using the topic ID being sent into this function, the .find_one()
+    # method is used on the topics collection
+    topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+    return render_template("edit_topic.html", topic=topic)
+
+
+# --- DELETE A TOPIC FUNCTIONALITY --- #
+@app.route("/delete_topic/<topic_id>")
+def delete_topic(topic_id):
+    """ Delete Topic Functionality. If the user wants to delete a topic,
+    then using the remove() method, it is deleted in the database. Thereafter,
+    the user receives a message and they are taken back to the admin dahboard
+    page. """
+    mongo.db.topics.remove({"_id": ObjectId(topic_id)})
+    flash("Topic Successfully Deleted")
+    return redirect(url_for("admin_dashboard"))
+
+
+# --------------------------------------------------- #
+#           USER FEATURES: PROFILE | BOOKMARK         #
+# --------------------------------------------------- #
+
+# --- PROFILE  FUNCTIONALITY --- #
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    """User Profile. Find username in the database and retrieve the
+    username. Then render the profile template with the user's name"""
+    # find the user in the database
+    username = mongo.db.users.find_one(
+        # take the session user's username from Mongo
+        {"username": session["user"]})["username"]
+
+    # check if session['user'] cookie is truthy
+    if session["user"]:
+        # render appropriate profile template
+        return render_template("profile.html", username=username)
+
+    # return profile page with user's unique name
+    return redirect(url_for("login"))
+
+
+# --- BOOKMARK A RESOURCE FUNCTIONALITY --- #
 @app.route("/bookmark/<resource_id>", methods=["POST"])
 def bookmark(resource_id):
     """ Bookmark Functionality."""
@@ -561,10 +508,28 @@ def bookmark(resource_id):
     except KeyError:
         pass
     print("Bookmarks", bookmarks, resource_id)
+    if request.method == "POST":
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"].lower()},
+            {"$push": {"bookmarks": ObjectId(resource_id)}})
+        flash("Resource added to bookmarks on your profile")
+        return redirect(url_for(
+                        "profile", username=session["user"]))
+
     return render_template("resources.html", resources=resources)
 
 
-# ============================================ #
+# --------------------------------------------------- #
+#                       MISC                          #
+# --------------------------------------------------- #
+
+
+# --- RENDER LANDING PAGE FUNCTIONALITY --- #
+@app.route('/')
+@app.route('/index')
+def index():
+    """Render Landing page"""
+    return render_template("index.html")
 
 
 if __name__ == "__main__":

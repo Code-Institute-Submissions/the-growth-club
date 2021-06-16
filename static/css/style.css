@@ -422,8 +422,12 @@ i.left {
     margin-right: unset;
 }
 
-#save-btn{
+.btn-floating{
     background-color: var(--Cream);
+}
+
+.btn-floating:hover{
+    background-color: var(--Orange);
 }
 
 .btn-floating i {
