@@ -29,7 +29,7 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
     """Render Landing page"""
-    return render_template('index.html')
+    return render_template("index.html")
 
 
 # ============================================ #
@@ -498,7 +498,7 @@ def add_featured_resource():
     categories = mongo.db.categories.find().sort("category_name", 1)
     topics = mongo.db.topics.find().sort("topic_name", 1)
     # render the add_resources template
-    return render_template("add_featured.html", categories=categories,
+    return render_template("add_featured_resource.html", categories=categories,
                            topics=topics)
 
 
@@ -542,7 +542,7 @@ def edit_featured_resource(featured_resource_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     topics = mongo.db.topics.find().sort("topic_name", 1)
     # render the edit_resources template
-    return render_template("edit_featured.html",
+    return render_template("edit_featured_resource.html",
                            featured_resource=featured_resource,
                            categories=categories, topics=topics)
 

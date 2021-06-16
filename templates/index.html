@@ -20,20 +20,20 @@
         <div class="container">
             <div class="row">
                 <!-- Loop over all of the items from the resource collection-->
-                {% for resource in resources %}
+                {% for featured_resource in featured_resources %}
                 <div class="col s12 m6 card-container">
                     <div class="card resources-card">
                         <div class="card-content resource-content">
                             <!-- Category -->
-                            <p class="featured-cat right">{{ resource.category_name }}</p>
+                            <p class="featured-cat right">{{ featured_resource.category_name }}</p>
                             <!-- Title -->
-                            <h3 class="resource-title">{{ resource.resource_name }}</h3>
+                            <h3 class="resource-title">{{ featured_resource.featured_name }}</h3>
                             <!-- Date -->
-                            <p class="resource-p">{{ resource.resource_date }}</p>
+                            <p class="resource-p">{{ featured_resource.featured_date }}</p>
                             <!-- Description -->
-                            <p class="resource-p">{{ resource.resource_description }}</p>
+                            <p class="resource-p">{{ featured_resource.featured_description }}</p>
                             <!-- Link -->
-                            <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer">View resource</a>View resource</a>
+                            <a href="{{ featured_resource.featured_link }}" target="_blank" rel="noopener noreferrer">View resource</a>View resource</a>
                         </div>
                     </div>
                 </div>
