@@ -18,10 +18,14 @@
                             </div>
                         </span>
                     </h4>
-                    <p class="manage-featured-p">Here you can manage the featured items that appear on the home page each month.</p>
-                    <!-- Add resource Button-->
+                    <p class="manage-featured-p">Here you can add featured items that appear on the home page each month.</p>
+                    <p class="manage-featured-p">You can edit the featured items directly on the home page.</p>
+                    
                     <div class="resource-btn-c">
-                    <a href="{{ url_for('add_featured_resource') }}" class="waves-effect waves-light btn manage-resources-btn"><i class="material-icons left">add</i>Add Featured Resource</a>
+                        <!-- Add resource Button-->
+                        <a href="{{ url_for('add_featured_resource') }}" class="waves-effect waves-light btn manage-resources-btn"><i class="material-icons left">add</i>Add Featured Resource</a>
+                        <!-- Edit resource Button-->
+                        <a href="{{ url_for('get_featured_resources') }}" class="waves-effect waves-light btn manage-resources-btn"><i class="material-icons left">add</i>Edit Featured Resource</a>
                     </div>
                 </div>
             </div>
