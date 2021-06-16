@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="center-align">Edit a Featured Resource</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_featured', featured_resource_id=featured_resource._id) }}">
+        <!-- category selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">folder_open</i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    <!-- If the for-loop category's name is equal to the resource category name, then select that as the default. The 'else' statement will be for all other options, not selected. If the category iteration of names does match that from our resource category name, then apply the 'selected' attribute.-->
+                    {% for category in categories %}
+                        {% if category.category_name == resource.category_name %}
+                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        {% else %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select for="category_name">
+                <label>Resource Category</label>
+            </div>
+        </div>
+        <!-- Featured Resource Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">create</i>
+                <input id="featured_name" name="featured_name" minlength="5" maxlength="50" value={{featured_resource.featured_name}} type="text" class="validate" required>
+                <label for="featured_name">Featured Resource Name</label>
+            </div>
+        </div>
+        <!-- Featured Resource Description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_align_left</i>
+                <textarea id="featured_description" name="featured_description" minlength="5" maxlength="200" class="materialize-textarea validate" required>
+                    {{- featured_resource.featured_description -}}
+                </textarea>
+                <label for="featured_description">Featured Resource Description</label>
+            </div>
+        </div>
+        <!-- Date picker -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">event</i>
+                <input id="featured_date" name="featured_date" type="text" class="datepicker validate" value="{{ featured_resource.featured_date}}">
+                <label for="featured_date">Date</label>
+            </div>
+        </div>
+        <!-- Resource Link -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">link</i>
+                <input id="featured_link" name="featured_link" minlength="5" type="url" class="validate" value="{{featured_resource.featured_link}}" required>
+                <label for="featured_link">Link to FeaturedResource</label>
+            </div>
+        </div>
+        <!-- Topic selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">label_outline</i>
+                <select id="topic_name" name="topic_name" class="validate" required>
+                    <option value="" disabled selected>Choose Topic</option>
+                    {% for topic in topics %}
+                        {% if topic.topic_name == resource.topic_name %}
+                            <option value="{{ topic.topic_name }}" selected>{{ topic.topic_name }}</option>
+                        {% else %}
+                            <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select for="topic_name">
+                <label>Resource Topic</label>
+            </div>
+        </div>
+        <!-- Submit btn-->
+        <div class="row center-align">
+            <!-- cancel button -->
+            <a href="{{ url_for('admin_dashboard')}}" class="waves-effect waves-light btn-large">
+                Cancel
+            </a>
+            <!-- edit button -->
+            <button type="submit" class="waves-effect waves-light btn-large ">
+                Update Featured Resource
+            </button>
+        </div>
+        <!-- Submit btn end-->
+    </form>
+</div>
+
+{% endblock %}

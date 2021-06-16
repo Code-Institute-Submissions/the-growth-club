@@ -505,6 +505,51 @@ def add_featured_resource():
 # ============================================ #
 
 
+# Edit Featured Resources
+@app.route("/edit_featured_resource/<featured_resource_id>",
+           methods=["GET", "POST"])
+def edit_featured_resource(featured_resource_id):
+    """ Edit Featured Resource. First, retrieve the resource from the database
+    to be edited by using the id. Then the ID needs to be converted into a BSON
+    data-type. Use the Post method to update the resource in the
+    database."""
+    if request.method == "POST":
+        # find the collections and the keys
+        category = mongo.db.categories.find_one({'category_name':
+                                                request.form.get(
+                                                    "category_name")})
+        topic = mongo.db.topics.find_one({'topic_name': request.form.get(
+                                                    "topic_name")})
+        submit = {
+            "category_name": ObjectId(category['_id']),
+            "featured_name": request.form.get("featured_name"),
+            "featured_description": request.form.get("featured_description"),
+            "featured_date": request.form.get("featured_date"),
+            "featured_link": request.form.get("featured_link"),
+            "topic_name": ObjectId(topic['_id']),
+        }
+        # update resource in database
+        mongo.db.featured_resources.update({"_id": ObjectId(
+                                                        featured_resource_id)},
+                                           submit)
+        flash("The featured resource was successfully edited and updated")
+        # return to the resources page
+        return redirect(url_for("get_featured_resources"))
+    # retrieve the featured resource from the database by id
+    featured_resource = mongo.db.featured_resources.find_one({"_id": ObjectId(
+                                                            featured_resource_id)})
+    # find the category & topic from the database
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    topics = mongo.db.topics.find().sort("topic_name", 1)
+    # render the edit_resources template
+    return render_template("edit_featured.html",
+                           featured_resource=featured_resource,
+                           categories=categories, topics=topics)
+
+
+# ============================================ #
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
