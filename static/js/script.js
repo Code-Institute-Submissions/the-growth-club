@@ -16,6 +16,14 @@ $(document).ready(function () {
             done: "Select"
         }
     });
+    // Bookmark save button
+    $('.bookmark_btn').on('click', function(){
+        resource_id = $(this).attr('data-resource')
+        url = "/bookmark/" + resource_id
+        $.post(url);
+    });
+
+
     // From Task Manager walkhtrough project by Code Institute
     validateMaterializeSelect();
     function validateMaterializeSelect() {

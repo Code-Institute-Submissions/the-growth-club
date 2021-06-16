@@ -550,6 +550,23 @@ def edit_featured_resource(featured_resource_id):
 # ============================================ #
 
 
+# Bookmark Functionality
+@app.route("/bookmark/<resource_id>", methods=["POST"])
+def bookmark(resource_id):
+    """ Bookmark Functionality."""
+    user = mongo.db.users.find_one({"username": session["user"]})
+    bookmarks = []
+    try:
+        bookmarks = user['bookmarks']
+    except KeyError:
+        pass
+    print("Bookmarks", bookmarks, resource_id)
+    return render_template("resources.html", resources=resources)
+
+
+# ============================================ #
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
