@@ -465,6 +465,45 @@ def delete_topic(topic_id):
     return redirect(url_for("admin_dashboard"))
 
 
+# ============================================ #
+
+
+# Add a Featured Resource Functionality
+@app.route("/add_featured_resource", methods=["GET", "POST"])
+def add_featured_resource():
+    """Add Featured Resource. When user submits a new request, find the
+    resources in the database and add the new items to the database. If this
+    was successful, the user is notified and returned to the resources page.
+    """
+    if request.method == "POST":
+        # find the collections and the keys
+        category = mongo.db.categories.find_one({'category_name':
+                                                request.form.get(
+                                                    "category_name")})
+        topic = mongo.db.topics.find_one({'topic_name': request.form.get(
+                                                    "topic_name")})
+        # create dictionary for items in form by ObjectId
+        featured_resource = {
+            "category_name": ObjectId(category['_id']),
+            "featured_name": request.form.get("featured_name"),
+            "featured_description": request.form.get("featured_description"),
+            "featured_date": request.form.get("featured_date"),
+            "featured_link": request.form.get("featured_link"),
+            "topic_name": ObjectId(topic['_id']),
+            }
+        mongo.db.featured_resources.insert_one(featured_resource)
+        flash("Featured Resource Successfully Added")
+        return redirect(url_for("get_featured_resources"))
+    # find category & topic in database
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    topics = mongo.db.topics.find().sort("topic_name", 1)
+    # render the add_resources template
+    return render_template("add_featured.html", categories=categories,
+                           topics=topics)
+
+
+# ============================================ #
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

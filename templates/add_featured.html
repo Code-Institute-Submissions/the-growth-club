@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- This page will only be visible to the admin -->
-<h3 class="center-align">Add Featured Item of the Month</h3>
+<h3 class="center-align">Add Featured Resource of the Month</h3>
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_featured') }}">
         <!-- category selection -->
@@ -18,44 +18,39 @@
             </div>
         </div>
         <!-- category selection end -->
-        <!-- Resource Name -->
+        <!-- Featured Resource Name -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">create</i>
-                <input id="resource_name" name="resource_name" minlength="5" maxlength="50" type="text" class="validate"
-                    required>
-                <label for="resource_name">Resource Name</label>
+                <input id="featured_name" name="featured_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                <label for="featured_name">Featured Resource Name</label>
             </div>
         </div>
-        <!-- Resource Name end-->
-        <!-- Resource Description -->
+        <!-- Featured Resource Description -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_align_left</i>
-                <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200"
+                <textarea id="featured_description" name="featured_description" minlength="5" maxlength="200"
                     class="materialize-textarea validate" required></textarea>
-                <label for="resource_description">Resource Description</label>
+                <label for="featured_description"> Featured Resource Description</label>
             </div>
         </div>
-        <!-- Resource Description end -->
         <!-- Date picker -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">event</i>
-                <input id="resource_date" name="resource_date" type="text" class="datepicker validate">
-                <label for="resource_date">Date</label>
+                <input id="featured_date" name="featured_date" type="text" class="datepicker validate">
+                <label for="featured_date">Date</label>
             </div>
         </div>
-        <!-- Date picker end -->
         <!-- Resource Link -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">link</i>
-                <input id="resource_link" name="resource_link" minlength="5" type="url" class="validate" required>
-                <label for="resource_link">Link to Resource</label>
+                <input id="featured_link" name="featured_link" minlength="5" type="url" class="validate" required>
+                <label for="featured_link">Link to Featured Resource</label>
             </div>
         </div>
-        <!-- Resource link end -->
         <!-- Topic selection -->
         <div class="row">
             <div class="input-field col s12">
@@ -69,17 +64,14 @@
                 <label>Resource Topic</label>
             </div>
         </div>
-        <!-- Topic selection end -->
         <!-- Submit btn-->
         <div class="row center-align">
             <button type="submit" class="waves-effect waves-light btn-large ">
-                Add Featured Item
+                Add Featured Resource
             </button>
         </div>
         <!-- Submit btn end-->
     </form>
 </div>
-
-
     
 {% endblock %}
