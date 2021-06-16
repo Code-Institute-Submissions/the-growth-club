@@ -71,6 +71,39 @@ def get_resources():
 # ============================================ #
 
 
+# Featured Resources List Functionality
+@app.route("/get_featured_resources")
+def get_featured_resources():
+    """Get featured resources function. To find all the resources in the
+    database and list them. The ObjectId is used to find the items to ensure it
+    can be updated correctly. The ObjectId needs to be translated in a
+    way so that it does not show the id number but the name.
+    """
+    # find featured resources in the the database
+    featured_resources = list(mongo.db.featured_resources.find())
+    # loop through all resources
+    for featured_resource in featured_resources:
+        try:
+            category = mongo.db.categories.find_one({
+                '_id': ObjectId(featured_resource['category_name'])
+            })
+            topic = mongo.db.topics.find_one({
+                '_id': ObjectId(featured_resource['topic_name'])
+            })
+            featured_resource['category_name'] = category['category_name']
+            featured_resource['topic_name'] = topic['topic_name']
+
+        except Exception as e:
+            print('problem with resource %s' % featured_resource
+                  ['featured_name'])  # check if we need to remove
+            pass
+    # render the index template
+    return render_template("index.html", featured_resources=featured_resources)
+
+
+# ============================================ #
+
+
 # Search Functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -431,35 +464,6 @@ def delete_topic(topic_id):
     flash("Topic Successfully Deleted")
     return redirect(url_for("admin_dashboard"))
 
-
-# ============================================ #
-
-
-# Add Featured Resource Functionality
-@app.route("/add_featured", methods=["GET", "POST"])
-def add_featured():
-    """Add Featured Resource. First find the category and topic in the database
-    then sort the them by the name key. Then pass the new variables over to the
-    HTML template. """
-    if request.method == "POST":
-        # create dictionary for items in form
-        featured_resource = {
-            "category_name": request.form.get("category_name"),
-            "resource_name": request.form.get("resource_name"),
-            "resource_description": request.form.get("resource_description"),
-            "resource_date": request.form.get("resource_date"),
-            "resource_link": request.form.get("resource_link"),
-            "topic_name": request.form.get("topic_name"),
-            }
-        mongo.db.resources.insert_one(featured_resource)
-        flash("Featured Resource Successfully Added")
-        return redirect(url_for("admin_dashboard"))
-    # find category & topic in database
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    topics = mongo.db.topics.find().sort("topic_name", 1)
-    # render the add_resources template
-    return render_template("add_featured.html", categories=categories,
-                           topics=topics)
 
 
 if __name__ == "__main__":
