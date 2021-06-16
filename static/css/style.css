@@ -32,6 +32,7 @@
 }
 
 
+
 /* -------------------------------------------------- Root Variables*/
 :root {
     /* font-family: var(--Roboto); */
@@ -197,6 +198,12 @@ button{
   /* icon prefix focus color */
   .input-field .prefix {
     color: #000;
+  }
+
+  .field-row{
+    background-color: var(--Cream);
+    border-radius: 10px;
+    padding-top: 10px
   }
 
 /* --------------------------------------------------- Landing Page */

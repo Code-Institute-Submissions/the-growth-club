@@ -5,7 +5,7 @@
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div>
                 <!-- Username -->
-                <div class="row">
+                <div class="row field-row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">person_outline</i>
                         <input id="username" name="username" type="text" class="validate" minlength="5" maxlength="15"
@@ -15,7 +15,7 @@
                 </div>
                 <!-- Username end-->
                 <!-- Email -->
-                <div class="row">
+                <div class="row field-row">
                     <div class="input-field col s12">
                         <i class="far fa-envelope prefix"></i>
                         <input id="email" name="email" type="email" class="validate">
@@ -24,7 +24,7 @@
                 </div>
                 <!-- Email end-->
                 <!-- Password -->
-                <div class="row">
+                <div class="row field-row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">lock_outline</i>
                         <input id="password" name="password" type="password" class="validate" minlength="5"

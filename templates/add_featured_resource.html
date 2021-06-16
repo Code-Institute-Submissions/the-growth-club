@@ -5,7 +5,7 @@
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_featured_resource') }}">
         <!-- category selection -->
-        <div class="row">
+        <div class="row field-row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">folder_open</i>
                 <select id="category_name" name="category_name" class="validate" required>
@@ -19,7 +19,7 @@
         </div>
         <!-- category selection end -->
         <!-- Featured Resource Name -->
-        <div class="row">
+        <div class="row field-row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">create</i>
                 <input id="featured_name" name="featured_name" minlength="5" maxlength="50" type="text" class="validate" required>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <!-- Featured Resource Description -->
-        <div class="row">
+        <div class="row field-row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_align_left</i>
                 <textarea id="featured_description" name="featured_description" minlength="5" maxlength="200"
@@ -36,7 +36,7 @@
             </div>
         </div>
         <!-- Date picker -->
-        <div class="row">
+        <div class="row field-row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">event</i>
                 <input id="featured_date" name="featured_date" type="text" class="datepicker validate">
@@ -44,7 +44,7 @@
             </div>
         </div>
         <!-- Resource Link -->
-        <div class="row">
+        <div class="row field-row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">link</i>
                 <input id="featured_link" name="featured_link" minlength="5" type="url" class="validate" required>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <!-- Topic selection -->
-        <div class="row">
+        <div class="row field-row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">label_outline</i>
                 <select id="topic_name" name="topic_name" class="validate" required>
