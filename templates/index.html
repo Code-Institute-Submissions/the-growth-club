@@ -34,6 +34,10 @@
                             <p class="resource-p">{{ featured_resource.featured_description }}</p>
                             <!-- Link -->
                             <a href="{{ featured_resource.featured_link }}" target="_blank" rel="noopener noreferrer">View resource</a>View resource</a>
+                            <div class="card-action right-align">
+                                <!-- Edit Btn-->
+                                <a href="{{ url_for('edit_featured_resource', featured_resource_id=featured_resource._id) }}" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
+                            </div>
                         </div>
                     </div>
                 </div>
