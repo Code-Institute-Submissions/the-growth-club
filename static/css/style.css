@@ -550,6 +550,11 @@ i.left {
      
  }
 
+ .saved-resources-h{
+     font-size: 24px;
+     text-decoration: underline 5px solid var(--Orange);
+ }
+
 
 /* --------------------------------------------------- Manage Resources Page */
 
