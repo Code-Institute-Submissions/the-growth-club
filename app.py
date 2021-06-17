@@ -264,6 +264,7 @@ def admin_dashboard():
 
 
 # --- VIEW FEATURED RESOURCE FUNCTIONALITY --- #
+@app.route('/')
 @app.route("/get_featured_resources")
 def get_featured_resources():
     """Get featured resources function. To find all the resources in the
