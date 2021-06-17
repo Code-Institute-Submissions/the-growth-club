@@ -520,6 +520,25 @@ def bookmark(resource_id):
     return render_template("resources.html", resources=resources)
 
 
+# --- DELETE PROFILE FUNCTIONALITY --- #
+@app.route('/delete_account/<user_id>', methods=["GET", "POST"])
+def delete_account(user_id):
+    """
+    Delete user Profile Functionality
+    """
+    user = mongo.db.users.find_one({'username': session["user"]})
+    # Checks if password matches existing password in database
+    if check_password_hash(user["password"],
+                           request.form.get("confirm_to_delete")):
+        flash("We can confirm that your account has been deleted.")
+        session.pop("user")
+        mongo.db.users.remove({"_id": ObjectId(user['_id'])})
+        return redirect(url_for("get_featured_resources"))
+    else:
+        flash("The password you entered was incorrect! Please try again")
+        return redirect(url_for("profile", user=user.get("username")))
+
+
 # --------------------------------------------------- #
 #                    ERROR HANDELING                  #
 # --------------------------------------------------- #

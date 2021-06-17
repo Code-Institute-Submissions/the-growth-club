@@ -560,6 +560,11 @@ i.left {
  }
 
 
+ .delete-form{
+     padding-bottom: 30px;
+ }
+
+
 /* --------------------------------------------------- Manage Resources Page */
 
 .manage-resources-c{

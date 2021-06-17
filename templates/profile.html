@@ -29,9 +29,36 @@
           </div>
           <!-- Delete account -->
           <div class="center-align">
-            <p class="delete-p">Don’t want access to Community resources? <br>
-              <a href="" class="delete-link"> Click here to delete your profile.</a>
+            <p class="delete-p">Don’t want access to Club resources? <br>
+              <!-- Modal Trigger -->
+              <a class="modal-trigger delete-link" href="#deletemodal">Click here to delete your profile.</a>
+                <!-- Modal Structure -->
+                <div id="deletemodal" class="modal ">
+                  <div class="modal-content">
+                    <h4>Hi {{ username }}! </h4>
+                    <p>You are about to delete your account and leave the Growth Club! Are you sure? You will miss our on awesome Club Resources.</p>
+                  </div>
+                    <form method="POST" action="{{ url_for('delete_account', user_id=username) }}" class="delete-form container">
+                      <div class="row field-row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock_outline</i>
+                            <input id="confirm_to_delete" name="confirm_to_delete" type="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                            <label for="password">Confirm Your Password to Delete Your Account</label>
+                        </div>
+                      </div>
+                      <div>
+                        <!-- cancel button -->
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
+                        Cancel
+                        </a>
+                        <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Delete account">Forever Delete my account
+                        </button>  
+                    </div>
+                    </form>
+                  </div>
+                </div>
              </p>
+          
           </div>
         </div>
       </div>
