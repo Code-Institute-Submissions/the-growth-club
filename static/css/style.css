@@ -704,3 +704,34 @@ i.left {
 .social-links li{
     display: inline;
 }
+
+/* --------------------------------------------------- Error Pages */
+
+.error-img{
+    width: 100%;
+
+}
+
+.error-container{
+    min-height: 100vh;
+}
+
+.error-p{
+    padding-bottom: 30px;
+}
+
+.error-btn{
+    color: var(--Black);
+    font-weight: 700;
+    background-color: var(--Orange);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.error-btn:hover{
+    color: var(--Black);
+    background-color: var(--Cream);
+    border-radius: 10px;
+    border: 1px solid var(--Black) ;
+    padding: 20px;
+}

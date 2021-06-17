@@ -521,6 +521,29 @@ def bookmark(resource_id):
 
 
 # --------------------------------------------------- #
+#                    ERROR HANDELING                  #
+# --------------------------------------------------- #
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    """
+    Renders a custom 404 error page with a button
+    that takes the user back to the home page.
+    """
+    return render_template('errors/404.html'), 404
+
+
+@app.errorhandler(500)
+def not_found_server(e):
+    """
+    Renders a custom 500 error page with a button
+    that takes the user back to the home page.
+    """
+    return render_template("errors/500.html"), 500
+
+
+# --------------------------------------------------- #
 #                       MISC                          #
 # --------------------------------------------------- #
 
