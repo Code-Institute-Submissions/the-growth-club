@@ -123,7 +123,9 @@ nav ul a {
     color: var(--Black);
     font-weight: 500;
     font-size: 20px;
+    text-decoration-color: var(--Orange);
 }
+
 
 nav .sidenav-trigger i {
     height: 56px;
@@ -140,7 +142,7 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
 }
 
 nav ul li.active {
-    border-bottom: 3px solid var(--Orange);
+    text-decoration: underline 5px solid var(--Orange);
     background-color: var(--Cream);
 }
 
