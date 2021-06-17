@@ -559,9 +559,13 @@ i.left {
      text-decoration: underline 5px solid var(--Orange);
  }
 
+ .change-form{
+    padding-bottom: 30px;
+ }
+
 
  .delete-form{
-     padding-bottom: 30px;
+    padding-bottom: 30px;
  }
 
 

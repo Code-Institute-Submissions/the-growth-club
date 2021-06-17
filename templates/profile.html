@@ -25,7 +25,34 @@
         <div class="col s12 m12 l12 center-align">
           <!-- Change password -->
           <div class="center-align">
-            <a href="" class="waves-effect waves-light btn change-pw-btn"> <i class="material-icons left">lock_outline</i>Change Password</a>
+            <!-- Modal Trigger -->
+            <a href="#change_password_modal" class="waves-effect waves-light btn change-pw-btn modal-trigger"> <i class="material-icons left">lock_outline</i>Change Password</a>
+            <!-- Modal Structure -->
+            <div id="change_password_modal" class="modal ">
+              <div class="modal-content">
+                <h4>Hi {{ username }}! </h4>
+                <p>You can change your password here. <br>
+                Please enter your new password.</p>
+              </div>
+                <form method="POST" action="{{ url_for('change_password', username=session['user']) }}" class="change-form container">
+                  <div class="row field-row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="password_change" name="password_change" type="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        <label for="password_change">New password</label>
+                    </div>
+                  </div>
+                  <div>
+                    <!-- cancel button -->
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
+                    Cancel
+                    </a>
+                    <!-- submit button -->
+                    <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Change Password">Change password
+                    </button>  
+                </div>
+                </form>
+              </div>
           </div>
           <!-- Delete account -->
           <div class="center-align">
@@ -51,6 +78,7 @@
                         <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
                         Cancel
                         </a>
+                        <!-- submit button -->
                         <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Delete account">Forever Delete my account
                         </button>  
                     </div>

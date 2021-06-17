@@ -520,11 +520,33 @@ def bookmark(resource_id):
     return render_template("resources.html", resources=resources)
 
 
+# --- CHANGE PASSWORD FUNCTIONALITY --- #
+@app.route('/change_password/<username>', methods=["GET", "POST"])
+def change_password(username):
+    """
+    Change Password Functionality where the user can change their current
+    password on their profile page.
+    """
+    if request.method == "POST":
+        submit = {
+            "username": session["user"],
+            "password": generate_password_hash(request.form.get
+                                               ("password_change")),
+        }
+        mongo.db.users.update({"username": username}, submit)
+        flash("Your password has been updated")
+        return render_template("profile.html", username=username)
+    if session:
+        return render_template("profile.html", username=username)
+    return redirect(url_for("get_featured_resources"))
+
+
 # --- DELETE PROFILE FUNCTIONALITY --- #
 @app.route('/delete_account/<user_id>', methods=["GET", "POST"])
 def delete_account(user_id):
     """
-    Delete user Profile Functionality
+    Delete Profile Functionality where the user can delete their account
+    on their profile page.
     """
     user = mongo.db.users.find_one({'username': session["user"]})
     # Checks if password matches existing password in database
@@ -535,7 +557,7 @@ def delete_account(user_id):
         mongo.db.users.remove({"_id": ObjectId(user['_id'])})
         return redirect(url_for("get_featured_resources"))
     else:
-        flash("The password you entered was incorrect! Please try again")
+        flash("The password you entered was incorrect. Please try again!")
         return redirect(url_for("profile", user=user.get("username")))
 
 
