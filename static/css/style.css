@@ -229,7 +229,16 @@ button{
     padding-top: 20px;
     background-color: var(--Cream);
     padding-bottom: 20px;
+    min-height: 100vh;
 }
+
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+        .landing {
+            padding-top: 200px;
+        }
+    }
 
 .landing-img {
     width: 100%;
