@@ -19,7 +19,34 @@
             </h4>
             <p>Here you will see all the posts you have saved</p>
             <div id="savedItems">
-
+              <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <!-- Loop over all of the items from the resource collection-->
+                        {% for resource in resources %}
+                        <div class="card manage-resources-c">
+                            <!-- Title -->
+                            <h3 class=" resource-title">{{ resource.resource_name }}
+                            </h3>
+                            <ul id="resource-list">
+                                <!-- Category -->
+                                <li class="resource-cat">{{ resource.category_name }}</li>
+                                <!-- Topic -->
+                                <li class="resource-topic">{{ resource.topic_name }}</li>
+                                <!-- Date -->
+                                <li class="resource-p">{{ resource.resource_date }}</li>
+                                
+                                <li></li>
+                            </ul>
+                            <!-- Link -->
+                            <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer">View resource</a>
+                            <!-- Description -->
+                            <p class="resource-p">{{ resource.resource_description }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>   
+                </div>
+              </div>
             </div>
         </div>
         </div>

@@ -80,15 +80,14 @@ def login():
         # if match with exisiting user then check password
         if existing_user:
             # ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    # if user password matches hashed password log in user
-                    session["user"] = request.form.get("username").lower()
-                    # if user password matches hashed password show message
-                    flash("Hi, {}".format(request.form.get("username")))
-                    # take user to the profile page
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+            if check_password_hash(existing_user["password"],
+                                   request.form.get("password")):
+                # if user password matches hashed password log in user
+                session["user"] = request.form.get("username").lower()
+                # if user password matches hashed password show message
+                flash("Hi, {}".format(request.form.get("username")))
+                # take user to the profile page
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 # if password does not match show message
                 flash("Incorrect Username and/or Password")
@@ -165,6 +164,7 @@ def get_resources():
     # find resources in the the database
     resources = list(mongo.db.resources.find())
     # loop through all resources
+    current_user = mongo.db.users.find_one({'username': session['user']})
     for resource in resources:
         try:
             user = mongo.db.users.find_one({
@@ -179,9 +179,11 @@ def get_resources():
             resource['created_by'] = user['username']
             resource['category_name'] = category['category_name']
             resource['topic_name'] = topic['topic_name']
-
+            if ObjectId(resource['_id']) in current_user['bookmarks']:
+                resource['bookmarked'] = True
         except Exception as e:
-            print('problem with resource %s' % resource['resource_name'])  # check if we need to remove
+            print('problem with resource %s' % resource['resource_name'])
+            # check if we need to remove!!!
             pass
     # render the resources template
     return render_template("resources.html", resources=resources)
@@ -359,8 +361,8 @@ def edit_featured_resource(featured_resource_id):
         # return to the resources page
         return redirect(url_for("get_featured_resources"))
     # retrieve the featured resource from the database by id
-    featured_resource = mongo.db.featured_resources.find_one({"_id": ObjectId(
-                                                            featured_resource_id)})
+    featured_resource = mongo.db.featured_resources.find_one({
+        "_id": ObjectId(featured_resource_id)})
     # find the category & topic from the database
     categories = mongo.db.categories.find().sort("category_name", 1)
     topics = mongo.db.topics.find().sort("topic_name", 1)
@@ -485,14 +487,31 @@ def profile(username):
     """User Profile. Find username in the database and retrieve the
     username. Then render the profile template with the user's name"""
     # find the user in the database
-    username = mongo.db.users.find_one(
+    user = mongo.db.users.find_one(
         # take the session user's username from Mongo
-        {"username": session["user"]})["username"]
+        {"username": session["user"]})
 
     # check if session['user'] cookie is truthy
     if session["user"]:
+        user_resources = []
+        for resource in user['bookmarks']:
+            user_resource = mongo.db.resources.find_one({'_id': resource})
+            user = mongo.db.users.find_one({
+                '_id': ObjectId(user_resource['created_by'])
+            })
+            category = mongo.db.categories.find_one({
+                '_id': ObjectId(user_resource['category_name'])
+            })
+            topic = mongo.db.topics.find_one({
+                '_id': ObjectId(user_resource['topic_name'])
+            })
+            user_resource['created_by'] = user['username']
+            user_resource['category_name'] = category['category_name']
+            user_resource['topic_name'] = topic['topic_name']
+            user_resources.append(user_resource)
         # render appropriate profile template
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username,
+                               resources=user_resources)
 
     # return profile page with user's unique name
     return redirect(url_for("login"))
@@ -517,7 +536,8 @@ def bookmark(resource_id):
         return redirect(url_for(
                         "profile", username=session["user"]))
 
-    return render_template("resources.html", resources=resources)
+    return redirect(url_for(
+                        "profile", username=session["user"]))
 
 
 # --- CHANGE PASSWORD FUNCTIONALITY --- #

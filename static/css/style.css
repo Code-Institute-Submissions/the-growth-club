@@ -755,3 +755,7 @@ i.left {
     border: 1px solid var(--Black) ;
     padding: 20px;
 }
+
+.bookmarked{
+    background-color: orange;
+}
