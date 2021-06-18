@@ -245,7 +245,28 @@ def search():
     """ Search Functionality."""
     query = request.form.get("query")
     resources = list(mongo.db.resources.find({"$text": {"$search": query}}))
-    return render_template("resources.html", resources=resources)
+    for resource in resources:
+        try:
+            user = mongo.db.users.find_one({
+                '_id': ObjectId(resource['created_by'])
+            })
+            category = mongo.db.categories.find_one({
+                '_id': ObjectId(resource['category_name'])
+            })
+            topic = mongo.db.topics.find_one({
+                '_id': ObjectId(resource['topic_name'])
+            })
+            resource['created_by'] = user['username']
+            resource['category_name'] = category['category_name']
+            resource['topic_name'] = topic['topic_name']
+        except Exception as e:
+            print('problem with resource %s' % resource['resource_name'])
+            # check if we need to remove
+            pass
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    topics = list(mongo.db.topics.find().sort("topic_name", 1))
+    return render_template("resources.html", resources=resources,
+                           categories=categories, topics=topics)
 
 
 # --------------------------------------------------- #
