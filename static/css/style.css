@@ -73,7 +73,7 @@ h2 {
 h3{
     font-weight: 600;
     font-size: 34px;
-    padding-top: 20px;
+    
     padding-bottom: 20px;
 }
 
@@ -357,8 +357,58 @@ button{
 
 .featured-cat{
     font-size: 20px;
-    color: #BABABA;
+    color: #525252;
     font-weight: 600;
+    margin-top: unset;
+}
+
+.card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
+    max-height:none;
+}
+
+.card.large{
+    height: 550px;
+}
+
+.featured-p{
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.featured-btn-icon{
+    padding-right: 10px;
+}
+
+.featured-title{
+    margin-top:unset;
+}
+
+.card .card-image img {
+    width: 50%;
+}
+
+.card .card-content {
+    padding:0px
+}
+
+.featured-img{
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 80%;
+    height: 200px;
+   
+}
+
+.featured-date{
+    padding: 5px 15px;
+    color: var(--Main-Text);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.featured-content{
+    padding:0px;
 }
 
 #home-login-btn{
@@ -373,6 +423,22 @@ button{
     border: 1px solid var(--Main-Text) ;
 }
 
+.resource-link-div{
+    padding: 10px;
+}
+
+.btn-small {
+    background-color: var(--Accent);
+    border-radius: 10px;
+    color: var(--bgBlack);
+    border: 1px solid var(--bgBlack);
+}
+
+.btn-small:hover {
+    background-color: var(--Orange);
+    color: var(--bgBlack);
+    border: 1px solid var(--Orange);
+}
 
 /* --------------------------------------------------- Log In & Sign Up Pages */
 
@@ -703,6 +769,16 @@ i.left {
 .manage-featured-p{
     font-size: 16px;
 }
+
+.image-upload-p{
+    font-size: 16px;
+    
+}
+
+.upload-icon{
+    padding-right:10px;
+}
+
 
 .categories-card{
     background-color: var(--Accent);

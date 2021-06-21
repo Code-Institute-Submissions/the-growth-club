@@ -3,12 +3,13 @@
     <!-- Landing Section -->
     <div class="container landing">
         <div class="row landing-row ">
+            <!-- Landing Text-->
             <div class="col s12 m12 l6">
                 <h1 class="home-heading">Welcome to the Growth Club!</h1>
-                
                 <p class="home-p"> Where you can find & share resources to learn, attend, read, watch things about UX, UI, Development and Tech for Free! </p>
                 <a href="#featured-section" class="waves-effect waves-light btn" id="home-features-btn">See Features of the month</a>
             </div>
+            <!-- Landing Image -->
             <div class="col s12 m12 l6">
                 <img src="static/images/growth-club-home.png" alt="people working together" class="landing-img">
             </div>
@@ -17,23 +18,30 @@
     <!-- Featured Section -->
     <main id="featured-section">
         <h3 class="center-align">Featured Resources of the Month</h3>
-        <div class="container">
-            <div class="row">
+        <div class="container ">
+            <div class="row ">
                 <!-- Loop over all of the items from the resource collection-->
                 {% for featured_resource in featured_resources %}
-                <div class="col s12 m6 card-container">
-                    <div class="card resources-card">
-                        <div class="card-content resource-content">
+                <div class="col s12 m12 l6 card-container">
+                    <div class="	
+                    card large resources-card ">
                             <!-- Category -->
-                            <p class="featured-cat right">{{ featured_resource.category_name }}</p>
+                            <h3 class="featured-cat right">{{ featured_resource.category_name }}</h3>
+                            <div class="card-image featured-img" style="background-image: url(static/images/featured-img.png)" >
+                            </div>
+                            <div class="card-content featured-content">
                             <!-- Title -->
-                            <h3 class="resource-title">{{ featured_resource.featured_name }}</h3>
-                            <!-- Date -->
-                            <p class="resource-p">{{ featured_resource.featured_date }}</p>
-                            <!-- Description -->
-                            <p class="resource-p">{{ featured_resource.featured_description }}</p>
+                            <h3 class="resource-title featured-title">{{ featured_resource.featured_name }}</h3>
+                            <ul id="resource-list">
+                                <!-- Topic -->
+                                <li class="resource-topic">{{ featured_resource.topic_name }}</li>
+                                <!-- Date -->
+                                <li class="featured-date">{{ featured_resource.featured_date }}</li>
+                            </ul>
                             <!-- Link -->
-                            <a href="{{ featured_resource.featured_link }}" target="_blank" rel="noopener noreferrer">View resource</a>View resource</a>
+                            <a href="{{ featured_resource.featured_link }}" target="_blank" rel="noopener noreferrer" class="btn-small"><i class="material-icons left featured-btn-icon">open_in_new</i>Visit Resource</a> 
+                            <!-- Description -->
+                            <p class="featured-p">{{ featured_resource.featured_description }}</p>
                             {% if session.user|lower == "admin"|lower %}
                             <div class="card-action right-align">
                                 <!-- Edit Btn-->
@@ -47,8 +55,14 @@
             </div>
         </div>
         <!-- Log In button -->
-        <div class="center-align">
-            <a href="{{ url_for('login') }}" class="waves-effect waves-light btn" id="home-login-btn">Log In to View All</a>
-        </div>
+        {% if session.user %}
+            <div class="center-align">
+                <a href="{{ url_for('get_resources') }}" class="waves-effect waves-light btn" id="home-login-btn">View Club Resources</a>
+            </div>
+              {% else %}
+              <div class="center-align">
+                <a href="{{ url_for('login') }}" class="waves-effect waves-light btn" id="home-login-btn">Log In To View Resources</a>
+            </div>
+              {% endif %}
     </main>
 {% endblock %}
