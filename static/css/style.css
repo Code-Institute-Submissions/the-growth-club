@@ -20,7 +20,7 @@
 }
 
 .darker-background{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
 }
 
 .font-roboto {
@@ -43,12 +43,12 @@
     /* color: var(--bgBlack); 
        background-color: var(--bgBlack);*/
     --bgBlack: #000000;
-    /* color: var(--Black); */
-    --Black: #1A222D;
+    /* color: var(--Main-Text); */
+    --Main-Text: #1A222D;
     /* color: var(--Orange); */
     --Orange: #FE9902;
-    /* color: var(--Cream); */
-    --Cream: #F9F5F1;
+    /* color: var(--Accent); */
+    --Accent: #f1f1f1;
     /* text-align: center; */
     --center: center;
 }
@@ -65,7 +65,8 @@ h1 {
 
 
 h2 {
-    font-size: 36px;
+    Font-size: 25px;
+    line-height: 30px;
     font-weight: 500;
 }
 
@@ -101,18 +102,38 @@ p{
 
 #logo{
     padding-left: 2rem;
-    color: var(--Black) ;
-    font-size: 40px;
+    color: var(--Main-Text) ;
+    font-size: 34px;
     font-weight: 600;
     text-decoration: underline 10px solid var(--Orange);
 }
 
+@media only screen and (min-width: 425px){
+#logo{
+    padding-left: 2rem;
+    color: var(--Main-Text) ;
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: underline 10px solid var(--Orange);
+}
+}
+
 #navbar-style{
-    background-color: var(--Cream);
-    color: var(--Black) ;
+    background-color: var(--Accent);
+    color: var(--Main-Text) ;
     padding-top: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
+}
+
+.nav-btn {
+    background-color: var(--Orange);
+    border-radius: 20px;
+}
+
+.nav-btn:hover {
+    background-color: var(--Orange);
+    border-radius: 20px;
 }
 
 #navbar-menu{
@@ -120,9 +141,9 @@ p{
 }
 
 nav ul a {
-    color: var(--Black);
+    color: var(--Main-Text);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration-color: var(--Orange);
 }
 
@@ -130,47 +151,59 @@ nav ul a {
 nav .sidenav-trigger i {
     height: 56px;
     line-height: 56px;
-    color: var(--Black);
+    color: var(--Main-Text);
     font-size: 50px;
 }
 
 @media only screen and (min-width: 601px){
 nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
-    color: var(--Black);
+    color: var(--Main-Text);
     font-size: 50px;
 }
 }
 
+.hvr-grow {
+    display: flex;
+}
 nav ul li.active {
     text-decoration: underline 5px solid var(--Orange);
-    background-color: var(--Cream);
+    background-color: var(--Accent);
 }
 
 button{
-    background-color: var(--Black);
+    background-color: var(--Main-Text);
 }
 
 .sidenav{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
+    
 }
 
 .sidenav-close{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
 }
 
 .sidenav-logo{
     padding-left: 30px;
     text-decoration: underline 5px solid var(--Orange);
+    padding-bottom: 20px;
 }
 
 .close-icon{
-    color: var(--Black);
+    color: var(--Main-Text);
+}
+
+.sidenav li>a {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .sidenav li>a>i.material-icons {
     float: right;
-    color: var(--Black);
+    color: var(--Main-Text);
     font-size: 40px;
+    padding-top: 10px;
 }
 
 .sidenav-close {
@@ -178,23 +211,31 @@ button{
     padding-bottom: 10px;
 }
 .sidenav-close:hover {
-    background-color: var(--Cream);
+    background-color: var(--Accent);
+}
+
+#sidenav-btn {
+    background-color: var(--Orange);
+    border-radius: 20px;
+    font-size: 24px;
+    color: var(--Main-Text);
+    font-weight: 500;
 }
 
 #sidenav-btn:hover{
-    background-color: var(--Cream);
-    color: var(--bgBlack);
-    border: 1px solid var(--Black) ;
+    background-color: var(--Orange);
+    border-radius: 20px;
+    border: none;
 }
 
 /* --------------------------------------------------- Forms */
 
 /* input field color */
 .input-field {
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     border-style: solid;
     border-radius: 10px;
-    border-color: var(--Cream);
+    border-color: var(--Accent);
   }
 
   /* icon prefix focus color */
@@ -203,7 +244,7 @@ button{
   }
 
   .field-row{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     border-radius: 10px;
     padding-top: 10px
   }
@@ -212,33 +253,76 @@ button{
 
 .home-heading{
     font-weight: 700;
-    font-size: 72px;
+    font-size: 55px;
 }
-
+/* For Tablet: */
 @media only screen and (min-width: 768px){
 .home-heading {
-    font-size: 80px;
+    font-size: 70px;
 }
 }
+/* For Laptop: */
+@media only screen and (min-width: 1000px){
+.home-heading {
+    font-size: 75px;
+}
+}
+/* For 4K: */
+@media only screen and (min-width: 2560px){
+    .home-heading {
+        font-size: 90px;
+    }
+    }
 
 .landing {
-    background-repeat: no-repeat, no-repeat;
     min-width: 100vw;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
-    background-color: var(--Cream);
-    padding-bottom: 20px;
+    background-color: var(--Accent);
+    
     min-height: 100vh;
 }
 
 
 @media only screen and (min-width: 768px) {
     /* For desktop: */
-        .landing {
-            padding-top: 200px;
-        }
+    .landing {
+        padding-top: 70px;
     }
+}
+
+@media only screen and (min-width: 1000px) {
+/* For Laptop: */
+    .landing {
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+/* For 4K: */
+    .landing {
+        padding-top: 100px;
+        }
+}
+
+.home-p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media only screen and (min-width: 1000px) {
+    /* For 4K: */
+    .home-p{
+       font-size: 30px;
+    }
+}
+@media only screen and (min-width: 2560px) {
+    /* For 4K: */
+    .home-p{
+       font-size: 35px;
+    }
+}
 
 .landing-img {
     width: 100%;
@@ -256,15 +340,15 @@ button{
 }
 
 #home-features-btn{
-    background-color: var(--Black);
-    color: var(--Cream);
+    background-color: var(--Main-Text);
+    color: var(--Accent);
     font-weight: 700;
 }
 
 #home-features-btn:hover{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     color: var(--bgBlack);
-    border: 1px solid var(--Black) ;
+    border: 1px solid var(--Main-Text) ;
 }
 
 #featured-section{
@@ -278,15 +362,15 @@ button{
 }
 
 #home-login-btn{
-    background-color: var(--Black);
-    color: var(--Cream);
+    background-color: var(--Main-Text);
+    color: var(--Accent);
     font-weight: 700;
 }
     
 #home-login-btn:hover{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     color: var(--bgBlack);
-    border: 1px solid var(--Black) ;
+    border: 1px solid var(--Main-Text) ;
 }
 
 
@@ -315,8 +399,8 @@ button{
 
 
 .resource-add-btn{
-    background-color: var(--Black);
-    color: var(--Cream);
+    background-color: var(--Main-Text);
+    color: var(--Accent);
     font-weight: 500;
     padding-top: 8px;
     padding-bottom: 45px;
@@ -324,9 +408,9 @@ button{
 }
 
 .resource-add-btn:hover{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     color: var(--bgBlack);
-    border: 1px solid var(--Black) ;
+    border: 1px solid var(--Main-Text) ;
 }
 
 #card-col{
@@ -335,7 +419,7 @@ button{
 }
 
 .resources-card{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     width: 100%;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -344,7 +428,7 @@ button{
 }
 
 .resource-content{
-    color: var(--Black);
+    color: var(--Main-Text);
 }
 
 .resource-title{
@@ -365,9 +449,9 @@ button{
 .resource-cat{
     padding: 5px 15px;
     border-radius: 20px;
-    border: 1px solid var(--Black);
-    background-color: var(--Cream);
-    color: var(--Black);
+    border: 1px solid var(--Main-Text);
+    background-color: var(--Accent);
+    color: var(--Main-Text);
     font-size: 17px;
     line-height: 20px;
     width:fit-content;
@@ -380,7 +464,7 @@ button{
     padding: 5px 15px;
     border-radius: 20px;
     background-color: #FFC795;
-    color: var(--Black);
+    color: var(--Main-Text);
     font-size: 14px;
     line-height: 20px;
     width:fit-content;
@@ -391,7 +475,7 @@ button{
     padding: 5px 15px;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.1);
-    color: var(--Black);
+    color: var(--Main-Text);
     font-size: 14px;
     line-height: 20px;
     width:fit-content;
@@ -408,8 +492,8 @@ button{
 }
 
 #delete-btn{
-    background-color: var(--Cream);
-    color: var(--Black);
+    background-color: var(--Accent);
+    color: var(--Main-Text);
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
@@ -419,8 +503,8 @@ button{
 }
 
 #edit-btn{
-    background-color: var(--Cream);
-    color: var(--Black);
+    background-color: var(--Accent);
+    color: var(--Main-Text);
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
@@ -434,7 +518,7 @@ i.left {
 }
 
 .btn-floating{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
 }
 
 .btn-floating:hover{
@@ -442,7 +526,7 @@ i.left {
 }
 
 .btn-floating i {
-    color: var(--Black);
+    color: var(--Main-Text);
 }
 
 #search-btn{
@@ -457,8 +541,8 @@ i.left {
 }
 
 #reset-btn{
-    background-color: var(--Cream);
-    color: var(--Black);
+    background-color: var(--Accent);
+    color: var(--Main-Text);
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
@@ -475,12 +559,12 @@ i.left {
 /* --------------------------------------------------- Add Resources Page*/
 
 .datepicker-date-display {
-    background-color: var(--Cream);
-    color: var(--Black)
+    background-color: var(--Accent);
+    color: var(--Main-Text)
 }
 
 .datepicker-calendar-container {
-    color: var(--Black);
+    color: var(--Main-Text);
 }
 
 .is-today {
@@ -498,7 +582,7 @@ i.left {
 
 .datepicker-clear {
     background-color: var(--bgBlack);
-    color: var(--Cream);
+    color: var(--Accent);
     border-radius: 10px;
 }
 
@@ -519,13 +603,13 @@ i.left {
 }
 
 .profile-h{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     border-radius: 5px;
-    color: var(--Black);
+    color: var(--Main-Text);
 }
 
 .tabs .tab a{
-    color: var(--Black);
+    color: var(--Main-Text);
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
@@ -539,28 +623,28 @@ i.left {
 
 .tab-p{
     padding-top: 10px;
-    background-color: var(--Cream);
+    background-color: var(--Accent);
 }
 
 .change-pw-btn{
-   background-color: var(--Cream);
-   border: 1px solid var(--Black);
-   color: var(--Black);
+   background-color: var(--Accent);
+   border: 1px solid var(--Main-Text);
+   color: var(--Main-Text);
 }
 .change-pw-btn:hover{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     border: 1px solid var(--Orange);
-    color: var(--Black);
+    color: var(--Main-Text);
     font-weight: initial;
  }
 
  .delete-p{
      font-size: 18px;
-     color: var(--Black);
+     color: var(--Main-Text);
  }
 
  .delete-link{
-    color: var(--Black);
+    color: var(--Main-Text);
     border-bottom: 5px solid var(--Orange);
      
  }
@@ -587,7 +671,7 @@ i.left {
     padding-top: 20px;
     border-radius: 8px;
     padding-left: 30px;
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     padding-right: 30px;
 }
 
@@ -601,13 +685,13 @@ i.left {
 }
 
 .info-modal-h{
-    color:var(--Black);
+    color:var(--Main-Text);
     font-size: 24px;
     font-weight: 700 ;
 }
 
 .info-modal-p{
-    color:var(--Black);
+    color:var(--Main-Text);
     font-size: 18px;
 }
 
@@ -621,7 +705,7 @@ i.left {
 }
 
 .categories-card{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
 }
 
 .manage-categories-h{
@@ -629,8 +713,8 @@ i.left {
 }
 
 .manage-resources-btn{
-    background-color: var(--Black);
-    color: var(--Cream);
+    background-color: var(--Main-Text);
+    color: var(--Accent);
     font-weight: 500;
     padding-top: 8px;
     padding-bottom: 45px;
@@ -638,9 +722,9 @@ i.left {
 }
 
 .manage-resources-btn:hover{
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     color: var(--bgBlack);
-    border: 1px solid var(--Black) ;
+    border: 1px solid var(--Main-Text) ;
 }
 
 .manage-card{
@@ -663,7 +747,7 @@ i.left {
 .footer-bg{
     margin-top: 5rem;
     padding-top: 2rem;
-    background-color: var(--Cream);
+    background-color: var(--Accent);
     
 }
 
@@ -677,15 +761,31 @@ i.left {
 }
 
 .footer-h{
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
+    font-weight: 500;
 }
 
 @media only screen and (min-width: 768px) {
-/* For desktop: */
+/* For tablet: */
 .footer-h{
-    text-align: left;
+    font-size: 24px;
     }
+}
+
+@media only screen and (min-width: 1000px) {
+/* For Laptop: */
+.footer-h {
+    text-align: left;
+    font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+/* For 4K: */
+.footer-h {
+    font-size: 24px;
+        }
 }
 
 .footer-p{
@@ -694,11 +794,27 @@ i.left {
 }
 
 @media only screen and (min-width: 768px) {
-    /* For desktop: */
+    /* For tablet: */
     .footer-p{
-        text-align: left;
+        font-size: 16px;
+        }
     }
-}
+    
+    @media only screen and (min-width: 1000px) {
+    /* For Laptop: */
+    .footer-p {
+        text-align: left;
+        font-size: 16px;
+        }
+    }
+    
+    @media only screen and (min-width: 2560px) {
+    /* For 4K: */
+    .footer-p {
+        text-align: left;
+        font-size: 16px;
+            }
+    }
 
 .footer-img{
     height: 50px;
@@ -714,7 +830,7 @@ i.left {
     line-height: 10px;
     text-align: center;
     color: var(--bgBlack);
-    background: var(--Cream);
+    background: var(--Accent);
     transition: all 0.35s ease-in-out;
 }
 
@@ -741,7 +857,7 @@ i.left {
 }
 
 .error-btn{
-    color: var(--Black);
+    color: var(--Main-Text);
     font-weight: 700;
     background-color: var(--Orange);
     border-radius: 10px;
@@ -749,10 +865,10 @@ i.left {
 }
 
 .error-btn:hover{
-    color: var(--Black);
-    background-color: var(--Cream);
+    color: var(--Main-Text);
+    background-color: var(--Accent);
     border-radius: 10px;
-    border: 1px solid var(--Black) ;
+    border: 1px solid var(--Main-Text) ;
     padding: 20px;
 }
 

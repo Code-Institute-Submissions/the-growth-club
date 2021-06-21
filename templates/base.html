@@ -35,36 +35,39 @@
             <a href="/get_featured_resources" class="brand-logo black-text left"
             id="logo">GrowthClub</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right "><i class="material-icons prefix">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="{{url_for('get_featured_resources')}}">Home</a></li>
+            <ul class="right hide-on-med-and-down ">
+              <li><a href="{{url_for('get_featured_resources')}}" >HOME</a></li>
               {% if session.user %}
-                <li><a href="{{ url_for('get_resources') }}">Resources</a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('get_resources') }}">RESOURCES</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                 {% if session.user|lower == "admin"|lower %}
-                  <li><a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a></li>
+                  <li><a href="{{ url_for('admin_dashboard') }}">ADMIN DASHBOARD</a></li>
                 {% endif %}
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
               {% else %}
-              <li><a href="{{ url_for('login') }}">Log In</a></li>
-              <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn">Sign Up</a></li>
+              <li><a href="{{ url_for('login') }}">LOG IN</a></li>
+              <li><a href="{{ url_for('register') }}" class="nav-btn hvr-grow">SIGN UP</a></li>
               {% endif %}
             </ul>
           </div>
         </nav>
         <!-- mobile sidenav -->
         <ul class="sidenav slider fullscreen" id="mobile-demo">
-          <li><a class="sidenav-close" href="{{url_for('index')}}">
+          <li><a class="sidenav-close" href="{{url_for('get_featured_resources')}}">
             <i class="material-icons">close</i></a></li>
-          <li><h4 class="sidenav-logo">GrowthClub</h4></li>
-          <li><a class="black-text" href="{{url_for('get_featured_resources')}}">Home</a></li>
+          <li class="center-align"><h4 class="sidenav-logo">GrowthClub</h4></li>
+          <li class="center-align"><a class="black-text" href="{{url_for('get_featured_resources')}}">HOME</a></li>
           {% if session.user %}
-            <li><a href="{{ url_for('get_resources') }}">Resources</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li class="center-align"><a href="{{ url_for('get_resources') }}">RESOURCES</a></li>
+            <li class="center-align"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+            <li class="center-align"><a href="{{ url_for('admin_dashboard') }}">ADMIN DASHBOARD</a></li>
+            <li class="center-align"><a href="{{ url_for('logout') }}">LOG OUT</a></li>
           {% else %}
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}" class="waves-effect waves-light btn" id="sidenav-btn">Sign Up</a></li>
+            <li class="center-align"><a href="{{ url_for('login') }}">LOG IN</a></li>
+            <li class="center-align">
+              <div class="center-align">
+                <a href="{{ url_for('register') }}" class="btn " id="sidenav-btn">SIGN UP</a>
+              </div></li>
           {% endif %}
         </ul>      
     </header>
@@ -85,6 +88,7 @@
     {% block content %}
     {% endblock %}
   </main>
+  <!-- Footer -->
   <footer class="footer-bg">
     <div class="container footer-container">
       <div class="row footer-row">
