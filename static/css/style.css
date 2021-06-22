@@ -56,6 +56,12 @@
 /* -------------------------------------------------- Body Styles*/
 body{
     overflow-x: hidden;
+    
+}
+
+/* original code credit: https://css-tricks.com/snippets/jquery/smooth-scrolling/*/
+html {
+    scroll-behavior: smooth;
 }
 
 h1 {
