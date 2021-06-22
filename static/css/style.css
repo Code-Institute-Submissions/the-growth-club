@@ -360,11 +360,36 @@ button{
     color: #525252;
     font-weight: 600;
     margin-top: unset;
+    padding-bottom:unset;
 }
 
 .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
     max-height:none;
+    margin-top: -90px;
 }
+
+@media only screen and (min-width: 375px) {
+    /* For tablet: */
+    .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
+        margin-top: -70px;
+        }
+    }
+
+
+@media only screen and (min-width: 425px) {
+    /* For tablet: */
+    .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
+        margin-top: -30px;
+        }
+    }
+
+@media only screen and (min-width: 1024px) {
+    /* For desktop: */
+    .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
+        margin-top: -45px;
+        }
+    }
+
 
 .card.large{
     height: 550px;
@@ -383,9 +408,49 @@ button{
     margin-top:unset;
 }
 
-.card .card-image img {
-    width: 50%;
+ .card .card-image img {
+    width: 100%;
+    top:-20px;
 }
+
+@media only screen and (min-width: 375px) {
+    /* For small mobile: */
+    .card .card-image img{
+        top:-20px;
+        }
+    }
+
+@media only screen and (min-width: 425px) {
+    /* For medium mobile: */
+    .card .card-image img{
+        width: 60%;
+        top:-20px;
+        }
+    }
+
+@media only screen and (min-width: 768px) {
+    /* For tablet: */
+    .card .card-image img{
+        width: 40%;
+        top:-20px;
+        }
+    }
+    
+    @media only screen and (min-width: 1024px) {
+    /* For Laptop: */
+    .card .card-image img {
+        width: 80%;
+        top:-20px;
+        }
+    }
+    
+    @media only screen and (min-width: 1400px) {
+    /* For 4K: */
+    .card  .card-image img {
+        width:60%;
+        top:-50px;
+            }
+    }
 
 .card .card-content {
     padding:0px
@@ -621,6 +686,9 @@ i.left {
     font-weight: 400;
 }
 
+.bookmarked{
+    background-color: var(--Orange);
+}
 
 /* --------------------------------------------------- Add Resources Page*/
 
@@ -946,8 +1014,4 @@ i.left {
     border-radius: 10px;
     border: 1px solid var(--Main-Text) ;
     padding: 20px;
-}
-
-.bookmarked{
-    background-color: orange;
 }

@@ -339,6 +339,7 @@ def add_featured_resource():
             "featured_date": request.form.get("featured_date"),
             "featured_link": request.form.get("featured_link"),
             "topic_name": ObjectId(topic['_id']),
+            "featured_img": request.form.get("featured_img"),
             }
         mongo.db.featured_resources.insert_one(featured_resource)
         flash("Featured Resource Successfully Added")
