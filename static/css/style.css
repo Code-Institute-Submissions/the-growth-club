@@ -49,6 +49,8 @@
     --Accent: #f1f1f1;
     /* color: var(--SecondaryAccent); */
     --SecondaryAccent: #FFC795;
+    /* color: var(--SecondaryAccent); */
+    --TertiaryAccent: #fadeb4;
      /* color: var(--AccentTransparent); */
      --AccentTransparent: rgba(241, 241, 241, 0.4);
     /* text-align: center; */
@@ -260,6 +262,25 @@ button{
 .form-container {
     width: 90%;
   }
+
+.input-field>label{
+    color: #495057
+}
+
+input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
+    color: var(--Main-Text);
+    
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+        border-bottom: 1px solid var(--Orange);
+        box-shadow: 0 1px 0 0 var(--Orange);
+    }
+
+.input-field .prefix.active {
+        color: var(--Orange);
+    }
+
 
 /* --------------------------------------------------- Landing Page */
 
@@ -544,6 +565,24 @@ button{
 
 /* --------------------------------------------------- Resources */
 
+.resource-h{
+    padding: 30px;
+    font-weight: 500;
+    background-color: var(--AccentTransparent);
+    border-radius: 20px;
+    font-size: 28px;
+}
+
+.resource-header-row{
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    background-image:url(/static/images/form-heading-bg.svg);
+    margin-top: 30px;
+    padding-bottom:10px;
+}
+
+
 .resource-btn-c{
     margin-bottom: 30px;
 }
@@ -600,8 +639,7 @@ button{
 .resource-cat{
     padding: 5px 15px;
     border-radius: 20px;
-    border: 1px solid var(--Main-Text);
-    background-color: var(--Accent);
+    background-color: var(--TertiaryAccent);
     color: var(--Main-Text);
     font-size: 17px;
     line-height: 20px;
@@ -620,6 +658,11 @@ button{
     line-height: 20px;
     width:fit-content;
     font-weight: 700;
+}
+
+.visit-resource-btn{
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 .resource-by{
@@ -680,26 +723,41 @@ i.left {
     color: var(--Main-Text);
 }
 
+.search-row{
+    margin-top: 20px;
+    border: 2px rgba(0, 0, 0, 0.1);
+}
+.search-input-field{
+    background-color: var(--bgWhite);
+    border: none;
+}
+
+.button-wrapper{
+    margin-top: 16px;
+}
+
 #search-btn{
     background-color: var(--Orange);
+    border-radius: 10px;
     color: var(--bgBlack);
-    font-weight: 700;
+    border: 1px solid var(--Orange);
+    padding:12px 10px;
+    margin-right:10px;
 }
 
 #search-btn:hover{
     background-color: var(--Orange);
-    border: none;
+    color: var(--bgBlack);
+    border: 1px solid var(--Orange);
 }
 
 #reset-btn{
+    padding:10px;
     background-color: var(--Accent);
     color: var(--Main-Text);
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid var(--Orange);
     border-radius: 10px;
-    border-color: var(--Orange);
     text-transform: unset;
-    width: max-content;
 }
 
 #reset-btn:hover{
