@@ -674,9 +674,24 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     font-weight: 700;
 }
 
-.visit-resource-btn{
+.visit-resource-btn {
     margin-top:10px;
     margin-bottom:10px;
+    background-color: var(--Accent);
+    border-radius: 10px;
+    color: var(--bgBlack);
+    border: 1px solid var(--bgBlack);
+    padding-top: 0px;
+    padding-bottom: 5px;
+    height: 32.4px;
+    line-height: 32.4px;
+    font-size: 13px;
+}
+
+.visit-resource-btn:hover {
+    background-color: var(--Orange);
+    color: var(--bgBlack);
+    border: 1px solid var(--Orange);
 }
 
 .resource-by{
