@@ -1060,21 +1060,21 @@ i.left {
 .footer-h{
     font-size: 18px;
     text-align: center;
-    font-weight: 500;
+    font-weight:300;
 }
 
 @media only screen and (min-width: 768px) {
 /* For tablet: */
 .footer-h{
-    font-size: 24px;
+    font-size: 20px;
     }
 }
 
 @media only screen and (min-width: 1000px) {
 /* For Laptop: */
 .footer-h {
-    text-align: left;
-    font-size: 24px;
+    text-align: center;
+    font-size: 18px;
     }
 }
 
@@ -1088,6 +1088,7 @@ i.left {
 .footer-p{
     font-size: 15px;
     text-align: center;
+    font-weight:200;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1100,7 +1101,7 @@ i.left {
     @media only screen and (min-width: 1000px) {
     /* For Laptop: */
     .footer-p {
-        text-align: left;
+        text-align: center;
         font-size: 16px;
         }
     }
@@ -1136,6 +1137,10 @@ i.left {
 }
 .social-links li{
     display: inline;
+}
+
+.copyright-f{
+    padding-bottom: 20px;
 }
 
 /* --------------------------------------------------- Error Pages */
