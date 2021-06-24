@@ -1038,7 +1038,28 @@ i.left {
  }
 
 
-/* --------------------------------------------------- Manage Resources Page */
+/* --------------------------------------------- Manage Resources Admin Page */
+
+.page-header-container {
+    width: 90%;
+  }
+
+.page-h{
+    padding: 30px;
+    font-weight: 500;
+    background-color: var(--AccentTransparent);
+    border-radius: 20px;
+    font-size: 28px;
+}
+
+.page-header-row{
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    background-image:url(/static/images/form-heading-bg.svg);
+    margin-top: 30px;
+    padding-bottom:10px;
+}
 
 .manage-resources-c{
     padding-bottom: 20px;
@@ -1080,11 +1101,14 @@ i.left {
 
 .image-upload-p{
     font-size: 16px;
-    
 }
 
 .upload-icon{
     padding-right:10px;
+}
+
+.admin-btn-icon{
+    padding-right: 5px;
 }
 
 
@@ -1094,6 +1118,7 @@ i.left {
 
 .manage-categories-h{
     font-size: 20px;
+    text-align: center;
 }
 
 .manage-resources-btn{
@@ -1113,11 +1138,15 @@ i.left {
 
 .manage-card{
     border-radius: 8px;
-    border: 1px solid #d5d1c4;
+    background-color: var(--Accent);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .container-manage-cat{
-    margin-left: 20px;
+    background-color: var(--bgWhite);
+    border-radius: 10px;
+    padding: 15px 30px;
 }
 
 .cat-name-p{
