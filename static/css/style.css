@@ -562,12 +562,21 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 /* --------------------------------------------------- Log In & Sign Up Pages */
 
+.userform-container{
+    height: 100vh;
+}
+
+.user-form-row{
+    margin-top:100px;
+}
+
 .note-p{
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .redirect-p{
-    color: var(--Orange)
+    color: var(--Orange);
+    font-weight: 700;
 }
 
 /* --------------------------------------------------- Flash Messages */
