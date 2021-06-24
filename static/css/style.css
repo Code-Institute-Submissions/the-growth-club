@@ -1008,6 +1008,14 @@ i.left {
     margin-top: 50px;
 }
 
+.bookmark-date{
+    padding: 5px 15px;
+    color: var(--Main-Text);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
 /* Change Password Button*/
 .change-pw-btn{
    background-color: var(--Accent);
