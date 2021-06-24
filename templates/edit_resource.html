@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="center-align">Edit a Resource you’ve added</h3>
+<div class="container form-container ">
+    <div class="row resource-header">
+        <div class="col s12 m12 l6 ">
+            <h3 class=" add-resource-h center-align">Edit a Resource you’ve added</h3>
+        </div>
+        <div class="col s12 m12 l6 center-align ">
+            <img src="/static/images/edit-reousrces-heading.svg" alt="edit resources" class="add-resource-img  ">
+        </div>
+    </div>
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_resource', resource_id=resource._id) }}">
@@ -30,6 +38,7 @@
                 <input id="resource_name" name="resource_name" minlength="5" maxlength="50" value={{resource.resource_name}} type="text" class="validate"
                     required>
                 <label for="resource_name">Resource Name</label>
+                <span class="helper-text" data-error="Write between 3 - 50 characters" data-success="Awesome!">Write a description about the resource in 3 - 50 characters</span>
             </div>
         </div>
         <!-- Resource Name end-->
@@ -41,6 +50,7 @@
                     {{- resource.resource_description -}}
                 </textarea>
                 <label for="resource_description">Resource Description</label>
+                <span class="helper-text" data-error="Write between 5 - 200 characters" data-success="Awesome!">Write a description about the resource in 5-200 characters</span>
             </div>
         </div>
         <!-- Resource Description end -->
@@ -50,6 +60,7 @@
                 <i class="material-icons prefix">event</i>
                 <input id="resource_date" name="resource_date" type="text" class="datepicker validate" value="{{ resource.resource_date}}">
                 <label for="resource_date">Date</label>
+                <span class="helper-text" data-success="Awesome!">You can choose a date if it is an event</span>
             </div>
         </div>
         <!-- Date picker end -->
@@ -59,6 +70,7 @@
                 <i class="material-icons prefix">link</i>
                 <input id="resource_link" name="resource_link" minlength="5" type="url" class="validate" value="{{resource.resource_link}}" required>
                 <label for="resource_link">Link to Resource</label>
+                <span class="helper-text" data-error="You must enter a valid URL for example: https://www.google.com/" data-success="Awesome!">Paste the URL of the resource here, for example: https://www.google.com/</span>
             </div>
         </div>
         <!-- Resource link end -->
