@@ -1,134 +1,135 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container page-header-container  ">
+  <!-- Profile Page Header -->
   <div class="row page-header-row">
       <div class="col s12 m12 l6 header-col ">
+        <!-- Profile Page Heading -->
           <h3 class=" page-h center-align profile-h">{{ username }}'s Profile</h3>
       </div>
+      <!-- Profile Page Image -->
       <div class="col s12 m12 l6 center-align ">
-          <img src="/static/images/profile.svg" alt="" class="add-resource-img">
+          <img src="/static/images/profile.svg" alt="profile image" class="add-resource-img">
       </div>
   </div>
-    <div class="container profile-container ">
-      <div class="row center-align ">
-        <div class="col s12 m12 l12 ">
-          <!-- Go to resource page btn -->
-          <div class="center-align">
-            <a href="{{ url_for('get_resources') }}" class="waves-effect waves-light btn manage-resources-btn">View Club Resources</a>
-            <a href="{{ url_for('get_featured_resources') }}" class="waves-effect waves-light btn manage-resources-btn">View Featured Resources</a>
-          </div>
-          </div>
-        </div>
-        <div class="row center-align bookmark-row">
-        <div class="col s12 m12 l12 ">
-          <!-- Saved -->
-            <h4 class="saved-resources-h">
-              <i class="material-icons save-icon prefix ">bookmark_border</i>
-              Saved Resources
-            </h4>
-            <p class="bookmark-p">Here you will see all the posts you have saved</p>
-            <div id="savedItems">
-              <div class="container">
-                <div class="row">
-                    <div class="col s12 m12 l12">
-                        <!-- Loop over all of the items from the resource collection-->
-                        {% for resource in resources %}
-                        <div class="card manage-resources-c">
-                            <!-- Title -->
-                            <h3 class=" resource-title">{{ resource.resource_name }}
-                            </h3>
-                            <ul id="resource-list">
-                                <!-- Category -->
-                                <li class="resource-cat">{{ resource.category_name }}</li>
-                                <!-- Topic -->
-                                <li class="resource-topic">{{ resource.topic_name }}</li>
-                                <!-- Date -->
-                                <li class="resource-p">{{ resource.resource_date }}</li>
-                                
-                                <li></li>
-                            </ul>
-                            <!-- Link -->
-                            <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer">View resource</a>
-                            <!-- Description -->
-                            <p class="resource-p">{{ resource.resource_description }}</p>
-                        </div>
-                        {% endfor %}
-                    </div>   
-                </div>
-              </div>
-            </div>
-        </div>
+</div>
+<main class="container profile-container center-align">
+  <div class="row center-align ">
+    <div class="col s12 m12 l12 ">
+      <!-- Links to other pages -->
+      <div class="center-align">
+        <!-- Link to resources page-->
+        <a href="{{ url_for('get_resources') }}" class="waves-effect waves-light btn manage-resources-btn to-resources-link">View Club Resources</a>
+        <!-- Link to featured resources page-->
+        <a href="{{ url_for('get_featured_resources') }}" class="waves-effect waves-light btn manage-resources-btn to-resources-link">View Featured Resources</a>
       </div>
-        </div>
-      </div>
-      <div class="row center-align">
-        <div class="col s12 m12 l12 center-align">
-          <!-- Change password -->
-          <div class="center-align">
-            <!-- Modal Trigger -->
-            <a href="#change_password_modal" class="waves-effect waves-light btn change-pw-btn modal-trigger"> <i class="material-icons left">lock_outline</i>Change Password</a>
-            <!-- Modal Structure -->
-            <div id="change_password_modal" class="modal ">
-              <div class="modal-content">
-                <h4>Hi {{ username }}! </h4>
-                <p>You can change your password here. <br>
-                Please enter your new password.</p>
-              </div>
-                <form method="POST" action="{{ url_for('change_password', username=session['user']) }}" class="change-form container">
-                  <div class="row field-row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">lock_outline</i>
-                        <input id="password_change" name="password_change" type="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-                        <label for="password_change">New password</label>
-                    </div>
-                  </div>
-                  <div>
-                    <!-- cancel button -->
-                    <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
-                    Cancel
-                    </a>
-                    <!-- submit button -->
-                    <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Change Password">Change password
-                    </button>  
+    </div>
+  </div>
+  <div class="row center-align bookmark-row">
+    <div class="col s12 m12 l12 ">
+      <!-- Saved -->
+      <h4 class="saved-resources-h">
+        <i class="material-icons save-icon prefix ">bookmark_border</i>
+        Bookmarked Resources
+      </h4>
+      <p class="bookmark-p">Here you will see all the posts you have bookmarked.</p>
+      <div id="savedItems">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <!-- Loop over all of the items from the resource collection-->
+              {% for resource in resources %}
+                <div class="card manage-resources-c">
+                  <!-- Title -->
+                  <h3 class=" resource-title">{{ resource.resource_name }}</h3>
+                  <ul id="resource-list">
+                    <!-- Category -->
+                    <li class="resource-cat">{{ resource.category_name }}</li>
+                    <!-- Topic -->
+                    <li class="resource-topic">{{ resource.topic_name }}</li>
+                    <!-- Date -->
+                    <li class="resource-p">{{ resource.resource_date }}</li>
+                  </ul>
+                  <!-- Link -->
+                  <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer" class="btn visit-resource-btn"><i class="material-icons left featured-btn-icon">open_in_new</i>Visit Resource</a> 
+                  <!-- Description -->
+                  <p class="resource-p">{{ resource.resource_description }}</p>
                 </div>
-                </form>
-              </div>
-          </div>
-          <!-- Delete account -->
-          <div class="center-align">
-            <p class="delete-p">Don’t want access to Club resources? <br>
-              <!-- Modal Trigger -->
-              <a class="modal-trigger delete-link" href="#deletemodal">Click here to delete your profile.</a>
-                <!-- Modal Structure -->
-                <div id="deletemodal" class="modal ">
-                  <div class="modal-content">
-                    <h4>Hi {{ username }}! </h4>
-                    <p>You are about to delete your account and leave the Growth Club! Are you sure? You will miss our on awesome Club Resources.</p>
-                  </div>
-                    <form method="POST" action="{{ url_for('delete_account', user_id=username) }}" class="delete-form container">
-                      <div class="row field-row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">lock_outline</i>
-                            <input id="confirm_to_delete" name="confirm_to_delete" type="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-                            <label for="password">Confirm Your Password to Delete Your Account</label>
-                        </div>
-                      </div>
-                      <div>
-                        <!-- cancel button -->
-                        <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
-                        Cancel
-                        </a>
-                        <!-- submit button -->
-                        <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Delete account">Forever Delete my account
-                        </button>  
-                    </div>
-                    </form>
-                  </div>
-                </div>
-             </p>
-          
+              {% endfor %}
+            </div>   
           </div>
         </div>
       </div>
     </div>
-    {% endblock %}
+  </div>
+</main>
+<section class="container">
+  <div class="row center-align">
+    <div class="col s12 m12 l12 center-align">
+      <!-- Change password -->
+      <div class="center-align">
+        <!-- Modal Trigger -->
+        <a href="#change_password_modal" class="waves-effect waves-light btn change-pw-btn modal-trigger"> <i class="material-icons left">lock_outline</i>
+          Change Password</a>
+        <!-- Modal Structure -->
+        <div id="change_password_modal" class="modal ">
+          <div class="modal-content">
+            <h4>Hi {{ username }}! </h4>
+            <p>You can change your password here. <br>
+              Please enter your new password.</p>
+          </div>
+          <form method="POST" action="{{ url_for('change_password', username=session['user']) }}" class="change-form container">
+            <div class="row field-row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">lock_outline</i>
+                <input id="password_change" name="password_change" type="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                <label for="password_change">New password</label>
+              </div>
+            </div>
+            <div>
+              <!-- cancel button -->
+              <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
+                Cancel
+              </a>
+              <!-- submit button -->
+              <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Change Password">Change password
+              </button>  
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Delete account -->
+      <div class="center-align">
+        <p class="delete-p">Don’t want access to Club resources?</p>
+          <!-- Modal Trigger -->
+        <p class="delete-p"><a class="modal-trigger delete-link" href="#deletemodal">Click here to delete your profile.</a></p>
+        <!-- Modal Structure -->
+        <div id="deletemodal" class="modal ">
+          <div class="modal-content">
+            <h4>Hi {{ username }}! </h4>
+            <p>You are about to delete your account and leave the Growth Club! Are you sure? You will miss our on awesome Club Resources.</p>
+          </div>
+          <form method="POST" action="{{ url_for('delete_account', user_id=username) }}" class="delete-form container">
+            <div class="row field-row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">lock_outline</i>
+                <input id="confirm_to_delete" name="confirm_to_delete" type="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                <label for="password">Confirm Your Password to Delete Your Account</label>
+              </div>
+            </div>
+            <div>
+              <!-- cancel button -->
+              <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
+              Cancel
+              </a>
+              <!-- submit button -->
+              <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Delete account">Forever Delete my account
+              </button>  
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

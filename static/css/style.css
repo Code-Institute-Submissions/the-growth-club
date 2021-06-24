@@ -965,10 +965,10 @@ i.left {
 }
 
 /* --------------------------------------------------- Profile Page */
+
+/* General Profile Structure */
 .profile-container{
     height: 100vh;
-    width: 100vw;
-    padding-left:20px;
     padding-right: 20px;
 }
 
@@ -976,51 +976,44 @@ i.left {
     width: 100%;
 }
 
+/* Profile Header */
 .profile-h{
     background-color: var(--Accent);
     border-radius: 5px;
     color: var(--Main-Text);
+    text-transform:capitalize;
 }
 
 .profile-header-row{
     margin-bottom: 50px;
 }
 
+/* To Resources Links*/
+.to-resources-link{
+    margin-bottom: 20px;
+    margin-top:20px;
+}
+
+/* Bookmarked Items*/
+.saved-resources-h{
+    font-size: 24px;
+    text-decoration: underline 5px solid var(--Orange);
+}
+
 .bookmark-p{
     font-size: 18px;
-}
-
-
-.profile-h{
-    text-transform:capitalize;
-}
-
-.tabs .tab a{
-    color: var(--Main-Text);
-}
-
-.tabs .tab a:hover, .tabs .tab a.active {
-    background-color: transparent;
-    color: var(--Orange);
-}
-
-.tabs .indicator {
-    background-color:  var(--Orange);
-}
-
-.tab-p{
-    padding-top: 10px;
-    background-color: var(--Accent);
 }
 
 .bookmark-row{
     margin-top: 50px;
 }
 
+/* Change Password Button*/
 .change-pw-btn{
    background-color: var(--Accent);
    border: 1px solid var(--Main-Text);
    color: var(--Main-Text);
+   margin-bottom: 20px;
 }
 .change-pw-btn:hover{
     background-color: var(--Accent);
@@ -1029,31 +1022,26 @@ i.left {
     font-weight: initial;
  }
 
- .delete-p{
-     font-size: 18px;
-     color: var(--Main-Text);
- }
+/* Delete Password Button*/
+.delete-p{
+    font-size: 18px;
+    color: var(--Main-Text);
+    margin: 0px;
+}
 
- .delete-link{
+.delete-link{
     color: var(--Main-Text);
     border-bottom: 5px solid var(--Orange);
-     
- }
+}
 
- .saved-resources-h{
-     font-size: 24px;
-     text-decoration: underline 5px solid var(--Orange);
- }
-
- .change-form{
+/* Modal style*/
+.change-form{
     padding-bottom: 30px;
- }
+}
 
-
- .delete-form{
+.delete-form{
     padding-bottom: 30px;
- }
-
+}
 
 /* --------------------------------------------- Manage Resources Admin Page */
 
