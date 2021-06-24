@@ -982,6 +982,19 @@ i.left {
     color: var(--Main-Text);
 }
 
+.profile-header-row{
+    margin-bottom: 50px;
+}
+
+.bookmark-p{
+    font-size: 18px;
+}
+
+
+.profile-h{
+    text-transform:capitalize;
+}
+
 .tabs .tab a{
     color: var(--Main-Text);
 }
@@ -998,6 +1011,10 @@ i.left {
 .tab-p{
     padding-top: 10px;
     background-color: var(--Accent);
+}
+
+.bookmark-row{
+    margin-top: 50px;
 }
 
 .change-pw-btn{
