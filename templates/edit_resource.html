@@ -12,7 +12,7 @@
                     <option value="" disabled selected>Choose Category</option>
                     <!-- If the for-loop category's name is equal to the resource category name, then select that as the default. The 'else' statement will be for all other options, not selected. If the category iteration of names does match that from our resource category name, then apply the 'selected' attribute.-->
                     {% for category in categories %}
-                        {% if category.category_name == resource.category_name %}
+                        {% if resource.category_name  == category._id %}
                             <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
                         {% else %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
@@ -68,15 +68,16 @@
                 <i class="material-icons prefix">label_outline</i>
                 <select id="topic_name" name="topic_name" class="validate" required>
                     <option value="" disabled selected>Choose Topic</option>
+                    <!-- If the for-loop topic's name is equal to the resource topic name, then select that as the default. The 'else' statement will be for all other options, not selected. If the topic iteration of names does match that from our resource topic name, then apply the 'selected' attribute.-->
                     {% for topic in topics %}
-                        {% if topic.topic_name == resource.topic_name %}
+                        {% if resource.topic_name  == topic._id %}
                             <option value="{{ topic.topic_name }}" selected>{{ topic.topic_name }}</option>
                         {% else %}
                             <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
                         {% endif %}
                     {% endfor %}
                 </select for="topic_name">
-                <label>Resource Topic</label>
+                <label>Topic Category</label>
             </div>
         </div>
         <!-- Topic selection end -->
