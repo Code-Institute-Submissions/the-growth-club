@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container form-container  ">
+<!-- Page Heading -->
+<div class="container form-container">
     <div class="row resource-header-row ">
         <div class="col s12 m12 l12 ">
             <h3 class=" resource-h center-align">Club Resources</h3>
@@ -8,85 +9,84 @@
         
     </div>
 </div>
-    <!-- Search Form & Buttons-->
-    <div class="container center">
-        <div class="row ">
-            <form action="{{ url_for('search') }}" method="post" class="col s12">
-                <div class="row search-row">
-                    <!-- Search Input-->
-                    <div class="input-field search-input-field col s12 m8 left-align ">
-                        <i class="material-icons prefix ">search</i>
-                        <input type="search" name="query" id="query" minlength="2" required>
-                        <label class="form-label" for="query">Search Resources</label>
-                        <span class="helper-text">Search for resources by description</span>
-                    </div>
-                    <!-- Buttons-->
-                    <div class="col s12 m4 button-wrapper ">
-                        <button type="submit" class="hvr-grow-shadow " id="search-btn">
-                            Search
-                        </button>
-                        <a href="{{ url_for('get_resources') }}" class="hvr-grow-shadow" id="reset-btn">Reset</a>
-                    </div>
+<!-- Search Form & Buttons-->
+<section class="container center">
+    <div class="row">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row search-row">
+                <!-- Search Input-->
+                <div class="input-field search-input-field col s12 m8 left-align">
+                    <i class="material-icons prefix ">search</i>
+                    <input type="search" name="query" id="query" minlength="2" required>
+                    <label class="form-label" for="query">Search Resources</label>
+                    <span class="helper-text">Search for resources by description</span>
                 </div>
-            </form>
-        </div>
+                <!-- Buttons-->
+                <div class="col s12 m4 button-wrapper">
+                    <button type="submit" class="hvr-grow-shadow" id="search-btn">
+                    Search
+                    </button>
+                    <a href="{{ url_for('get_resources') }}" class="hvr-grow-shadow" id="reset-btn">Reset</a>
+                </div>
+            </div>
+        </form>
     </div>
-    <!-- Add resource Button-->
-    <div class="center-align resource-btn-c">
-        <a href="{{ url_for('add_resource') }}" class="waves-effect waves-light btn resource-add-btn"><i class="material-icons left">add</i>Add Resource</a>
-    </div>
-    <!-- For searching Cards-->
-    {% if resources|length > 0 %}
-    <!-- Resources Cards-->
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <!-- Loop over all of the items from the resource collection-->
-                {% for resource in resources %}
-                <div class="card manage-resources-c">
-                    <!-- Title -->
-                    <h3 class=" resource-title">{{ resource.resource_name }}
-                        <span>
-                            <!-- Save Button -->
-                            <a class="waves-effect waves-light btn-floating right bookmark_btn {%if resource.bookmarked%}bookmarked{%endif%}" data-resource="{{resource._id}}"><i class="material-icons save-icon">bookmark_border</i></a>
-                        </span>
-                    </h3>
-                    <ul id="resource-list">
-                        <!-- Category -->
-                        <li class="resource-cat">{{ resource.category_name }}</li>
-                        <!-- Topic -->
-                        <li class="resource-topic">{{ resource.topic_name }}</li>
-                        <!-- Date -->
-                        <li class="resource-p">{{ resource.resource_date }}</li>
-                        
-                        <li></li>
-                    </ul>
-                    <!-- Link -->
-                    <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer" class="btn visit-resource-btn"><i class="material-icons left featured-btn-icon">open_in_new</i>Visit Resource</a> 
-                    <!-- Description -->
-                    <p class="resource-p">{{ resource.resource_description }}</p>
-                    <div class="card-action container" id="resource-bottom">
-                        <div class="row">
-                            <div class="col m8 l6 left-align">
-                                <!-- Created by -->
-                                <p class="resource-by">created by: {{ resource.created_by }}</p>
-                            </div>
-                            <div class="col m4 l6 right-align">
-                                <!-- Delete Btn-->
-                                <a href="{{ url_for('delete_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="delete-btn"><i class="material-icons left">delete_outline</i>Delete</a>
-                                <!-- Edit Btn-->
-                                <a href="{{ url_for('edit_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
-                            </div>
+</section>
+<!-- Add resource Button-->
+<div class="center-align resource-btn-c">
+    <a href="{{ url_for('add_resource') }}" class="waves-effect waves-light btn resource-add-btn"><i class="material-icons left">add</i>Add Resource</a>
+</div>
+<!-- For searching Cards-->
+{% if resources|length > 0 %}
+<!-- Resources Cards-->
+<main class="container">
+    <div class="row">
+        <div class="col s12 m12 l12">
+        <!-- Loop over all of the items from the resource collection-->
+        {% for resource in resources %}
+            <div class="card manage-resources-c">
+                <!-- Title -->
+                <h3 class=" resource-title">{{ resource.resource_name }}
+                <span>
+                    <!-- Save Button -->
+                    <a class="waves-effect waves-light btn-floating right bookmark_btn {%if resource.bookmarked%}bookmarked{%endif%}" data-resource="{{resource._id}}"><i class="material-icons save-icon">bookmark_border</i></a>
+                </span>
+                </h3>
+                <ul id="resource-list">
+                <!-- Category -->
+                    <li class="resource-cat">{{ resource.category_name }}</li>
+                    <!-- Topic -->
+                    <li class="resource-topic">{{ resource.topic_name }}</li>
+                    <!-- Date -->
+                    <li class="resource-date">{{ resource.resource_date }}</li>
+                </ul>
+                <!-- Link -->
+                <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer" class="btn visit-resource-btn"><i class="material-icons left featured-btn-icon">open_in_new</i>Visit Resource</a> 
+                <!-- Description -->
+                <p class="resource-p">{{ resource.resource_description }}</p>
+                <div class="card-action container" id="resource-bottom">
+                    <div class="row">
+                        <div class="col m8 l6 left-align">
+                            <!-- Created by -->
+                            <p class="resource-by">created by: {{ resource.created_by }}</p>
+                        </div>
+                        <!-- Buttons to manage resource-->
+                        <div class="col m4 l6 right-align">
+                            <!-- Delete Btn-->
+                            <a href="{{ url_for('delete_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="delete-btn"><i class="material-icons left">delete_outline</i>Delete</a>
+                            <!-- Edit Btn-->
+                            <a href="{{ url_for('edit_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-            </div>   
-        </div>
+            </div>
+        {% endfor %}
+        </div>   
     </div>
-    <!-- Message if no search results found-->
-    {% else %}
-        <h3 class="center-align">No Results Found</h3>
-    {% endif %}
+</main>
+<!-- Message if no search results found-->
+{% else %}
+    <h3 class="center-align">No Results Found</h3>
+{% endif %}
 {% endblock %}
     

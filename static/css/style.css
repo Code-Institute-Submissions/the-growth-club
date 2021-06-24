@@ -579,6 +579,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 /* --------------------------------------------------- Resources */
 
+/* Resources Header */
 .resource-h{
     padding: 30px;
     font-weight: 500;
@@ -596,162 +597,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     padding-bottom:10px;
 }
 
-
-.resource-btn-c{
-    margin-bottom: 30px;
-}
-
-
-.resource-add-btn{
-    background-color: var(--Main-Text);
-    color: var(--Accent);
-    font-weight: 500;
-    padding-top: 8px;
-    padding-bottom: 45px;
-    padding-left: 10px;
-}
-
-.resource-add-btn:hover{
-    background-color: var(--Accent);
-    color: var(--bgBlack);
-    border: 1px solid var(--Main-Text) ;
-}
-
-#card-col{
-    width: 80%;
-    margin: auto;
-}
-
-.resources-card{
-    background-color: var(--Accent);
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    padding: 30px;
-}
-
-.resource-content{
-    color: var(--Main-Text);
-}
-
-.resource-title{
-    font-size: 24px;
-    font-weight: 600;
-    padding-bottom:0px;
-}
-
-#resource-list li{
-    display: inline;
-}
-
-
-.resource-p{
-    font-size: 14px;
-}
-
-.resource-cat{
-    padding: 5px 15px;
-    border-radius: 20px;
-    background-color: var(--TertiaryAccent);
-    color: var(--Main-Text);
-    font-size: 17px;
-    line-height: 20px;
-    width:fit-content;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.resource-topic{
-    /*background-color: var(--Orange);  Remember to remove */ 
-    padding: 5px 15px;
-    border-radius: 20px;
-    background-color: #FFC795;
-    color: var(--Main-Text);
-    font-size: 14px;
-    line-height: 20px;
-    width:fit-content;
-    font-weight: 700;
-}
-
-.visit-resource-btn {
-    margin-top:10px;
-    margin-bottom:10px;
-    background-color: var(--Accent);
-    border-radius: 10px;
-    color: var(--bgBlack);
-    border: 1px solid var(--bgBlack);
-    padding-top: 0px;
-    padding-bottom: 5px;
-    height: 32.4px;
-    line-height: 32.4px;
-    font-size: 13px;
-}
-
-.visit-resource-btn:hover {
-    background-color: var(--Orange);
-    color: var(--bgBlack);
-    border: 1px solid var(--Orange);
-}
-
-.resource-by{
-    padding: 5px 15px;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: var(--Main-Text);
-    font-size: 14px;
-    line-height: 20px;
-    width:fit-content;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-	font-size: 12px;
-	font-weight: 700;
-}
-
-#resource-bottom {
-    width: 100%;
-    padding-bottom: 0px;
-    padding-left: 0px;
-}
-
-#delete-btn{
-    background-color: var(--Accent);
-    color: var(--Main-Text);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: var(--Orange);
-    text-transform: unset;
-    margin-top: 10px;
-}
-
-#edit-btn{
-    background-color: var(--Accent);
-    color: var(--Main-Text);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: var(--Orange);
-    text-transform: unset;
-    margin-top: 10px;
-}
-
-i.left {
-    margin-right: unset;
-}
-
-.btn-floating{
-    background-color: var(--Accent);
-}
-
-.btn-floating:hover{
-    background-color: var(--Orange);
-}
-
-.btn-floating i {
-    color: var(--Main-Text);
-}
-
+/* Search Resources */
 .search-row{
     margin-top: 20px;
     border: 2px rgba(0, 0, 0, 0.1);
@@ -791,6 +637,176 @@ i.left {
 
 #reset-btn:hover{
     font-weight: 400;
+}
+
+/* Add Resource Button */
+.resource-btn-c{
+    margin-bottom: 30px;
+}
+
+.resource-add-btn{
+    background-color: var(--Main-Text);
+    color: var(--Accent);
+    font-weight: 500;
+    padding-top: 8px;
+    padding-bottom: 45px;
+    padding-left: 10px;
+}
+
+.resource-add-btn:hover{
+    background-color: var(--Accent);
+    color: var(--bgBlack);
+    border: 1px solid var(--Main-Text) ;
+}
+
+/* Resources Cards General Styles */
+#card-col{
+    width: 80%;
+    margin: auto;
+}
+
+.resources-card{
+    background-color: var(--Accent);
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.resource-content{
+    color: var(--Main-Text);
+}
+
+.resource-title{
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom:0px;
+}
+
+#resource-list li{
+    display: inline;
+}
+
+.resource-p{
+    font-size: 14px;
+}
+
+#resource-bottom {
+    width: 100%;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+i.left {
+    margin-right: unset;
+}
+
+/* Resources Cards Date */
+.resource-date{
+    padding: 5px 15px;
+    color: var(--Main-Text);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+/* Resources Cards Category */
+.resource-cat{
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: var(--TertiaryAccent);
+    color: var(--Main-Text);
+    font-size: 17px;
+    line-height: 20px;
+    width:fit-content;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Resources Cards Topic */
+.resource-topic{
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: var(--SecondaryAccent);
+    color: var(--Main-Text);
+    font-size: 14px;
+    line-height: 20px;
+    width:fit-content;
+    font-weight: 700;
+}
+
+/* Resources Cards Link To Visit Resource */
+.visit-resource-btn {
+    margin-top:10px;
+    margin-bottom:10px;
+    background-color: var(--Accent);
+    border-radius: 10px;
+    color: var(--bgBlack);
+    border: 1px solid var(--bgBlack);
+    padding-top: 0px;
+    padding-bottom: 5px;
+    height: 32.4px;
+    line-height: 32.4px;
+    font-size: 13px;
+}
+
+.visit-resource-btn:hover {
+    background-color: var(--Orange);
+    color: var(--bgBlack);
+    border: 1px solid var(--Orange);
+}
+
+/* Resources Cards Created By */
+.resource-by{
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--Main-Text);
+    font-size: 14px;
+    line-height: 20px;
+    width:fit-content;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+/* Resource Cards Delete Button */
+#delete-btn{
+    background-color: var(--Accent);
+    color: var(--Main-Text);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--Orange);
+    text-transform: unset;
+    margin-top: 10px;
+}
+
+/* Resource Cards Edit Button */
+#edit-btn{
+    background-color: var(--Accent);
+    color: var(--Main-Text);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--Orange);
+    text-transform: unset;
+    margin-top: 10px;
+}
+
+/* Resource Cards Bookmark Button*/
+.btn-floating{
+    background-color: var(--Accent);
+}
+
+.btn-floating:hover{
+    background-color: var(--Orange);
+}
+
+.btn-floating i {
+    color: var(--Main-Text);
 }
 
 .bookmarked{
