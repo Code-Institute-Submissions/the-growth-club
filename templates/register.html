@@ -1,38 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="center-align">Join the Growth Club for Free!</h3>
-    <div class="row">
+
+<div class="container userform-container">
+    <!-- Page Heading -->
+    <div class="row resource-header-row ">
+        <div class="col s12 m12 l12 ">
+            <h3 class=" resource-h center-align">Join the Growth Club for Free!</h3>
+        </div>
+    </div>
+    <div class="row user-form-row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div>
-                <!-- Username -->
-                <div class="row field-row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">person_outline</i>
-                        <input id="username" name="username" type="text" class="validate" minlength="5" maxlength="15"
+            <!-- Username -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">person_outline</i>
+                    <input id="username" name="username" type="text" class="validate" minlength="5" maxlength="15"
                             pattern="^[a-zA-Z0-9]{5,15}$">
-                        <label for="username">Username</label>
-                    </div>
+                    <label for="username">Username</label>
+                    <span class="helper-text" data-error="Write between 5-15 characters" data-success="Awesome!">Choose an awesome username. This should be between 5-15 characters and you can use numbers and letters.</span>
                 </div>
-                <!-- Username end-->
-                <!-- Email -->
-                <div class="row field-row">
-                    <div class="input-field col s12">
-                        <i class="far fa-envelope prefix"></i>
-                        <input id="email" name="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
+            </div>
+            <!-- Email -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="far fa-envelope prefix"></i>
+                    <input id="email" name="email" type="email" class="validate" required>
+                    <label for="email">Email</label>
+                    <span class="helper-text" data-error="Type a valid email address for example: excited@gmail.com" data-success="Nice!">Type an email address for example: excited@gmail.com</span>
                 </div>
-                <!-- Email end-->
-                <!-- Password -->
-                <div class="row field-row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">lock_outline</i>
-                        <input id="password" name="password" type="password" class="validate" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$">
-                        <label for="password">Password</label>
-                    </div>
+            </div>
+            <!-- Password -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock_outline</i>
+                    <input id="password" name="password" type="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$">
+                    <label for="password">Password</label>
+                    <span class="helper-text" data-error="Type a valid email address for example: excited@gmail.com" data-success="Nice!">Choose a secret password between 5-15 characters. You can use numbers and letters.  </span>
                 </div>
-                <!-- Password end -->
             </div>
             <!-- Register -->
             <div class="row center-align">
@@ -42,7 +46,6 @@
                     </button>
                 </div>
             </div>
-            <!-- Register end-->
         </form>
     </div>
     <!-- Info -->
@@ -51,9 +54,10 @@
             <p class="center-align note-p">We will never share your information with anyone! </p>
             <p class="center-align note-p">
                 Already Registered?
-                <a href="{{ url_for('login') }}" class="redirect-p">Log In here</a>
+                <a href="{{ url_for('login') }}" class="redirect-p delete-link">Log In here</a>
             </p>
         </div>
     </div>  
     <!-- Info end-->
+</div>
 {% endblock %}
