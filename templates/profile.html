@@ -92,11 +92,11 @@
             <!--Form Buttons -->
             <div>
               <!-- Cancel Button -->
-              <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
+              <a href="{{ url_for('profile', username=session['user']) }}" class="general-button">
                 Cancel
               </a>
               <!-- Submit Button -->
-              <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Change Password">Change password
+              <button type="submit" placeholder="Delete account" class="general-button" aria-label="Change Password">Change password
               </button>  
             </div>
           </form>
@@ -112,7 +112,7 @@
           <div class="modal-content">
             <i class="material-icons prefix" id="delete-warning-icon">error_outline</i>
             <h4 class="modal-h">Hi {{ username }}! </h4>
-            <p>You are about to <u>delete</u> your account and leave the Growth Club! Are you sure? You will miss our on awesome Club Resources.</p>
+            <p>You are about to <u>delete</u> your account and leave the Growth Club! Are you sure? You will miss out on the awesome Club Resources.</p>
           </div>
           <form method="POST" action="{{ url_for('delete_account', user_id=username) }}" class="delete-form container">
             <div class="row field-row">
@@ -125,11 +125,11 @@
             <!--Form Buttons -->
             <div>
               <!-- Cancel Button -->
-              <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
+              <a href="{{ url_for('profile', username=session['user']) }}" class="general-button">
               Cancel
               </a>
               <!-- Submit Button -->
-              <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Delete account">Delete my account forever.
+              <button type="submit" placeholder="Delete account" class="general-button" aria-label="Delete account">Delete my account forever.
               </button>  
             </div>
           </form>
