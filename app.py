@@ -39,7 +39,7 @@ def register():
 
         # if match with exisiting user then give message
         if existing_user:
-            flash("Username already exists")
+            flash("Oh no, this Username already exists...")
             # take the user back to the sign up page
             return redirect(url_for("register"))
 
@@ -84,7 +84,8 @@ def login():
                 # if user password matches hashed password log in user
                 session["user"] = request.form.get("username").lower()
                 # if user password matches hashed password show message
-                flash("Hi, {}".format(request.form.get("username")))
+                flash("Hi {}. Welcome Back!".format(
+                    request.form.get("username")))
                 # take user to the profile page
                 return redirect(url_for("profile", username=session["user"]))
             else:
@@ -142,7 +143,7 @@ def add_resource():
             "created_by": ObjectId(user['_id'])
             }
         mongo.db.resources.insert_one(resource)
-        flash("Resource Successfully Added")
+        flash("The Resource was successfully added to the Growth Club!")
         return redirect(url_for("get_resources"))
     # find category & topic in database
     categories = mongo.db.categories.find().sort("category_name", 1)
@@ -214,7 +215,7 @@ def edit_resource(resource_id):
         }
         # update resource in database
         mongo.db.resources.update({"_id": ObjectId(resource_id)}, submit)
-        flash("The resource was successfully edited and updated")
+        flash("The Resource was successfully edited and updated")
         # return to the resources page
         return redirect(url_for("get_resources"))
     # retrieve the resource from the database by id
@@ -233,7 +234,7 @@ def delete_resource(resource_id):
     """Delete Resource. Find the resource by id and remove it from the
     database. The present a message to confirm that it has been deleted."""
     mongo.db.resources.remove({"_id": ObjectId(resource_id)})
-    flash("The resource was successfully deleted")
+    flash("The Resource was successfully deleted")
     # return to the resources page
     return redirect(url_for("get_resources"))
 
@@ -378,7 +379,7 @@ def edit_featured_resource(featured_resource_id):
         mongo.db.featured_resources.update({"_id": ObjectId(
                                                         featured_resource_id)},
                                            submit)
-        flash("The featured resource was successfully edited and updated")
+        flash("The Featured Resource was successfully edited and updated")
         # return to the resources page
         return redirect(url_for("get_featured_resources"))
     # retrieve the featured resource from the database by id
@@ -405,7 +406,7 @@ def add_category():
         }
         # insert the category in the database
         mongo.db.categories.insert_one(category)
-        flash("The new Category was Added")
+        flash("The new Category was added")
         # return to the admin dashboard page
         return redirect(url_for("admin_dashboard"))
     # return to the add_category page
@@ -457,7 +458,7 @@ def add_topic():
         }
         # insert the category in the database
         mongo.db.topics.insert_one(topic)
-        flash("The new Category was Added")
+        flash("The new Topic was Added")
         # return to the manage admin dashboard page
         return redirect(url_for("admin_dashboard"))
     # return to the add_category page
@@ -553,7 +554,7 @@ def bookmark(resource_id):
         mongo.db.users.find_one_and_update(
             {"username": session["user"].lower()},
             {"$push": {"bookmarks": ObjectId(resource_id)}})
-        flash("Resource added to bookmarks on your profile")
+        flash("Resource added your bookmarks on your profile")
         return redirect(url_for(
                         "profile", username=session["user"]))
 
