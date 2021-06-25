@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container form-container ">
+    <!-- Page Header -->
     <div class="row resource-header">
         <div class="col s12 m12 l6 ">
             <h3 class=" add-resource-h center-align">Add a Resource to share with the Club</h3>
@@ -10,6 +11,7 @@
         </div>
     </div>
     <div class="row">
+        <!-- Add a Resource Form -->
         <form class="col s12 m8 offset-m2 " method="POST" action="{{ url_for('add_resource') }}">
             <!-- category selection -->
             <div class="row field-row">
@@ -24,7 +26,6 @@
                     <label>Resource Category</label>
                 </div>
             </div>
-            <!-- category selection end -->
             <!-- Resource Name -->
             <div class="row field-row">
                 <div class="input-field col s12">
@@ -32,7 +33,7 @@
                     <input id="resource_name" name="resource_name" minlength="3" maxlength="50" type="text" class="validate" 
                         required>
                     <label for="resource_name">Resource Name</label>
-                    <span class="helper-text" data-error="Write between 3 - 50 characters" data-success="Awesome!">Write a description about the resource in 3 - 50 characters</span>
+                    <span class="helper-text" data-error="The resource name should be between 3 - 50 characters." data-success="Awesome!">Give the new resource a cool name that is between 3 - 50 characters.</span>
                 </div>
             </div>
             <!-- Resource Name end-->
@@ -40,32 +41,29 @@
             <div class="row field-row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">format_align_left</i>
-                    <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200" class="materialize-textarea validate" required data-success="✓"></textarea>
+                    <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200" class="materialize-textarea validate" required ></textarea>
                     <label for="resource_description">Resource Description</label>
-                    <span class="helper-text" data-error="Write between 5 - 200 characters" data-success="Awesome!">Write a description about the resource in 5-200 characters</span>
+                    <span class="helper-text" data-error="The description should be between 5 - 200 characters" data-success="Sounds interesting!">Write a description about the resource in 5-200 characters.</span>
                 </div>
             </div>
-            <!-- Resource Description end -->
             <!-- Date picker -->
             <div class="row field-row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">event</i>
                     <input id="resource_date" name="resource_date" type="text" class="datepicker validate">
                     <label for="resource_date">Date</label>
-                    <span class="helper-text" data-success="Awesome!">You can choose a date if it is an event</span>
+                    <span class="helper-text" data-success="Can't wait!">You can choose a date if it is an event, otherwise you can leave it blank.</span>
                 </div>
             </div>
-            <!-- Date picker end -->
             <!-- Resource Link -->
             <div class="row field-row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">link</i>
                     <input id="resource_link" name="resource_link" minlength="5" type="url" class="validate" required>
-                    <label for="resource_link">Link to Resource</label>
-                    <span class="helper-text" data-error="You must enter a valid URL for example: https://www.google.com/" data-success="Awesome!">Paste the URL of the resource here, for example: https://www.google.com/</span>
+                    <label for="resource_link">Link to the Resource</label>
+                    <span class="helper-text" data-error="Rather try using a valid URL for example: https://www.google.com/" data-success="Excellent!">Paste the URL of the resource here, for example: https://www.google.com/</span>
                 </div>
             </div>
-            <!-- Resource link end -->
             <!-- Topic selection -->
             <div class="row field-row">
                 <div class="input-field col s12">
@@ -79,21 +77,18 @@
                     <label>Resource Topic</label>
                 </div>
             </div>
-            <!-- Topic selection end -->
-            <!-- Submit btn-->
+            <!-- Form Buttons -->
             <div class="row center-align subit-btn-div">
-                <!-- cancel button -->
+                <!-- Cancel Button -->
                 <a href="{{ url_for('get_resources')}}" class="waves-effect waves-light btn manage-resources-btn">
                     Cancel
                 </a>
-                <!-- add button -->
+                <!-- Add Resource Button -->
                 <button type="submit" class="waves-effect waves-light btn manage-resources-btn ">
                     Add Resource
                 </button>
             </div>
-            <!-- Submit btn end-->
         </form>
     </div>
 </div>
-
 {% endblock %}
