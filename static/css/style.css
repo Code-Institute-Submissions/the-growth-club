@@ -1,39 +1,7 @@
-/* -------------------------------------------------- General Styles */
-.light-background {
-    background-color: var(--bgWhite);
-}
+/* --------------------------------------------------- */
+/*                  ROOT VARIABLES                     */
+/* --------------------------------------------------- */
 
-.primary-btn {
-    background-color: var(--bgBlack);
-}
-
-.main-text-color{
-    color: var(--Black) ;
-}
-
-.dark-btn-text-color{
-    color: var(--bgWhite) ;
-}
-
-.highlight-color{
-    color: var(--Orange) ;
-}
-
-.darker-background{
-    background-color: var(--Accent);
-}
-
-.main-font{
-    font-family: 'Poppins', sans-serif;
-}
-
-.text.center {
-    text-align: var(--center);
-}
-
-
-
-/* -------------------------------------------------- Root Variables*/
 :root {
     /* color: var(--bgWhite); 
        background-color: var(--bgWhite);*/
@@ -57,7 +25,10 @@
     --center: center;
 }
 
-/* -------------------------------------------------- Body Styles*/
+/* --------------------------------------------------- */
+/*                 GENERAL BODY SYTLES                 */
+/* --------------------------------------------------- */
+
 body{
     overflow-x: hidden;
 }
@@ -108,7 +79,43 @@ p{
     background-color: var(--bgWhite);
 }
 
-/* -------------------------------------------------- Navbar Styles*/
+/* ---General Styles */
+.light-background {
+    background-color: var(--bgWhite);
+}
+
+.primary-btn {
+    background-color: var(--bgBlack);
+}
+
+.main-text-color{
+    color: var(--Black) ;
+}
+
+.dark-btn-text-color{
+    color: var(--bgWhite) ;
+}
+
+.highlight-color{
+    color: var(--Orange) ;
+}
+
+.darker-background{
+    background-color: var(--Accent);
+}
+
+.main-font{
+    font-family: 'Poppins', sans-serif;
+}
+
+.text.center {
+    text-align: var(--center);
+}
+
+/* --------------------------------------------------- */
+/*                       NAVBAR                        */
+/* --------------------------------------------------- */
+
 
 #logo{
     padding-left: 2rem;
@@ -238,7 +245,10 @@ button{
     border: none;
 }
 
-/* --------------------------------------------------- Forms */
+/* --------------------------------------------------- */
+/*                      FORMS                          */
+/* --------------------------------------------------- */
+
 
 /* input field color */
 .input-field {
@@ -281,96 +291,102 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
         color: var(--Orange);
     }
 
+/* --------------------------------------------------- */
+/*                   LANDING PAGE                      */
+/* --------------------------------------------------- */
 
-/* --------------------------------------------------- Landing Page */
+/* --- LANDING PAGE CONTAINER--- */
 
-.home-heading{
-    font-weight: 700;
-    font-size: 55px;
-}
-/* For Tablet: */
-@media only screen and (min-width: 768px){
-.home-heading {
-    font-size: 70px;
-}
-}
-/* For Laptop: */
-@media only screen and (min-width: 1000px){
-.home-heading {
-    font-size: 75px;
-}
-}
-/* For 4K: */
-@media only screen and (min-width: 2560px){
-    .home-heading {
-        font-size: 90px;
-    }
-    }
-
+/* Smaller Screens */
 .landing {
     min-width: 100vw;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
     background-color: var(--Accent);
-    
     min-height: 100vh;
 }
 
-
+/* For Tablets */
 @media only screen and (min-width: 768px) {
-    /* For desktop: */
     .landing {
         padding-top: 70px;
     }
 }
 
+/* For Desktops */
 @media only screen and (min-width: 1000px) {
-/* For Laptop: */
     .landing {
         padding-top: 50px;
     }
 }
 
+/* For Large 4K Screens */
 @media only screen and (min-width: 2560px) {
-/* For 4K: */
     .landing {
         padding-top: 100px;
-        }
+    }
 }
 
+/* --- LANDING PAGE ROW--- */
+.landing-row {
+    padding-top: 10px;
+}
+
+/* --- MAIN HEADING --- */
+
+/* Smaller Screens */
+.home-heading{
+    font-weight: 700;
+    font-size: 55px;
+}
+/* For Tablets */
+@media only screen and (min-width: 768px){
+.home-heading {
+    font-size: 70px;
+    }
+}
+/* For Desktops */
+@media only screen and (min-width: 1000px){
+.home-heading {
+    font-size: 75px;
+    }
+}
+/* For Large 4K Screens */
+@media only screen and (min-width: 2560px){
+    .home-heading {
+        font-size: 90px;
+    }
+}
+
+/* --- LANDING PAGE PARAGRAPHS --- */
+
+/* Smaller Screens */
 .home-p{
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
+/* For Desktops */
 @media only screen and (min-width: 1000px) {
-    /* For 4K: */
     .home-p{
        font-size: 30px;
     }
 }
+
+/* For Large 4K Screens */
 @media only screen and (min-width: 2560px) {
-    /* For 4K: */
     .home-p{
        font-size: 35px;
     }
 }
 
+/* --- LANDING PAGE IMAGE--- */
 .landing-img {
     width: 100%;
 }
 
-.landing-row {
-    padding-top: 10px;
-}
-
-@media only screen and (min-width: 768px) {
-/* For desktop: */
-    .home-intro {
-        font-size: 30px;
-    }
-}
+/* --- LANDING PAGE CTA BUTTON--- */
 
 #home-features-btn{
     background-color: var(--Main-Text);
@@ -384,24 +400,13 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     border: 1px solid var(--Main-Text) ;
 }
 
+/* --- LANDING PAGE FEATURED SECTION--- */
+
 #featured-section{
     margin-top: 60px;
 }
 
-.featured-cat{
-    margin-top: unset;
-    margin-bottom: 2px;
-    padding: 5px 15px;
-    border-radius: 20px;
-    background-color: var(--TertiaryAccent);
-    color: var(--Main-Text);
-    font-size: 17px;
-    line-height: 20px;
-    width:fit-content;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
+/* Featured Resources Cards */
 .featured-card{
     background-color: var(--Accent);
     width: 100%;
@@ -416,100 +421,43 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     margin-top: -90px;
 }
 
+/* Smaller Screens */
 @media only screen and (min-width: 375px) {
-    /* For tablet: */
     .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
         margin-top: -70px;
-        }
     }
+}
 
-
+/* For Tablets */
 @media only screen and (min-width: 425px) {
-    /* For tablet: */
     .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
         margin-top: -50px;
-        }
     }
+}
 
+/* For Desktops */
 @media only screen and (min-width: 1024px) {
-    /* For desktop: */
     .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
         margin-top: -45px;
-        }
     }
-
+}
 
 .card.large{
     height: 550px;
 }
 
-.featured-p{
-    font-size: 13px;
-    padding-top: 10px;
-}
-
-@media only screen and (min-width: 768px) {
-    /* For tablet: */
-    .featured-p{
-        font-size: 14px;
-        padding-top: 15px;
-        }
-    }
-
-.featured-btn-icon{
-    padding-right: 10px;
-}
-
-.featured-title{
-    margin-top:unset;
-}
-
- .card .card-image img {
-    width: 100%;
-    top:-20px;
-}
-
-@media only screen and (min-width: 375px) {
-    /* For small mobile: */
-    .card .card-image img{
-        top:-20px;
-        }
-    }
-
-@media only screen and (min-width: 425px) {
-    /* For medium mobile: */
-    .card .card-image img{
-        width: 60%;
-        top:-20px;
-        }
-    }
-
-@media only screen and (min-width: 768px) {
-    /* For tablet: */
-    .card .card-image img{
-        width: 40%;
-        top:-20px;
-        }
-    }
-    
-    @media only screen and (min-width: 1024px) {
-    /* For Laptop: */
-    .card .card-image img {
-        width: 80%;
-        top:-20px;
-        }
-    }
-    
-    @media only screen and (min-width: 1400px) {
-    /* For 4K: */
-    .card  .card-image img {
-        width:60%;
-        top:-50px;
-            }
-    }
-
 .card .card-content {
     padding:0px
+}
+
+.featured-content{
+    padding:0px;
+}
+
+/* Featured Resource Image */
+.card .card-image img {
+    width: 100%;
+    top:-20px;
 }
 
 .featured-img{
@@ -519,6 +467,85 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     height: 200px;
 }
 
+/* Featured Resources Title */
+.featured-title{
+    margin-top:unset;
+}
+
+/* Featured Resources Category */
+.featured-cat{
+    margin-top: unset;
+    margin-bottom: 2px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: var(--TertiaryAccent);
+    color: var(--Main-Text);
+    font-size: 17px;
+    line-height: 20px;
+    width:fit-content;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Featured Resources Paragraphs */
+.featured-p{
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+/* For Tablets */
+@media only screen and (min-width: 768px) {
+    .featured-p{
+        font-size: 14px;
+        padding-top: 15px;
+    }
+}
+
+/* Featured Resource Icons */
+.featured-btn-icon{
+    padding-right: 10px;
+}
+
+/* Smaller Mobile */
+@media only screen and (min-width: 375px) {
+    .card .card-image img{
+        top:-20px;
+    }
+}
+
+/* Medium Mobile */
+@media only screen and (min-width: 425px) {
+    .card .card-image img{
+        width: 60%;
+        top:-20px;
+    }
+}
+
+/* For Tablets */
+@media only screen and (min-width: 768px) {
+    .card .card-image img{
+        width: 40%;
+        top:-20px;
+    }
+}
+
+/* For Laptops */
+@media only screen and (min-width: 1024px) {
+    .card .card-image img {
+        width: 80%;
+        top:-20px;
+    }
+}
+ 
+/* For Large 4K Screens */
+@media only screen and (min-width: 1400px) {
+    .card  .card-image img {
+        width:60%;
+        top:-50px;
+    }
+}
+
+/* Featured Resource Event Date */
 .featured-date{
     padding: 5px 15px;
     color: var(--Main-Text);
@@ -527,16 +554,16 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     font-weight: 700;
 }
 
-.featured-content{
-    padding:0px;
-}
-
+/* Featured Resource Event Date */
 #home-login-btn{
     background-color: var(--Main-Text);
     color: var(--Accent);
     font-weight: 700;
 }
-    
+
+/* --- LANDING PAGE CTA TO ALL RESOURCES--- */
+ 
+/* CTA Log in button */
 #home-login-btn:hover{
     background-color: var(--Accent);
     color: var(--bgBlack);
@@ -560,7 +587,9 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     border: 1px solid var(--Orange);
 }
 
-/* --------------------------------------------------- Log In & Sign Up Pages */
+/* --------------------------------------------------- */
+/*               LOG IN & SIGN UP PAGES                */
+/* --------------------------------------------------- */
 
 .userform-container{
     height: 100vh;
@@ -579,14 +608,19 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     font-weight: 700;
 }
 
-/* --------------------------------------------------- Flash Messages */
+/* --------------------------------------------------- */
+/*                  FLASH MESSAGES                     */
+/* --------------------------------------------------- */
 
 .flashes h4{
     line-height: 2;
     color: var(--Orange)
 }
 
-/* --------------------------------------------------- Resources */
+/* --------------------------------------------------- */
+/*                   RESOURCES PAGE                    */
+/* --------------------------------------------------- */
+
 
 /* Resources Header */
 .resource-h{
@@ -822,7 +856,9 @@ i.left {
     background-color: var(--Orange);
 }
 
-/* --------------------------------------------------- Add Resources Page*/
+/* --------------------------------------------------- */
+/*                 ADD RESOURCES PAGE                  */
+/* --------------------------------------------------- */
 
 
 @media only screen and (min-width: 1024px) {
@@ -989,7 +1025,10 @@ i.left {
     
 }
 
-/* --------------------------------------------------- Profile Page */
+/* --------------------------------------------------- */
+/*                    PROFILE PAGE                     */
+/* --------------------------------------------------- */
+
 
 /* General Profile Structure */
 .profile-container{
@@ -1076,7 +1115,10 @@ i.left {
     padding-bottom: 30px;
 }
 
-/* --------------------------------------------- Manage Resources Admin Page */
+/* --------------------------------------------------- */
+/*              MANAGE RESOURCES ADMIN PAGE            */
+/* --------------------------------------------------- */
+
 
 .page-header-container {
     width: 90%;
@@ -1193,7 +1235,10 @@ i.left {
     padding-bottom: 10px;
 }
 
-/* --------------------------------------------------- Footer */
+/* --------------------------------------------------- */
+/*                       FOOTER                        */
+/* --------------------------------------------------- */
+
 
 .footer-bg{
     margin-top: 5rem;
@@ -1297,7 +1342,10 @@ i.left {
     padding-bottom: 20px;
 }
 
-/* --------------------------------------------------- Error Pages */
+/* --------------------------------------------------- */
+/*                     ERROR PAGES                     */
+/* --------------------------------------------------- */
+
 
 .error-img{
     width: 100%;
