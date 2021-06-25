@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container form-container ">
+<div class="container form-container">
     <!-- Page Header -->
     <div class="row resource-header">
-        <div class="col s12 m12 l6 ">
+        <div class="col s12 m12 l6">
             <h3 class=" add-resource-h center-align">Add a Resource to share with the Club</h3>
         </div>
-        <div class="col s12 m12 l6 center-align ">
-            <img src="static/images/add-resources-heading.svg" alt="" class="add-resource-img  ">
+        <div class="col s12 m12 l6 center-align">
+            <img src="static/images/add-resources-heading.svg" alt="add resources" class="add-resource-img">
         </div>
     </div>
     <div class="row">
         <!-- Add a Resource Form -->
         <form class="col s12 m8 offset-m2 " method="POST" action="{{ url_for('add_resource') }}">
-            <!-- category selection -->
+            <!-- Category Selection -->
             <div class="row field-row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix" id="resource-form-icon">folder_open</i>
@@ -36,7 +36,6 @@
                     <span class="helper-text" data-error="The resource name should be between 3 - 50 characters." data-success="Awesome!">Give the new resource a cool name that is between 3 - 50 characters.</span>
                 </div>
             </div>
-            <!-- Resource Name end-->
             <!-- Resource Description -->
             <div class="row field-row">
                 <div class="input-field col s12">
@@ -84,7 +83,7 @@
                     Cancel
                 </a>
                 <!-- Add Resource Button -->
-                <button type="submit" class="waves-effect waves-light btn manage-resources-btn ">
+                <button type="submit" class="waves-effect waves-light btn manage-resources-btn">
                     Add Resource
                 </button>
             </div>
