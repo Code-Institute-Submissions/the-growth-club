@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container page-header-container  ">
+<div class="container page-header-container ">
   <!-- Profile Page Header -->
   <div class="row page-header-row">
-      <div class="col s12 m12 l6 header-col ">
+      <div class="col s12 m12 l6 header-col">
         <!-- Profile Page Heading -->
           <h3 class=" page-h center-align profile-h">{{ username }}'s Profile</h3>
       </div>
       <!-- Profile Page Image -->
-      <div class="col s12 m12 l6 center-align ">
+      <div class="col s12 m12 l6 center-align">
           <img src="/static/images/profile.svg" alt="profile image" class="add-resource-img">
       </div>
   </div>
 </div>
 <main class="container profile-container center-align">
-  <div class="row center-align ">
-    <div class="col s12 m12 l12 ">
+  <div class="row center-align">
+    <div class="col s12 m12 l12">
       <!-- Links to other pages -->
       <div class="center-align">
-        <!-- Link to resources page-->
+        <!-- Link to resources page -->
         <a href="{{ url_for('get_resources') }}" class="waves-effect waves-light btn manage-resources-btn to-resources-link">View Club Resources</a>
         <!-- Link to featured resources page-->
         <a href="{{ url_for('get_featured_resources') }}" class="waves-effect waves-light btn manage-resources-btn to-resources-link">View Featured Resources</a>
@@ -27,9 +27,9 @@
   </div>
   <div class="row center-align bookmark-row">
     <div class="col s12 m12 l12 ">
-      <!-- Saved -->
+      <!-- Bookmarked Items -->
       <h4 class="saved-resources-h">
-        <i class="material-icons save-icon prefix ">bookmark_border</i>
+        <i class="material-icons save-icon prefix">bookmark_border</i>
         Bookmarked Resources
       </h4>
       <p class="bookmark-p">Here you will see all the posts you have bookmarked.</p>
@@ -63,18 +63,20 @@
     </div>
   </div>
 </main>
+<!-- Manage Profile -->
 <section class="container">
   <div class="row center-align">
     <div class="col s12 m12 l12 center-align">
       <!-- Change password -->
       <div class="center-align">
-        <!-- Modal Trigger -->
+        <!-- Change password Modal Trigger -->
         <a href="#change_password_modal" class="waves-effect waves-light btn change-pw-btn modal-trigger"> <i class="material-icons left">lock_outline</i>
-          Change Password</a>
-        <!-- Modal Structure -->
-        <div id="change_password_modal" class="modal ">
+          Change Password
+        </a>
+        <!-- Change password Modal Structure -->
+        <div id="change_password_modal" class="modal">
           <div class="modal-content">
-            <h4>Hi {{ username }}! </h4>
+            <h4 class="modal-h">Hi {{ username }}! </h4>
             <p>You can change your password here. <br>
               Please enter your new password.</p>
           </div>
@@ -84,14 +86,16 @@
                 <i class="material-icons prefix">lock_outline</i>
                 <input id="password_change" name="password_change" type="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 <label for="password_change">New password</label>
+                <span class="helper-text" data-error="Type a valid password. It should contain 5-15 characters." data-success="Nice!">Choose a new super secret password between 5-15 characters. You can use numbers and letters.</span>
               </div>
             </div>
+            <!--Form Buttons -->
             <div>
-              <!-- cancel button -->
+              <!-- Cancel Button -->
               <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
                 Cancel
               </a>
-              <!-- submit button -->
+              <!-- Submit Button -->
               <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Change Password">Change password
               </button>  
             </div>
@@ -101,13 +105,14 @@
       <!-- Delete account -->
       <div class="center-align">
         <p class="delete-p">Don’t want access to Club resources?</p>
-          <!-- Modal Trigger -->
-        <p class="delete-p"><a class="modal-trigger delete-link" href="#deletemodal">Click here to delete your profile.</a></p>
-        <!-- Modal Structure -->
+        <!-- Delete account Modal Trigger -->
+        <p class="delete-p" ><a class="modal-trigger delete-link redirect-p" href="#deletemodal">Click here to delete your profile.</a></p>
+        <!-- Delete account Modal Structure -->
         <div id="deletemodal" class="modal ">
           <div class="modal-content">
-            <h4>Hi {{ username }}! </h4>
-            <p>You are about to delete your account and leave the Growth Club! Are you sure? You will miss our on awesome Club Resources.</p>
+            <i class="material-icons prefix" id="delete-warning-icon">error_outline</i>
+            <h4 class="modal-h">Hi {{ username }}! </h4>
+            <p>You are about to <u>delete</u> your account and leave the Growth Club! Are you sure? You will miss our on awesome Club Resources.</p>
           </div>
           <form method="POST" action="{{ url_for('delete_account', user_id=username) }}" class="delete-form container">
             <div class="row field-row">
@@ -117,13 +122,14 @@
                 <label for="password">Confirm Your Password to Delete Your Account</label>
               </div>
             </div>
+            <!--Form Buttons -->
             <div>
-              <!-- cancel button -->
+              <!-- Cancel Button -->
               <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn manage-resources-btn">
               Cancel
               </a>
-              <!-- submit button -->
-              <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Delete account">Forever Delete my account
+              <!-- Submit Button -->
+              <button type="submit" placeholder="Delete account" class="btn manage-resources-btn" aria-label="Delete account">Delete my account forever.
               </button>  
             </div>
           </form>

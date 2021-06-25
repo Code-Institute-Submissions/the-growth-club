@@ -1017,6 +1017,8 @@ i.left {
     padding-top: 20px;
 }
 
+
+/* DO NOT FORGET THIS!!*/
 /* Choose one of the below 3 options*/
 #resource-form-icon {
     color: var(--Orange);
@@ -1114,12 +1116,32 @@ i.left {
 }
 
 /* Modal style*/
+
+#change_password_modal{
+    border-radius: 8px;
+    background-color: var(--bgWhite);
+}
+
 .change-form{
     padding-bottom: 30px;
 }
 
+.modal-h{
+    text-transform: capitalize;
+}
+
+#deletemodal{
+    border-radius: 8px;
+    background-color: var(--bgWhite);
+}
+
 .delete-form{
     padding-bottom: 30px;
+}
+
+#delete-warning-icon{
+    color:var(--Orange);
+    font-size:50px;
 }
 
 /* --------------------------------------------------- */
