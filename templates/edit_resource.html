@@ -1,111 +1,104 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container form-container ">
+<div class="container form-container">
+    <!-- Page Header -->
     <div class="row resource-header">
-        <div class="col s12 m12 l6 ">
+        <div class="col s12 m12 l6">
             <h3 class=" add-resource-h center-align">Edit a Resource you’ve added</h3>
         </div>
-        <div class="col s12 m12 l6 center-align ">
-            <img src="/static/images/edit-reousrces-heading.svg" alt="edit resources" class="add-resource-img  ">
+        <div class="col s12 m12 l6 center-align">
+            <img src="/static/images/edit-reousrces-heading.svg" alt="edit resources" class="add-resource-img">
         </div>
     </div>
-
-<div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_resource', resource_id=resource._id) }}">
-        <!-- category selection -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">folder_open</i>
-                <select id="category_name" name="category_name" class="validate" required>
-                    <option value="" disabled selected>Choose Category</option>
-                    <!-- If the for-loop category's name is equal to the resource category id, then select that as the default. The 'else' statement will be for all other options, not selected. If the category iteration of names does match that from our resource category name, then apply the 'selected' attribute.-->
-                    {% for category in categories %}
-                        {% if resource.category_name  == category._id %}
-                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                        {% else %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select for="category_name">
-                <label>Resource Category</label>
+    <div class="row">
+        <!-- Edit a Resource Form -->
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_resource', resource_id=resource._id) }}">
+            <!-- Category Selection -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">folder_open</i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        <!-- For Loop to find current category-->
+                        {% for category in categories %}
+                            {% if resource.category_name  == category._id %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select for="category_name">
+                    <label>Resource Category</label>
+                </div>
             </div>
-        </div>
-        <!-- category selection end -->
-        <!-- Resource Name -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">create</i>
-                <input id="resource_name" name="resource_name" minlength="5" maxlength="50" value={{resource.resource_name}} type="text" class="validate"
-                    required>
-                <label for="resource_name">Resource Name</label>
-                <span class="helper-text" data-error="Write between 3 - 50 characters" data-success="Awesome!">Write a description about the resource in 3 - 50 characters</span>
+            <!-- Resource Name -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">create</i>
+                    <input id="resource_name" name="resource_name" minlength="3" maxlength="50" value={{resource.resource_name}} type="text" class="validate" required>
+                    <label for="resource_name">Resource Name</label>
+                    <span class="helper-text" data-error="The resource name should be between 3 - 50 characters." data-success="Awesome!">Give the new resource a cool name that is between 3 - 50 characters.</span>
+                </div>
             </div>
-        </div>
-        <!-- Resource Name end-->
-        <!-- Resource Description -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">format_align_left</i>
-                <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200" class="materialize-textarea validate" required>
-                    {{- resource.resource_description -}}
-                </textarea>
-                <label for="resource_description">Resource Description</label>
-                <span class="helper-text" data-error="Write between 5 - 200 characters" data-success="Awesome!">Write a description about the resource in 5-200 characters</span>
+            <!-- Resource Description -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">format_align_left</i>
+                    <textarea id="resource_description" name="resource_description" minlength="5" maxlength="200" class="materialize-textarea validate" required>
+                        {{- resource.resource_description -}}
+                    </textarea>
+                    <label for="resource_description">Resource Description</label>
+                    <span class="helper-text" data-error="The description should be between 5 - 200 characters" data-success="Sounds interesting!">Write a description about the resource in 5-200 characters.</span>
+                </div>
             </div>
-        </div>
-        <!-- Resource Description end -->
-        <!-- Date picker -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">event</i>
-                <input id="resource_date" name="resource_date" type="text" class="datepicker validate" value="{{ resource.resource_date}}">
-                <label for="resource_date">Date</label>
-                <span class="helper-text" data-success="Awesome!">You can choose a date if it is an event</span>
+            <!-- Date picker -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">event</i>
+                    <input id="resource_date" name="resource_date" type="text" class="datepicker validate" value="{{ resource.resource_date}}">
+                    <label for="resource_date">Date</label>
+                    <span class="helper-text" data-success="Can't wait!">You can choose a date if it is an event, otherwise you can leave it blank.</span>
+                </div>
             </div>
-        </div>
-        <!-- Date picker end -->
-        <!-- Resource Link -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">link</i>
-                <input id="resource_link" name="resource_link" minlength="5" type="url" class="validate" value="{{resource.resource_link}}" required>
-                <label for="resource_link">Link to Resource</label>
-                <span class="helper-text" data-error="You must enter a valid URL for example: https://www.google.com/" data-success="Awesome!">Paste the URL of the resource here, for example: https://www.google.com/</span>
+            <!-- Resource Link -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">link</i>
+                    <input id="resource_link" name="resource_link" minlength="5" type="url" class="validate" value="{{resource.resource_link}}" required>
+                    <label for="resource_link">Link to Resource</label>
+                    <span class="helper-text" data-error="Rather try using a valid URL for example: https://www.google.com/" data-success="Excellent!">Paste the URL of the resource here, for example: https://www.google.com/</span>
+                </div>
             </div>
-        </div>
-        <!-- Resource link end -->
-        <!-- Topic selection -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">label_outline</i>
-                <select id="topic_name" name="topic_name" class="validate" required>
-                    <option value="" disabled selected>Choose Topic</option>
-                    <!-- If the for-loop topic's name is equal to the resource topic id, then select that as the default. The 'else' statement will be for all other options, not selected. If the topic iteration of names does match that from our resource topic name, then apply the 'selected' attribute.-->
-                    {% for topic in topics %}
-                        {% if resource.topic_name  == topic._id %}
-                            <option value="{{ topic.topic_name }}" selected>{{ topic.topic_name }}</option>
-                        {% else %}
-                            <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select for="topic_name">
-                <label>Topic Category</label>
+            <!-- Topic selection -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">label_outline</i>
+                    <select id="topic_name" name="topic_name" class="validate" required>
+                        <option value="" disabled selected>Choose Topic</option>
+                        <!-- For Loop to find current topic-->
+                        {% for topic in topics %}
+                            {% if resource.topic_name  == topic._id %}
+                                <option value="{{ topic.topic_name }}" selected>{{ topic.topic_name }}</option>
+                            {% else %}
+                                <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select for="topic_name">
+                    <label>Topic Category</label>
+                </div>
             </div>
-        </div>
-        <!-- Topic selection end -->
-        <!-- Submit btn-->
-        <div class="row center-align">
-            <!-- cancel button -->
-            <a href="{{ url_for('get_resources')}}" class="waves-effect waves-light btn manage-resources-btn">
-                Cancel
-            </a>
-            <!-- edit button -->
-            <button type="submit" class="waves-effect waves-light btn manage-resources-btn ">
-                Update Resource
-            </button>
-        </div>
-        <!-- Submit btn end-->
-    </form>
+            <!-- Form Buttons -->
+            <div class="row center-align">
+                <!-- Cancel Button -->
+                <a href="{{ url_for('get_resources')}}" class="waves-effect waves-light btn manage-resources-btn">
+                    Cancel
+                </a>
+                <!-- Edit Button -->
+                <button type="submit" class="waves-effect waves-light btn manage-resources-btn ">
+                    Update Resource
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
-
 {% endblock %}
