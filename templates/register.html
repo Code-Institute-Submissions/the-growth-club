@@ -7,7 +7,9 @@
             <h3 class=" resource-h center-align">Join the Growth Club for Free!</h3>
         </div>
     </div>
-    <div class="row user-form-row">
+    <div class="row user-form-row register-row {
+        margin-top: 40px;
+   }">
         <!-- User Register Form -->
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <!-- Username -->
@@ -40,7 +42,7 @@
             <!-- Register -->
             <div class="row center-align">
                 <div class="col s12">
-                    <button type="submit" class="waves-effect waves-light btn manage-resources-btn ">
+                    <button type="submit" class="general-button">
                         Sign Up
                     </button>
                 </div>

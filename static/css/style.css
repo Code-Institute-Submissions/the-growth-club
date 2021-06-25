@@ -3,25 +3,14 @@
 /* --------------------------------------------------- */
 
 :root {
-    /* color: var(--bgWhite); 
-       background-color: var(--bgWhite);*/
     --bgWhite: #FFFEFC;
-    /* color: var(--bgBlack); 
-       background-color: var(--bgBlack);*/
     --bgBlack: #000000;
-    /* color: var(--Main-Text); */
     --Main-Text: #1A222D;
-    /* color: var(--Orange); */
     --Orange: #FE9902;
-    /* color: var(--Accent); */
     --Accent: #f1f1f1;
-    /* color: var(--SecondaryAccent); */
     --SecondaryAccent: #FFC795;
-    /* color: var(--SecondaryAccent); */
     --TertiaryAccent: #fadeb4;
-     /* color: var(--AccentTransparent); */
-     --AccentTransparent: rgba(241, 241, 241, 0.4);
-    /* text-align: center; */
+    --AccentTransparent: rgba(241, 241, 241, 0.4);
     --center: center;
 }
 
@@ -29,21 +18,34 @@
 /*                 GENERAL BODY SYTLES                 */
 /* --------------------------------------------------- */
 
-body{
-    overflow-x: hidden;
-}
+/* --- GENERAL STYLES --- */
 
 /* original code credit: https://css-tricks.com/snippets/jquery/smooth-scrolling/*/
 html {
     scroll-behavior: smooth;
-    
 }
 
+body{
+    overflow-x: hidden;
+}
+
+.main-text-color{
+    color: var(--Black) ;
+}
+
+.light-background {
+    background-color: var(--bgWhite);
+}
+
+.main-font{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- GENERAL HEADINGS --- */
 h1 {
     font-weight: 700;
     font-size: 72px;
 }
-
 
 h2 {
     Font-size: 25px;
@@ -54,22 +56,25 @@ h2 {
 h3{
     font-weight: 400;
     font-size: 34px;
-    
     padding-bottom: 20px;
 }
 
+/* --- GENERAL PARAGRAPHS--- */
 p{
     font-size: 24px;
 }
 
+/* --- BUTTONS --- */
 .btn{
     text-align: center;
-    background-color: var(--bgBlack);
+    background-color: var(--Main-Text);
     text-transform: unset;
     border-radius: 10px;
     padding-bottom: 50px;
     padding-left: 20px;
     padding-top: 10px;
+    color: var(--Accent);
+    font-size:14px;
 }
 .btn:hover{
     color: var(--bgBlack);
@@ -79,44 +84,55 @@ p{
     background-color: var(--bgWhite);
 }
 
-/* ---General Styles */
-.light-background {
-    background-color: var(--bgWhite);
+.general-button{
+    padding: 18px 20px 20px;
+    border-radius: 10px;
+    background-color: var(--Main-Text);
+    color: var(--Accent);
+    font-weight: 600;
+    font-size:14px;
+    margin-top:10px;
 }
 
-.primary-btn {
-    background-color: var(--bgBlack);
-}
-
-.main-text-color{
-    color: var(--Black) ;
-}
-
-.dark-btn-text-color{
-    color: var(--bgWhite) ;
-}
-
-.highlight-color{
-    color: var(--Orange) ;
-}
-
-.darker-background{
+.general-button:hover{
     background-color: var(--Accent);
+    color: var(--bgBlack);
+    border: 1px solid var(--Main-Text) ;
 }
 
-.main-font{
-    font-family: 'Poppins', sans-serif;
+button{
+    padding: 20px 20px;
+    border-radius: 10px;
+    background-color: var(--Main-Text);
+    color: var(--Accent);
+    font-weight: 600;
+    font-size:14px;
+    margin-left: 10px;
 }
 
-.text.center {
-    text-align: var(--center);
+button:hover{
+    background-color: var(--Accent);
+    color: var(--bgBlack);
+    border: 1px solid var(--Main-Text) ;
+}
+
+button:focus {
+    outline: none;
+    background-color: var(--bgWhite);
+    color:var(--Main-Text)
+}
+
+/* Buttons Icon */
+.btn-icon{
+    font-size: 20px;
+    padding-right: 5px;
 }
 
 /* --------------------------------------------------- */
 /*                       NAVBAR                        */
 /* --------------------------------------------------- */
 
-
+/* --- LOGO--- */
 #logo{
     padding-left: 2rem;
     color: var(--Main-Text) ;
@@ -135,6 +151,7 @@ p{
 }
 }
 
+/* --- LARGER SCREEN NAVBAR STYLES--- */
 #navbar-style{
     background-color: var(--Accent);
     color: var(--Main-Text) ;
@@ -164,19 +181,19 @@ nav ul a {
     text-decoration-color: var(--Orange);
 }
 
-
+/* --- SIDE NAVBAR--- */
 nav .sidenav-trigger i {
     height: 56px;
     line-height: 56px;
     color: var(--Main-Text);
     font-size: 50px;
 }
-
+/* Larger Screens */
 @media only screen and (min-width: 601px){
 nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
     color: var(--Main-Text);
     font-size: 50px;
-}
+    }
 }
 
 .hvr-grow {
@@ -187,13 +204,8 @@ nav ul li.active {
     background-color: var(--Accent);
 }
 
-button{
-    background-color: var(--Main-Text);
-}
-
 .sidenav{
     background-color: var(--Accent);
-    
 }
 
 .sidenav-close{
@@ -249,7 +261,6 @@ button{
 /*                      FORMS                          */
 /* --------------------------------------------------- */
 
-
 /* input field color */
 .input-field {
     background-color: var(--Accent);
@@ -260,7 +271,7 @@ button{
 
   /* icon prefix focus color */
   .input-field .prefix {
-    color: #000;
+    color: var(--bgBlack);
   }
 
   .field-row{
@@ -277,11 +288,13 @@ button{
     color: #495057
 }
 
+/* --- INPUT FIELD LABEL --- */
 input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
     color: var(--Main-Text);
     
 }
 
+/* --- ACTIVE INPUT FIELD--- */
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
         border-bottom: 1px solid var(--Orange);
         box-shadow: 0 1px 0 0 var(--Orange);
@@ -445,7 +458,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 /* For Desktops */
 @media only screen and (min-width: 1024px) {
     .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
-        margin-top: -45px;
+        margin-top: -30px;
     }
 }
 
@@ -459,19 +472,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 .featured-content{
     padding:0px;
-}
-
-/* Featured Resource Image */
-.card .card-image img {
-    width: 100%;
-    top:-20px;
-}
-
-.featured-img{
-    background-position: 50% 50%;
-    background-size: cover;
-    width: 80%;
-    height: 200px;
 }
 
 /* Featured Resources Title */
@@ -513,6 +513,19 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     padding-right: 10px;
 }
 
+/* Featured Resource Image */
+.featured-img{
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 80%;
+    height: 200px;
+}
+
+.card .card-image img {
+    width: 100%;
+    top:-20px;
+}
+
 /* Smaller Mobile */
 @media only screen and (min-width: 375px) {
     .card .card-image img{
@@ -548,7 +561,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 @media only screen and (min-width: 1400px) {
     .card  .card-image img {
         width:60%;
-        top:-50px;
+        top:-20px;
     }
 }
 
@@ -595,9 +608,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 
 /* --------------------------------------------------- */
-/*               LOG IN & SIGN UP PAGES                */
+/*              LOG IN & REGISTER PAGES                */
 /* --------------------------------------------------- */
 
+/* GENERAL STYLES LOG IN & REGISTER PAGES */
 .userform-container{
     height: 100vh;
 }
@@ -613,6 +627,16 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 .redirect-p{
     color: var(--Orange);
     font-weight: 700;
+}
+
+/* LOG IN PAGE */
+.log-in-row{
+    margin-top: 40px;
+}
+
+/* REGISTER PAGE */
+.register-row{
+    margin-top: 40px;
 }
 
 /* --------------------------------------------------- */
@@ -1017,23 +1041,6 @@ i.left {
     padding-top: 20px;
 }
 
-
-/* DO NOT FORGET THIS!!*/
-/* Choose one of the below 3 options*/
-#resource-form-icon {
-    color: var(--Orange);
-    color: black;
-}
-
-.input-field .prefix{
-    color: var(--Orange);
-    
-}
-.input-field .prefix{
-    color: black;
-    
-}
-
 /* --------------------------------------------------- */
 /*                    PROFILE PAGE                     */
 /* --------------------------------------------------- */
@@ -1063,7 +1070,6 @@ i.left {
 
 /* To Resources Links*/
 .to-resources-link{
-    margin-bottom: 20px;
     margin-top:20px;
 }
 
@@ -1199,7 +1205,6 @@ i.left {
     font-size: 18px;
 }
 
-
 .manage-resources-h{
     font-size: 24px;
 }
@@ -1220,7 +1225,6 @@ i.left {
     padding-right: 5px;
 }
 
-
 .categories-card{
     background-color: var(--Accent);
 }
@@ -1230,20 +1234,10 @@ i.left {
     text-align: center;
 }
 
-.manage-resources-btn{
-    background-color: var(--Main-Text);
-    color: var(--Accent);
-    font-weight: 500;
-    padding-top: 8px;
-    padding-bottom: 45px;
-    padding-left: 20px;
+.featured-btn{
+    margin-top:20px;
 }
 
-.manage-resources-btn:hover{
-    background-color: var(--Accent);
-    color: var(--bgBlack);
-    border: 1px solid var(--Main-Text) ;
-}
 
 .manage-card{
     border-radius: 8px;

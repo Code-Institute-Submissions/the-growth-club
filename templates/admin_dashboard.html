@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container page-header-container  ">
+    <div class="container page-header-container ">
         <div class="row page-header-row">
             <div class="col s12 m12 l6 ">
                 <h3 class=" page-h center-align">Manage Resources Admin Dashboard</h3>
@@ -29,15 +29,14 @@
                     <p class="manage-featured-p">Here you can add featured items that appear on the home page each month.</p>
                     <p class="manage-featured-p">You can edit the featured items directly on the home page.</p>
                     
-                    <div class=" center-align">
+                    <div class="center-align featured-btn">
                         <!-- Add resource Button-->
-                        <a href="{{ url_for('add_featured_resource') }}" class="waves-effect waves-light btn manage-resources-btn"><i class="material-icons left admin-btn-icon">add</i>Add Featured Resource</a>
+                        <a href="{{ url_for('add_featured_resource') }}" class="waves-effect waves-light general-button"><i class="material-icons left btn-icon">add</i>Add Featured Resource</a>
                         <!-- Edit resource Button-->
-                        <a href="{{ url_for('get_featured_resources') }}" class="waves-effect waves-light btn manage-resources-btn"><i class="material-icons left admin-btn-icon">edit</i>Edit Featured Resource</a>
+                        <a href="{{ url_for('get_featured_resources') }}" class="waves-effect waves-light general-button"><i class="material-icons left btn-icon">edit</i>Edit Featured Resource</a>
                     </div>
                 </div>
             </div>
-        
             <!-- Category section -->
             <div class="col s12 m12 l12">
                 <div class="card manage-resources-c">
@@ -57,7 +56,7 @@
                     <p class="manage-featured-p">Here you can manage the current categories of resources.</p>
                     <!-- Add category button -->
                     <div class=" resource-btn-c center-align">
-                        <a href="{{ url_for('add_category') }}" class="waves-effect waves-light btn manage-resources-btn center-align"><i class="material-icons admin-btn-icon left">add</i>Add Category</a>
+                        <a href="{{ url_for('add_category') }}" class="waves-effect waves-light general-button"><i class="material-icons left btn-icon">add</i>Add Category</a>
                     </div>
                     <!-- Current Categories -->
                     <div class="container container-manage-cat">
@@ -100,7 +99,7 @@
                     <p class="manage-featured-p">Here you can manage the current topics of resources.</p>
                     <!-- Add topics button -->
                     <div class=" resource-btn-c center-align">
-                        <a href="{{ url_for('add_topic') }}" class="waves-effect waves-light btn manage-resources-btn center-align"><i class="material-icons left">add</i>Add Topic</a>
+                        <a href="{{ url_for('add_topic') }}" class="waves-effect waves-light general-button"><i class="material-icons left btn-icon">add</i>Add Topic</a>
                     </div>
                     <!-- Current Categories -->
                     <div class="container container-manage-cat">

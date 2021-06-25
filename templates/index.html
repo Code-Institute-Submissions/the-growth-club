@@ -61,11 +61,11 @@
         <!-- Log In button -->
         {% if session.user %}
             <div class="center-align">
-                <a href="{{ url_for('get_resources') }}" class="waves-effect waves-light btn" id="home-login-btn">View Club Resources</a>
+                <a href="{{ url_for('get_resources') }}" class="general-button">View Club Resources</a>
             </div>
               {% else %}
               <div class="center-align">
-                <a href="{{ url_for('login') }}" class="waves-effect waves-light btn" id="home-login-btn">Log In To View Resources</a>
+                <a href="{{ url_for('login') }}" class="general-button">Log In To View Resources</a>
             </div>
               {% endif %}
     </main>
