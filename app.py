@@ -23,7 +23,6 @@ mongo = PyMongo(app)
 #    USER: REGISTRATION | LOG IN | LOG OUT    #
 # ------------------------------------------- #
 
-
 # --- SIGN UP / REGISTER FUNCTIONALITY --- #
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -111,7 +110,7 @@ def logout():
     # remove user from session cookies
     session.pop("user")
     # return to log in page
-    return redirect(url_for("login"))
+    return redirect(url_for("get_featured_resources"))
 
 
 # --------------------------------------------------- #
