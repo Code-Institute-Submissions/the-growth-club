@@ -1,28 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="center-align">Add Topic</h3>
-
-<div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_topic') }}">
-        <!-- Topic name -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">folder_open</i>
-                <input id="topic_name" name="topic_name" minlength="2" maxlength="25" type="text" class="validate" required>
-                <label for="topic_name">Topic Name</label>
-            </div>
+<div class="container userform-container ">
+    <!-- Page Heading -->
+    <div class="row resource-header-row">
+        <div class="col s12 m12 l12 ">
+            <h3 class=" resource-h center-align">Add a New Topic</h3>
         </div>
-        <!-- topic name end -->
-        <!-- Submit btn-->
-        <div class="row center-align">
-            <div class="col s12 center-align">
-                <button type="submit" class="waves-effect waves-light btn manage-resources-btn ">
-                    Add Topic
-                </button>
+    </div>
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_topic') }}">
+            <!-- Topic Name Input-->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">folder_open</i>
+                    <input id="topic_name" name="topic_name" minlength="2" maxlength="25" type="text" class="validate" required>
+                    <label for="topic_name">Topic Name</label>
+                    <span class="helper-text" data-error="Type a new topic name in 3 - 20 characters" data-success="Excellent!">Type a new topic name in 3 - 20 characters.</span>
+                </div>
             </div>
-        </div>
-        <!-- Submit btn end-->
-    </form>
+            <!--Form Buttons -->
+            <div class="row center-align">
+                <div class="col s12 center-align">
+                    <!-- Cancel Button -->
+                    <a href="{{ url_for('admin_dashboard')}}" class="waves-effect waves-light btn manage-resources-btn">
+                        Cancel
+                    </a>
+                    <!-- Add Button -->
+                    <button type="submit" class="waves-effect waves-light btn manage-resources-btn">
+                        Add Topic
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
-
 {% endblock %}
