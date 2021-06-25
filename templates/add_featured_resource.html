@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- This page will only be visible to the admin -->
-<div class="container form-container ">
+<div class="container form-container">
+    <!-- Page Header -->
     <div class="row resource-header">
         <div class="col s12 m12 l6 ">
             <h3 class=" add-resource-h center-align">Add Featured Resource of the Month</h3>
@@ -10,85 +11,84 @@
             <img src="static/images/add-resources-heading.svg" alt="add a resource" class="add-resource-img">
         </div>
     </div>
-<div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_featured_resource') }}">
-        <!-- category selection -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">folder_open</i>
-                <select id="category_name" name="category_name" class="validate" required>
-                    <option value="" disabled selected>Choose Category</option>
-                    {% for category in categories %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                    {% endfor %}
-                </select for="category_name">
-                <label>Resource Category</label>
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_featured_resource') }}">
+            <!-- Category Selection -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">folder_open</i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select for="category_name">
+                    <label>Resource Category</label>
+                </div>
             </div>
-        </div>
-        <!-- category selection end -->
-        <!-- Featured Resource Name -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">create</i>
-                <input id="featured_name" name="featured_name" minlength="5" maxlength="50" type="text" class="validate" required>
-                <label for="featured_name">Featured Resource Name</label>
-                <span class="helper-text" data-error="Write between 3 - 50 characters" data-success="Awesome!">Write a description about the resource in 3 - 50 characters</span>
+            <!-- Featured Resource Name -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">create</i>
+                    <input id="featured_name" name="featured_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="featured_name">Featured Resource Name</label>
+                    <span class="helper-text" data-error="The resource name should be between 5 - 50 characters." data-success="Awesome!">Give the new featured resource a cool name that is between 3 - 50 characters.</span>
+                </div>
             </div>
-        </div>
-        <!-- Featured Resource Description -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">format_align_left</i>
-                <textarea id="featured_description" name="featured_description" minlength="5" maxlength="200"
-                    class="materialize-textarea validate" required></textarea>
-                <label for="featured_description"> Featured Resource Description</label>
-                <span class="helper-text" data-error="Write between 5 - 200 characters" data-success="Awesome!">Write a description about the resource in 5-200 characters</span>
+            <!-- Featured Resource Description -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">format_align_left</i>
+                    <textarea id="featured_description" name="featured_description" minlength="5" maxlength="200"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="featured_description"> Featured Resource Description</label>
+                    <span class="helper-text" data-error="The description should be between 5 - 200 characters" data-success="Sounds interesting!">Write a description about the featured resource in 5-200 characters</span>
+                </div>
             </div>
-        </div>
-        <!-- Date picker -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">event</i>
-                <input id="featured_date" name="featured_date" type="text" class="datepicker validate">
-                <label for="featured_date">Date</label>
-                <span class="helper-text" data-success="Awesome!">You can choose a date if it is an event</span>
+            <!-- Date picker -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">event</i>
+                    <input id="featured_date" name="featured_date" type="text" class="datepicker validate">
+                    <label for="featured_date">Date</label>
+                    <span class="helper-text" data-success="Can't wait!">You can choose a date if it is an event, otherwise you can leave it blank.</span>
+                </div>
             </div>
-        </div>
-        <!-- Resource Link -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">link</i>
-                <input id="featured_link" name="featured_link" minlength="5" type="url" class="validate" required>
-                <label for="featured_link">Link to Featured Resource</label>
-                <span class="helper-text" data-error="You must enter a valid URL for example: https://www.google.com/" data-success="Awesome!">Paste the URL of the resource here, for example: https://www.google.com/</span>
+            <!-- Resource Link -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">link</i>
+                    <input id="featured_link" name="featured_link" minlength="5" type="url" class="validate" required>
+                    <label for="featured_link">Link to Featured Resource</label>
+                    <span class="helper-text" data-error="Rather try using a valid URL for example: https://www.google.com/" data-success="Excellent!">Paste the URL of the resource here, for example: https://www.google.com/</span>
+                </div>
             </div>
-        </div>
-        <!-- Topic selection -->
-        <div class="row field-row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">label_outline</i>
-                <select id="topic_name" name="topic_name" class="validate" required>
-                    <option value="" disabled selected>Choose Topic</option>
-                    {% for topic in topics %}
-                    <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
-                    {% endfor %}
-                </select for="topic_name">
-                <label>Resource Topic</label>
+            <!-- Topic selection -->
+            <div class="row field-row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">label_outline</i>
+                    <select id="topic_name" name="topic_name" class="validate" required>
+                        <option value="" disabled selected>Choose Topic</option>
+                        {% for topic in topics %}
+                        <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
+                        {% endfor %}
+                    </select for="topic_name">
+                    <label>Resource Topic</label>
+                </div>
             </div>
-        </div>
-        <!-- Submit btn-->
-        <div class="row center-align subit-btn-div">
-            <!-- cancel button -->
-            <a href="{{ url_for('admin_dashboard')}}" class="waves-effect waves-light btn manage-resources-btn">
-                Cancel
-            </a>
-            <!-- add button -->
-            <button type="submit" class="waves-effect waves-light btn manage-resources-btn ">
-                Add Featured Resource
-            </button>
-        </div>
-        <!-- Submit btn end-->
-    </form>
-</div>
-    
+           <!-- Form Buttons -->
+            <div class="row center-align subit-btn-div">
+                <!-- Cancel Button -->
+                <a href="{{ url_for('admin_dashboard')}}" class="waves-effect waves-light btn manage-resources-btn">
+                    Cancel
+                </a>
+                <!-- Add Resource Button -->
+                <button type="submit" class="waves-effect waves-light btn manage-resources-btn ">
+                    Add Featured Resource
+                </button>
+            </div>
+            <!-- Submit btn end-->
+        </form>
+    </div>
+</div>      
 {% endblock %}

@@ -291,6 +291,13 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
         color: var(--Orange);
     }
 
+/* HELPER TEXT */
+.input-field .helper-text {
+    font-size: 12px;
+    color: var(--Main-Text);
+    font-style: italic;
+}
+
 /* --------------------------------------------------- */
 /*                   LANDING PAGE                      */
 /* --------------------------------------------------- */
