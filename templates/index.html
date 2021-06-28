@@ -6,19 +6,21 @@
             <!-- Landing Text-->
             <div class="col s12 m12 l6">
                 <h1 class="home-heading">Welcome to the Growth Club!</h1>
-                <p class="home-p"> Where you can find & share resources to learn, attend, read, watch things about UX, UI, Development and Tech for Free! </p>
+                <p class="home-p"> Where you can find & share resources to learn, attend, read and watch things about UX, UI, Development and Tech for Free! </p>
                 <a href="#featured-section" class="waves-effect waves-light btn" id="home-features-btn">View Featured Resources of the Month</a>
             </div>
             <!-- Landing Image -->
             <div class="col s12 m12 l6">
+                <div class="circle"></div>
                 <img src="static/images/growth-club-home.png" alt="people working together" class="landing-img">
+                <div class="triangle"></div>
             </div>
         </div>
     </div>
     <!-- Featured Section -->
     <main id="featured-section">
-        <h3 class="center-align">Featured Resources of the Month</h3>
-        <div class="container ">
+        <h3 class="center-align featured-h">Featured Resources of the Month</h3>
+        <div class="container featured-card-c ">
             <div class="row ">
                 <!-- Loop over all of the items from the resource collection-->
                 {% for featured_resource in featured_resources %}
@@ -61,7 +63,7 @@
         <!-- Log In button -->
         {% if session.user %}
             <div class="center-align">
-                <a href="{{ url_for('get_resources') }}" class="general-button">View Club Resources</a>
+                <a href="{{ url_for('get_resources') }}" class="general-button">View More Resources</a>
             </div>
               {% else %}
               <div class="center-align">

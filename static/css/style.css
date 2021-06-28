@@ -122,11 +122,40 @@ button:focus {
     color:var(--Main-Text)
 }
 
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+    background-color: var(--SecondaryAccent)
+}
+
 /* Buttons Icon */
 .btn-icon{
     font-size: 20px;
     padding-right: 5px;
 }
+
+/* SHAPES */
+.circle {
+    width: 40px;
+    height: 40px;
+    background: var(--Orange);
+    border-radius: 50%;
+    float: right;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    float: left;
+    margin-top: -50px;
+    margin-right: 10px;
+    margin-bottom: 100px;
+    margin-left: 20px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid var(--SecondaryAccent);
+}
+
 
 /* --------------------------------------------------- */
 /*                       NAVBAR                        */
@@ -322,7 +351,8 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     min-width: 100vw;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 8px;
     background-color: var(--Accent);
     min-height: 100vh;
 }
@@ -330,14 +360,14 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 /* For Tablets */
 @media only screen and (min-width: 768px) {
     .landing {
-        padding-top: 70px;
+        padding-top: 50px;
     }
 }
 
 /* For Desktops */
 @media only screen and (min-width: 1000px) {
     .landing {
-        padding-top: 50px;
+        padding-top: 40px;
     }
 }
 
@@ -359,6 +389,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 .home-heading{
     font-weight: 700;
     font-size: 55px;
+    margin-top:10px;
 }
 /* For Tablets */
 @media only screen and (min-width: 768px){
@@ -403,7 +434,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 /* --- LANDING PAGE IMAGE--- */
 .landing-img {
-    width: 100%;
+    width:90%;
 }
 
 /* --- LANDING PAGE CTA BUTTON--- */
@@ -422,8 +453,24 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 /* --- LANDING PAGE FEATURED SECTION--- */
 
+/* Featured Section */
 #featured-section{
-    margin-top: 60px;
+    margin-top: 40px;
+}
+
+/* Heading */
+/* Background gradient from https://cssgradient.io/*/
+.featured-h{
+    margin-bottom: 20px;
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    background: linear-gradient(90deg, rgba(254,153,2,1) 5%, rgba(254,153,2,1) 99%);
+    padding: 50px 0px 120px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: underline 3px solid var(--Main-Text)
 }
 
 /* Featured Resources Cards */
@@ -434,6 +481,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     margin-bottom: 20px;
     border-radius: 8px;
     padding: 30px;
+}
+
+.featured-card-c {
+    margin-top: -90px;
 }
 
 .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
