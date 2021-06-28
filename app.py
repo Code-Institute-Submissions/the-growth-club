@@ -604,6 +604,7 @@ def delete_account(user_id):
     # return to home page page
     return redirect(url_for("get_featured_resources"))
 
+
 # --------------------------------------------------- #
 #                    ERROR HANDELING                  #
 # --------------------------------------------------- #
