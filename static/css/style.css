@@ -458,19 +458,29 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     margin-top: 40px;
 }
 
-/* Heading */
-/* Background gradient from https://cssgradient.io/*/
-.featured-h{
+.featured-wrapper{
     margin-bottom: 20px;
     margin-top: 40px;
     font-size: 24px;
     font-weight: 600;
-    background: linear-gradient(90deg, rgba(254,153,2,1) 5%, rgba(254,153,2,1) 99%);
-    padding: 50px 0px 120px;
+    background-image:url(/static/images/form-heading-bg.svg);
+    padding: 50px 0px 100px;
     border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-decoration: underline 3px solid var(--Main-Text)
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Heading */
+/* Background gradient from https://cssgradient.io/*/
+.featured-h{
+    font-size: 24px;
+    font-weight: 600;
+    padding: 30px 0px 30px 0px ;
+    font-weight: 500;
+    background-color: var(--AccentTransparent);
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 /* Featured Resources Cards */
