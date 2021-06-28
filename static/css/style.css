@@ -471,7 +471,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 
 /* Heading */
-/* Background gradient from https://cssgradient.io/*/
 .featured-h{
     font-size: 24px;
     font-weight: 600;
@@ -1119,7 +1118,7 @@ i.left {
 
 /* Profile Header */
 .profile-h{
-    background-color: var(--Accent);
+    
     border-radius: 5px;
     color: var(--Main-Text);
     text-transform:capitalize;
