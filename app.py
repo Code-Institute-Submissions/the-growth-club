@@ -110,7 +110,7 @@ def logout():
     flash("You have been logged out")
     # remove user from session cookies
     session.pop("user")
-    # return to log in page
+    # return to home page page
     return redirect(url_for("get_featured_resources"))
 
 
@@ -601,13 +601,14 @@ def delete_account(user_id):
     else:
         flash("The password you entered was incorrect. Please try again!")
         return redirect(url_for("profile", user=user.get("username")))
-
+    # return to home page page
+    return redirect(url_for("get_featured_resources"))
 
 # --------------------------------------------------- #
 #                    ERROR HANDELING                  #
 # --------------------------------------------------- #
 
-
+# -- 404 ERROR --- #
 @app.errorhandler(404)
 def page_not_found(e):
     """
@@ -617,6 +618,7 @@ def page_not_found(e):
     return render_template('errors/404.html'), 404
 
 
+# -- 500 ERROR --- #
 @app.errorhandler(500)
 def not_found_server(e):
     """
