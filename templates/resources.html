@@ -70,12 +70,14 @@
                             <p class="resource-by">created by: {{ resource.created_by }}</p>
                         </div>
                         <!-- Buttons to manage resource-->
+                        {% if session.user|lower == resource.created_by|lower or session.user|lower == "admin"|lower %}
                         <div class="col m4 l6 right-align">
                             <!-- Delete Btn-->
                             <a href="{{ url_for('delete_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="delete-btn"><i class="material-icons left">delete_outline</i>Delete</a>
                             <!-- Edit Btn-->
                             <a href="{{ url_for('edit_resource', resource_id=resource._id) }}" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

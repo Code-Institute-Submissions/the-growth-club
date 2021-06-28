@@ -59,7 +59,9 @@
           {% if session.user %}
             <li class="center-align"><a href="{{ url_for('get_resources') }}">RESOURCES</a></li>
             <li class="center-align"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+            {% if session.user|lower == "admin"|lower %}
             <li class="center-align"><a href="{{ url_for('admin_dashboard') }}">ADMIN DASHBOARD</a></li>
+            {% endif %}
             <li class="center-align"><a href="{{ url_for('logout') }}">LOG OUT</a></li>
           {% else %}
             <li class="center-align"><a href="{{ url_for('login') }}">LOG IN</a></li>
