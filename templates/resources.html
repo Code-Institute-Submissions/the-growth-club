@@ -87,7 +87,15 @@
 </main>
 <!-- Message if no search results found-->
 {% else %}
-    <h3 class="center-align">No Results Found</h3>
+<section class="container no-results-c">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <h3 class="center-align">No Results Found. </h3>
+            <p class="center-align">Maybe try and search again.</p>
+        </div>
+    </div>
+</section>
+    
 {% endif %}
 {% endblock %}
     
