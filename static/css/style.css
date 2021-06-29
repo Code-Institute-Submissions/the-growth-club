@@ -92,6 +92,7 @@ p{
     font-weight: 600;
     font-size:14px;
     margin-top:10px;
+    margin-right: 10px;
 }
 
 .general-button:hover{
@@ -107,13 +108,11 @@ button{
     color: var(--Accent);
     font-weight: 600;
     font-size:14px;
-    margin-left: 10px;
 }
 
 button:hover{
     background-color: var(--Accent);
     color: var(--bgBlack);
-    border: 1px solid var(--Main-Text) ;
 }
 
 button:focus {
@@ -1011,7 +1010,7 @@ i.left {
         }
     }
     
-    @media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
     /* For Laptop: */
     .add-resource-h{
         padding-top: 30px;
@@ -1025,7 +1024,7 @@ i.left {
         }
     }
     
-    @media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1400px) {
     /* For 4K: */
     .add-resource-h{
         padding-left: 30px;
@@ -1101,6 +1100,10 @@ i.left {
 }
 .dropdown-content li>a, .dropdown-content li>span:hover {
     color: var(--Orange);
+}
+
+.datepicker-day-button{
+    border:none;
 }
 
 .subit-btn-div{
