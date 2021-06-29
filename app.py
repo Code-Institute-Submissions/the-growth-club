@@ -512,31 +512,34 @@ def profile(username):
     user = mongo.db.users.find_one(
         # take the session user's username from Mongo
         {"username": session["user"]})
-
-    # check if session['user'] cookie is truthy
-    if session["user"]:
-        user_resources = []
-        for resource in user['bookmarks']:
-            user_resource = mongo.db.resources.find_one({'_id': resource})
-            user = mongo.db.users.find_one({
-                '_id': ObjectId(user_resource['created_by'])
-            })
-            category = mongo.db.categories.find_one({
-                '_id': ObjectId(user_resource['category_name'])
-            })
-            topic = mongo.db.topics.find_one({
-                '_id': ObjectId(user_resource['topic_name'])
-            })
-            user_resource['created_by'] = user['username']
-            user_resource['category_name'] = category['category_name']
-            user_resource['topic_name'] = topic['topic_name']
-            user_resources.append(user_resource)
-        # render appropriate profile template
-        return render_template("profile.html", username=username,
-                               resources=user_resources)
-
+    # if the user has a bookmark try the execute the below
+    try:
+        # check if session['user'] cookie is truthy
+        if session["user"]:
+            user_resources = []
+            for resource in user['bookmarks']:
+                user_resource = mongo.db.resources.find_one({'_id': resource})
+                user = mongo.db.users.find_one({
+                    '_id': ObjectId(user_resource['created_by'])
+                })
+                category = mongo.db.categories.find_one({
+                    '_id': ObjectId(user_resource['category_name'])
+                })
+                topic = mongo.db.topics.find_one({
+                    '_id': ObjectId(user_resource['topic_name'])
+                })
+                user_resource['created_by'] = user['username']
+                user_resource['category_name'] = category['category_name']
+                user_resource['topic_name'] = topic['topic_name']
+                user_resources.append(user_resource)
+            # render appropriate profile template
+            return render_template("profile.html", username=username,
+                                   resources=user_resources)
+    # if the user has no bookmarks try render their profile
+    except KeyError:
+        pass
     # return profile page with user's unique name
-    return redirect(url_for("login"))
+    return render_template("profile.html", username=username)
 
 
 # --- BOOKMARK A RESOURCE FUNCTIONALITY --- #
