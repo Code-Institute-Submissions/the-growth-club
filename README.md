@@ -86,6 +86,43 @@ I have used Balsamic to create low-fidelity wireframes and used Figma to create 
 **Medium Fidelity**
 [image]
 
+## Data Structure
+A database structure was designed to be specifically suited for The Growth Club. It was important to make sure the nesting relationships between the collections and the keys worked logically. The database was created as a usable non-relational database where data is stored in a consistent and well-organised manner. To maintain a database configuration in a single location where it can be changed easily, ObjectId's are used in several collections to ensure key values are more accurate by using the ObjectId's rather than strings.
+
+[MongoDB](https://www.mongodb.com/) is utilised to store data for The Growth Club. It is a non-relational database-backed Flask web application that allows users to easily create, locate, display, edit and delete data records on the Growth Club web app.
+
+The data structure outline:
+![Data Structure](documentation/Images/Data_structure.png)
+
+### Collections
+
+- **Categories collection**
+    - This collection holds the category_name key which is a string datatype. 
+    - This field data is passed to other collections by utilising the ObjectID rather than the string above.
+
+- **Featured Resources collection**
+    - This collection holds several keys for the featured section on the landing page which is only editable by the admin user.
+    - The data keys include the category name, resource name, description, date of an event, link to the resource, topic name and a featured image. 
+    - All the above keys are strings except for the category name and topic name as the ObjectID's are used from the categories and topics collections respectively. 
+
+- **Resources collection**
+    - This collection holds several keys for the resource page where the user can view all the resources in the database.
+    - The data keys include the category name, resource name, description, date of an event, link to the resource, topic name and a created by. 
+    - All the above keys are strings except for the category name, topic name and created by as the ObjectID's are used from the categories, topics and users collections respectively. 
+    - The data from this collection is also used on the user's profile if they have bookmarked a particular resource
+
+- **Topics collection**
+    - This collection holds the topic_name key which is a string datatype. 
+    - This field data is passed to other collections by utilising the ObjectID rather than the string above.
+
+- **Users collection**
+    - This collection holds several keys about the user which is provided by the user on the register page and used again on the log in page.
+    - The data keys include the username, email, password and bookmarks. 
+    - All the above keys are strings except for the bookmarks key as this is an array datatype. 
+    - The bookmarks key is created if the user has bookmarked a resource on the resources page. The resource ObjectID is then used as the value for the item in the array.
+___
+<br>
+
 ## Features
 - There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
 
@@ -168,11 +205,11 @@ You have to create an account with MongoDB.
 - From the application's repository, click the "code" button and download the zip of the repository. Alternatively, you can clone the repository using the following line in your terminal: git clone https://github.com/byIlsa/story-chain.git
 - Access the folder in your terminal window and install the application's required modules using the following command: pip3 install -r requirements.txt
 - Sign-in or sign-up to MongoDB and create a new cluster
-- ◦ Within the Sandbox, click the collections button and after click Create Database (Add My Own Data) called story_chain
-- ◦ Set up the following collections: users, stories and chains. Click [here](https://github.com/byIlsa/story-chain#database-structure) to see the exact Database Structure
-- ◦ Under the Security menu on the left, select Database Access.
-- ◦ Add a new database user, and keep the credentials secure
-- ◦ Within the Network Access option, add IP Address 0.0.0.0
+- Within the Sandbox, click the collections button and after click Create Database (Add My Own Data) called story_chain
+- Set up the following collections: users, stories and chains. Click [here](https://github.com/byIlsa/story-chain#database-structure) to see the exact Database Structure
+- Under the Security menu on the left, select Database Access.
+- Add a new database user, and keep the credentials secure
+- Within the Network Access option, add IP Address 0.0.0.0
 - In your IDE, create a file containing your environmental variables called [env.py](http://env.py/) at the root level of the application. It will need to contain the following lines and variables: import os
     ```
     - os.environ["PORT"] = "5000"
