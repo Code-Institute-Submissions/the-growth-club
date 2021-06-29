@@ -1129,8 +1129,16 @@ i.left {
 }
 
 /* To Resources Links*/
+
+.to-resources-link{
+    margin-top:40px;
+}
+
+@media only screen and (min-width: 1000px) {
+    /* For Laptop: */
 .to-resources-link{
     margin-top:20px;
+}
 }
 
 /* Bookmarked Items*/

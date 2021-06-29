@@ -10,11 +10,15 @@
 </div>
 <main class="container profile-container center-align">
   <div class="row center-align">
-    <div class="col s12 m12 l12">
+    <div class="col s12 m12 l6">
       <!-- Links to other pages -->
-      <div class="center-align to-resources-link">
+      <div class="to-resources-link center">
         <!-- Link to resources page -->
         <a href="{{ url_for('get_resources') }}" class="general-button">View Club Resources</a>
+      </div>
+    </div>
+    <div class="col s12 m12 l6">
+      <div class=" to-resources-link center">
         <!-- Link to featured resources page-->
         <a href="{{ url_for('get_featured_resources') }}" class="general-button">View Featured Resources</a>
       </div>
