@@ -12,6 +12,9 @@ This project is part of my Code Institute Full Stack Software Development studie
         * [Requirements](#requirements)
         * [Expectations](#expectations)
     * [User Stories](#user-stories)
+    * [User Flow](#user-flow)
+    * [Log In Sign Up Flow](#log-in-sign-up-flow)
+* [UI Design](#ui-design) 
     * [Design](#design)
         * [Icons](#icons)
         * [Colours](#colours)
@@ -95,35 +98,49 @@ This website project will target users who are interested in viewing and sharing
 - As an Admin User, I want to be able to bookmark resources.
 
 <a></a>
-### **User flow**
+### **User Flow**
 In the planning phase, I created a User flow to determine the main paths the user might take on the web app. 
 ![User flow](documentation/Images/userflow.png)
 
-### Log In & Sign Up Flow
+<a></a>
+### **Log In Sign Up Flow**
 In the planning phase, I created a Login and Sign up/Register flow to determine the main paths the user might take on the web app to manage their status on the website. The success and failure messages differ slightly on the deployed app as the copy was changed during testing with users to be more clear 
 ![image](documentation/Images/login_signup_flow.png)
 ___
 <br>
 
-## UI Design
-### Font
-- I used Google Fonts to explore the various options.
-- The project has a main font of Roboto as it is easy to read and modern
+<a></a>
+## **UI Design**
+### **Font**
+- I used [Google Fonts](https://fonts.google.com/) to explore the various options.
+- The project has the main font of [Roboto](https://fonts.google.com/specimen/Roboto) as it is easy to read and modern
 - “Sans-Serif” is used as the default backup font in cases where these fonts have difficulty loading.
 
-### Colour Scheme
-- The colour scheme is based on creating an environment with energy, excitement and warmth.
-- I used Coolors to map out my colour scheme.
-- The logo was created with Off-Black and underlined with Orange
-- The navbar is created with cream
-- The call to action buttons black
-- All colours were checked with WebAIM [https://webaim.org/resources/contrastchecker/](https://webaim.org/resources/contrastchecker/) to check the accessibility of the colours and present a pass
-[image]
+<a></a>
+### **Colour Scheme**
+- The colour scheme is based on creating an environment with energy, excitement and warmth;
+- The logo was created with "Raisin Black" and underlined with "Yellow Orange Color Wheel";
+- The navbar is created with "Cultured";
+- The call to action buttons background is created with "Cultured";
+- All colours were checked with WebAIM [https://webaim.org/resources/contrastchecker/](https://webaim.org/resources/contrastchecker/) to check the accessibility of the colours and present a pass.
 
-### Icons
-I used icons from Materialized and Font Awesome library. The icons that were used were are all .... themed or used to give meaning to a certain section.
+#### **Colour Palette**
+Coolors was used to map out my colour scheme.
+![Colour Palette](documentation/Images/coolors_colour_palette.png)
+- #00000: This colour is used for borders of buttons and where the text needed to stand out more because of the background.
+- #1A222D: This colour is used as the main text colour and where the background should completely black like the CTA buttons.
+- #FE9902: This colour is used as the primary colour and sets the tone for the website. It is used to show if something is important or show the user where they are.
+- #FFC795: This colour is used as a secondary accent colour where something is highlighted.
+- #FADEB4: This colour is used as a tertiary accent colour where something is highlighted but should not stand out as much.
+- #F1F1F1: This colour is used as an accent colour and mainly used for the landing page background, resource cards, navbar and footer.
+- #FFFEFC: This colour is used as the main background colour for the website and for text where elements have darker backgrounds.
 
-## Wireframes
+<a></a>
+### **Icons**
+- Majority of icons from the Materialized Icons library was used unless there was not an appropriate icon available then the Font Awesome library is used. 
+
+<a></a>
+## **Wireframes**
 I have used Balsamic to create low-fidelity wireframes and used Figma to create medium-fidelity wireframes. First I created a basic wireframe for mobile, for tablet and desktop. The website will be easy to navigate by using the navigation bar or by scrolling down the page. I have included a scroll-up button for user convenience.There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
 ### Wireframe images:
 **Sketches**
