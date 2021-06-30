@@ -16,9 +16,10 @@ This project is part of my Code Institute Full Stack Software Development studie
     * [Log In Sign Up Flow](#log-in-sign-up-flow)
 * [UI Design](#ui-design) 
     * [Design](#design)
+        * [Font](#font)
+        * [Colour Scheme](#colour-scheme)
         * [Icons](#icons)
-        * [Colours](#colours)
-        * [Logo](#logo)
+        * [Structure](#structure)
 * [Wireframes](#wireframes)
 * [Features](#features)
     * [Existing Features](#existing-features)
@@ -140,8 +141,15 @@ Coolors was used to map out my colour scheme.
 - Majority of icons from the Materialized Icons library was used unless there was not an appropriate icon available then the Font Awesome library is used. 
 
 <a></a>
+### **Structure**
+The overall structure that was used is the Materialize framework. Materialize provides various elements of CSS and Javascript which is very helpful to keep a good structure on your page.
+___
+<br>
+
+<a></a>
 ## **Wireframes**
 I have used Balsamic to create low-fidelity wireframes and used Figma to create medium-fidelity wireframes. First I created a basic wireframe for mobile, for tablet and desktop. The website will be easy to navigate by using the navigation bar or by scrolling down the page. I have included a scroll-up button for user convenience.There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
+
 ### Wireframe images:
 **Sketches**
 [image]
