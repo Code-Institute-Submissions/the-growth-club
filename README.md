@@ -148,15 +148,36 @@ ___
 
 <a></a>
 ## **Wireframes**
-I have used Balsamic to create low-fidelity wireframes and used Figma to create medium-fidelity wireframes. First I created a basic wireframe for mobile, for tablet and desktop. The website will be easy to navigate by using the navigation bar or by scrolling down the page. I have included a scroll-up button for user convenience.There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
+I have used Balsamic to create low-fidelity wireframes and used Figma to create medium-fidelity wireframes. First I created a basic wireframe for mobile, for tablet and desktop. The website will be easy to navigate by using the navigation bar or by scrolling down the page. I have included a scroll-up button for user convenience. There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
 
-### Wireframe images:
-**Sketches**
-[image]
-**Low Fidelity**
-[image]
-**Medium Fidelity**
-[image]
+### **Wireframe images**
+#### **Sketches**
+Sketches were part of the first phase of the design for this project. Sketches with pen and paper are used to roughly draft the flow and the structure of the project without having to focus on colour, fonts and the correct layout.
+- [Sketch](documentation/wireframes/sketch.png)
+
+#### **Low Fidelity**
+[Balsamiq](https://balsamiq.com/) was used to create low-fidelity wireframes. Low-fidelity designs were utilised to make the design process simple and test low-tech concepts. When designing a low-fi prototype, the font types and colours are ignored to focus on the design of the project itself.
+
+*Guest User*
+- [Landing Page](documentation/wireframes/guest_user_landing_page.png)
+- [Log In Page](documentation/wireframes/guest_user_login_page.png)
+- [Registration Page](documentation/wireframes/guest_user_register_page.png)
+
+*Registered User*
+- [Landing Page](documentation/wireframes/registered_user_landing_page.png)
+- [Profile Page](documentation/wireframes/registered_user_profile_page.png)
+- [Resources Page](documentation/wireframes/registered_user_resources_page.png)
+
+*Admin User*
+- [Landing Page](documentation/wireframes/admin_user_landing_page.png)
+- [Manage Resources Admin Dashboard Page](documentation/wireframes/admin_user_manage_dashboard_page.png)
+
+#### **Medium Fidelity**
+[Figma](https://www.figma.com/) was used to create medium-fidelity wireframes. Medium-fidelity designs were utilised to start experimenting with colours, fonts and images.
+- [Mobile & Tablet](documentation/wireframes/mobile_design.png)
+- [Desktop](documentation/wireframes/desktop_design.png)
+___
+<br>
 
 ## Data Structure
 A database structure was designed to be specifically suited for The Growth Club. It was important to make sure the nesting relationships between the collections and the keys worked logically. The database was created as a usable non-relational database where data is stored in a consistent and well-organised manner. To maintain a database configuration in a single location where it can be changed easily, ObjectId's are used in several collections to ensure key values are more accurate by using the ObjectId's rather than strings.
