@@ -2,61 +2,108 @@
 
 This project is part of my Code Institute Full Stack Software Development studies, specifically the Data-Centric Development module. The objective for this milestone project is to "Create a web application that allows users to view and share info on events, tools, articles and videos about UX, Software Development and Tech ", using the CRUD operations of Create, Read, Update, and Delete for info.
 
-## User Experience
-This website project will target users who are interested in viewing and sharing information about UX, Design, Software Development and Tech. The priority focus is on providing an easy to navigate and responsive website that allows users to be a part of a community with collection of resources such as articles, tools, videos and events.
+<a></a>
+## Table of contents 
+* [UX](#ux)
+    * [User Persona](#user-persona)
+    * [User Goals](#user-goals) 
+    * [Site Owners Goals](#site-owners-goals) 
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
+        * [Requirements](#requirements)
+        * [Expectations](#expectations)
+    * [User Stories](#user-stories)
+    * [Design](#design)
+        * [Icons](#icons)
+        * [Colours](#colours)
+        * [Logo](#logo)
+* [Wireframes](#wireframes)
+* [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features to be implemented](#features-to-be-implemented)
+* [Technologies used](#technologies-used)
+    * [Languages](#languages)
+    * [Libraries](#libraries)
+    * [Tools](#tools)
+    * [Design](#design)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-### User Goals
-- View featured **resource posts per month** created by the Growth Club
-- View **resource posts** created by the Growth Club community
-- View, edit, search, delete **resource posts** created by them
-- View, edit, search, delete **resource posts** created by them
+<a name="ux"></a>
+## **UX**
+<a></a>
+### **User Persona**
+This website project will target users who are interested in viewing and sharing information about UX, Design, Software Development and Tech. The priority focus is on providing an easy to navigate and responsive website that allows users to be a part of a community with a collection of resources such as articles, tools, videos and events.
 
-### Site Owners Goals
+<a></a>
+### **User Goals**
+- View featured **resources posts per month** created by the Growth Club;
+- View **resource posts** created by the Growth Club community;
+- View, edit, search, delete **resource posts** created by them;
+- The website has to work well on all kinds of devices like mobile phones, tablets and desktops.
+
+<a></a>
+### **Site Owners Goals**
 - Be the “go-to” place for users in the UX, design, software and tech industry for resources
 - To create a community for users in the UX, design, software and tech industry.
 
-### User Requirements and Expectations
-#### Requirements
+<a></a>
+### **User Requirements and Expectations**
+#### **Requirements**
 - Easy to navigate by using the navigation menu.
 - Relevant content for each category.
 - Appealing visual elements.
 - Easy way to find resources relevant to the user.
-
-#### Expectations
+#### **Expectations**
 - When clicking on links (resource and social media links), expect the page to open in a separate browser.
 - Expect that the navigation links work properly to take the user where they intended to go.
 - Expect to be able to add, edit or delete items added by the user.
 - Feedback whether or not registered, logged in, logged out.
 
-### User Stories
-*Guest User:*
-- As a Generic User, I want to view the featured **resource posts** of the month to get a sense of the value if I sign up as a registered user and they don't have to search for it.
-- As a Guest User, I want to be met with a visually appealing and easy to read layout of created items.
-- As a Guest user, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering.
-- As a Guest User, I want to be able to sign-up to create and edit my own **resource posts**.
-- As a Guest User, I want to be able to contact someone in the event something is wrong with the app.
+<a></a>
+### **User Stories**
+*Guest User*
+- As a Guest User, I want to view the featured **resources posts** of the month to get a sense of the value if I sign up as a registered user and they don't have to search for it;
+- As a Guest User, I want to be met with a visually appealing and easy to read layout of created items;
+- As a Guest User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
+- As a Guest User, I want to be able to sign-up to create and edit my own **resource posts**;
+- As a Guest User, I want to be able to get in contact via social media if I like the site or have suggestions.
 
 *Registered User*
-- As a Registered User, I want to view the featured items of the month so that I don't have to search for them.
-- As a Registered User, I want to be met with a visually appealing and easy to read layout of created items.
-- As a Guest user, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering
-- As a Registered User, I want to be able to create, edit and delete the **resource posts** I have added
-- As a Registered User, I want to be able to view **resource posts** added by other members of the community
-- As a Registered user, I would like to be able to search the site so that I can easily find resources that I am looking for
-- As a Registered User, I want to be able to log out of my account.
-- As a Registered User, I want to have a method of contacting someone in the event something is not functioning as expected in the application.
+- As a Registered User, I want to view the featured items of the month so that I don't have to search for them;
+- As a Registered User, I want to be met with a visually appealing and easy to read layout of created items;
+- As a Registered User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
+- As a Registered User, I want to be able to log back into the Growth Club with my initial latest credentials;
+- As a Registered User, I want to be able to create, edit and delete the **resource posts** I have added;
+- As a Registered User, I want to be able to view **resource posts** added by other members of the community;
+- As a Registered User, I would like to be able to search the site so that I can easily find resources that I am looking for;
+- As a Registered User, I want to be able to bookmark resources I find interesting;
+- As a Registered User, I want to be able to change my password on my profile;
+- As a Registered User, I want to be able to delete my account and profile;
+- As a Registered User, I want to be able to log out of my account;
+- As a Registered User, I want to be able to get in contact via social media if I like the site or have suggestions.
 
 *Admin User*
-- As an Admin I would like the ability to **log in to an admin account** so that I can **create resource posts**
-- As an Admin I would like the ability to **edit any resource posts** so that I can **maintain the site to stay updated**
-- As an Admin I would like the ability to **delete any resource posts** so that I can **remove outdated information.**
+- As an Admin User, I would like the ability to **log in to an admin account** so that I can **create and edit featured resources posts** for each month;
+- As an Admin User, I want to be able to view all **resource posts** added by other members of the community;
+- As an Admin User, I would like the ability to ** to create resource posts** without restrictions;
+- As an Admin User, I would like the ability to **edit any resource posts** so that I can **maintain the site to stay updated**;
+- As an Admin User, I would like the ability to ** to delete any resource posts** so that I can **remove outdated information**;
+- As an Admin User, I would like to be able to search the site so that I can easily find resources that I am looking for;
+- As an Admin User, I want to be able to log out of my account;
+- As an Admin User, I want to be able to change my password on my profile;
+- As an Admin User, I want to be able to bookmark resources.
 
-### User flow
-I created a User flow to determine the main paths the user might take on the web app.
-[image]
+<a></a>
+### **User flow**
+In the planning phase, I created a User flow to determine the main paths the user might take on the web app. 
+![User flow](documentation/Images/userflow.png)
 
 ### Log In & Sign Up Flow
-[image]
+In the planning phase, I created a Login and Sign up/Register flow to determine the main paths the user might take on the web app to manage their status on the website. The success and failure messages differ slightly on the deployed app as the copy was changed during testing with users to be more clear 
+![image](documentation/Images/login_signup_flow.png)
+___
+<br>
 
 ## UI Design
 ### Font
