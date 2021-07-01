@@ -956,6 +956,51 @@ i.left {
     height: 100vh;
 }
 
+.delete-resource-modal-content{
+    text-align: center;
+}
+
+.delete-icon{
+    color: var(--Orange);
+    font-size: 100px;
+}
+
+.modal{
+    border-radius: 10px;
+}
+
+.modal-btns{
+    margin:30px;
+}
+
+.modal-cancel-btn{
+    background-color: var(--bgWhite);
+    color: var(--Main-Text);
+    font-weight: 600;
+    border: 1px solid var(--Orange);
+    margin-right: 20px;
+}
+
+.modal-cancel-btn:hover{
+    background-color: var(--SecondaryAccent);
+    color: var(--Main-Text);
+    border: none;
+}
+
+.modal-delete-btn{
+    background-color: var(--bgWhite);
+    color: var(--Main-Text);
+    font-weight: 600;
+    border: 1px solid var(--Orange);
+    margin-right: 20px;
+}
+
+.modal-delete-btn:hover{
+    background-color: var(--SecondaryAccent);
+    color: var(--Main-Text);
+    border: none;
+}
+
 /* --------------------------------------------------- */
 /*                 ADD RESOURCES PAGE                  */
 /* --------------------------------------------------- */
