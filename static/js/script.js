@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Sidenav Open and close
-    $(".sidenav").sidenav({edge: "right"});
+    $(".sidenav").sidenav({edge: "left"});
     // Form select
     $("select").formSelect();
     // Tabs for profile
