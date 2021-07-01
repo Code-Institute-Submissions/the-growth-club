@@ -22,9 +22,8 @@ This project is part of my Code Institute Full Stack Software Development studie
         * [Structure](#structure)
 * [Wireframes](#wireframes)
 * [Data Structure](#data-structure)
-* [Features](#features)
-    * [Existing Features](#existing-features)
-    * [Features to be implemented](#features-to-be-implemented)
+* [Existing Features](#existing-features)
+* [Future Features](#future-features)
 * [Technologies used](#technologies-used)
     * [Languages](#languages)
     * [Libraries](#libraries)
@@ -219,9 +218,8 @@ ___
 <br>
 
 <a></a>
-## **Features**
+## **Existing Features**
 - There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
-
 ### Elements on every page
 #### Header
 1. Logo
@@ -368,8 +366,11 @@ ___
 
 ### 404 & 500 Page
 - The custom 404 & 500 Pages contains an image and text that makes the user understand they have encountered an error. There is a button to return the user to the Growth Club Home page.
+___
+<br>
 
-### Features to be implemented
+<a></a>
+## **Future Features**
 - Have a 'forgot password' functionality on the log in page.
 - Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc.
 - Events in the form of a calendar to visually represent events and not have it be part of the general resources.
@@ -377,7 +378,73 @@ ___
 - User can search by category and topic.
 - User can filter resources by category or topic.
 
-## Technologies Used
+<a></a>
+## **Technologies Used**
+
+### **Languages**
+- This project uses HTML, CSS, JavaScript and Python programming languages.
+
+### **Libraries & Frameworks**
+- [Materialize](https://materializecss.com/)
+    - The project uses **Materialize** to simplify the structure of the website and help make the website responsive easy to do. The majority of the icons used in this project are from the Materlize library.
+- [Font Awesome](https://fontawesome.com/)
+    - Where the Materialize icon library did not have a usable icon, the fallback icon library used was the Fontawesome for the icons.
+- [Google Fonts](https://fonts.google.com/)
+    - The project uses **Google fonts** to style the website fonts.
+- [Hover.css](https://cdnjs.com/libraries/hover.css/2.1.0)
+    - The project uses **Hover.css** to apply hover effects to the projects navbar.
+- [Pymongo](https://pypi.org/project/pymongo/) and [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) 
+    - To connect Python and Flask to the MongoDB database
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/) 
+    - To construct and render pages.
+- [MongoDB Atlas](https://www.mongodb.com/)
+    - Non-relational database hosting service used.
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ )
+    - A WSGI web application library used for passwords for Python.
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+    - Templating language for Python, to simplify displaying data from the backend of this project smoothly and effectively in HTML.
+- [jQuery](https://jquery.com/)
+    - JavaScript library
+
+### **Tools**
+- [Gitpod](https://www.gitpod.io/)
+    - IDE used to build the website
+- [Github](https://github.com/)
+    - Used to host the repository of all previous versions of the build and linked to Heroku to push the latest changes to the deployed build version held there.
+- [Heroku](https://www.heroku.com/)
+    - A cloud platform as a service enabling deployment of the site.
+- [Responsinator](http://www.responsinator.com/)
+    - The project used **Responsinator** to determine if the site was responsive to various devices.
+- [Am I Responsive](http://ami.responsivedesign.is/#)
+    - The project used **Am I Responsive** to view images of the website on different devices if the site was responsive to various devices.
+- Chrome DevTools
+    - For this project, the web developer tools built directly into the Google Chrome browser was used to help edit pages and diagnose problems quickly.
+- [W3C Markup Validator](https://validator.w3.org/)
+    - For testing HTML code
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    - For testing CSS code
+- [JSHint Validator](https://jshint.com/)
+    - For detecting errors and potential problems in your JavaScript code
+- [Link Checker](https://validator.w3.org/checklink)
+    - For checking all links on the website and see if all links work
+- Lighthouse in Google dev tool
+    - For testing the performance of the website
+- [TestProject](https://testproject.io/)
+    - For automated testing of website
+- [TinyPNG](https://tinypng.com/)
+    - To optimise images for website loading time.
+- [Python Tester](https://extendsclass.com/python-tester.html) 
+    - Python code syntax checker
+- [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) 
+    - Validates all tags are opening and closing correctly.
+- [Google Mobile-Friendly Test Mobile](https://search.google.com/test/mobile-friendly)
+    - To check if site is mobiole friendly
+
+### **Design**
+- [Balsamiq](https://balsamiq.com/)
+    - To design low fidelity mockups
+- [Figma](https://www.figma.com/)
+    - To design a medium-fidelity mockup
 
 ## Testing
 
