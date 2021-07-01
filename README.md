@@ -441,6 +441,8 @@ ___
     - Validates all tags are opening and closing correctly.
 - [Google Mobile-Friendly Test Mobile](https://search.google.com/test/mobile-friendly)
     - To check if site is mobiole friendly
+- [Grammerly](https://www.grammarly.com/) 
+    - To check spelling & grammer
 
 ### **Design**
 - [Balsamiq](https://balsamiq.com/)
@@ -450,11 +452,13 @@ ___
 ___
 <br>
 
+<a></a>
 ## Testing
 Testing information can be found in separate [TESTING.md file](documentation/testing/TESTING.md)
 ___
 <br>
 
+<a></a>
 ## Deployment
 This project was developed using the Gitpod IDE, committed to git and pushed to GitHub using the built-in function within Gitpod. After writing the code, committing and pushing it to GitHub. I've deployed this project to Heroku and used "git push Heroku master" to make sure my pushes to GitHub were also made to Heroku.
 
@@ -506,20 +510,33 @@ You have to create an account with MongoDB.
 - Scroll down to the "deployment method"-section. Choose "Github" for automatic deployment.
 - From the inputs below, make sure your GitHub user is selected, and then enter the name for your repo. Click "search". When it finds the repo, click the "connect" button.
 - Scroll back up and click "settings".
-    - Scroll down and click "Reveal config vars".
+- Scroll down and click "Reveal config vars".
 - Set up the same variables as in your [env.py](http://env.py/) (IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME): !You shouldn't set the DEBUG variable is under config vars, only in your [env.py](http://env.py/) to prevent DEBUG from being active on the live website.
-    - PORT = 5000 SECRET_KEY = YOUR_SECRET_KEY MONGO_URI = YOUR_MONGODB_URI MONGO_DBNAME = DATABASE_NAME
+- PORT = 5000 SECRET_KEY = YOUR_SECRET_KEY MONGO_URI = YOUR_MONGODB_URI MONGO_DBNAME = DATABASE_NAME
 - Scroll back up and click "Deploy". Scroll down and click "Enable automatic deployment".
-- click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
+- Click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
 - To commit your changes to the branch, use git push to push your changes.
+___
+<br>
 
-## Credits
+<a></a>
+## **Credits**
 
-### Content
-- The copy and text for this website was created by Franciska Du Toit
+### **Content**
+- The copy and text for this website was created by Franciska Du Toit.
 
-### Media
-- Images used are from Undraw
+### **Media**
+- All Images used are from [Undraw](https://undraw.co/)
+- Background svg image from [Haikei](https://app.haikei.app/)
 
-### Code
-Acknowledgements
+### **Code**
+- HTML for Shapes adapted from [CSS Tricks](https://css-tricks.com/the-shapes-of-css/)
+- HTML & JS for scroll up function adapted from [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
+- HTML for the navbar and form adapted from [Materialize](https://materializecss.com/)
+- HTML for modals adapted from [Materialize](https://materializecss.com/)
+- CSS for smooth scroll adapted from [CSS Tricks](https://css-tricks.com/snippets/jquery/smooth-scrolling/*/)
+- JQuery for validation from Task Manager walkhtrough project by Code Institute
+- JQuery for navbar menu active item adapted from [InfoWorld](https://www.infoworld.com/article/3304440/setting-an-active-menu-item-based-on-the-current-url-with-jquery.html)
+
+### **Acknowledgements**
+- Thanks to my mentor Antonio Rodriquez for guiding me throughout this project.
