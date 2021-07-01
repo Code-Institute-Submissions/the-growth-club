@@ -378,6 +378,8 @@ ___
 - User can search by category and topic.
 - User can filter resources by category or topic.
 
+___
+<br>
 <a></a>
 ## **Technologies Used**
 
@@ -445,8 +447,13 @@ ___
     - To design low fidelity mockups
 - [Figma](https://www.figma.com/)
     - To design a medium-fidelity mockup
+___
+<br>
 
 ## Testing
+Testing information can be found in separate [TESTING.md file](documentation/testing/TESTING.md)
+___
+<br>
 
 ## Deployment
 This project was developed using the Gitpod IDE, committed to git and pushed to GitHub using the built-in function within Gitpod. After writing the code, committing and pushing it to GitHub. I've deployed this project to Heroku and used "git push Heroku master" to make sure my pushes to GitHub were also made to Heroku.
