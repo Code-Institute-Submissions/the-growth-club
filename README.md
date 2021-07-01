@@ -2,6 +2,10 @@
 
 This project is part of my Code Institute Full Stack Software Development studies, specifically the Data-Centric Development module. The objective for this milestone project is to "Create a web application that allows users to view and share info on events, tools, articles and videos about UX, Software Development and Tech ", using the CRUD operations of Create, Read, Update, and Delete for info.
 
+![Mockup image](documentation/Images/mockup.png)
+
+[View live version of website via GitHub Pages](https://the-growth-club.herokuapp.com/)
+
 <a></a>
 ## Table of contents 
 * [UX](#ux)
@@ -187,7 +191,7 @@ A database structure was designed to be specifically suited for The Growth Club.
 [MongoDB](https://www.mongodb.com/) is utilised to store data for The Growth Club. It is a non-relational database-backed Flask web application that allows users to easily create, locate, display, edit and delete data records on the Growth Club web app.
 
 The data structure outline:
-[Data Structure](documentation/Images/data_structure_breakdown.png)
+[Data Structure](documentation/Images/Data_structure.png)
 
 ### **Collections**
 - **Categories collection**
