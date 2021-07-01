@@ -21,6 +21,7 @@ This project is part of my Code Institute Full Stack Software Development studie
         * [Icons](#icons)
         * [Structure](#structure)
 * [Wireframes](#wireframes)
+* [Data Structure](#data-structure)
 * [Features](#features)
     * [Existing Features](#existing-features)
     * [Features to be implemented](#features-to-be-implemented)
@@ -97,6 +98,7 @@ This website project will target users who are interested in viewing and sharing
 - As an Admin User, I want to be able to log out of my account;
 - As an Admin User, I want to be able to change my password on my profile;
 - As an Admin User, I want to be able to bookmark resources.
+- As an Admin User, I want to be able to view all pages.
 
 <a></a>
 ### **User Flow**
@@ -179,16 +181,16 @@ Sketches were part of the first phase of the design for this project. Sketches w
 ___
 <br>
 
-## Data Structure
+<a></a>
+## **Data Structure**
 A database structure was designed to be specifically suited for The Growth Club. It was important to make sure the nesting relationships between the collections and the keys worked logically. The database was created as a usable non-relational database where data is stored in a consistent and well-organised manner. To maintain a database configuration in a single location where it can be changed easily, ObjectId's are used in several collections to ensure key values are more accurate by using the ObjectId's rather than strings.
 
 [MongoDB](https://www.mongodb.com/) is utilised to store data for The Growth Club. It is a non-relational database-backed Flask web application that allows users to easily create, locate, display, edit and delete data records on the Growth Club web app.
 
 The data structure outline:
-![Data Structure](documentation/Images/Data_structure.png)
+[Data Structure](documentation/Images/data_structure_breakdown.png)
 
-### Collections
-
+### **Collections**
 - **Categories collection**
     - This collection holds the category_name key which is a string datatype. 
     - This field data is passed to other collections by utilising the ObjectID rather than the string above.
@@ -216,67 +218,164 @@ The data structure outline:
 ___
 <br>
 
-## Features
+<a></a>
+## **Features**
 - There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
 
 ### Elements on every page
 #### Header
-
 1. Logo
-
-- Allows the user to easily recognise the brand of “Growth Club”. If the user clicks on the logo, it will return the users to the “Home” section as they would expect..
+- Allows the user to easily recognise the brand of “Growth Club”. If the user clicks on the logo, it will return the users to the “Home” section as they would expect.
 
 2. Navbar
 - Navigation Bar - Allows the user to easily navigate the website's sections and find what they are looking for with ease and speed.
 - The navigation bar features the Growth Club logo in the top left corner.
-- For visitors to the site who are not logged in, list items links are available for them to use.
+- For visitors to the site who are not logged in (*Guest Users*), these menu links are available for them to use:
     - Home
     - Log in
-    - Sign Up
-- For users who are logged in, the list items are as follows:
+    - Sign Up - This is a CTA and therefore it stands out so that the user is drawn to this button.
+- For users who are logged in(*Registered Users*), the list items are as follows:
     - Home
     - Resources
-    - Profile (this option is a dropdown menu)
-        - Log out
+    - Profile 
+    - Log out
 - Python determines if the user is logged in or not by checking if 'user' in session and passes this data to Jinja to display the correct navbar for the user.
-- The navbar is collapsed into a burger icon on small screens
+- The navbar is collapsed into a burger icon on small screens.
 
 3. Floating to top button:
-- A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. I added this feature because some pages can be quite long and the navbar is not fixed to the top of the page.
+- A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. This feature was added because the resources page can be quite long and the navbar is not fixed to the top of the page.
 
-4. Footer
+#### Footer
 - The footer features:
-    - A brief description of the purpose and mission of the site.
-    - A list of useful links users might need when viewing the footer.
-    - Copyright information.
-    - Links to social media for Admin -Social Icons - Allows the user to access the social platforms that the designer & creator of the website use.
+ - A brief description of the purpose and mission of the site.
+ - Copyright information.
+ - Links to social media for Admin -Social Icons - Allows the user to access the social platforms that the designer & creator of the website use.
 
 ### Landing Page
+- The landing page gives the user an immediate welcome and indication of what the site is about.
+- The is a CTA button to view the Featured Resources of the month (Featured Resources section) which was important that they go there if they want to quickly find the most recent resources added by the administrator.
+- After the featured section, there is a CTA button to view more resources. If the user is not logged in they will be taken to the login page. If the user is logged in, they will be taken directly to the resources.
 
-### Favourite Section
-
-### Resources Page
+#### Featured Section
+- On the landing page the featured resources of the month is selected and added by the administrator.
+- The purpose is to have one resource for each category each month to be showcased.
+- Guest users are also able to view these resources as well as Registered users. 
 
 ### Log in Page
-- The login page features a simple **form** where the user can enter either their username or their email address and their password.
+- The login page features a simple **form** where the user can enter either their username or their email address and their password.
+- There is helper text under each input field to guide the user as to the parameters they can input.
+- The user will receive validation or error feedback when they enter information in the input field which is also be accompanied by colours to show validation (green for correct and red for incorrect).
+- If the user lands on the log in page but realises they don't have an account yet and would like to register, there is a link on the page that will take them to the registration page or they can click on the navbar menu Sign up button.
 
-### Sign Up Page
+### Profile Page 
+- Then if the user logs in or register successfully they are taken to their Profile page.
+- This page will feature their username at the top to personalise the user experience.
+- There are links to take the user to the Resources page or the Featured section on the landing page.
+- The user can see all their bookmarked resources on their profile if they have any.
+- The user can change their password if they click on the Change password button. A modal will pop up and ask for the new password. If they confirm to change their password, their password will be updated in the database under the Users collection.
+- The user can delete their profile if they click on the Delete Profile link. This will open a modal to confirm if they want to continue to delete their profile. If they confirm, their username, email and password will be detailed from the Users collection. They will then be logged out and returned to the landing page as Guest users.
+
+### Resources Page
+- Only a Registered user can view the resources page where the registered user can then view, search, add, edit or delete resources. The edit and delete functions will only be available if the user created the resource.
+- The user can search by resource description and reset the search box. If there are no results, there will be a message to the user to say there are no results.
+- If the user clicks on the "Add a resource" button it will take them to the Add Resource Page.
+- If the user created the resource, they will see the edit button for the resource. If the user clicks on the "Edit" button it will take them to the Edit Resource Page.
+- If the user created the resource, they will see the delete button for the resource. If the user clicks on the "Delete" button, the resource will be deleted.
+- The user can bookmark a resource. If they click on the bookmark icon, this will confirm to them it has been added as a bookmark and appears on their profile.
+
+### Registration & Sign Up Page
 - The sign-up page features a simple form, where the user can input a username, email address and password. The form was kept deliberately simple so that signup has minimum barriers.
+- If the user lands on the registration page but realises they already have an account and would like to log in, there is a link on the page that will take them to the login page or they can click on the navbar menu Log in Page link. 
+- There is a message to the user about not sharing their information to put the user's mind at ease.
 
 ### Add Resource Page
-- The add resources page features a simple form, where the user can input the basic required information. The form was kept deliberately simple so that signup has minimum barriers.
+- If the user clicked on the Add resource button on the resources page then they will be taken to this page.
+- The add resources page features a simple form, where the user can input the basic required information.
+- The user will be able to select from the current categories and topics as well as additional information to all the required fields for the resource.
+- There is helper text under each input field to guide the user as to the parameters they can input.
+- The user will receive validation or error feedback when they enter information in the input field which is also be accompanied by colours to show validation (green for correct and red for incorrect).
+- If the user clicks add resource button, it will add the new resource to the database.
+- If the user clicks on the cancel button it will take them back to the resources page.
 
 ### Edit Resource Page
-- The edit resources page features a simple form, where the user can edit only a resource added by them. The form was kept deliberately simple so that signup has minimum barriers.
+- The edit resources page features a simple form, where the user can edit only a resource added by them. 
+- If the user clicked on the Edit resource button on the resources page then they will be taken to this page. They will only be able to edit the resource if they created the resource.
+- The current resource information will be shown and the user can change the information and save it. This will update the database with the new information.
+- The user will be able to select from the current categories and topics as well as additional information to all the required fields for the resource.
+- There is helper text under each input field to guide the user as to the parameters they can input.
+- The user will receive validation or error feedback when they enter information in the input field which is also be accompanied by colours to show validation (green for correct and red for incorrect).
+- If the user clicks on the cancel button it will take them back to the resources page.
 
-### 404 Page
+### Manage Resource Admin Dashboard Page
+- This page can only be viewed by the admin user.
+- From here the user can manage the featured resources, categories and topics.
+- The admin user can add a new featured resource or edit current featured resources. If the admin user clicks on the Add new Featured resources button, then they will be taken to the Add Featured resource page. If the admin user clicks on the edit the resource button, it will take them to the landing page so that they can edit the featured resource form directly from the featured section.
+- The admin user can add a new Category if they click on the Add Category button. This will take them to the Add New Category page.
+- The admin user can edit current Categories. If the user clicks on the edit button for that category, they will be taken to that edit category page
+- The admin user can add a new Topic if they click on the Add Topic button. This will take them to the Add new Topic page.
+- The admin user can edit current topics. If the user clicks on the edit button for that topic, they will be taken to the Edit Topic page
 
-- The custom 404 Page contains ..., and two buttons to return the user to the Growth Club Home page or Resources page.
+#### Add Featured Resource Page (Admin)
+- This page can only be viewed by the admin user.
+- If the admin user clicked on Add new featured resources button on the Dashboard, then this page will display.
+- The add featured resources page features a simple form, where the admin user can input the basic required information. 
+- The admin user will be able to select from the current categories and topics as well as additional information to all the required fields for the resource.
+- There is helper text under each input field to guide the admin user as to the parameters they can input.
+- The admin user will receive validation or error feedback when they enter information in the input field which is also be accompanied by colours to show validation (green for correct and red for incorrect).
+- If the admin user clicks add resource featured button, it will add the new resource to the database in the featured resources collection.
+- If the user clicks on the cancel button it will take them back to the Manage resources admin dashboard page.
+
+#### Add New Category page
+- This page can only be viewed by the admin user.
+- If the admin user clicked on Add new category button on the Dashboard, then this page will display.
+- The Add New Category page features a simple form, where the admin user can input the basic required information. 
+- There is helper text under each input field to guide the admin user as to the parameters they can input.
+- The admin user will receive validation or error feedback when they enter information in the input field which is also be accompanied by colours to show validation (green for correct and red for incorrect).
+- If the admin user clicks Add Category button, it will add the new category to the database in the Categories collection.
+- If the user clicks on the cancel button it will take them back to the Manage resources admin dashboard page.
+
+#### Edit Category page
+- This page can only be viewed by the admin user.
+- If the admin user clicked on the Edit category button on the Dashboard, then this page will display.
+- The current category information will be shown and the admin user can change the information and save it. This will update the database with the new information.
+- There is helper text under the input field to guide the user as to the parameters they can input.
+- The user will receive validation or error feedback when they enter information in the input field which is also be accompanied by colours to show validation (green for correct and red for incorrect).
+- If the admin user clicks the Update Category button, it will update the category in the database for the Categories collection.
+- If the user clicks on the cancel button it will take them back to the Manage resources admin dashboard page.
+
+#### Add New Topic page
+- This page can only be viewed by the admin user.
+- If the admin user clicked on Add new Topic button on the Dashboard, then this page will display.
+- The Add New Topic page features a simple form, where the admin user can input the basic required information. 
+- There is helper text under each input field to guide the admin user as to the parameters they can input.
+- The admin user will receive validation or error feedback when they enter information in the input field which is also be accompanied by colours to show validation (green for correct and red for incorrect).
+- If the admin user clicks Add Topic button, it will add the new Topic to the database in the Topics collection.
+- If the user clicks on the cancel button it will take them back to the Manage resources admin dashboard page.
+
+#### Edit Topic page
+- This page can only be viewed by the admin user.
+- If the admin user clicked on the Edit Topic button on the Dashboard, then this page will display.
+- The current Topic information will be shown and the admin user can change the information and save it. This will update the database with the new information.
+- There is helper text under the input field to guide the user as to the parameters they can input.
+- The user will receive validation or error feedback when they enter information in the input field which is also be accompanied by colours to show validation (green for correct and red for incorrect).
+- If the admin user clicks the Update Topic button, it will edit the Topic to the database for the Topics collection.
+- If the user clicks on the cancel button it will take them back to the Manage resources admin dashboard page.
+
+### Log Out 
+- If a registered or admin user clicks on the log out button, they will be logged out of their current session and will no longer be able to see the pages they would if they were logged in.
+- A registered user will have to log in again if they want to see their Profile or the Resources Page.
+- A Admin user will have to log in again if they want to see their Profile, Resources Page or the Manage Resource Dashboard Page.
+
+### 404 & 500 Page
+- The custom 404 & 500 Pages contains an image and text that makes the user understand they have encountered an error. There is a button to return the user to the Growth Club Home page.
 
 ### Features to be implemented
-- Have a 'forget password' functionality.
-- Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc
-- Events in the form of a calendar
+- Have a 'forgot password' functionality on the log in page.
+- Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc.
+- Events in the form of a calendar to visually represent events and not have it be part of the general resources.
+- Admin can update the images for the featured resources section. For now, it is just in the database and only editable from the backend. This was not a priority for this version of the project.
+- User can search by category and topic.
+- User can filter resources by category or topic.
 
 ## Technologies Used
 
