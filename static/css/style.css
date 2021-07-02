@@ -501,34 +501,8 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     margin-top: -90px;
 }
 
-.card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
-    max-height:none;
-    margin-top: -90px;
-}
-
-/* Smaller Screens */
-@media only screen and (min-width: 375px) {
-    .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
-        margin-top: -70px;
-    }
-}
-
-/* For Tablets */
-@media only screen and (min-width: 425px) {
-    .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
-        margin-top: -50px;
-    }
-}
-
-/* For Desktops */
-@media only screen and (min-width: 1024px) {
-    .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
-        margin-top: -30px;
-    }
-}
-
 .card.large{
-    height: 550px;
+    height: 500px;
 }
 
 .card .card-content {
@@ -541,7 +515,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 /* Featured Resources Title */
 .featured-title{
-    margin-top:unset;
+    margin-top: 100px;
 }
 
 /* Featured Resources Category */
@@ -560,74 +534,31 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 
 /* Featured Resources Paragraphs */
-.featured-p{
-    font-size: 13px;
-    padding-top: 10px;
-}
-
-/* For Tablets */
-@media only screen and (min-width: 768px) {
+    /* For Smaller screens */
     .featured-p{
-        font-size: 14px;
-        padding-top: 15px;
+        font-size: 13px;
+        padding-top: 10px;
     }
-}
+
+    /* For Tablets */
+    @media only screen and (min-width: 768px) {
+        .featured-p{
+            font-size: 16px;
+            padding-top: 15px;
+        }
+    }
+
+    /* For Laptops & larger */
+    @media only screen and (min-width: 1000px) {
+        .featured-p{
+            font-size: 17px;
+            padding-top: 15px;
+        }
+    }
 
 /* Featured Resource Icons */
 .featured-btn-icon{
     padding-right: 10px;
-}
-
-/* Featured Resource Image */
-.featured-img{
-    background-position: 50% 50%;
-    background-size: cover;
-    width: 80%;
-    height: 200px;
-}
-
-.card .card-image img {
-    width: 100%;
-    top:-20px;
-}
-
-/* Smaller Mobile */
-@media only screen and (min-width: 375px) {
-    .card .card-image img{
-        top:-20px;
-    }
-}
-
-/* Medium Mobile */
-@media only screen and (min-width: 425px) {
-    .card .card-image img{
-        width: 60%;
-        top:-20px;
-    }
-}
-
-/* For Tablets */
-@media only screen and (min-width: 768px) {
-    .card .card-image img{
-        width: 40%;
-        top:-20px;
-    }
-}
-
-/* For Laptops */
-@media only screen and (min-width: 1024px) {
-    .card .card-image img {
-        width: 80%;
-        top:-20px;
-    }
-}
- 
-/* For Large 4K Screens */
-@media only screen and (min-width: 1400px) {
-    .card  .card-image img {
-        width:60%;
-        top:-20px;
-    }
 }
 
 /* Featured Resource Event Date */

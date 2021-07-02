@@ -29,15 +29,9 @@
                 <div class="col s12 m12 l6 card-container">
                     <div class="	
                     card large featured-card ">
-                            <!-- Category -->
-                            <h3 class="featured-cat right">{{ featured_resource.category_name }}</h3>
-                            <div class="card-image featured-img" >
-                                {% if featured_resource.featured_img %}
-                                <img src="{{ featured_resource.featured_img }}" alt="Picture of {{ featured_resource.featured_name }}" id="featured-img">
-                                {% endif %}
-                            </div>
-                            
                             <div class="card-content featured-content">
+                                <!-- Category -->
+                            <h3 class="featured-cat right">{{ featured_resource.category_name }}</h3>
                             <!-- Title -->
                             <h3 class="resource-title featured-title">{{ featured_resource.featured_name }}</h3>
                             <ul id="resource-list">
