@@ -60,11 +60,13 @@
  - On the Resources The user will be able to type text in the search input field and find resources that have keywords in their description. If no resources are found, then the user will see "No results found" and they can reset the search.
     - [Search Field](documentation/images/test_screenshots/resources_search.png)
     - [No search results](documentation/images/test_screenshots/no_results_search.png)
-8. As a Registered User, I want to be able to bookmark resources I find interesting;
+8. As a Registered User, I want to be able to bookmark resources I find interesting and remove a bookmark.
  - On the Resources page, the user can bookmark a resource by clicking on the bookmark icon which will turn orange to show it was bookmarked. 
-    - [Resource page: Bookmarked Resources](documentation/images/test_screenshots/bookmarked_resource_page.png)
-    - If the user has bookmarked resources, it will appear on their profile under the Bookmarks section.
-    - [Profile page: Bookmarked Resources](documentation/images/test_screenshots/bookmarked_profile.png)
+   - [Resource page: Bookmarked Resources](documentation/images/test_screenshots/bookmarked_resource_page.png)
+   - If the user has bookmarked resources, it will appear on their profile under the Bookmarks section.
+   - [Profile page: Bookmarked Resources](documentation/images/test_screenshots/bookmarked_profile.png)
+   - If the user wants to remove the bookmark they can click on the "x" button and the resource will be removed, they will recieve a confirmation message.
+   - [Profiel Page: Removed Bookmark confirmation](documentation/images/test_screenshots/bookmark_remove_confirmation.png)
 9. As a Registered User, I want to be able to change my password on my profile;
  - The user can change their password if they click on the "Change Password" button on the Profile page. If the user clicked on the Change password button, a modal will open and ask them to type in their new password. If they confirm to change their password, they will receive a confirmation message.
     - [Change Password Button](documentation/images/test_screenshots/change_password_delete_profile_buttons.png)
