@@ -394,6 +394,17 @@ def edit_featured_resource(featured_resource_id):
                            categories=categories, topics=topics)
 
 
+# --- DELETE A FEATURED RESOURCE FUNCTIONALITY --- #
+@app.route("/delete_featured_resource/<featured_resource_id>")
+def delete_featured_resource(featured_resource_id):
+    """Delete Featured Resource. Find the resource by id and remove it from the
+    database. The present a message to confirm that it has been deleted."""
+    mongo.db.featured_resources.remove({"_id": ObjectId(featured_resource_id)})
+    flash("The Featured Resource was successfully deleted")
+    # return to the resources page
+    return redirect(url_for("get_featured_resources"))
+
+
 # --- ADD A CATEGORY FUNCTIONALITY --- #
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
