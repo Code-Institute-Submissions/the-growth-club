@@ -464,7 +464,7 @@ ___
 
 <a></a>
 ## **Testing**
-Testing information can be found in the separate [TESTING.md file](documentation/testing/TESTING.md)
+Testing information can be found in the separate [TESTING.md file](documentation/TESTING.md)
 ___
 <br>
 
