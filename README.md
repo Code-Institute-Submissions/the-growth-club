@@ -578,6 +578,7 @@ ___
 - CSS for smooth scroll adapted from [CSS Tricks](https://css-tricks.com/snippets/jquery/smooth-scrolling/*/)
 - JQuery for validation from Task Manager walkhtrough project by Code Institute
 - JQuery for navbar menu active item adapted from [InfoWorld](https://www.infoworld.com/article/3304440/setting-an-active-menu-item-based-on-the-current-url-with-jquery.html)
+- JQuery for bookmark from adpated from https://stackoverflow.com/questions/5828965/bookmark-on-click-using-jquery
 
 ### **Acknowledgements**
 - Thanks to my mentor Antonio Rodriquez for guiding me throughout this project.
