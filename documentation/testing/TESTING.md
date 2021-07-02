@@ -36,7 +36,7 @@
         - [Landing section on Home page](documentation/images/test_screenshots/landing_section_landing_page.png)
 3. As a Registered User, I want to view the featured items of the month so that I don't have to search for them;
     - On the Home page a Registered user is able to see the featured items added by the administrator.
-        - [Featured section on Home page]()
+        - [Featured section on Home page](documentation/images/test_screenshots/featured_section_landing_page_registered_user.png)
 4. As a Registered User, I want to be able to log back into the Growth Club with my initial latest credentials;
     - The user can click on the Log In menu link in the navbar to be taken to the log in page where they can use their credentials to log in to view the Club resources. The user will receive a log in confirmation once they have logged in.
         - [Log In Page](documentation/images/test_screenshots/log_in_page.png)
@@ -84,6 +84,7 @@
         - [Footer](documentation/images/test_screenshots/footer.png)
 
 *Admin User*
+The Admin user the same user stories as the Registered user above with the additional extras below:
 - As an Admin User, I would like the ability to **log in to an admin account** so that I can **create, edit and delete featured resources posts** for each month;
     - The log in features are similar to the above, but if the admin user is log in, the are able to see the Manage Resources Admin Dashboard. From here they are able to add & edit feature resources.
         - [Admin Dashboard Page](documentation/images/test_screenshots/admin_dashboard.png)
@@ -91,17 +92,16 @@
         - [Add Featured Resouces Page](documentation/images/test_screenshots/add_featured_resource.png)
         - [Add Featured Resource Confirmation](documentation/images/test_screenshots/add_featured_resource_confirmation.png)
     - The admin user can click on the "Edit or Delete Featured Resource" button on the Admin Dashboard and will be taked to the Featued Resource section on the Home page where they will be able to view Edit & Delete buttons. 
-        - [Featured Section on Home Page Admin View]()
+        - [Featured Section on Home Page Admin View](documentation/images/test_screenshots/featured_resources_admin_view.png)
     - If the edit button is clicked, the user will be taken to the Edit Featured Resource page. If the featured resource is successfully update, they will receive a confirmation message.
         - [Edit Featured Resouces Page](documentation/images/test_screenshots/edit_featured_resource_page.png)
         - [Edit Featured Resource Confirmation](documentation/images/test_screenshots/edit_featured_resource_confirmation.png)
     - If the delete button is clicked, a delete confirmation modal will display. If the featured resource is successfully deleted, they will receive a confirmation message.
         - [Delete Featured Resource Modal](documentation/images/test_screenshots/delete_featured_resource_modal.png)
         - [Delete Featured Resource Confirmation](documentation/images/test_screenshots/delete_featured_resource_confirmation.png)
-- As an Admin User, I want to be able to view all **resource posts** added by other members of the community;
-- As an Admin User, I would like the ability to **edit or delete any resource posts** so that I can **maintain the site to stay updated**;
-
-
+- As an Admin User, I want to be able to view all **resource posts** added by other members of the community as well as the ability to **edit or delete any resource posts** so that I can **maintain the site to stay updated**
+    - The admin user can view all resources and also the edit & delete buttons. They can edit or delete any resource regardless of who added the resource.
+        -[Admin User View of Resource Page](documentation/images/test_screenshots/resource_page_view_admin.png)
 
 ##  Testing and Validation of website
 
