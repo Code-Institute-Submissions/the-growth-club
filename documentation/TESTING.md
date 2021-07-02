@@ -4,9 +4,9 @@
 
 [View live version of website via GitHub Pages](http://the-growth-club.herokuapp.com/)
 
-## Testing user stories from the UX section
+## **Testing user stories from the UX section**
 ### **User Stories**
-*Guest User*
+#### *Guest User*
 1. As a Guest User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
  - On the Home page landing section, it is clear what the site is about. In addition to this, the purpose of the site is in the Footer as well.
     - [Landing section on Home page](documentation/images/test_screenshots/landing_section_landing_page.png)
@@ -26,7 +26,7 @@
  - The user can get in contact or follow the created or the site on social media as their social links are in the footer on every page of the website.
     - [Footer](documentation/images/test_screenshots/footer.png)
 
-*Registered User*
+#### *Registered User*
 1. As a Registered User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
  - On the Home page landing section, it is clear what the site is about. In addition to this, the purpose of the site is in the Footer as well.
     - [Landing section on Home page](documentation/images/test_screenshots/landing_section_landing_page.png)
@@ -83,9 +83,9 @@
  - The user can get in contact or follow the created or the site on social media as their social links are in the footer on every page of the website.
     - [Footer](documentation/images/test_screenshots/footer.png)
 
-*Admin User*
+#### *Admin User*
 The Admin user the same user stories as the Registered user above with the additional extras below:
-- As an Admin User, I would like the ability to **log in to an admin account** so that I can **create, edit and delete featured resources posts** for each month;
+1. As an Admin User, I would like the ability to **log in to an admin account** so that I can **create, edit and delete featured resources posts** for each month;
  - The login features are similar to the above, but if the admin user is logged in, they can see the Manage Resources Admin Dashboard. From here they can add & edit feature resources.
     - [Admin Dashboard Page](documentation/images/test_screenshots/admin_dashboard.png)
  - The admin user can add a featured resource by clicking on the "Add featured resource" button which will take them to the Add Featured Resource page where they can fill in the form and add a resource. The form will have helper text to guide the user as well as validation. The user will receive confirmation if the featured resource is added to the Home page Featured Section.
@@ -99,77 +99,150 @@ The Admin user the same user stories as the Registered user above with the addit
  - If the delete button is clicked, a delete confirmation modal will display. If the featured resource is successfully deleted, they will receive a confirmation message.
     - [Delete Featured Resource Modal](documentation/images/test_screenshots/delete_featured_resource_modal.png)
     - [Delete Featured Resource Confirmation](documentation/images/test_screenshots/delete_featured_resource_confirmation.png)
-- As an Admin User, I want to be able to view all **resource posts** added by other members of the community as well as the ability to **edit or delete any resource posts** so that I can **maintain the site to stay updated**
+2. As an Admin User, I want to be able to view all **resource posts** added by other members of the community as well as the ability to **edit or delete any resource posts** so that I can **maintain the site to stay updated**
  - The admin user can view all resources and also the edit & delete buttons. They can edit or delete any resource regardless of who added the resource.
     -[Admin User View of Resource Page](documentation/images/test_screenshots/resource_page_view_admin.png)
+___
+<br>
 
-##  Testing and Validation of website
-
+##  **Testing and Validation of website**
 ### [Link Checker](https://validator.w3.org/checklink)
-To check that all links are working and not broken.
-* **Result**
-   
-* **Fix**  
-
+- To check that all links are working and not broken.
 
 ### Lighthouse (Google dev tool)
-To test the accessibility and performance of the website.
-* **Result**
-    
-* **Fix** 
-    
-    
+- To test the accessibility and performance of the website. 
 - Final version: 
-![Lighthouse report ]()
+[Lighthouse report ]()
 
 ### [Responsinator](http://www.responsinator.com/)
-To test the responsiveness of the live website and functionalities on different size mobile devices.
-* **Result**
-    
-* **Fix** 
-   
+- To test the responsiveness of the live website and functionalities on different size mobile devices.
 - Final version: [To view site on Responsinator ]()
 
 ### [Am I Responsive](http://ami.responsivedesign.is/)
-To view images of the website on different devices.
-* **Result**
-
-- Final version: ![Am I Responsive ]()
+- To view images of the website on different devices.
+- Final version: [Am I Responsive ]()
 
 ### [JSHint](https://jshint.com/)
-To detect errors and potential problems in your JavaScript code.
-* **Result**
-    
-* **Fix** 
-    
+- To detect errors and potential problems in your JavaScript code.
 - Final version: no errors for () if add /*jshint esversion: 6 */ at top of code so that JSHint does not raise unnecessary warnings for ECMAScript 6 features.
 
 ### [W3C CSS validation](https://jigsaw.w3.org/css-validator/)
-To validate the CCS code of the project.
-* **Result**
-    
-* **Fix** 
+- To validate the CCS code of the project.
 - Final version: 
-- ![CSS Validation]()
+- [CSS Validation]()
 
 ### [W3C Markup Validation](https://validator.w3.org/)
-To validate the HTML code of the project.
-* **Result**
-    
-* **Fix** 
-   
+- To validate the HTML code of the project.
 - Final version: no errors or warnings for )
-- ![HTMl Validation]()
+- [HTMl Validation]()
 
 ### Google Dev Tool 
-To check for errors in JavaScript code
-* **Result**
-
-* **Fix** 
-
+- To check for errors in JavaScript code
 - Final version: no errors or warnings 
-- ![Google Dev Tool]()
+- [Google Dev Tool]()
 
-## Manual testing of all elements and functionality on every page
+## **Manual testing of all elements and functionality on every page**
+## **Manual testing of all elements and functionality on every page**
+1. Logo - click on the logo, returns to the “Home” section on all pages.
+2. Navbar 
+   - if *any user* click on the Home link - go to the Home page on all pages
+   - if *Guest user* click on Login link - got to Login page
+   - if *Guest user* click on Sign Up link - go to Register page 
+   - if *Registered user* click on Resource link - go to the Resources page
+   - if *Registered user* click on Profile link - go to the Profile page
+   - if *Registered user* click on the Log Out link - log the user out and go to the Home page
+   - if *Admin user* click on Admin Dashboard link - go to Admin Dashboard page
+3. Footer 
+   - if *any user* click on the Instagram link - go to Franciska Du Toit's Instagram page
+   - if *any user* click on the LinkedIn link - go to Franciska Du Toit's LinkedIn page
+   - if *any user* click on the Twitter link - go to Franciska Du Toit's Twitter page
+   - if *any user* click on the GitHub link - go to Franciska Du Toit's GitHub page
+4. Floating to top button 
+   - if click float to top button, moves the view back up to the top of the page.
+5. Landing Page
+   - if *any user* click on the "View Featured Resources of Month" Button - go to the Featured section at the bottom of the Home page
+   - if *any user* click on each Featured Resource card "Visit Resource" button - go to the correct Resource external page
+   - if *Guest user* click on "Log In to View More Resources" button - got to Login page
+   - if *Registered user* click on the "View More Resources" button - go to the Resources page
+6. Registration & Sign Up Page
+   - if *Guest user* type in "Username", "Email" and "Password" fields - validation is given if correct and feedback is given if incorrect.
+      - if click on the "Sign Up" button" user is added to the database, go to the profile page and feedback is given to the user that they are registered
+   - if *any user* click on the "Login Here" link - go to the Login page
+7. Log in Page
+   - if *Registered users* type in their user details in the "Username" and "Password" fields validation is given if correct and feedback is given if incorrect.
+      - if click on the "Login" button" the user is logged in, go to the profile page and feedback is given to the user that they are now logged in.
+   - if *any user* click on the "Create an account here!" link - go to the Registration page
+8. Profile Page 
+   - if *Registered user* clicks on the "View Club Resources" button - go to Resources Page
+   - if *Registered user* clicks on the "View Featured Resources" button - go to Home Page
+   - if *Registered user* clicks on the "Change Password" button - open modal to change the password
+      - if type in a new password and click the "Change password" button - the password is changed in the database and a success message is given to the user
+      - if click on "Cancel" go back to a Profile page
+   - if *Registered user* clicks on the "Click here to delete your profile" link - open modal to delete the account
+      - if type in the password and click the "Delete my account forever" button - the account is deleted in the database and a success message is given to the user.
+      - if click on "Cancel" go back to a Profile page
+9. Resources Page
+   - if *Registered user* type text in the search field and click on the "Search" button", the relevant matching resource is shown. If there are no matching resources, the user is notified to try again. 
+   - if click on the "Reset" button, the search field is reset.
+   - if *Registered user* clicks on "Add Resource" - go to the Add Resource page 
+   - if *Registered user* clicks on each Resource card "Visit Resource" button - go to the correct Resource external page
+   - if *Registered user* created the resource view Edit & Delete buttons
+      - if the user clicks on each Resource card "Delete" Button - open modal to confirm delete resource. If the user clicks on the "Delete" button, the resource is deleted, removed from the database and the user gets a confirmation. If the user clicks on the "Cancel" button the modal is closed.
+      - if the user clicks on each Resource card "Edit" Button - go to the Edit Resource page
+   - if *Registered user* clicks on the bookmark button, the resource is added to their profile, the button changes to orange and a feedback message is given
+10. Add Resource Page
+   - if *Registered user* click on "Choose Category" and "Choose Topic" they can select a current category or topic.
+   - if *Registered user* types in text in fields, validation is given if correct and feedback is given if incorrect.
+   - if *Registered user* wants to select a date, a date picker opens with the current date and a date can be selected.
+   - if *Registered user* click on the "Add Resource" button, a new resource is added to the database and a success message is given to the user.
+   - if *Registered user* click on cancel - go to Resources Page
+11. Edit Resource Page
+   - view current details of resource
+   - if click on "Choose Category" and "Choose Topic" they can select a current category or topic.
+   - if type in text in fields, validation is given if correct and feedback is given if incorrect.
+   - if want to select a date, a date picker opens with the current date and a date can be selected.
+   - if click on the "Update Resource" button, the resource is updated in the database and a success message is given to the user.
+   - if click on cancel - go to the Resources Page
+12. Manage Resource Admin Dashboard Page
+   - if *Admin user* click the "Add new Featured resource" button, go to Add Featured resource page. 
+   - if *Admin user* click the "Delete or Edit Featured resource" button, go to the Home page.
+   - if *Admin user* click the info button, open info modal about Featured resources
+   - if *Admin user* click the "Add Category" button, go to Add Category page. 
+   - if *Admin user* click the "Edit" button in the Category section, go Edit Category page.
+   - if *Admin user* click the "Delete" button in the Category section, the delete modal opens.
+   - if click on cancel - close modal
+   - if click on the "Delete" button, the category is deleted and a success message appears.
+   - if *Admin user* click the info button, open info modal about Categories.
+   - if *Admin user* click the "Add Topic" button, go to Add Topic page. 
+   - if *Admin user* click the "Edit" button in the Topic section, go to the Edit Topic page.
+   - if *Admin user* click the "Delete" button in the Topic section, the delete modal opens.
+   - if click on cancel - close modal
+   - if click on the "Delete" button, the Topic is deleted and a success message appears.
+   - if *Admin user* click the info button, open info modal about Topics.
+13. Add Featured Resource Page 
+   - if *Admin user* click on "Choose Category" and "Choose Topic" they can select a current category or topic.
+   - if *Admin user* types in text in fields, validation is given if correct and feedback is given if incorrect.
+   - if *Admin user* wants to select a date, a date picker opens with the current date and a date can be selected.
+   - if *Admin user* click on the "Add Featured Resource" button, a new featured resource is added to the database and a success message is given to the user.
+   - if *Admin user* click on cancel - go to Admin Dashboard Page
+14. Add New Category page
+   - if *Admin user* types in text in fields, validation is given if correct and feedback is given if incorrect.
+   - if *Admin user* click on the "Add Category" button, a new category is added to the database and a success message is given to the user.
+   - if *Admin user* click on cancel - go to Admin Dashboard Page
+15. Edit Category page
+   - view current details of category
+   - if *Admin user* types in text in fields, validation is given if correct and feedback is given if incorrect. 
+   - if *Admin user* click on the "Update Category" button, the category is updated in the database and a success message is given to the user.
+   - if *Admin user* click on cancel - go to Admin Dashboard Page
+16. Add New Topic page
+   - if *Admin user* types in text in fields, validation is given if correct and feedback is given if incorrect.
+   - if *Admin user* click on the "Add Topic" button, a new Topic is added to the database and a success message is given to the user.
+   - if *Admin user* click on cancel - go to Admin Dashboard Page
+17. Edit Topic page
+   - view current details of category
+   - if *Admin user* types in text in fields, validation is given if correct and feedback is given if incorrect. 
+   - if *Admin user* click on the "Update Topic" button, the Topic is updated in the database and a success message is given to the user.
+   - if *Admin user* click on cancel - go to Admin Dashboard Page
 
-## Further testing: 
+
+## **Further testing** 
