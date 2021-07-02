@@ -90,7 +90,7 @@ This website project will target users who are interested in viewing and sharing
 5. As a Registered User, I want to be able to view **resource posts** added by other members of the community;
 6. As a Registered User, I want to be able to create, edit and delete the **resource posts** I have added;
 7. As a Registered User, I would like to be able to search the site so that I can easily find resources that I am looking for;
-8. As a Registered User, I want to be able to bookmark resources I find interesting;
+8. As a Registered User, I want to be able to bookmark resources I find interesting and remove a bookmark.
 9. As a Registered User, I want to be able to change my password on my profile;
 10. As a Registered User, I want to be able to delete my account and profile;
 11. As a Registered User, I want to be able to log out of my account;
