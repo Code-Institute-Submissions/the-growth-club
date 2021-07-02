@@ -76,37 +76,30 @@ This website project will target users who are interested in viewing and sharing
 <a></a>
 ### **User Stories**
 *Guest User*
-- As a Guest User, I want to view the featured **resources posts** of the month to get a sense of the value if I sign up as a registered user and they don't have to search for it;
-- As a Guest User, I want to be met with a visually appealing and easy to read layout of created items;
-- As a Guest User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
-- As a Guest User, I want to be able to sign-up to create and edit my own **resource posts**;
-- As a Guest User, I want to be able to get in contact via social media if I like the site or have suggestions.
+1. As a Guest User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
+2. As a Guest User, I want to be met with a visually appealing and easy to read layout of created items;
+3. As a Guest User, I want to view the featured **resources posts** of the month to get a sense of the value if I sign up as a registered user and they don't have to search for it;
+4. As a Guest User, I want to be able to sign-up to create and edit my own **resource posts**;
+5. As a Guest User, I want to be able to get in contact via social media if I like the site or have suggestions.
 
 *Registered User*
-- As a Registered User, I want to view the featured items of the month so that I don't have to search for them;
-- As a Registered User, I want to be met with a visually appealing and easy to read layout of created items;
-- As a Registered User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
-- As a Registered User, I want to be able to log back into the Growth Club with my initial latest credentials;
-- As a Registered User, I want to be able to create, edit and delete the **resource posts** I have added;
-- As a Registered User, I want to be able to view **resource posts** added by other members of the community;
-- As a Registered User, I would like to be able to search the site so that I can easily find resources that I am looking for;
-- As a Registered User, I want to be able to bookmark resources I find interesting;
-- As a Registered User, I want to be able to change my password on my profile;
-- As a Registered User, I want to be able to delete my account and profile;
-- As a Registered User, I want to be able to log out of my account;
-- As a Registered User, I want to be able to get in contact via social media if I like the site or have suggestions.
+1. As a Registered User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
+2. As a Registered User, I want to be met with a visually appealing and easy to read layout of created items;
+3. As a Registered User, I want to view the featured items of the month so that I don't have to search for them;
+4. As a Registered User, I want to be able to log back into the Growth Club with my initial latest credentials;
+5. As a Registered User, I want to be able to view **resource posts** added by other members of the community;
+6. As a Registered User, I want to be able to create, edit and delete the **resource posts** I have added;
+7. As a Registered User, I would like to be able to search the site so that I can easily find resources that I am looking for;
+8. As a Registered User, I want to be able to bookmark resources I find interesting;
+9. As a Registered User, I want to be able to change my password on my profile;
+10. As a Registered User, I want to be able to delete my account and profile;
+11. As a Registered User, I want to be able to log out of my account;
+12. As a Registered User, I want to be able to get in contact via social media if I like the site or have suggestions.
 
 *Admin User*
-- As an Admin User, I would like the ability to **log in to an admin account** so that I can **create and edit featured resources posts** for each month;
-- As an Admin User, I want to be able to view all **resource posts** added by other members of the community;
-- As an Admin User, I would like the ability to ** to create resource posts** without restrictions;
-- As an Admin User, I would like the ability to **edit any resource posts** so that I can **maintain the site to stay updated**;
-- As an Admin User, I would like the ability to ** to delete any resource posts** so that I can **remove outdated information**;
-- As an Admin User, I would like to be able to search the site so that I can easily find resources that I am looking for;
-- As an Admin User, I want to be able to log out of my account;
-- As an Admin User, I want to be able to change my password on my profile;
-- As an Admin User, I want to be able to bookmark resources.
-- As an Admin User, I want to be able to view all pages.
+The Admin user the same user stories as the Registered user above with the additional extras below:
+1. As an Admin User, I would like the ability to **log in to an admin account** so that I can **create, edit and delete featured resources posts** for each month;
+2. As an Admin User, I want to be able to view all **resource posts** added by other members of the community as well as the ability to **edit or delete any resource posts** so that I can **maintain the site to stay updated**
 
 <a></a>
 ### **User Flow**
