@@ -16,7 +16,7 @@ $(document).ready(function () {
             done: "Select"
         }
     });
-    // Bookmark save button
+    // Bookmark save button modified from https://stackoverflow.com/questions/5828965/bookmark-on-click-using-jquery
     $('.bookmark_btn').on('click', function(){
         resource_id = $(this).attr('data-resource')
         url = "/bookmark/" + resource_id
