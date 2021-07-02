@@ -376,7 +376,6 @@ ___
 - Have a 'forgot password' functionality on the log in page.
 - Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc.
 - Events in the form of a calendar to visually represent events and not have it be part of the general resources.
-- Admin can update the images for the featured resources section. For now, it is just in the database and only editable from the backend. This was not a priority for this version of the project.
 - User can search by category and topic.
 - User can filter resources by category or topic.
 
@@ -436,8 +435,6 @@ ___
     - For testing the performance of the website
 - [TestProject](https://testproject.io/)
     - For automated testing of website
-- [TinyPNG](https://tinypng.com/)
-    - To optimise images for website loading time.
 - [Python Tester](https://extendsclass.com/python-tester.html) 
     - Python code syntax checker
 - [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) 
