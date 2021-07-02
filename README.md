@@ -463,14 +463,14 @@ ___
 <br>
 
 <a></a>
-## Testing
+## **Testing**
 Testing information can be found in the separate [TESTING.md file](documentation/testing/TESTING.md)
 ___
 <br>
 
 <a></a>
 ## **Deployment**
-This project uses GitHub for version control, GitPod as the cloud-based IDE and Heroku to deploy the site into production.The below steps are specific to Gitpod therefore depending on your IDE, you might need to adjust the below steps.
+This project uses GitHub for version control, GitPod as the cloud-based IDE and Heroku to deploy the site into production. The below steps are specific to Gitpod therefore depending on your IDE, you might need to adjust the below steps.
 
 ### To clone the project:
 From the application's repository, click the "code" button and download the zip of the repository. Alternatively, you can clone the repository using the following line in your terminal: 
@@ -478,12 +478,12 @@ From the application's repository, click the "code" button and download the zip 
 git clone https://github.com/Franciskadtt/the-growth-club.git
 ```
 
-The following must be installed on your IDE:
+The following must be installed on your IDE:
 - [PIP](https://pip.pypa.io/en/stable/installing/)
 - [Python 3](https://www.python.org/downloads/)
 
 ### Database Creation with MongoDB Atlas
-You have to create an account with MongoDB. You can see [here](https://docs.atlas.mongodb.com/) how to set up your MongoDB Atlas account. Sign-in or sign-up to MongoDB and create a new cluster then follow the below steps:
+You have to create an account with MongoDB. You can see [here](https://docs.atlas.mongodb.com/) how to set up your MongoDB Atlas account. Sign-in or sign-up to MongoDB and create a new cluster then follow the below steps:
 1. Go to Collections
 2. Go to "+Create Database"
 3. Click on "Create Collection"
@@ -496,47 +496,51 @@ You have to create an account with MongoDB. You can see [here](https://docs.atl
     ```
     pip3 install Flask
     ```
-2.  Now we need to create a few new files. First, our Python file that will be the foundation of our application. You can name it something else, in this case I used app.py, so type in the terminal: 
+2. Now we need to create a few new files. First, our Python file that will be the foundation of our application. You can name it something else, in this case, I used app.py, so type in the terminal: 
     ```
     touch app.py
     ```
-3. Next, we will be storing some sensitive data, and we need to hide them using environment variables. You can use the terminale or just create a new file. I used the terminal, so type in the terminal:
+3. Next, we will be storing some sensitive data, and we need to hide them using environment variables. You can use the terminal or just create a new file. I used the terminal, so type in the terminal:
     ```
     touch env.py
     ```
-4. That file should never be pushed to GitHub, so we need to be able to ignore it some how, so type in the terminal:
+4. That file should never be pushed to GitHub, so we need to be able to ignore it somehow, so type in the terminal:
     ```
-    touch .gitignore
+   touch .gitignore
     ```
 5. Double check in the gitignore file that you see "env.py" and "pycache/"
-6. Go to env.py file and add the following:
+6. Go to the env.py file and add the following:
     ```
     import os
-    
+ 
     os.environ["PORT"] = "5000"
     os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
     os.environ["DEBUG"] = "True"
     os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
     os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
     ```
-7. Go to app.py file and import OS, Flask, env.py
+7. Go to app.py file and import the following:
     ```
     import os
-    
-    from flask import Flask
+    from flask import (
+    Flask, flash, render_template,
+    redirect, request, session, url_for)
+    from flask_pymongo import PyMongo
+    from bson.objectid import ObjectId
+    from werkzeug.security import generate_password_hash, check_password_hash
     if os.path.exists("env.py"):
-    import env
+        import env
     ```
 8. Create an instance of Flask
     ```
     app = Flask(__name__)
     ```
-9. To test your application, tell your app how and where to run your application. Set your IP and PORT environment variables in the hidden env.py file. Make sure to update this to debug=False prior to actual deployment of your project.
+9. To test your application, tell your app how and where to run your application. Set your IP and PORT environment variables in the hidden env.py file. Make sure to update this to debug=False before the actual deployment of your project.
     ```
     if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+    port=int(os.environ.get("PORT")),
+    debug=True)
     ```
 10. You can now run your application, type in the terminal:
     ```
@@ -544,15 +548,15 @@ You have to create an account with MongoDB. You can see [here](https://docs.atl
     ```
 
 ### Deploying to Heroku
-1. Setup a Heroku app within Heroku dashboard with your region (or the closest one to you) and app name.
+1. Setup a Heroku app within the Heroku dashboard with your region (or the closest one to you) and app name.
 2. Run pip3 freeze --local > requirements.txt in your workspace terminal to collect any new dependencies.
 3. Run python app.py > Procfile to create a Procfile required for Heroku deployment.
 4. In Heroku, in your app, select the 'deploy' tab and 'connect with GitHub'.
-5. Search for your repo (or signin and connect GitHub account) and select this.
-6. In the 'settings' tab, click 'Reveal Config Vars' and input your environment variable from your local build in the key/value inputs.
+5. Search for your repo (or sign in and connect GitHub account) and select this.
+6. In the 'settings tab, click 'Reveal Config Vars' and input your environment variable from your local build in the key/value inputs.
 7. In your local workspace, add, commit and push your requirements.txt and Procfile.
 8. In Heroku, select 'Automatic Deploys' to automatically rebuild the app when a new Git commit is pushed.
-9. Once the inital build is complete, click 'Open App' in the top right of the screen to view the application.
+9. Once the initial build is complete, click 'Open App' in the top right of the screen to view the application.
 ___
 <br>
 
