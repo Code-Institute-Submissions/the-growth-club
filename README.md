@@ -2,12 +2,14 @@
 
 This project is part of my Code Institute Full Stack Software Development studies, specifically the Data-Centric Development module. The objective for this milestone project is to "Create a web application that allows users to view and share info on events, tools, articles and videos about UX, Software Development and Tech ", using the CRUD operations of Create, Read, Update, and Delete for info.
 
-![Mockup image](documentation/Images/mockup.png)
-
 [View live version of website via GitHub Pages](https://the-growth-club.herokuapp.com/)
 
+![Mockup image](documentation/images/mockup.png)
+___
+<br>
+
 <a></a>
-## Table of contents 
+## Table of Contents 
 * [UX](#ux)
     * [User Persona](#user-persona)
     * [User Goals](#user-goals) 
@@ -36,6 +38,9 @@ This project is part of my Code Institute Full Stack Software Development studie
 * [Testing](#testing)
 * [Deployment](#deployment)
 * [Credits](#credits)
+
+___
+<br>
 
 <a name="ux"></a>
 ## **UX**
@@ -106,12 +111,12 @@ This website project will target users who are interested in viewing and sharing
 <a></a>
 ### **User Flow**
 In the planning phase, I created a User flow to determine the main paths the user might take on the web app. 
-![User flow](documentation/Images/userflow.png)
+![User flow](documentation/images/userflow.png)
 
 <a></a>
 ### **Log In Sign Up Flow**
 In the planning phase, I created a Login and Sign up/Register flow to determine the main paths the user might take on the web app to manage their status on the website. The success and failure messages differ slightly on the deployed app as the copy was changed during testing with users to be more clear 
-![image](documentation/Images/login_signup_flow.png)
+![image](documentation/images/login_signup_flow.png)
 ___
 <br>
 
@@ -132,7 +137,7 @@ ___
 
 #### **Colour Palette**
 Coolors was used to map out my colour scheme.
-![Colour Palette](documentation/Images/coolors_colour_palette.png)
+![Colour Palette](documentation/images/coolors_colour_palette.png)
 - #00000: This colour is used for borders of buttons and where the text needed to stand out more because of the background.
 - #1A222D: This colour is used as the main text colour and where the background should completely black like the CTA buttons.
 - #FE9902: This colour is used as the primary colour and sets the tone for the website. It is used to show if something is important or show the user where they are.
@@ -155,7 +160,7 @@ ___
 ## **Wireframes**
 I have used Balsamic to create low-fidelity wireframes and used Figma to create medium-fidelity wireframes. First I created a basic wireframe for mobile, for tablet and desktop. The website will be easy to navigate by using the navigation bar or by scrolling down the page. I have included a scroll-up button for user convenience. There is a mobile-first focus and therefore I wanted to keep in mind first what will work on mobile.
 
-### **Wireframe images**
+### **Wireframe Images**
 #### **Sketches**
 Sketches were part of the first phase of the design for this project. Sketches with pen and paper are used to roughly draft the flow and the structure of the project without having to focus on colour, fonts and the correct layout.
 - [Sketch](documentation/wireframes/sketch.png)
@@ -191,7 +196,7 @@ A database structure was designed to be specifically suited for The Growth Club.
 [MongoDB](https://www.mongodb.com/) is utilised to store data for The Growth Club. It is a non-relational database-backed Flask web application that allows users to easily create, locate, display, edit and delete data records on the Growth Club web app.
 
 The data structure outline:
-[Data Structure](documentation/Images/Data_structure.png)
+[Data Structure](documentation/images/data_structure.png)
 
 ### **Collections**
 - **Categories collection**
@@ -384,6 +389,7 @@ ___
 
 ___
 <br>
+
 <a></a>
 ## **Technologies Used**
 
@@ -458,68 +464,95 @@ ___
 
 <a></a>
 ## Testing
-Testing information can be found in separate [TESTING.md file](documentation/testing/TESTING.md)
+Testing information can be found in the separate [TESTING.md file](documentation/testing/TESTING.md)
 ___
 <br>
 
 <a></a>
-## Deployment
-This project was developed using the Gitpod IDE, committed to git and pushed to GitHub using the built-in function within Gitpod. After writing the code, committing and pushing it to GitHub. I've deployed this project to Heroku and used "git push Heroku master" to make sure my pushes to GitHub were also made to Heroku.
+## **Deployment**
+This project uses GitHub for version control, GitPod as the cloud-based IDE and Heroku to deploy the site into production.The below steps are specific to Gitpod therefore depending on your IDE, you might need to adjust the below steps.
 
-This project can be run locally by following the following steps: ( I used Gitpod for development, so the following steps will be specific to Gitpod. You will need to adjust them depending on your IDE
+### To clone the project:
+From the application's repository, click the "code" button and download the zip of the repository. Alternatively, you can clone the repository using the following line in your terminal: 
+```
+git clone https://github.com/Franciskadtt/the-growth-club.git
+```
 
-The following **must be installed** on your IDE:
+The following must be installed on your IDE:
 - [PIP](https://pip.pypa.io/en/stable/installing/)
 - [Python 3](https://www.python.org/downloads/)
 
-You have to create an account with MongoDB.
-- You can see [here](https://docs.atlas.mongodb.com/) how to set up your MongoDB Atlas account.
+### Database Creation with MongoDB Atlas
+You have to create an account with MongoDB. You can see [here](https://docs.atlas.mongodb.com/) how to set up your MongoDB Atlas account. Sign-in or sign-up to MongoDB and create a new cluster then follow the below steps:
+1. Go to Collections
+2. Go to "+Create Database"
+3. Click on "Create Collection"
+4. Then add all the collections (see data structure above)
+5. Click on "Insert Document"
+6. Add key and value - then click "Insert"
 
-**To clone the project:**
-- From the application's repository, click the "code" button and download the zip of the repository. Alternatively, you can clone the repository using the following line in your terminal: git clone https://github.com/byIlsa/story-chain.git
-- Access the folder in your terminal window and install the application's required modules using the following command: pip3 install -r requirements.txt
-- Sign-in or sign-up to MongoDB and create a new cluster
-- Within the Sandbox, click the collections button and after click Create Database (Add My Own Data) called story_chain
-- Set up the following collections: users, stories and chains. Click [here](https://github.com/byIlsa/story-chain#database-structure) to see the exact Database Structure
-- Under the Security menu on the left, select Database Access.
-- Add a new database user, and keep the credentials secure
-- Within the Network Access option, add IP Address 0.0.0.0
-- In your IDE, create a file containing your environmental variables called [env.py](http://env.py/) at the root level of the application. It will need to contain the following lines and variables: import os
+### Create the Flask Application
+1. Install Flask - type in terminal: 
     ```
-    - os.environ["PORT"] = "5000"
-    - os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
-    - os.environ["DEBUG"] = "True"
-    - os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
-    - os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
-- Please note that you will need to update the SECRET_KEY with your secret key, as well as the MONGO_URI and MONGO_DBNAME variables with those provided by MongoDB. Tip for your SECRET_KEY, you can use a Password Generator to have a secure secret key. I recommend a length of 24 characters and exclude symbols. To find your MONGO_URI, go to your clusters and click on connect. Choose connect your application and copy the link provided. Don't forget to update the necessary fields like password and database name. If you plan on pushing this application to a public repository, ensure that [env.py](http://env.py/) is added to your .gitignore file.
-- The application can now be run locally. In your terminal, type the following command python3 [app.py](http://app.py/).
+    pip3 install Flask
+    ```
+2.  Now we need to create a few new files. First, our Python file that will be the foundation of our application. You can name it something else, in this case I used app.py, so type in the terminal: 
+    ```
+    touch app.py
+    ```
+3. Next, we will be storing some sensitive data, and we need to hide them using environment variables. You can use the terminale or just create a new file. I used the terminal, so type in the terminal:
+    ```
+    touch env.py
+    ```
+4. That file should never be pushed to GitHub, so we need to be able to ignore it some how, so type in the terminal:
+    ```
+    touch .gitignore
+    ```
+5. Double check in the gitignore file that you see "env.py" and "pycache/"
+6. Go to env.py file and add the following:
+    ```
+    import os
+    
+    os.environ["PORT"] = "5000"
+    os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+    os.environ["DEBUG"] = "True"
+    os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+    os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
+    ```
+7. Go to app.py file and import OS, Flask, env.py
+    ```
+    import os
+    
+    from flask import Flask
+    if os.path.exists("env.py"):
+    import env
+    ```
+8. Create an instance of Flask
+    ```
+    app = Flask(__name__)
+    ```
+9. To test your application, tell your app how and where to run your application. Set your IP and PORT environment variables in the hidden env.py file. Make sure to update this to debug=False prior to actual deployment of your project.
+    ```
+    if __name__ == "__main__":
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
+    ```
+10. You can now run your application, type in the terminal:
+    ```
+    python3 app.py
+    ```
 
-**To deploy your project on Heroku, use the following steps:**
-
-- Login to your Heroku account and create a new app. Choose your region.
-- Ensure the Procfile and requirements.txt files exist are present and up-to-date in your local repository.
-**Requirements:**
-
-`pip3 freeze --local > requirements.txt`
-
-**Procfile:**
-
-`echo web: python app.py > Procfile`
-
-- The Procfile should contain the following line:
-
-`web: python app.py`
-
-**Final steps:**
-- Scroll down to the "deployment method"-section. Choose "Github" for automatic deployment.
-- From the inputs below, make sure your GitHub user is selected, and then enter the name for your repo. Click "search". When it finds the repo, click the "connect" button.
-- Scroll back up and click "settings".
-- Scroll down and click "Reveal config vars".
-- Set up the same variables as in your [env.py](http://env.py/) (IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME): !You shouldn't set the DEBUG variable is under config vars, only in your [env.py](http://env.py/) to prevent DEBUG from being active on the live website.
-- PORT = 5000 SECRET_KEY = YOUR_SECRET_KEY MONGO_URI = YOUR_MONGODB_URI MONGO_DBNAME = DATABASE_NAME
-- Scroll back up and click "Deploy". Scroll down and click "Enable automatic deployment".
-- Click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
-- To commit your changes to the branch, use git push to push your changes.
+### Deploying to Heroku
+1. Setup a Heroku app within Heroku dashboard with your region (or the closest one to you) and app name.
+2. Run pip3 freeze --local > requirements.txt in your workspace terminal to collect any new dependencies.
+3. Run python app.py > Procfile to create a Procfile required for Heroku deployment.
+4. In Heroku, in your app, select the 'deploy' tab and 'connect with GitHub'.
+5. Search for your repo (or signin and connect GitHub account) and select this.
+6. In the 'settings' tab, click 'Reveal Config Vars' and input your environment variable from your local build in the key/value inputs.
+7. In your local workspace, add, commit and push your requirements.txt and Procfile.
+8. In Heroku, select 'Automatic Deploys' to automatically rebuild the app when a new Git commit is pushed.
+9. Once the inital build is complete, click 'Open App' in the top right of the screen to view the application.
 ___
 <br>
 
