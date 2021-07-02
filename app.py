@@ -182,8 +182,6 @@ def get_resources():
             if ObjectId(resource['_id']) in current_user['bookmarks']:
                 resource['bookmarked'] = True
         except Exception as e:
-            print('problem with resource %s' % resource['resource_name'])
-            # check if we need to remove!!!
             pass
     # render the resources template
     return render_template("resources.html", resources=resources)
@@ -260,8 +258,6 @@ def search():
             resource['category_name'] = category['category_name']
             resource['topic_name'] = topic['topic_name']
         except Exception as e:
-            print('problem with resource %s' % resource['resource_name'])
-            # check if we need to remove
             pass
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     topics = list(mongo.db.topics.find().sort("topic_name", 1))
@@ -310,8 +306,6 @@ def get_featured_resources():
             featured_resource['topic_name'] = topic['topic_name']
 
         except Exception as e:
-            print('problem with resource %s' % featured_resource
-                  ['featured_name'])  # check if we need to remove
             pass
     # render the index template
     return render_template("index.html", featured_resources=featured_resources)
@@ -572,6 +566,18 @@ def bookmark(resource_id):
         return redirect(url_for(
                         "profile", username=session["user"]))
 
+    return redirect(url_for(
+                        "profile", username=session["user"]))
+
+
+# --- DELETE A BOOKMARK FUNCTIONALITY --- #
+@app.route("/delete_bookmark/<resource_id>")
+def delete_bookmark(resource_id):
+    """ Delete Bookmark Functionality."""
+    mongo.db.users.find_one_and_update(
+        {"username": session["user"].lower()},
+        {"$pull": {"bookmarks": ObjectId(resource_id)}})
+    flash("Bookmark Successfully Removed")
     return redirect(url_for(
                         "profile", username=session["user"]))
 

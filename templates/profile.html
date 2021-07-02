@@ -39,6 +39,9 @@
               <!-- Loop over all of the items from the resource collection-->
               {% for resource in resources %}
                 <div class="card manage-resources-c">
+                  <a class="btn-floating waves-effect waves-light right" href="{{ url_for('delete_bookmark', resource_id=resource._id) }}">
+                    <i class="material-icons">close</i>
+                  </a>
                   <!-- Title -->
                   <h3 class=" resource-title">{{ resource.resource_name }}</h3>
                   <ul id="resource-list">
