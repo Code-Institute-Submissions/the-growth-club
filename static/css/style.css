@@ -11,7 +11,6 @@
     --SecondaryAccent: #FFC795;
     --TertiaryAccent: #fadeb4;
     --AccentTransparent: rgba(241, 241, 241, 0.4);
-    --center: center;
 }
 
 /* --------------------------------------------------- */
@@ -166,21 +165,19 @@ button:focus {
 /* --------------------------------------------------- */
 
 /* --- LOGO--- */
+/* Original code with modifications from  https://css-tricks.com/almanac/properties/t/text-decoration-thickness/ */
 #logo{
     padding-left: 2rem;
     color: var(--Main-Text) ;
     font-size: 30px;
     font-weight: 600;
-    text-decoration: underline 10px solid var(--Orange);
+    text-decoration: underline var(--Orange) solid;
+    text-decoration-thickness: 10px;
 }
 
 @media only screen and (min-width: 425px){
 #logo{
-    padding-left: 2rem;
-    color: var(--Main-Text) ;
     font-size: 40px;
-    font-weight: 600;
-    text-decoration: underline 10px solid var(--Orange);
 }
 }
 
@@ -233,7 +230,8 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
     display: flex;
 }
 nav ul li.active {
-    text-decoration: underline 5px solid var(--Orange);
+    text-decoration: underline var(--Orange) solid;
+    text-decoration-thickness: 5px;
     background-color: var(--Accent);
 }
 
@@ -247,7 +245,8 @@ nav ul li.active {
 
 .sidenav-logo{
     padding-left: 30px;
-    text-decoration: underline 5px solid var(--Orange);
+    text-decoration: underline var(--Orange) solid;
+    text-decoration-thickness: 5px;
     padding-bottom: 20px;
 }
 
@@ -1153,7 +1152,8 @@ i.left {
 /* Bookmarked Items*/
 .saved-resources-h{
     font-size: 24px;
-    text-decoration: underline 5px solid var(--Orange);
+    text-decoration: underline var(--Orange) solid;
+    text-decoration-thickness: 5px;
 }
 
 .bookmark-p{
