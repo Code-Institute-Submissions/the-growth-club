@@ -754,7 +754,8 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     padding-bottom:0px;
 }
 
-#resource-list li{
+ul:not(.browser-default)>li {
+    list-style-type: none;
     display: inline;
 }
 
