@@ -3,6 +3,8 @@
 [Main README.md file](README.md)
 
 [View live version of website via GitHub Pages](http://the-growth-club.herokuapp.com/)
+___
+<br>
 
 ## **Testing user stories from the UX section**
 ### **User Stories**
@@ -109,7 +111,12 @@ ___
 
 ##  **Testing and Validation of website**
 ### [Link Checker](https://validator.w3.org/checklink)
-- To check that all links are working and not broken.
+- To check that all links are working and not broken. 
+- [Link Validation Test](documentation/images/validator_screenshots/linkchecker.png)
+   - Issue with https://fonts.googleapis.com/ in the header of the base template but this directly copied and pasted from the Google Fonts website to use a font. Therefore this can be safely ignored.
+   - Issue with Linkedin link was manually checked and resolved.
+   - Issue with Instagram link was manually checked and resolved.
+- Final version has no other link errors or warnings.
 
 ### Lighthouse (Google dev tool)
 - To test the accessibility and performance of the website. 
@@ -118,32 +125,100 @@ ___
 
 ### [Responsinator](http://www.responsinator.com/)
 - To test the responsiveness of the live website and functionalities on different size mobile devices.
-- Final version: [To view site on Responsinator ]()
+- Final version: 
+   - [Mobile view ](documentation/images/validator_screenshots/responsinator_mobile.png)
+   - [Tablet view ](documentation/images/validator_screenshots/responsinator_tablet.png)
 
 ### [Am I Responsive](http://ami.responsivedesign.is/)
 - To view images of the website on different devices.
-- Final version: [Am I Responsive ]()
+- Final version: [Am I Responsive ](documentation/images/validator_screenshots/am_i_responsive_design.png)
 
-### [JSHint](https://jshint.com/)
-- To detect errors and potential problems in your JavaScript code.
-- Final version: no errors for () if add /*jshint esversion: 6 */ at top of code so that JSHint does not raise unnecessary warnings for ECMAScript 6 features.
+### JavaScript
+- [JSHint](https://jshint.com/)
+   - [Test JavaScript Validation](documentation/images/validator_screenshots/jshint_test.png)
+   - [Final JavaScript Validation](documentation/images/validator_screenshots/jshint_final.png)
+   - Final version - addressing errors and warnings: 
+      - Warning for ''let' is available in ES6 (use 'esversion: 6'). Can be safely ignored. If add /*jshint esversion: 6 */ at top of code so that JSHint does not raise unnecessary warnings for ECMAScript 6 features.
+      - JSHint flags Jquery $ symbol as undefined variable - safely ignored. 
 
-### [W3C CSS validation](https://jigsaw.w3.org/css-validator/)
-- To validate the CCS code of the project.
-- Final version: 
-- [CSS Validation]()
+- [JSEsprima](https://esprima.org/)
+   - [Final JavaScript Validated](documentation/images/validator_screenshots/js_esprima_final.png)
 
-### [W3C Markup Validation](https://validator.w3.org/)
-- To validate the HTML code of the project.
-- Final version: no errors or warnings for )
-- [HTMl Validation]()
+### [CSS: W3C CSS validation](https://jigsaw.w3.org/css-validator/)
+- To validate the CCS code of the project pasting code in by direct input method.
+- Final version - addressing errors and warnings: 
+   - The Validator states there is an error with regards to the "text-decoration-thickness" but this is acceptable according to [w3.org](https://www.w3.org/TR/css-text-decor-4/#propdef-text-decoration-thickness) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness). This property, sets the stroke thickness of underlines, overlines, and line-throughs specified on the element with text-decoration-line, and affects all decorations originating from this element even if descendant boxes specify a different thickness. Therefore it can be safely ignored.
+   - 8 warnings relating to custom colour variables. The W3C CSS validator cannot parse :root variables. Therefore it can be safely ignored.
+- [Final CSS Validation](/documentation/images/validator_screenshots/CSS_validator_final.png)
+
+### [HMTL: W3C Markup Validation](https://validator.w3.org/)
+- To validate the HTML code of the project by pasting code in by direct input method as the W3C Validator for HTML does not understand the Jinja templating syntax.
+- Final version: no errors or warnings
+- Testing and Final results per page:
+   - Error Pages - No Errors in testing and finally
+      - [Error Pages Final](documentation/images/validator_screenshots/HTML_validator_404_page_test.png)
+   - Add Category Page - No Errors in testing and finally
+      - [Add Category Page - Final](documentation/images/validator_screenshots/HTML_validator_add_category_page_test.png)
+   - Add Featured Resources Page - Some errors in testing and no errors finally
+      - [Add Featured Resources Page - Test](documentation/images/validator_screenshots/HTML_validator_add_featured_resource_page_test.png)
+      - [Add Featured Resources Page - Final](documentation/images/validator_screenshots/HTML_validator_add_featured_resource_page_final.png)
+   - Add Resources Page - Some errors in testing and no errors finally
+      - [Add Resources Page - Test](documentation/images/validator_screenshots/HTML_validator_add_resource_page_test.png)
+      - [Add Resources Page - Final](documentation/images/validator_screenshots/HTML_validator_add_resource_page_final.png)
+   - Add Resources Page - Some errors in testing and no errors finally
+      - [Add Resources Page - Test](documentation/images/validator_screenshots/HTML_validator_add_resource_page_test.png)
+      - [Add Resources Page - Final](documentation/images/validator_screenshots/HTML_validator_add_resource_page_final.png)
+   - Add Topic Page - No Errors in testing and finally
+      - [Add Topic Page - Final](documentation/images/validator_screenshots/HTML_validator_add_topic_page_test.png)
+   - Add Admin Dashboard Page - Some errors in testing and no errors finally
+      - [Add Admin Dashboard Page - Test](documentation/images/validator_screenshots/HTML_validator_admin_dashboard_page_test.png)
+      - [Add Admin Dashboard Page - Final](documentation/images/validator_screenshots/HTML_validator_admin_dashboard_page_final.png)
+   - Edit Category Page - No Errors in testing and finally
+      - [Edit Category Page  - Final](documentation/images/validator_screenshots/HTML_validator_edit_category_page_test.png)
+   - Edit Featured Resource Page - Some errors in testing and no errors finally
+      - [Edit Featured Resource Page - Test](documentation/images/validator_screenshots/HTML_validator_edit_featured_resource_page_test.png)
+      - [Edit Featured Resource Page - Final](documentation/images/validator_screenshots/HTML_validator_edit_featured_resource_page_final.png)
+   - Edit Resource Page - Some errors in testing and no errors finally
+      - [Edit Resource Page - Test](documentation/images/validator_screenshots/HTML_validator_edit_resource_page_test.png)
+      - [Edit Resource Page - Final](documentation/images/validator_screenshots/HTML_validator_edit_resource_page_final.png)
+   - Edit Topic Page - No Errors in testing and finally
+      - [Edit Topic Page  - Final](documentation/images/validator_screenshots/HTML_validator_edit_topic_page_test.png)
+   - Home Page - Some errors in testing and no errors finally
+      - [Home Page - Test](documentation/images/validator_screenshots/HTML_validator_home_page_test.png)
+      - [Home Page - Final](documentation/images/validator_screenshots/HTML_validator_edit_resource_page_final.png)
+   - Log In Page - No Errors in testing and finally
+      - [Log In Page - Final](documentation/images/validator_screenshots/HTML_validator_login_page_test.png)
+   - Profile Page - Some errors in testing and no errors finally
+      - [Profile Page - Test](documentation/images/validator_screenshots/HTML_validator_profile_page_final.png)
+      - [Profile Page - Final](documentation/images/validator_screenshots/HTML_validator_profile_page_final.png)
+   - Register Page - No Errors in testing and finally
+      - [Register Page - Final](documentation/images/validator_screenshots/HTML_validator_register_page_test.png)
+   - Resource Page - Some errors in testing and no errors finally
+      - [Resource Page - Test](documentation/images/validator_screenshots/HTML_validator_resource_page_final.png)
+      - [Resource Page - Final](documentation/images/validator_screenshots/HTML_validator_resource_page_test.png)
+
+### Python
+- [Extendsclass](https://extendsclass.com/python-tester.html) - No syntax errors
+   - [Final Python Validated](documentation/images/validator_screenshots/python_extendsclass_final.png)
+- [PEP8 Online](http://pep8online.com/) - Pythoon file is PEP8 compliant
+   - [Final Python Validated](documentation/images/validator_screenshots/python_pep8online_final.png)
 
 ### Google Dev Tool 
 - To check for errors in JavaScript code
 - Final version: no errors or warnings 
-- [Google Dev Tool]()
+- [Final Google Dev Tool]()
 
-## **Manual testing of all elements and functionality on every page**
+### Browser Compatibility
+To ensure a broad range of users can successfully use this site, I tested it across the 6 major browsers in both desktop and mobile configuration.
+- Chrome
+- Firefox 
+- Safari
+- Opera
+- Edge
+- Internet Explorer
+___
+<br>
+
 ## **Manual testing of all elements and functionality on every page**
 1. Logo - click on the logo, returns to the “Home” section on all pages.
 2. Navbar 
@@ -248,3 +323,8 @@ ___
 
 
 ## **Further testing** 
+
+## **Deployment**
+- Ensured deployed page on Heroku loads up correctly.
+- Ensured Debug variable in app.py file is set to False.
+- Confirmed that there is no difference between the deployed version and the development version.
