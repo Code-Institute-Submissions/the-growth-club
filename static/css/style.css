@@ -603,6 +603,32 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     border: 1px solid var(--Orange);
 }
 
+/* --- FEATURED SECTION BUTTONS --- */
+/* Resource Cards Delete Button */
+.delete-btn{
+    background-color: var(--Accent);
+    color: var(--Main-Text);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--Orange);
+    text-transform: unset;
+    margin-top: 10px;
+}
+
+/* Resource Cards Edit Button */
+.edit-btn{
+    background-color: var(--Accent);
+    color: var(--Main-Text);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--Orange);
+    text-transform: unset;
+    margin-top: 10px;
+}
+
+
 /* --------------------------------------------------- */
 /*              LOG IN & REGISTER PAGES                */
 /* --------------------------------------------------- */
