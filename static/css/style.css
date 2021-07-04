@@ -502,7 +502,14 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 
 .card.large{
-    height: 500px;
+    height: 510px;
+}
+
+/* For Laptops & larger */
+@media only screen and (min-width: 1000px) {
+.card.large{
+    height: 600px;
+}
 }
 
 .card .card-content {
@@ -575,6 +582,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     background-color: var(--Main-Text);
     color: var(--Accent);
     font-weight: 700;
+}
+
+.featured-card-bottom{
+    margin-bottom: 20px;
 }
 
 /* --- LANDING PAGE CTA TO ALL RESOURCES--- */
@@ -789,8 +800,13 @@ ul:not(.browser-default)>li {
     font-size: 14px;
 }
 
-#resource-bottom {
+.resource-bottom {
     width: 100%;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.card .card-action:last-child {
     padding-bottom: 0px;
     padding-left: 0px;
 }
@@ -867,30 +883,7 @@ i.left {
     letter-spacing: 3px;
 	font-size: 12px;
 	font-weight: 700;
-}
-
-/* Resource Cards Delete Button */
-#delete-btn{
-    background-color: var(--Accent);
-    color: var(--Main-Text);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: var(--Orange);
-    text-transform: unset;
-    margin-top: 10px;
-}
-
-/* Resource Cards Edit Button */
-#edit-btn{
-    background-color: var(--Accent);
-    color: var(--Main-Text);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: var(--Orange);
-    text-transform: unset;
-    margin-top: 10px;
+    text-align: center;
 }
 
 /* Resource Cards Bookmark Button*/
@@ -1269,7 +1262,7 @@ i.left {
     padding-right: 30px;
 }
 
-#modal-btn{
+.modal-btn{
     background-color: var(--Orange);
 }
 

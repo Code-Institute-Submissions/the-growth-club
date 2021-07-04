@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container page-header-container ">
+<div class="container page-header-container ">
         <div class="row page-header-row">
             <div class="col s12 m12 l6 ">
                 <h3 class=" page-h center-align">Manage Resources Admin Dashboard</h3>
@@ -13,19 +13,18 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="card manage-resources-c">
-                    <h4 class=" manage-resources-h">Featured Resources Section
-                        <span>
-                            <!-- Modal Trigger -->
-                            <a class="waves-effect waves-light btn-floating modal-trigger right" id="modal-btn" href="#modal-featured"><i class="material-icons">info_outline</i></a>
-                            <!-- Modal Structure -->
-                            <div id="modal-featured" class="modal info-modal">
-                                <div class="modal-content">
+                    <div>
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light btn-floating modal-trigger right modal-btn" href="#modal-featured"><i class="material-icons">info_outline</i></a>
+                        <!-- Modal Structure -->
+                        <div id="modal-featured" class="modal info-modal">
+                            <div class="modal-content">
                                 <h4 class="info-modal-h"> 🧐 What is a Featured Resource?</h4>
                                 <p class="info-modal-p">A Featured Resource is a resource chosen by the Administrator each month from each category to showcase their suggestion for that month. </p>
-                                </div>
                             </div>
-                        </span>
-                    </h4>
+                        </div>
+                    </div>
+                    <h4 class=" manage-resources-h">Featured Resources Section</h4>
                     <p class="manage-featured-p">Here you can add featured items that appear on the home page each month.</p>
                     <p class="manage-featured-p">You can edit the featured items directly on the home page.</p>
                     <div class="center-align featured-btn">
@@ -39,18 +38,18 @@
             <!-- Category section -->
             <div class="col s12 m12 l12">
                 <div class="card manage-resources-c">
-                    <h4 class="manage-resources-h">Categories Section 
-                        <span>
-                            <!-- Modal Trigger -->
-                            <a class="waves-effect waves-light btn-floating modal-trigger right" id="modal-btn" href="#modal-cat"><i class="material-icons">info_outline</i></a>
-                            <!-- Modal Structure -->
-                            <div id="modal-cat" class="modal info-modal">
-                                <div class="modal-content">
+                    <div>
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light btn-floating modal-trigger right modal-btn" href="#modal-cat"><i class="material-icons">info_outline</i></a>
+                        <!-- Modal Structure -->
+                        <div id="modal-cat" class="modal info-modal">
+                            <div class="modal-content">
                                 <h4 class="info-modal-h"> 🧐 What is a category?</h4>
                                 <p class="info-modal-p">A category can either be an Event to attend, Something to Read, a Tool to use or a Video to watch. It is the type of resource. </p>
-                                </div>
                             </div>
-                        </span>
+                        </div>
+                    </div>
+                    <h4 class="manage-resources-h">Categories Section 
                     </h4>
                     <p class="manage-featured-p">Here you can manage the current categories of resources.</p>
                     <!-- Add category button -->
@@ -69,7 +68,7 @@
                                         <!-- Delete & Edit Buttons -->
                                         <div>
                                             <!-- Delete Btn Modal Trigger-->
-                                            <a class="modal-trigger btn-small" id="delete-btn"href="#{{ category._id }}"><i class="material-icons left">delete_outline</i>Delete</a>
+                                            <a class="modal-trigger btn-small delete-btn" href="#{{ category._id }}"><i class="material-icons left">delete_outline</i>Delete</a>
                                             <!-- Modal Structure -->
                                             <div id="{{ category._id }}" class="modal ">
                                                 <div class="modal-content delete-resource-modal-content">
@@ -88,7 +87,7 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            <a href="{{ url_for('edit_category', category_id=category._id) }}" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
+                                            <a href="{{ url_for('edit_category', category_id=category._id) }}" class="waves-effect waves-light btn-small edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
                                         </div>
                                     </div>
                                 </div>
@@ -101,18 +100,18 @@
             <!-- Topic section -->
             <div class="col s12 m12 l12">
                 <div class="card manage-resources-c">
-                    <h4 class="manage-resources-h">Topic Section 
-                        <span>
-                            <!-- Modal Trigger -->
-                            <a class="waves-effect waves-light btn-floating modal-trigger right" id="modal-btn" href="#modal-topic"><i class="material-icons">info_outline</i></a>
-                            <!-- Modal Structure -->
-                            <div id="modal-topic" class="modal info-modal">
-                                <div class="modal-content">
+                    <div>
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light btn-floating modal-trigger right modal-btn" href="#modal-topic"><i class="material-icons">info_outline</i></a>
+                        <!-- Modal Structure -->
+                        <div id="modal-topic" class="modal info-modal">
+                            <div class="modal-content">
                                 <h4 class="info-modal-h"> 🧐 What is a Topic?</h4>
                                 <p class="info-modal-p">A Topic is the sub-type of the resource. It tells you what topic the resource is about for instance it could be about UX, UI, Development or Technology.</p>
-                                </div>
                             </div>
-                        </span>
+                        </div>
+                    </div>
+                    <h4 class="manage-resources-h">Topic Section
                     </h4>
                     <p class="manage-featured-p">Here you can manage the current topics of resources.</p>
                     <!-- Add topics button -->
@@ -131,7 +130,7 @@
                                         <!-- Delete & Edit Buttons -->
                                         <div>
                                             <!-- Delete Btn Modal Trigger-->
-                                            <a class="modal-trigger btn-small" id="delete-btn"href="#{{ topic._id }}"><i class="material-icons left">delete_outline</i>Delete</a>
+                                            <a class="modal-trigger btn-small delete-btn" href="#{{ topic._id }}"><i class="material-icons left">delete_outline</i>Delete</a>
                                             <!-- Modal Structure -->
                                             <div id="{{topic._id }}" class="modal">
                                                 <div class="modal-content delete-resource-modal-content">
@@ -150,7 +149,7 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            <a href="{{ url_for('edit_topic', topic_id=topic._id) }}" class="waves-effect waves-light btn-small" id="edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
+                                            <a href="{{ url_for('edit_topic', topic_id=topic._id) }}" class="waves-effect waves-light btn-small edit-btn"><i class="material-icons left">edit_note</i>Edit</a>
                                         </div>
                                     </div>
                                 </div>
@@ -162,6 +161,5 @@
             </div>
         </div>
     </div>
-
-
+</div>  
 {% endblock %}
