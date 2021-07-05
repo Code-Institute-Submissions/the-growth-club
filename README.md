@@ -570,6 +570,7 @@ ___
 - JQuery for validation from Task Manager walkhtrough project by Code Institute
 - JQuery for navbar menu active item adapted from [InfoWorld](https://www.infoworld.com/article/3304440/setting-an-active-menu-item-based-on-the-current-url-with-jquery.html)
 - JQuery for bookmark from adpated from https://stackoverflow.com/questions/5828965/bookmark-on-click-using-jquery
+- HTML, CSS and JQuery for scroll up button from adpated from [Stack Overflow] https://stackoverflow.com/questions/14249998/jquery-back-to-top and [Tutorial Republic] https://www.tutorialrepublic.com/faq/how-to-scroll-to-the-top-of-the-page-using-jquery.php
 
 ### **Acknowledgements**
 - Thanks to my mentor Antonio Rodriquez for guiding me throughout this project.
