@@ -159,7 +159,6 @@ button:focus {
     transform: rotate(45deg);
 }
 
-
 /* --------------------------------------------------- */
 /*                       NAVBAR                        */
 /* --------------------------------------------------- */
@@ -171,14 +170,16 @@ button:focus {
     color: var(--Main-Text) ;
     font-size: 30px;
     font-weight: 600;
-    text-decoration: underline var(--Orange) solid;
-    text-decoration-thickness: 10px;
 }
 
 @media only screen and (min-width: 425px){
 #logo{
     font-size: 40px;
+    }
 }
+
+.logo-underline{
+    border-bottom: 10px solid var(--Orange);
 }
 
 /* --- LARGER SCREEN NAVBAR STYLES--- */
@@ -1152,9 +1153,12 @@ i.left {
 /* Bookmarked Items*/
 .saved-resources-h{
     font-size: 24px;
-    text-decoration: underline var(--Orange) solid;
-    text-decoration-thickness: 5px;
 }
+
+.underline{
+    border-bottom: 5px solid var(--Orange);
+}
+
 
 .bookmark-p{
     font-size: 18px;
