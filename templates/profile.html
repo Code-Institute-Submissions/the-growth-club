@@ -32,7 +32,7 @@
         <span class="underline">Bookmarked Resources</span> 
       </h4>
       <p class="bookmark-p">Here you will see all the posts you have bookmarked.</p>
-      <div id="savedItems">
+      <div id="savedItems" class="left-align">
         <div class="container">
           <div class="row">
             <div class="col s12 m12 l12">
@@ -43,19 +43,19 @@
                     <i class="material-icons">close</i>
                   </a>
                   <!-- Title -->
-                  <h3 class=" resource-title">{{ resource.resource_name }}</h3>
+                  <h3 class="resource-title left-align">{{ resource.resource_name }}</h3>
                   <ul>
                     <!-- Category -->
-                    <li class="resource-cat">{{ resource.category_name }}</li>
+                    <li class="resource-cat left-align">{{ resource.category_name }}</li>
                     <!-- Topic -->
-                    <li class="resource-topic">{{ resource.topic_name }}</li>
+                    <li class="resource-topic left-align">{{ resource.topic_name }}</li>
                     <!-- Date -->
-                    <li class="bookmark-date">{{ resource.resource_date }}</li>
+                    <li class="bookmark-date left-align">{{ resource.resource_date }}</li>
                   </ul>
                   <!-- Link -->
                   <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer" class="btn visit-resource-btn"><i class="material-icons left featured-btn-icon">open_in_new</i>Visit Resource</a> 
                   <!-- Description -->
-                  <p class="resource-p">{{ resource.resource_description }}</p>
+                  <p class="resource-p left-align">{{ resource.resource_description }}</p>
                 </div>
               {% endfor %}
             </div>   

@@ -793,7 +793,15 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 ul:not(.browser-default)>li {
     list-style-type: none;
-    display: inline;
+    margin-bottom:5px;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For medium mobile and larger: */
+    ul:not(.browser-default)>li {
+        list-style-type: none;
+        display: inline;
+    }
 }
 
 .resource-p{
@@ -817,7 +825,7 @@ i.left {
 
 /* Resources Cards Date */
 .resource-date{
-    padding: 5px 15px;
+    padding: 5px 5px;
     color: var(--Main-Text);
     font-size: 14px;
     line-height: 20px;
@@ -856,7 +864,6 @@ i.left {
     background-color: var(--Accent);
     border-radius: 10px;
     color: var(--bgBlack);
-    border: 1px solid var(--bgBlack);
     padding-top: 0px;
     padding-bottom: 5px;
     height: 32.4px;
@@ -872,7 +879,7 @@ i.left {
 
 /* Resources Cards Created By */
 .resource-by{
-    padding: 5px 15px;
+    padding: 5px 5px;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.1);
     color: var(--Main-Text);
@@ -884,6 +891,13 @@ i.left {
 	font-size: 12px;
 	font-weight: 700;
     text-align: center;
+}
+
+@media only screen and (min-width: 425px) {
+    /* For medium mobile and larger: */
+    .resource-by{
+         padding: 5px 10px;
+    }
 }
 
 /* Resource Cards Bookmark Button*/
@@ -1155,10 +1169,12 @@ i.left {
     font-size: 24px;
 }
 
-.underline{
-    border-bottom: 5px solid var(--Orange);
+@media only screen and (min-width: 425px) {
+    /* For Laptop: */
+    .underline{
+        border-bottom: 5px solid var(--Orange);
+    }
 }
-
 
 .bookmark-p{
     font-size: 18px;
@@ -1169,7 +1185,7 @@ i.left {
 }
 
 .bookmark-date{
-    padding: 5px 15px;
+    padding: 5px 5px;
     color: var(--Main-Text);
     font-size: 14px;
     line-height: 20px;
