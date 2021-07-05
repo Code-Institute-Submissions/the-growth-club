@@ -16,13 +16,31 @@ $(document).ready(function () {
             done: "Select"
         }
     });
-    // Bookmark save button modified from https://stackoverflow.com/questions/5828965/bookmark-on-click-using-jquery
+    // Bookmark save button 
+    /* Orginal code from with modifications for project:
+     https://stackoverflow.com/questions/5828965/bookmark-on-click-using-jquery and https://www.tutorialrepublic.com/faq/how-to-scroll-to-the-top-of-the-page-using-jquery.php */ 
     $('.bookmark_btn').on('click', function(){
         resource_id = $(this).attr('data-resource')
         url = "/bookmark/" + resource_id
         $.post(url);
         $(this).css('background-color','var(--Orange)');
     });
+    // Page scroll up feature for resource page
+    /* Orginal code from with modifications for project:
+     https://stackoverflow.com/questions/14249998/jquery-back-to-top and https://www.tutorialrepublic.com/faq/how-to-scroll-to-the-top-of-the-page-using-jquery.php */ 
+    $(window).scroll(function() {
+        if ($(this).scrollTop()) {
+            $('#scrollButton').fadeIn();
+        } else {
+            $('#scrollButton').fadeOut();
+        }
+    });
+    
+    $("#scrollButton").click(function() {
+        $("html, body").animate({ 
+            scrollTop: 0 
+        }, "fast");
+     });
 
 
     // From Task Manager walkhtrough project by Code Institute
@@ -56,7 +74,8 @@ $(document).ready(function () {
 });
 
 // Menu items: show active page
-// From https://www.infoworld.com/article/3304440/setting-an-active-menu-item-based-on-the-current-url-with-jquery.html
+/* Orginal code from with modifications for project:
+ https://www.infoworld.com/article/3304440/setting-an-active-menu-item-based-on-the-current-url-with-jquery.html */
 $(function () {
     setNavigation();
 });
@@ -73,27 +92,3 @@ function setNavigation() {
         }
     });
 }
-
-// PAGE SCROLL UP FEATURE
-/** Add scroll up function
-orginal code from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp with modifications for project
-*/
-//Get the button
-var scrollUpButton = document.getElementById("scrollButton");
-    // When the user scrolls down 40px from the top of the document, show the button
-    window.onscroll = function() {
-        scrollFunction(); 
-    };
-    // To set the paramaters for the scroll function
-    function scrollFunction() {
-        if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-        scrollUpButton.style.display = "block";
-        } else {
-        scrollUpButton.style.display = "none";
-        }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
