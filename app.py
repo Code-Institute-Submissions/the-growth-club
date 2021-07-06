@@ -550,13 +550,6 @@ def profile(username):
 @app.route("/bookmark/<resource_id>", methods=["POST"])
 def bookmark(resource_id):
     """ Bookmark Functionality."""
-    user = mongo.db.users.find_one({"username": session["user"]})
-    bookmarks = []
-    try:
-        bookmarks = user['bookmarks']
-    except KeyError:
-        pass
-    print("Bookmarks", bookmarks, resource_id)
     if request.method == "POST":
         mongo.db.users.find_one_and_update(
             {"username": session["user"].lower()},
