@@ -35,7 +35,7 @@
             id="logo"><span class="logo-underline">GrowthClub</span></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right "><i class="material-icons prefix">menu</i></a>
             <ul class="right hide-on-med-and-down ">
-              <li><a href="{{url_for('get_featured_resources')}}" >HOME</a></li>
+              <li><a href="{{url_for('get_featured_resources')}}">HOME</a></li>
               {% if session.user %}
                 <li><a href="{{ url_for('get_resources') }}">RESOURCES</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
@@ -54,7 +54,7 @@
         <ul class="sidenav" id="mobile-demo">
           <li><a class="sidenav-close" href="{{url_for('get_featured_resources')}}">
             <i class="material-icons">close</i></a></li>
-          <li class="center-align"><h4 class="sidenav-logo">GrowthClub</h4></li>
+          <li class="center-align"><h4 class="sidenav-logo"><span class="sidenav-logo-underline">GrowthClub</span></h4></li>
           <li class="center-align"><a class="black-text" href="{{url_for('get_featured_resources')}}">HOME</a></li>
           {% if session.user %}
             <li class="center-align"><a href="{{ url_for('get_resources') }}">RESOURCES</a></li>

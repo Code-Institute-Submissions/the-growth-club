@@ -246,9 +246,11 @@ nav ul li.active {
 
 .sidenav-logo{
     padding-left: 30px;
-    text-decoration: underline var(--Orange) solid;
-    text-decoration-thickness: 5px;
     padding-bottom: 20px;
+}
+
+.sidenav-logo-underline{
+    border-bottom: 5px solid var(--Orange);
 }
 
 .close-icon{
@@ -1166,14 +1168,27 @@ i.left {
 
 /* Bookmarked Items*/
 .saved-resources-h{
-    font-size: 24px;
+    font-size: 18px;
 }
 
-@media only screen and (min-width: 425px) {
-    /* For Laptop: */
-    .underline{
-        border-bottom: 5px solid var(--Orange);
+@media only screen and (min-width: 375px) {
+    .saved-resources-h{
+        font-size: 20px;
     }
+}
+
+@media only screen and (min-width: 600px) {
+    .saved-resources-h{
+        font-size: 24px;
+    }
+}
+
+.save-icon{
+    font-size: 18px;
+}
+
+.underline{
+    border-bottom: 5px solid var(--Orange);
 }
 
 .bookmark-p{
