@@ -181,7 +181,7 @@ def get_resources():
             resource['topic_name'] = topic['topic_name']
             if ObjectId(resource['_id']) in current_user['bookmarks']:
                 resource['bookmarked'] = True
-        except Exception as e:
+        except Exception:
             pass
     # render the resources template
     return render_template("resources.html", resources=resources)
@@ -257,7 +257,7 @@ def search():
             resource['created_by'] = user['username']
             resource['category_name'] = category['category_name']
             resource['topic_name'] = topic['topic_name']
-        except Exception as e:
+        except Exception:
             pass
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     topics = list(mongo.db.topics.find().sort("topic_name", 1))
@@ -304,8 +304,7 @@ def get_featured_resources():
             })
             featured_resource['category_name'] = category['category_name']
             featured_resource['topic_name'] = topic['topic_name']
-
-        except Exception as e:
+        except Exception:
             pass
     # render the index template
     return render_template("index.html", featured_resources=featured_resources)
