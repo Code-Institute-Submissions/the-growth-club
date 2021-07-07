@@ -443,6 +443,8 @@ ___
     - To check if site is mobiole friendly
 - [Grammerly](https://www.grammarly.com/) 
     - To check spelling & grammer
+-[AutoPrefixer](https://autoprefixer.github.io/)
+    - Autoprefixer to parse CSS and adds vendor prefixes
 
 ### **Design**
 - [Balsamiq](https://balsamiq.com/)
