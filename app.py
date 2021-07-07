@@ -325,13 +325,13 @@ def get_featured_resources():
                 featured_resource['category_name'] = category['category_name']
             # if category does not exists, display the message
             else:
-                featured_resource['category_name'] = "Category deleted"
+                featured_resource['category_name'] = "No Category"
             # if topic exists, display the topic
             if topic:
                 featured_resource['topic_name'] = topic['topic_name']
             # if topic does not exists, display the message
             else:
-                featured_resource['topic_name'] = "Topic deleted"
+                featured_resource['topic_name'] = "No Topic"
         except Exception:
             pass
     # render the index template
@@ -562,14 +562,14 @@ def profile(username):
                         '_id': ObjectId(user_resource['topic_name'])
                     })
                     if category:
-                        user_resource['category_name'] = category
-                        ['category_name']
+                        user_resource['category_name'] = category[
+                            'category_name']
                     else:
-                        user_resource['category_name'] = "Category deleted"
+                        user_resource['category_name'] = "No Category"
                     if topic:
                         user_resource['topic_name'] = topic['topic_name']
                     else:
-                        user_resource['topic_name'] = "Topic deleted"
+                        user_resource['topic_name'] = "No Topic"
                 else:
                     user_resource = dict()
                     user_resource['_id'] = resource
