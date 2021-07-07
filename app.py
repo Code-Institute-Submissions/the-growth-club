@@ -551,10 +551,16 @@ def profile(username):
 def bookmark(resource_id):
     """ Bookmark Functionality."""
     if request.method == "POST":
-        mongo.db.users.find_one_and_update(
-            {"username": session["user"].lower()},
-            {"$push": {"bookmarks": ObjectId(resource_id)}})
-        flash("Resource added your bookmarks on your profile")
+        user_bookmarks = list(mongo.db.users.find_one({"username": session
+                                                      ["user"].lower()})
+                              ['bookmarks'])
+        if ObjectId(resource_id) not in user_bookmarks:
+            mongo.db.users.find_one_and_update(
+                {"username": session["user"].lower()},
+                {"$push": {"bookmarks": ObjectId(resource_id)}})
+            flash("Resource added your bookmarks on your profile")
+        else:
+            flash("Resource already bookmarked, skipping")
         return redirect(url_for(
                         "profile", username=session["user"]))
 
