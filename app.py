@@ -177,8 +177,18 @@ def get_resources():
                 '_id': ObjectId(resource['topic_name'])
             })
             resource['created_by'] = user['username']
-            resource['category_name'] = category['category_name']
-            resource['topic_name'] = topic['topic_name']
+            if user:
+                resource['created_by'] = user['username']
+            else:
+                resource['created_by'] = "Deleted user"
+            if category:
+                resource['category_name'] = category['category_name']
+            else:
+                resource['category_name'] = "Category deleted"
+            if topic:
+                resource['topic_name'] = topic['topic_name']
+            else:
+                resource['topic_name'] = "Topic deleted"
             if ObjectId(resource['_id']) in current_user['bookmarks']:
                 resource['bookmarked'] = True
         except Exception:
@@ -302,8 +312,14 @@ def get_featured_resources():
             topic = mongo.db.topics.find_one({
                 '_id': ObjectId(featured_resource['topic_name'])
             })
-            featured_resource['category_name'] = category['category_name']
-            featured_resource['topic_name'] = topic['topic_name']
+            if category:
+                featured_resource['category_name'] = category['category_name']
+            else:
+                featured_resource['category_name'] = "Category deleted"
+            if topic:
+                featured_resource['topic_name'] = topic['topic_name']
+            else:
+                featured_resource['topic_name'] = "Topic deleted"
         except Exception:
             pass
     # render the index template
@@ -523,18 +539,25 @@ def profile(username):
             user_resources = []
             for resource in user['bookmarks']:
                 user_resource = mongo.db.resources.find_one({'_id': resource})
-                user = mongo.db.users.find_one({
-                    '_id': ObjectId(user_resource['created_by'])
-                })
-                category = mongo.db.categories.find_one({
-                    '_id': ObjectId(user_resource['category_name'])
-                })
-                topic = mongo.db.topics.find_one({
-                    '_id': ObjectId(user_resource['topic_name'])
-                })
-                user_resource['created_by'] = user['username']
-                user_resource['category_name'] = category['category_name']
-                user_resource['topic_name'] = topic['topic_name']
+                if user_resource:
+                    user = mongo.db.users.find_one({
+                        '_id': ObjectId(user_resource['created_by'])
+                    })
+                    category = mongo.db.categories.find_one({
+                        '_id': ObjectId(user_resource['category_name'])
+                    })
+                    topic = mongo.db.topics.find_one({
+                        '_id': ObjectId(user_resource['topic_name'])
+                    })
+                    user_resource['created_by'] = user['username']
+                    user_resource['category_name'] = category['category_name']
+                    user_resource['topic_name'] = topic['topic_name']
+                else:
+                    user_resource = dict()
+                    user_resource['_id'] = resource
+                    user_resource['created_by'] = "N/A"
+                    user_resource['category_name'] = "N/A"
+                    user_resource['topic_name'] = "Resource deleted"
                 user_resources.append(user_resource)
             # render appropriate profile template
             return render_template("profile.html", username=username,
@@ -551,10 +574,15 @@ def profile(username):
 def bookmark(resource_id):
     """ Bookmark Functionality."""
     if request.method == "POST":
-        mongo.db.users.find_one_and_update(
-            {"username": session["user"].lower()},
-            {"$push": {"bookmarks": ObjectId(resource_id)}})
-        flash("Resource added your bookmarks on your profile")
+        user_bookmarks = list(mongo.db.users.find_one({"username": session["user"].lower()})['bookmarks'])
+        print('*******************', user_bookmarks, resource_id)
+        if ObjectId(resource_id) not in user_bookmarks:
+            mongo.db.users.find_one_and_update(
+                {"username": session["user"].lower()},
+                {"$push": {"bookmarks": ObjectId(resource_id)}})
+            flash("Resource added your bookmarks on your profile")
+        else:
+            flash("Resource already bookmarked, skipping")
         return redirect(url_for(
                         "profile", username=session["user"]))
 
@@ -566,11 +594,17 @@ def bookmark(resource_id):
 @app.route("/delete_bookmark/<resource_id>")
 def delete_bookmark(resource_id):
     """ Delete Bookmark Functionality."""
-    mongo.db.users.find_one_and_update(
-        {"username": session["user"].lower()},
-        {"$pull": {"bookmarks": ObjectId(resource_id)}})
-    flash("Bookmark Successfully Removed")
-    return redirect(url_for(
+    try:
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"].lower()},
+            {"$pull": {"bookmarks": ObjectId(resource_id)}})
+        flash("Bookmark Successfully Removed")
+    except Exception as e:
+        user_bookmarks = mongo.db.users.find_one({"username": session["user"].lower()})['bookmarks']
+        user_bookmarks.remove(resource_id)
+        mongo.db.users.find_one_and_update({"username": session["user"].lower()}, {'$set': {"bookmarks": user_bookmarks}})
+    finally:
+        return redirect(url_for(
                         "profile", username=session["user"]))
 
 
