@@ -189,7 +189,13 @@ button:focus {
 }
 
 .logo-underline{
-    border-bottom: 10px solid var(--Orange);
+    -webkit-text-decoration-color: var(--Orange);
+            text-decoration-color: var(--Orange);
+    -webkit-text-decoration-line:underline;
+            text-decoration-line:underline;
+    -webkit-text-decoration-style: solid;
+            text-decoration-style: solid;
+    text-decoration-thickness: 10px;
 }
 
 /* --- LARGER SCREEN NAVBAR STYLES--- */
