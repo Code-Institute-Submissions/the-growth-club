@@ -705,6 +705,11 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     margin-top: 40px;
 }
 
+.underline-link{
+    color: var(--Main-Text);
+    border-bottom: 5px solid var(--Orange);
+}
+
 /* REGISTER PAGE */
 .register-row{
     margin-top: 40px;
