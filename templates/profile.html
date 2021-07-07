@@ -53,7 +53,9 @@
                     <li class="bookmark-date left-align">{{ resource.resource_date }}</li>
                   </ul>
                   <!-- Link -->
-                  <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer" class="btn visit-resource-btn"><i class="material-icons left featured-btn-icon">open_in_new</i>Visit Resource</a> 
+                  {%if resource.resource_link%}
+                    <a href="{{ resource.resource_link }}" target="_blank" rel="noopener noreferrer" class="btn visit-resource-btn"><i class="material-icons left featured-btn-icon">open_in_new</i>Visit Resource</a>
+                  {%endif%} 
                   <!-- Description -->
                   <p class="resource-p left-align">{{ resource.resource_description }}</p>
                 </div>
