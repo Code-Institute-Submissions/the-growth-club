@@ -90,12 +90,12 @@ def login():
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # if password does not match show message
-                flash("Incorrect Username and/or Password")
+                flash("You have entered an invalid username or password")
                 return redirect(url_for("login"))
 
         else:
             # if username doesn't exist show message
-            flash("Incorrect Username and/or Password")
+            flash("You have entered an invalid username or password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
