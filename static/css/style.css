@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* --------------------------------------------------- */
 /*                  ROOT VARIABLES                     */
 /* --------------------------------------------------- */
@@ -142,7 +149,9 @@ button:focus {
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-bottom: 40px solid var(--SecondaryAccent);
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
 }
 
 .triangle-left {
@@ -156,7 +165,9 @@ button:focus {
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-bottom: 40px solid var(--SecondaryAccent);
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 /* --------------------------------------------------- */
@@ -164,7 +175,6 @@ button:focus {
 /* --------------------------------------------------- */
 
 /* --- LOGO--- */
-/* Original code with modifications from  https://css-tricks.com/almanac/properties/t/text-decoration-thickness/ */
 #logo{
     padding-left: 2rem;
     color: var(--Main-Text) ;
@@ -205,11 +215,19 @@ button:focus {
     color: var(--bgBlack);
 }
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 nav ul a {
     color: var(--Main-Text);
     font-weight: 500;
     font-size: 18px;
-    text-decoration-color: var(--Orange);
+    -webkit-text-decoration-color: var(--Orange);
+            text-decoration-color: var(--Orange);
 }
 
 /* --- SIDE NAVBAR--- */
@@ -228,10 +246,17 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
 }
 
 .hvr-grow {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 nav ul li.active {
-    text-decoration: underline var(--Orange) solid;
+    -webkit-text-decoration-color: var(--Orange);
+            text-decoration-color: var(--Orange);
+    -webkit-text-decoration-line:underline;
+            text-decoration-line:underline;
+    -webkit-text-decoration-style: solid;
+            text-decoration-style: solid;
     text-decoration-thickness: 5px;
     background-color: var(--Accent);
 }
@@ -332,7 +357,8 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
 /* --- ACTIVE INPUT FIELD--- */
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
         border-bottom: 1px solid var(--Orange);
-        box-shadow: 0 1px 0 0 var(--Orange);
+        -webkit-box-shadow: 0 1px 0 0 var(--Orange);
+                box-shadow: 0 1px 0 0 var(--Orange);
     }
 
 .input-field .prefix.active {
@@ -493,7 +519,9 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 .featured-card{
     background-color: var(--Accent);
     width: 100%;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-bottom: 20px;
     border-radius: 8px;
     padding: 30px;
@@ -537,6 +565,8 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     color: var(--Main-Text);
     font-size: 17px;
     line-height: 20px;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
     width:fit-content;
     text-transform: uppercase;
     font-weight: 700;
@@ -777,7 +807,9 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 .resources-card{
     background-color: var(--Accent);
     width: 100%;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-bottom: 20px;
     border-radius: 8px;
     padding: 30px;
@@ -842,6 +874,8 @@ i.left {
     color: var(--Main-Text);
     font-size: 17px;
     line-height: 20px;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
     width:fit-content;
     text-transform: uppercase;
     font-weight: 700;
@@ -855,6 +889,8 @@ i.left {
     color: var(--Main-Text);
     font-size: 14px;
     line-height: 20px;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
     width:fit-content;
     font-weight: 700;
 }
@@ -887,6 +923,8 @@ i.left {
     color: var(--Main-Text);
     font-size: 14px;
     line-height: 20px;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
     width:fit-content;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -1463,6 +1501,8 @@ i.left {
     text-align: center;
     color: var(--bgBlack);
     background: var(--Accent);
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out;
 }
 
@@ -1529,7 +1569,8 @@ i.left {
     padding: 10px 17px;
     border-radius: 50%;
     margin: 4px 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
 #scrollButton:hover {
