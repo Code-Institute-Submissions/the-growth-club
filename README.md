@@ -2,7 +2,7 @@
 
 This project is part of my Code Institute Full Stack Software Development studies, specifically the Data-Centric Development module. The objective for this milestone project is to "Create a web application that allows users to view and share info on events, tools, articles and videos about UX, Software Development and Tech ", using the CRUD operations of Create, Read, Update, and Delete for info.
 
-[View live version of website via GitHub Pages](https://the-growth-club.herokuapp.com/)
+[View live version of website via Heroku](https://the-growth-club.herokuapp.com/)
 
 ![Mockup image](documentation/images/mockup.png)
 ___

@@ -2,7 +2,7 @@
 
 [Main README.md file](README.md)
 
-[View live version of website via GitHub Pages](http://the-growth-club.herokuapp.com/)
+[View live version of website via Heroku](http://the-growth-club.herokuapp.com/)
 ___
 <br>
 
