@@ -409,6 +409,8 @@ ___
     - Templating language for Python, to simplify displaying data from the backend of this project smoothly and effectively in HTML.
 - [jQuery](https://jquery.com/)
     - JavaScript library
+- [Flask-SSLify 0.1.5](https://pypi.org/project/Flask-SSLify/#description)
+    - Flask extension that configures your Flask application to redirect all incoming requests to https.
 
 ### **Tools**
 - [Gitpod](https://www.gitpod.io/)
