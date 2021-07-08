@@ -164,11 +164,10 @@ def get_resources():
     """
     # find resources in the the database
     resources = list(mongo.db.resources.find())
-    current_user = mongo.db.users.find_one({'username': session['user']})
     # loop through all resources
+    current_user = mongo.db.users.find_one({'username': session['user']})
     for resource in resources:
         try:
-            # find the user, category and topic in db
             user = mongo.db.users.find_one({
                 '_id': ObjectId(resource['created_by'])
             })
@@ -178,26 +177,18 @@ def get_resources():
             topic = mongo.db.topics.find_one({
                 '_id': ObjectId(resource['topic_name'])
             })
-            resource['created_by'] = user['username']
-            # if user exists, display the user
             if user:
                 resource['created_by'] = user['username']
-            # if user does not exists, display the message
             else:
                 resource['created_by'] = "Deleted user"
-            # if category exists, display the category
             if category:
                 resource['category_name'] = category['category_name']
-            # if category does not exists, display the message
             else:
                 resource['category_name'] = "Category deleted"
-            # if topic exists, display the topic
             if topic:
                 resource['topic_name'] = topic['topic_name']
-            # if topic does not exists, display the message
             else:
                 resource['topic_name'] = "Topic deleted"
-            # if resource is bookmarked, show user
             if ObjectId(resource['_id']) in current_user['bookmarks']:
                 resource['bookmarked'] = True
         except Exception:
@@ -562,6 +553,11 @@ def profile(username):
                     topic = mongo.db.topics.find_one({
                         '_id': ObjectId(user_resource['topic_name'])
                     })
+                    if user:
+                        user_resource['created_by'] = user[
+                            'username']
+                    else:
+                        user_resource['created_by'] = "No User"
                     if category:
                         user_resource['category_name'] = category[
                             'category_name']
