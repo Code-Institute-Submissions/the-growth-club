@@ -6,6 +6,16 @@
 ___
 <br>
 
+<a></a>
+## Table of Contents 
+* [User Stories](#user-stories)
+* [Testing and Validation](#testing-and-validation) 
+* [Manual testing](#manual-testing)
+* [Bugs and Fixes](#bugs-and-fixes)
+* [Further testing](#further-testing)
+___
+<br>
+
 ## **Testing user stories from the UX section**
 ### **User Stories**
 #### *Guest User*
@@ -109,7 +119,7 @@ The Admin user the same user stories as the Registered user above with the addit
 ___
 <br>
 
-##  **Testing and Validation of website**
+##  **Testing and Validation**
 ### [Link Checker](https://validator.w3.org/checklink)
 - To check that all links are working and not broken. 
 - [Link Validation Test](documentation/images/validator_screenshots/linkchecker.png)
@@ -218,7 +228,8 @@ To ensure a broad range of users can successfully use this site, I tested it acr
 ___
 <br>
 
-## **Manual testing of all elements and functionality on every page**
+## **Manual testing**
+Manual testing of all elements and functionality on every page
 1. Logo - click on the logo, returns to the “Home” section on all pages.
 2. Navbar 
    - if *any user* click on the Home link - go to the Home page on all pages
@@ -320,13 +331,21 @@ ___
    - if *Admin user* click on the "Update Topic" button, the Topic is updated in the database and a success message is given to the user.
    - if *Admin user* click on cancel - go to Admin Dashboard Page
 
+## **Bugs and Fixes**
+### Bugs
+- There were a few bugs during the development and deployment. A sheet was created to keep track of the bugs, the expected results and the solutions/fixes.
+   - [Bugs, Expected Results & Fixes during Development Phase](documentation/images/bugs_and_fixes_development.png)
+   - [Bugs, Expected Results & Fixes during Deployement Phase](documentation/images/bugs_and_fixes_deployment.png)
+
+### Known Bugs
+- Firefox Browser: For all forms, if a cateogry or topic is selected, border-bottom does not change to green but red.
+
 ## **Further testing** 
 - Usability tests were done with two users to analyse the User Experience. The feedback from the users were very helpful to determine what works, what can be improved and determine future features.  
 - Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
-- Viewed the website on several devices, no further issues found.
 - Review all functionality and responsiveness on different desktop browsers and the website displayed correctly in all browsers including Safari, Chrome, Edge, Firefox and Opera browsers. (see Browser Compatibility section for detail)
-
-## **Deployment**
+### Deployment
 - Ensured deployed page on Heroku loads up correctly.
 - Ensured Debug variable in app.py file is set to False.
 - Confirmed that there is no difference between the deployed version and the development version.
+
