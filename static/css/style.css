@@ -221,13 +221,6 @@ button:focus {
     color: var(--bgBlack);
 }
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 nav ul a {
     color: var(--Main-Text);
     font-weight: 500;
@@ -340,7 +333,7 @@ nav ul li.active {
     color: var(--bgBlack);
   }
 
-  .field-row{
+.field-row{
     background-color: var(--Accent);
     border-radius: 10px;
     padding-top: 10px
@@ -355,21 +348,22 @@ nav ul li.active {
 }
 
 /* --- INPUT FIELD LABEL --- */
+/* From Google console */
 input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
     color: var(--Main-Text);
-    
 }
 
 /* --- ACTIVE INPUT FIELD--- */
+/* From Google console */
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-        border-bottom: 1px solid var(--Orange);
-        -webkit-box-shadow: 0 1px 0 0 var(--Orange);
-                box-shadow: 0 1px 0 0 var(--Orange);
-    }
+    border-bottom: 1px solid var(--Orange);
+    -webkit-box-shadow: 0 1px 0 0 var(--Orange);
+            box-shadow: 0 1px 0 0 var(--Orange);
+}
 
 .input-field .prefix.active {
-        color: var(--Orange);
-    }
+    color: var(--Orange);
+}
 
 /* HELPER TEXT */
 .input-field .helper-text {
@@ -431,14 +425,14 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 /* For Tablets */
 @media only screen and (min-width: 768px){
-.home-heading {
-    font-size: 70px;
+    .home-heading {
+        font-size: 70px;
     }
 }
 /* For Desktops */
 @media only screen and (min-width: 1000px){
-.home-heading {
-    font-size: 75px;
+    .home-heading {
+        font-size: 75px;
     }
 }
 /* For Large 4K Screens */
@@ -460,7 +454,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 /* For Desktops */
 @media only screen and (min-width: 1000px) {
     .home-p{
-       font-size: 30px;
+        font-size: 30px;
     }
 }
 
@@ -543,9 +537,9 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 /* For Laptops & larger */
 @media only screen and (min-width: 1000px) {
-.card.large{
-    height: 600px;
-}
+    .card.large{
+        height: 600px;
+    }
 }
 
 .card .card-content {
@@ -579,27 +573,27 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 
 /* Featured Resources Paragraphs */
-    /* For Smaller screens */
+/* For Smaller screens */
+.featured-p{
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+/* For Tablets */
+@media only screen and (min-width: 768px) {
     .featured-p{
-        font-size: 13px;
-        padding-top: 10px;
+        font-size: 16px;
+        padding-top: 15px;
     }
+}
 
-    /* For Tablets */
-    @media only screen and (min-width: 768px) {
-        .featured-p{
-            font-size: 16px;
-            padding-top: 15px;
-        }
+/* For Laptops & larger */
+@media only screen and (min-width: 1000px) {
+    .featured-p{
+        font-size: 17px;
+        padding-top: 15px;
     }
-
-    /* For Laptops & larger */
-    @media only screen and (min-width: 1000px) {
-        .featured-p{
-            font-size: 17px;
-            padding-top: 15px;
-        }
-    }
+}
 
 /* Featured Resource Icons */
 .featured-btn-icon{
@@ -677,7 +671,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     margin-top: 10px;
 }
 
-
 /* --------------------------------------------------- */
 /*              LOG IN & REGISTER PAGES                */
 /* --------------------------------------------------- */
@@ -728,7 +721,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 /*                   RESOURCES PAGE                    */
 /* --------------------------------------------------- */
 
-
 /* Resources Header */
 .resource-h{
     padding: 30px;
@@ -748,10 +740,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 
 /* Search Resources */
-.search-label{
-    padding-left: 5px;
-}
-
 .search-row{
     margin-top: 20px;
     border: 2px rgba(0, 0, 0, 0.1);
@@ -846,8 +834,8 @@ ul:not(.browser-default)>li {
     margin-bottom:5px;
 }
 
+/* For medium mobile and larger: */
 @media only screen and (min-width: 600px) {
-    /* For medium mobile and larger: */
     ul:not(.browser-default)>li {
         list-style-type: none;
         display: inline;
@@ -949,8 +937,8 @@ i.left {
     text-align: center;
 }
 
+/* For medium mobile and larger: */
 @media only screen and (min-width: 425px) {
-    /* For medium mobile and larger: */
     .resource-by{
          padding: 5px 10px;
     }
@@ -1022,6 +1010,37 @@ i.left {
     border: none;
 }
 
+/* SCROLL UP BUTTON */
+/* Scroll up button and icon */
+/** Orginal code from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp with modifications for project*/
+#scrollButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    color: var(--Orange);
+    background-color: var(--bgWhite);
+    cursor: pointer;
+    padding: 10px 17px;
+    border-radius: 50%;
+    margin: 4px 10px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#scrollButton:hover {
+    background: var(--Orange);
+    color: white;
+}
+
+/* Scroll up button icon */
+.scrollup-arrow{
+    font-size: 20px;
+}
+
 /* --------------------------------------------------- */
 /*                 ADD RESOURCES PAGE                  */
 /* --------------------------------------------------- */
@@ -1041,12 +1060,15 @@ i.left {
     padding-bottom: 20px;
 }
 
-@media only screen and (min-width: 425px) {
-    /* For medium mobile: */
+/* For medium mobile: */
+@media only screen and (min-width: 425px) {  
     .resource-header{
     padding-bottom: 20px;
         }
     }
+
+ /* Add resource heading */
+ /* For small mobile: */
 .add-resource-h{
     padding-top: 30px;
     font-weight: 500;
@@ -1057,8 +1079,8 @@ i.left {
     padding-right:20px;
 }
 
+ /* For medium mobile: */
 @media only screen and (min-width: 425px) {
-    /* For medium mobile: */
     .add-resource-h{
         padding-top: 30px;
         font-weight: 500;
@@ -1069,8 +1091,8 @@ i.left {
         }
     }
 
+/* For tablet: */
 @media only screen and (min-width: 768px) {
-    /* For tablet: */
     .add-resource-h{
         padding-top: 30px;
         font-weight: 500;
@@ -1080,8 +1102,8 @@ i.left {
         }
     }
     
+/* For Laptop: */
 @media only screen and (min-width: 1024px) {
-    /* For Laptop: */
     .add-resource-h{
         padding-top: 30px;
         font-weight: 500;
@@ -1091,40 +1113,43 @@ i.left {
         float: left;
         text-align: left;
         margin-left: 10px;
-        }
     }
-    
-@media only screen and (min-width: 1400px) {
-    /* For 4K: */
+}
+ 
+ /* For 4K: */
+@media only screen and (min-width: 1400px) { 
     .add-resource-h{
         padding-left: 30px;
         padding-right:30px;
         font-size: 38px;
-            }
     }
+}
 
+/* Add resource Image */
+/* For medium mobile: */
 .add-resource-img{
     width: 80%;
     padding-top: 20px;
 }
 
+/* For medium mobile: */
 @media only screen and (min-width: 425px) {
-    /* For medium mobile: */
     .add-resource-img{
         width: 60%;
         padding-top: 20px;
     }
 }
 
+/* For tablet: */
 @media only screen and (min-width: 768px) {
-    /* For medium mobile: */
     .add-resource-img{
         width: 30%;
         padding-top: 20px;
     }
 }
+
+/* For Laptop & Larger: */
 @media only screen and (min-width: 1024px) {
-    /* For medium mobile: */
     .add-resource-img{
         width: 50%;
         padding-right:40px;
@@ -1133,6 +1158,7 @@ i.left {
     }
 }
 
+/* Date Picker */
 .datepicker-date-display {
     background-color: var(--Accent);
     color: var(--Main-Text)
@@ -1165,6 +1191,11 @@ i.left {
     color: var(--Orange);
 }
 
+.datepicker-day-button{
+    border:none;
+}
+
+/* Form dropdown */
 .dropdown-content li>a, .dropdown-content li>span {
     color: var(--Main-Text);
 }
@@ -1172,10 +1203,7 @@ i.left {
     color: var(--Orange);
 }
 
-.datepicker-day-button{
-    border:none;
-}
-
+/*Submit button div*/
 .subit-btn-div{
     padding-top: 20px;
 }
@@ -1197,7 +1225,6 @@ i.left {
 
 /* Profile Header */
 .profile-h{
-    
     border-radius: 5px;
     color: var(--Main-Text);
     text-transform:capitalize;
@@ -1208,51 +1235,60 @@ i.left {
 }
 
 /* To Resources Links*/
-
 .to-resources-link{
     margin-top:40px;
 }
 
-@media only screen and (min-width: 1000px) {
-    /* For Laptop: */
-.to-resources-link{
-    margin-top:20px;
-}
+ /* For Laptop: */
+@media only screen and (min-width: 1000px) { 
+    .to-resources-link{
+        margin-top:20px;
+    }
 }
 
 /* Bookmarked Items*/
+/* Smallest devices*/
 .saved-resources-h{
     font-size: 18px;
 }
 
+/* Small to Medium devices*/
 @media only screen and (min-width: 375px) {
     .saved-resources-h{
         font-size: 20px;
     }
 }
 
+/* Tablets and larger devices*/
 @media only screen and (min-width: 600px) {
     .saved-resources-h{
         font-size: 24px;
     }
 }
 
-.save-icon{
-    font-size: 18px;
-}
-
+/* Underline Line */
 .underline{
     border-bottom: 5px solid var(--Orange);
 }
 
+/* BOOKMARK */
+/* Bookmark Icon */
+.save-icon{
+    font-size: 18px;
+}
+
+/* Bookmark paragraph*/
 .bookmark-p{
     font-size: 18px;
 }
 
+/* Bookmark row*/
 .bookmark-row{
     margin-top: 50px;
 }
 
+
+/* Bookmarked item date*/
 .bookmark-date{
     padding: 5px 5px;
     color: var(--Main-Text);
@@ -1268,6 +1304,7 @@ i.left {
    color: var(--Main-Text);
    margin-bottom: 20px;
 }
+
 .change-pw-btn:hover{
     background-color: var(--Accent);
     border: 1px solid var(--Orange);
@@ -1288,7 +1325,6 @@ i.left {
 }
 
 /* Modal style*/
-
 #change_password_modal{
     border-radius: 8px;
     background-color: var(--bgWhite);
@@ -1451,26 +1487,26 @@ i.left {
     font-weight:300;
 }
 
-@media only screen and (min-width: 768px) {
 /* For tablet: */
-.footer-h{
-    font-size: 20px;
+@media only screen and (min-width: 768px) {
+    .footer-h{
+        font-size: 20px;
     }
 }
 
 @media only screen and (min-width: 1000px) {
 /* For Laptop: */
-.footer-h {
-    text-align: center;
-    font-size: 18px;
+    .footer-h {
+        text-align: center;
+        font-size: 18px;
     }
 }
 
-@media only screen and (min-width: 2560px) {
 /* For 4K: */
-.footer-h {
-    font-size: 24px;
-        }
+@media only screen and (min-width: 2560px) {
+    .footer-h {
+        font-size: 24px;
+    }
 }
 
 .footer-p{
@@ -1479,28 +1515,28 @@ i.left {
     font-weight:200;
 }
 
-@media only screen and (min-width: 768px) {
-    /* For tablet: */
+/* For tablet: */
+@media only screen and (min-width: 768px) { 
     .footer-p{
         font-size: 16px;
-        }
     }
-    
-    @media only screen and (min-width: 1000px) {
-    /* For Laptop: */
+}
+
+/* For Laptops: */
+@media only screen and (min-width: 1000px) {
     .footer-p {
         text-align: center;
         font-size: 16px;
-        }
     }
+}
     
-    @media only screen and (min-width: 2560px) {
-    /* For 4K: */
+ /* For 4K: */
+@media only screen and (min-width: 2560px) {
     .footer-p {
         text-align: left;
         font-size: 16px;
-            }
     }
+}
 
 .footer-img{
     height: 50px;
@@ -1565,36 +1601,4 @@ i.left {
     border-radius: 10px;
     border: 1px solid var(--Main-Text) ;
     padding: 20px;
-}
-
-/*--------------------------------------------Scroll up button*/
-
-/* Scroll up button and icon */
-/** Orginal code from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp with modifications for project*/
-#scrollButton {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    color: var(--Orange);
-    background-color: var(--bgWhite);
-    cursor: pointer;
-    padding: 10px 17px;
-    border-radius: 50%;
-    margin: 4px 10px;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-#scrollButton:hover {
-    background: var(--Orange);
-    color: white;
-}
-
-/* Scroll up button icon */
-.scrollup-arrow{
-    font-size: 20px;
 }
