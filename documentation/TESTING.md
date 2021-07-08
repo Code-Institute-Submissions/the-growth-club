@@ -65,9 +65,9 @@ ___
 8. As a Registered User, I want to be able to bookmark resources I find interesting and remove a bookmark.
 - On the Resources page, the user can bookmark a resource by clicking on the bookmark icon which will turn orange to show it was bookmarked. 
    - [Resource page: Bookmarked Resources](documentation/images/test_screenshots/bookmarked_resource_page.png)
-   - If the user has bookmarked resources, it will appear on their profile under the Bookmarks section.
+- If the user has bookmarked resources, it will appear on their profile under the Bookmarks section.
    - [Profile page: Bookmarked Resources](documentation/images/test_screenshots/bookmarked_profile.png)
-   - If the user wants to remove the bookmark they can click on the "x" button and the resource will be removed, they will recieve a confirmation message.
+- If the user wants to remove the bookmark they can click on the "x" button and the resource will be removed, they will receive a confirmation message.
    - [Profile Page: Removed Bookmark confirmation](documentation/images/test_screenshots/bookmark_remove_confirmation.png)
 9. As a Registered User, I want to be able to change my password on my profile;
 - The user can change their password if they click on the "Change Password" button on the Profile page. If the user clicked on the Change password button, a modal will open and ask them to type in their new password. If they confirm to change their password, they will receive a confirmation message.
@@ -139,21 +139,20 @@ ___
    - [Final JavaScript Validation](documentation/images/validator_screenshots/jshint_final.png)
    - Final version - addressing errors and warnings: 
       - Warning for ''let' is available in ES6 (use 'esversion: 6'). Can be safely ignored. If add /*jshint esversion: 6 */ at top of code so that JSHint does not raise unnecessary warnings for ECMAScript 6 features.
-      - JSHint flags Jquery $ symbol as undefined variable - safely ignored. 
-
+      - JSHint flags Jquery $ symbol as an undefined variable - safely ignored. 
 - [JSEsprima](https://esprima.org/)
    - [Final JavaScript Validated](documentation/images/validator_screenshots/js_esprima_final.png)
 
 ### [CSS: W3C CSS validation](https://jigsaw.w3.org/css-validator/)
 - To validate the CCS code of the project pasting code in by direct input method.
 - Final version - addressing errors and warnings: 
-   - The Validator states there is an error with regards to the "text-decoration-thickness" but this is acceptable according to [w3.org](https://www.w3.org/TR/css-text-decor-4/#propdef-text-decoration-thickness) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness). This property, sets the stroke thickness of underlines, overlines, and line-throughs specified on the element with text-decoration-line, and affects all decorations originating from this element even if descendant boxes specify a different thickness. Therefore it can be safely ignored.
+   - The Validator states there is an error with regards to the "text-decoration-thickness" but this is acceptable according to [w3.org](https://www.w3.org/TR/css-text-decor-4/#propdef-text-decoration-thickness) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness). This property, sets the stroke thickness of underlines, overlines, and line-throughs specified on the element with text-decoration-line, and affects all decorations originating from this element even if descendant boxes specify a different thickness. Therefore, it can be safely ignored.
    - 8 warnings relating to custom colour variables. The W3C CSS validator cannot parse :root variables. Therefore it can be safely ignored.
-   - Warnings for vendor extensons suggested by AutoPrefixer is valid to ensure css styles can work across multiple browsers, can be safely ignored.
+   - Warnings for vendor extensions suggested by AutoPrefixer is valid to ensure CSS styles can work across multiple browsers, can be safely ignored.
 - [Final CSS Validation](/documentation/images/validator_screenshots/CSS_validator_final.png)
 
 ### [HMTL: W3C Markup Validation](https://validator.w3.org/)
-- To validate the HTML code of the project by pasting code in by direct input method. Note the W3C Validator for HTML does not understand the Jinja templating syntax therefore if there are warnings related to this, this can vbe safely ignored.
+- To validate the HTML code of the project by pasting code in by direct input method. Note the W3C Validator for HTML does not understand the Jinja templating syntax therefore if there are warnings related to this, this can be safely ignored.
 - Final version: no errors or warnings
 - Testing and Final results per page:
    - Error Pages - No Errors in testing and finally
@@ -235,7 +234,7 @@ ___
    - if *any user* click on the Twitter link - go to Franciska Du Toit's Twitter page
    - if *any user* click on the GitHub link - go to Franciska Du Toit's GitHub page
 4. Floating to top button 
-   - if click float to top button, moves the view back up to the top of the page.
+   - if click the float to top button, moves the view back up to the top of the page.
 5. Landing Page
    - if *any user* click on the "View Featured Resources of Month" Button - go to the Featured section at the bottom of the Home page
    - if *any user* click on each Featured Resource card "Visit Resource" button - go to the correct Resource external page
@@ -321,9 +320,8 @@ ___
    - if *Admin user* click on the "Update Topic" button, the Topic is updated in the database and a success message is given to the user.
    - if *Admin user* click on cancel - go to Admin Dashboard Page
 
-
 ## **Further testing** 
-- Usability tests were done with two users to analyse the User Experience. The feedback from the users were very helpful to determine what works, what can be improved and determine future features. 
+- Usability tests were done with two users to analyse the User Experience. The feedback from the users were very helpful to determine what works, what can be improved and determine future features.  
 - Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
 - Viewed the website on several devices, no further issues found.
 - Review all functionality and responsiveness on different desktop browsers and the website displayed correctly in all browsers including Safari, Chrome, Edge, Firefox and Opera browsers. (see Browser Compatibility section for detail)
