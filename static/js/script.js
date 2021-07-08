@@ -20,8 +20,8 @@ $(document).ready(function () {
     /* Orginal code from with modifications for project:
      https://stackoverflow.com/questions/5828965/bookmark-on-click-using-jquery and https://www.tutorialrepublic.com/faq/how-to-scroll-to-the-top-of-the-page-using-jquery.php */ 
     $('.bookmark_btn').on('click', function(){
-        resource_id = $(this).attr('data-resource')
-        url = "/bookmark/" + resource_id
+        let resource_id = $(this).attr('data-resource');
+        let url = "/bookmark/" + resource_id;
         $.post(url);
         $(this).css('background-color','var(--Orange)');
     });
