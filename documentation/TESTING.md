@@ -2,7 +2,7 @@
 
 [Main README.md file](README.md)
 
-[View live version of website via Heroku](http://the-growth-club.herokuapp.com/)
+[View live version of website via Heroku](https://the-growth-club.herokuapp.com/)
 ___
 <br>
 
@@ -149,10 +149,11 @@ ___
 - Final version - addressing errors and warnings: 
    - The Validator states there is an error with regards to the "text-decoration-thickness" but this is acceptable according to [w3.org](https://www.w3.org/TR/css-text-decor-4/#propdef-text-decoration-thickness) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness). This property, sets the stroke thickness of underlines, overlines, and line-throughs specified on the element with text-decoration-line, and affects all decorations originating from this element even if descendant boxes specify a different thickness. Therefore it can be safely ignored.
    - 8 warnings relating to custom colour variables. The W3C CSS validator cannot parse :root variables. Therefore it can be safely ignored.
+   - Warnings for vendor extensons suggested by AutoPrefixer is valid to ensure css styles can work across multiple browsers, can be safely ignored.
 - [Final CSS Validation](/documentation/images/validator_screenshots/CSS_validator_final.png)
 
 ### [HMTL: W3C Markup Validation](https://validator.w3.org/)
-- To validate the HTML code of the project by pasting code in by direct input method as the W3C Validator for HTML does not understand the Jinja templating syntax.
+- To validate the HTML code of the project by pasting code in by direct input method. Note the W3C Validator for HTML does not understand the Jinja templating syntax therefore if there are warnings related to this, this can vbe safely ignored.
 - Final version: no errors or warnings
 - Testing and Final results per page:
    - Error Pages - No Errors in testing and finally
@@ -206,16 +207,15 @@ ___
 ### Google Dev Tool 
 - To check for errors in JavaScript code
 - Final version: no errors or warnings 
-- [Final Google Dev Tool]()
 
 ### Browser Compatibility
-To ensure a broad range of users can successfully use this site, I tested it across the 6 major browsers in both desktop and mobile configuration.
+To ensure a broad range of users can successfully use this site, I tested it across the 6 major browsers in both desktop and mobile configuration. See the [Browser Compatibility Table](documentation/images/validator_screenshots/browser_compatibility_table.png) for more detail. The following browsers were tested:
 - Chrome
 - Firefox 
 - Safari
 - Opera
 - Edge
-- Internet Explorer
+
 ___
 <br>
 
@@ -323,6 +323,10 @@ ___
 
 
 ## **Further testing** 
+- Usability tests were done with two users to analyse the User Experience. The feedback from the users were very helpful to determine what works, what can be improved and determine future features. 
+- Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
+- Viewed the website on several devices, no further issues found.
+- Review all functionality and responsiveness on different desktop browsers and the website displayed correctly in all browsers including Safari, Chrome, Edge, Firefox and Opera browsers. (see Browser Compatibility section for detail)
 
 ## **Deployment**
 - Ensured deployed page on Heroku loads up correctly.
