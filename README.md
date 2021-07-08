@@ -378,6 +378,7 @@ ___
 - Events in the form of a calendar to visually represent events and not have it be part of the general resources.
 - User can search by category and topic.
 - User can filter resources by category or topic.
+- Currently the feedback for bookmarking appears on the profile page. In future the plan is to have the feedback to user about bookmarking a resource on the resources page.
 
 ___
 <br>
@@ -542,15 +543,16 @@ You have to create an account with MongoDB. You can see [here](https://docs.atla
     ```
 
 ### Deploying to Heroku
-1. Setup a Heroku app within the Heroku dashboard with your region (or the closest one to you) and app name.
-2. Run pip3 freeze --local > requirements.txt in your workspace terminal to collect any new dependencies.
-3. Run python app.py > Procfile to create a Procfile required for Heroku deployment.
-4. In Heroku, in your app, select the 'deploy' tab and 'connect with GitHub'.
-5. Search for your repo (or sign in and connect GitHub account) and select this.
-6. In the 'settings tab, click 'Reveal Config Vars' and input your environment variable from your local build in the key/value inputs.
-7. In your local workspace, add, commit and push your requirements.txt and Procfile.
-8. In Heroku, select 'Automatic Deploys' to automatically rebuild the app when a new Git commit is pushed.
-9. Once the initial build is complete, click 'Open App' in the top right of the screen to view the application.
+1. In the workspace terminal, run pip3 freeze --local > requirements.txt to collect any dependencies.
+2. Run python app.py > Procfile to create a Procfile required for Heroku deployment.
+3. Go to the [Heroku](https://www.heroku.com/) website. Register for an account and click on "Create a new app".
+4. Setup a Heroku app within the Heroku dashboard - Type in the app name and select region the click on create app.
+5. In Heroku, in your app, click on "GitHub" to connect to your repository. Type in the repository name as on GitHub. Click on "Connect".
+6. Search for your repo (or sign in and connect GitHub account) and select this.
+7. In the 'settings tab, click 'Reveal Config Vars' and input your environment variable from your local build in the key/value inputs.
+8. Then click "Hide Config Vars" in Heroku.
+9. In Heroku, select 'Automatic Deploys' to automatically rebuild the app when a new Git commit is pushed.
+10. Once the initial build is complete, click 'Open App' in the top right of the screen to view the application.
 ___
 <br>
 
