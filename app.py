@@ -638,17 +638,19 @@ def change_password(username):
     password on their profile page.
     """
     if request.method == "POST":
-        submit = {
-            "username": session["user"],
-            "password": generate_password_hash(request.form.get
-                                               ("password_change")),
-        }
-        mongo.db.users.update({"username": username}, submit)
+        print("test")
+        newPassword = generate_password_hash(request.form.get
+                                             ("password_change"))
+        mongo.db.users.update(
+            {"username": username},
+            {'$set':
+                {"password": newPassword}})
         flash("Your password has been updated")
-        return render_template("profile.html", username=username)
+        return redirect(url_for("get_resources"))
     if session:
-        return render_template("profile.html", username=username)
-    return redirect(url_for("get_featured_resources"))
+        return redirect(url_for("get_resources"))
+    return redirect(url_for(
+                        "profile", username=session["user"]))
 
 
 # --- DELETE PROFILE FUNCTIONALITY --- #
