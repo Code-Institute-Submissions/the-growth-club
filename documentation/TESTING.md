@@ -21,108 +21,108 @@ ___
 #### *Guest User*
 1. As a Guest User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
 - On the Home page landing section, it is clear what the site is about. In addition to this, the purpose of the site is in the Footer as well.
-   - [Landing section on Home page](documentation/images/test_screenshots/landing_section_landing_page.png)
-   - [Footer](documentation/images/test_screenshots/footer.png)
+   - [Landing section on Home page](/documentation/images/test_screenshots/landing_section_landing_page.png)
+   - [Footer](/documentation/images/test_screenshots/footer.png)
 2. As a Guest User, I want to be met with a visually appealing and easy to read layout of created items;
 - From the landing page and throughout the rest of the web app, the background is light and the text is darker for a modern and visually appealing site. The font is also large to ensure that the site is easy to read.
-   - [Landing section on Home page](documentation/images/test_screenshots/landing_section_landing_page.png)
+   - [Landing section on Home page](/documentation/images/test_screenshots/landing_section_landing_page.png)
 3. As a Guest User, I want to view the featured **resources posts** of the month to get a sense of the value if I sign up as a registered user and they don't have to search for it;
 - On the Home page a Guest user can see the featured items added by the administrator
-   - [Featured section on Home page](documentation/images/test_screenshots/featured_section_landing_page.png)
+   - [Featured section on Home page](/documentation/images/test_screenshots/featured_section_landing_page.png)
 4. As a Guest User, I want to be able to sign-up to create and edit my own **resource posts**;
 - The user can click on the signup button in the navbar which is indicated in orange. They will then be redirected to the Register page to sign up to view, add, search, edit, bookmark and delete resources. There is also a button on the bottom of the page that will take the user to the login page where they can log in or click on the registration link to be taken to the registration page. If the user successfully registers, they will see a confirmation message and be taken to their Profile page.
-   - [Register Page](documentation/images/test_screenshots/register_page.png)
-   - [Landing Page](documentation/images/test_screenshots/log_in_button_landing_page.png)
-   - [New Registered User confirmation](documentation/images/test_screenshots/new_registered_user_confirmation.png)
+   - [Register Page](/documentation/images/test_screenshots/register_page.png)
+   - [Landing Page](/documentation/images/test_screenshots/log_in_button_landing_page.png)
+   - [New Registered User confirmation](/documentation/images/test_screenshots/new_registered_user_confirmation.png)
 5. As a Guest User, I want to be able to get in contact via social media if I like the site or have suggestions.
 - The user can get in contact or follow the created or the site on social media as their social links are in the footer on every page of the website.
-   - [Footer](documentation/images/test_screenshots/footer.png)
+   - [Footer](d/ocumentation/images/test_screenshots/footer.png)
 
 #### *Registered User*
 1. As a Registered User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
 - On the Home page landing section, it is clear what the site is about. In addition to this, the purpose of the site is in the Footer as well.
-   - [Landing section on Home page](documentation/images/test_screenshots/landing_section_landing_page.png)
-   - [Footer](documentation/images/test_screenshots/footer.png)
+   - [Landing section on Home page](/documentation/images/test_screenshots/landing_section_landing_page.png)
+   - [Footer](/documentation/images/test_screenshots/footer.png)
 2. As a Registered User, I want to be met with a visually appealing and easy to read layout of created items;
 - From the landing page and throughout the rest of the web app, the background is light and the text is darker for a modern and visually appealing site. The font is also large to ensure that the site is easy to read.
-   - [Landing section on Home page](documentation/images/test_screenshots/landing_section_landing_page.png)
+   - [Landing section on Home page](/documentation/images/test_screenshots/landing_section_landing_page.png)
 3. As a Registered User, I want to view the featured items of the month so that I don't have to search for them;
  - On the Home page a Registered user can see the featured items added by the administrator.
-   - [Featured section on Home page](documentation/images/test_screenshots/featured_section_landing_page_registered_user.png)
+   - [Featured section on Home page](/documentation/images/test_screenshots/featured_section_landing_page_registered_user.png)
 4. As a Registered User, I want to be able to log back into the Growth Club with my initial latest credentials;
 - The user can click on the login menu link in the navbar to be taken to the login page where they can use their credentials to log in to view the Club resources. The user will receive a login confirmation once they have logged in.
-   - [Log In Page](documentation/images/test_screenshots/log_in_page.png)
-   - [ Log In confirmation](documentation/images/test_screenshots/log_in_welcome_profile_page.png)
+   - [Log In Page](/documentation/images/test_screenshots/log_in_page.png)
+   - [ Log In confirmation](/documentation/images/test_screenshots/log_in_welcome_profile_page.png)
 5. As a Registered User, I want to be able to view **resource posts** added by other members of the community;
 - The user can go to the Resources page, either by clicking the button on the profile page or in the navbar. On the Resources page, the user can view all the current resources in the Growth Club library.
-   - [Resources Page](documentation/images/test_screenshots/resources_page.png)
+   - [Resources Page](/documentation/images/test_screenshots/resources_page.png)
 6. As a Registered User, I want to be able to create, edit and delete the **resource posts** I have added;
 - On the Resources Page the user can click on the "Add Resource" button and will be taken to the Add Resources Page where they can fill in the form and add a resource. The form will have helper text to guide the user as well as validation.
-   - [Resources Page](documentation/images/test_screenshots/resources_page.png)
-   - [Add Resource Page](documentation/images/test_screenshots/add_resource_page.png)
-   - [Resource Added Confirmation](documentation/images/test_screenshots/resource_added_confirmation.png)
+   - [Resources Page](/documentation/images/test_screenshots/resources_page.png)
+   - [Add Resource Page](/documentation/images/test_screenshots/add_resource_page.png)
+   - [Resource Added Confirmation](/documentation/images/test_screenshots/resource_added_confirmation.png)
 - On the Resources Page the user can see an edit or delete button if they created the resource, otherwise, they will not be able to edit or delete a resource. If the resource is edited, the user will receive confirmation that the resource is edited & updated.
-   - [Viewing Edit & Delete Buttons](documentation/images/test_screenshots/delete_edit_buttons.png)
-   - [Edit Resource Page](documentation/images/test_screenshots/edit_resource_page.png)
-   - [Edit Resource Confirmation](documentation/images/test_screenshots/edit_resource_confirmation.png)
+   - [Viewing Edit & Delete Buttons](/documentation/images/test_screenshots/delete_edit_buttons.png)
+   - [Edit Resource Page](/documentation/images/test_screenshots/edit_resource_page.png)
+   - [Edit Resource Confirmation](/documentation/images/test_screenshots/edit_resource_confirmation.png)
 - If the user clicks on the delete button, they are asked for confirmation before they delete it. If the resource is deleted, the user will receive confirmation that the resource is deleted
-   - [Delete Modal](documentation/images/test_screenshots/delete_modal.png)
-   - [Delete Resource Confirmation](documentation/images/test_screenshots/delete_resource_confirmation.png)
+   - [Delete Modal](/documentation/images/test_screenshots/delete_modal.png)
+   - [Delete Resource Confirmation](/documentation/images/test_screenshots/delete_resource_confirmation.png)
 7. As a Registered User, I would like to be able to search the site so that I can easily find resources that I am looking for;
 - On the Resources The user will be able to type text in the search input field and find resources that have keywords in their description. If no resources are found, then the user will see "No results found" and they can reset the search.
-   - [Search Field](documentation/images/test_screenshots/resources_search.png)
-   - [No search results](documentation/images/test_screenshots/no_results_search.png)
+   - [Search Field](/documentation/images/test_screenshots/resources_search.png)
+   - [No search results](/documentation/images/test_screenshots/no_results_search.png)
 8. As a Registered User, I want to be able to bookmark resources I find interesting and remove a bookmark.
 - On the Resources page, the user can bookmark a resource by clicking on the bookmark icon which will turn orange to show it was bookmarked. 
-   - [Resource page: Bookmarked Resources](documentation/images/test_screenshots/bookmarked_resource_page.png)
+   - [Resource page: Bookmarked Resources](/documentation/images/test_screenshots/bookmarked_resource_page.png)
 - If the user has bookmarked resources, it will appear on their profile under the Bookmarks section.
-   - [Profile page: Bookmarked Resources](documentation/images/test_screenshots/bookmarked_profile.png)
+   - [Profile page: Bookmarked Resources](/documentation/images/test_screenshots/bookmarked_profile.png)
 - If the user wants to remove the bookmark they can click on the "x" button and the resource will be removed, they will receive a confirmation message.
-   - [Profile Page: Removed Bookmark confirmation](documentation/images/test_screenshots/bookmark_remove_confirmation.png)
+   - [Profile Page: Removed Bookmark confirmation](/documentation/images/test_screenshots/bookmark_remove_confirmation.png)
 9. As a Registered User, I want to be able to change my password on my profile;
 - The user can change their password if they click on the "Change Password" button on the Profile page. If the user clicked on the Change password button, a modal will open and ask them to type in their new password. If they confirm to change their password, they will receive a confirmation message.
-   - [Change Password Button](documentation/images/test_screenshots/change_password_delete_profile_buttons.png)
-   - [Change Password Modal](documentation/images/test_screenshots/change_password_modal.png)
-   - [Change Password Confirmation](documentation/images/test_screenshots/password_confirmation.png)
+   - [Change Password Button](/documentation/images/test_screenshots/change_password_delete_profile_buttons.png)
+   - [Change Password Modal](/documentation/images/test_screenshots/change_password_modal.png)
+   - [Change Password Confirmation](/documentation/images/test_screenshots/password_confirmation.png)
 10. As a Registered User, I want to be able to delete my account and profile;
 - The user can delete their profile from their profile page. If they click on the "Delete Profile" link a modal will appear where it asks for confirmation. The user needs to enter their password and click on the confirmation button which will delete their profile. If their account was successfully deleted, then they will receive a confirmation message and returned it to the Home Page.
-   - [Delete Profile Button](documentation/images/test_screenshots/change_password_delete_profile_buttons.png)
-   - [Delete ProfileModal](documentation/images/test_screenshots/delete_profile_modal.png)
-   - [Deleted Profile Confirmation](documentation/images/test_screenshots/delete_profile_confirmation.png)
+   - [Delete Profile Button](/documentation/images/test_screenshots/change_password_delete_profile_buttons.png)
+   - [Delete ProfileModal](/documentation/images/test_screenshots/delete_profile_modal.png)
+   - [Deleted Profile Confirmation](/documentation/images/test_screenshots/delete_profile_confirmation.png)
 11. As a Registered User, I want to be able to log out of my account;
  - The user can click on the log out button in the Navbar to log out of their account. They will receive a confirmation message if they are logged out of their account successfully and be taken to the Home Page.
-   - [Log Out Link](documentation/images/test_screenshots/log_out_link.png)
-   - [Log Out Confirmation](documentation/images/test_screenshots/log_out_confirmation.png)
+   - [Log Out Link](/documentation/images/test_screenshots/log_out_link.png)
+   - [Log Out Confirmation](/documentation/images/test_screenshots/log_out_confirmation.png)
 12. As a Registered User, I want to be able to get in contact via social media if I like the site or have suggestions.
  - The user can get in contact or follow the created or the site on social media as their social links are in the footer on every page of the website.
-   - [Footer](documentation/images/test_screenshots/footer.png)
+   - [Footer](/documentation/images/test_screenshots/footer.png)
 
 #### *Admin User*
 The Admin user the same user stories as the Registered user above with the additional extras below:
 1. As an Admin User, I would like the ability to **log in to an admin account** so that I can **create, edit and delete featured resources posts** for each month;
 - The login features are similar to the above, but if the admin user is logged in, they can see the Manage Resources Admin Dashboard. From here they can add & edit feature resources.
-   - [Admin Dashboard Page](documentation/images/test_screenshots/admin_dashboard.png)
+   - [Admin Dashboard Page](/documentation/images/test_screenshots/admin_dashboard.png)
 - The admin user can add a featured resource by clicking on the "Add featured resource" button which will take them to the Add Featured Resource page where they can fill in the form and add a resource. The form will have helper text to guide the user as well as validation. The user will receive confirmation if the featured resource is added to the Home page Featured Section.
-   - [Add Featured Resouces Page](documentation/images/test_screenshots/add_featured_resource.png)
-   - [Add Featured Resource Confirmation](documentation/images/test_screenshots/add_featured_resource_confirmation.png)
+   - [Add Featured Resouces Page](/documentation/images/test_screenshots/add_featured_resource.png)
+   - [Add Featured Resource Confirmation](/documentation/images/test_screenshots/add_featured_resource_confirmation.png)
 - The admin user can click on the "Edit or Delete Featured Resource" button on the Admin Dashboard and will be taken to the Featured Resource section on the Home page where they will be able to view Edit & Delete buttons. 
-   - [Featured Section on Home Page Admin View](documentation/images/test_screenshots/featured_resources_admin_view.png)
+   - [Featured Section on Home Page Admin View](/documentation/images/test_screenshots/featured_resources_admin_view.png)
 - If the edit button is clicked, the user will be taken to the Edit Featured Resource page. If the featured resource is successfully updated, they will receive a confirmation message.
-   - [Edit Featured Resouces Page](documentation/images/test_screenshots/edit_featured_resource_page.png)
-   - [Edit Featured Resource Confirmation](documentation/images/test_screenshots/edit_featured_resource_confirmation.png)
+   - [Edit Featured Resouces Page](/documentation/images/test_screenshots/edit_featured_resource_page.png)
+   - [Edit Featured Resource Confirmation](/documentation/images/test_screenshots/edit_featured_resource_confirmation.png)
 - If the delete button is clicked, a delete confirmation modal will display. If the featured resource is successfully deleted, they will receive a confirmation message.
-   - [Delete Featured Resource Modal](documentation/images/test_screenshots/delete_featured_resource_modal.png)
-   - [Delete Featured Resource Confirmation](documentation/images/test_screenshots/delete_featured_resource_confirmation.png)
+   - [Delete Featured Resource Modal](/documentation/images/test_screenshots/delete_featured_resource_modal.png)
+   - [Delete Featured Resource Confirmation](/documentation/images/test_screenshots/delete_featured_resource_confirmation.png)
 2. As an Admin User, I want to be able to view all **resource posts** added by other members of the community as well as the ability to **edit or delete any resource posts** so that I can **maintain the site to stay updated**
 - The admin user can view all resources and also the edit & delete buttons. They can edit or delete any resource regardless of who added the resource.
-    -[Admin User View of Resource Page](documentation/images/test_screenshots/resource_page_view_admin.png)
+    -[Admin User View of Resource Page](/documentation/images/test_screenshots/resource_page_view_admin.png)
 ___
 <br>
 
 ##  **Testing and Validation**
 ### [Link Checker](https://validator.w3.org/checklink)
 - To check that all links are working and not broken. 
-- [Link Validation Test](documentation/images/validator_screenshots/linkchecker.png)
+- [Link Validation Test](/documentation/images/validator_screenshots/linkchecker.png)
    - Issue with https://fonts.googleapis.com/ in the header of the base template but this directly copied and pasted from the Google Fonts website to use a font. Therefore this can be safely ignored.
    - Issue with Linkedin link was manually checked and resolved.
    - Issue with Instagram link was manually checked and resolved.
@@ -136,22 +136,22 @@ ___
 ### [Responsinator](http://www.responsinator.com/)
 - To test the responsiveness of the live website and functionalities on different size mobile devices.
 - Final version: 
-   - [Mobile view ](documentation/images/validator_screenshots/responsinator_mobile.png)
-   - [Tablet view ](documentation/images/validator_screenshots/responsinator_tablet.png)
+   - [Mobile view ](/documentation/images/validator_screenshots/responsinator_mobile.png)
+   - [Tablet view ](/documentation/images/validator_screenshots/responsinator_tablet.png)
 
 ### [Am I Responsive](http://ami.responsivedesign.is/)
 - To view images of the website on different devices.
-- Final version: [Am I Responsive ](documentation/images/validator_screenshots/am_i_responsive_design.png)
+- Final version: [Am I Responsive ](/documentation/images/validator_screenshots/am_i_responsive_design.png)
 
 ### JavaScript
 - [JSHint](https://jshint.com/)
-   - [Test JavaScript Validation](documentation/images/validator_screenshots/jshint_test.png)
-   - [Final JavaScript Validation](documentation/images/validator_screenshots/jshint_final.png)
+   - [Test JavaScript Validation](/documentation/images/validator_screenshots/jshint_test.png)
+   - [Final JavaScript Validation](/documentation/images/validator_screenshots/jshint_final.png)
    - Final version - addressing errors and warnings: 
       - Warning for ''let' is available in ES6 (use 'esversion: 6'). Can be safely ignored. If add /*jshint esversion: 6 */ at top of code so that JSHint does not raise unnecessary warnings for ECMAScript 6 features.
       - JSHint flags Jquery $ symbol as an undefined variable - safely ignored. 
 - [JSEsprima](https://esprima.org/)
-   - [Final JavaScript Validated](documentation/images/validator_screenshots/js_esprima_final.png)
+   - [Final JavaScript Validated](/documentation/images/validator_screenshots/js_esprima_final.png)
 
 ### [CSS: W3C CSS validation](https://jigsaw.w3.org/css-validator/)
 - To validate the CCS code of the project pasting code in by direct input method.
@@ -166,59 +166,59 @@ ___
 - Final version: no errors or warnings
 - Testing and Final results per page:
    - Error Pages - No Errors in testing and finally
-      - [Error Pages Final](documentation/images/validator_screenshots/HTML_validator_404_page_test.png)
+      - [Error Pages Final](/documentation/images/validator_screenshots/HTML_validator_404_page_test.png)
    - Add Category Page - No Errors in testing and finally
-      - [Add Category Page - Final](documentation/images/validator_screenshots/HTML_validator_add_category_page_test.png)
+      - [Add Category Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_category_page_test.png)
    - Add Featured Resources Page - Some errors in testing and no errors finally
-      - [Add Featured Resources Page - Test](documentation/images/validator_screenshots/HTML_validator_add_featured_resource_page_test.png)
-      - [Add Featured Resources Page - Final](documentation/images/validator_screenshots/HTML_validator_add_featured_resource_page_final.png)
+      - [Add Featured Resources Page - Test](/documentation/images/validator_screenshots/HTML_validator_add_featured_resource_page_test.png)
+      - [Add Featured Resources Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_featured_resource_page_final.png)
    - Add Resources Page - Some errors in testing and no errors finally
-      - [Add Resources Page - Test](documentation/images/validator_screenshots/HTML_validator_add_resource_page_test.png)
-      - [Add Resources Page - Final](documentation/images/validator_screenshots/HTML_validator_add_resource_page_final.png)
+      - [Add Resources Page - Test](/documentation/images/validator_screenshots/HTML_validator_add_resource_page_test.png)
+      - [Add Resources Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_resource_page_final.png)
    - Add Resources Page - Some errors in testing and no errors finally
-      - [Add Resources Page - Test](documentation/images/validator_screenshots/HTML_validator_add_resource_page_test.png)
-      - [Add Resources Page - Final](documentation/images/validator_screenshots/HTML_validator_add_resource_page_final.png)
+      - [Add Resources Page - Test](/documentation/images/validator_screenshots/HTML_validator_add_resource_page_test.png)
+      - [Add Resources Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_resource_page_final.png)
    - Add Topic Page - No Errors in testing and finally
-      - [Add Topic Page - Final](documentation/images/validator_screenshots/HTML_validator_add_topic_page_test.png)
+      - [Add Topic Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_topic_page_test.png)
    - Add Admin Dashboard Page - Some errors in testing and no errors finally
-      - [Add Admin Dashboard Page - Test](documentation/images/validator_screenshots/HTML_validator_admin_dashboard_page_test.png)
-      - [Add Admin Dashboard Page - Final](documentation/images/validator_screenshots/HTML_validator_admin_dashboard_page_final.png)
+      - [Add Admin Dashboard Page - Test](/documentation/images/validator_screenshots/HTML_validator_admin_dashboard_page_test.png)
+      - [Add Admin Dashboard Page - Final](/documentation/images/validator_screenshots/HTML_validator_admin_dashboard_page_final.png)
    - Edit Category Page - No Errors in testing and finally
-      - [Edit Category Page  - Final](documentation/images/validator_screenshots/HTML_validator_edit_category_page_test.png)
+      - [Edit Category Page  - Final](/documentation/images/validator_screenshots/HTML_validator_edit_category_page_test.png)
    - Edit Featured Resource Page - Some errors in testing and no errors finally
-      - [Edit Featured Resource Page - Test](documentation/images/validator_screenshots/HTML_validator_edit_featured_resource_page_test.png)
-      - [Edit Featured Resource Page - Final](documentation/images/validator_screenshots/HTML_validator_edit_featured_resource_page_final.png)
+      - [Edit Featured Resource Page - Test](/documentation/images/validator_screenshots/HTML_validator_edit_featured_resource_page_test.png)
+      - [Edit Featured Resource Page - Final](/documentation/images/validator_screenshots/HTML_validator_edit_featured_resource_page_final.png)
    - Edit Resource Page - Some errors in testing and no errors finally
-      - [Edit Resource Page - Test](documentation/images/validator_screenshots/HTML_validator_edit_resource_page_test.png)
-      - [Edit Resource Page - Final](documentation/images/validator_screenshots/HTML_validator_edit_resource_page_final.png)
+      - [Edit Resource Page - Test](/documentation/images/validator_screenshots/HTML_validator_edit_resource_page_test.png)
+      - [Edit Resource Page - Final](/documentation/images/validator_screenshots/HTML_validator_edit_resource_page_final.png)
    - Edit Topic Page - No Errors in testing and finally
-      - [Edit Topic Page  - Final](documentation/images/validator_screenshots/HTML_validator_edit_topic_page_test.png)
+      - [Edit Topic Page  - Final](/documentation/images/validator_screenshots/HTML_validator_edit_topic_page_test.png)
    - Home Page - Some errors in testing and no errors finally
-      - [Home Page - Test](documentation/images/validator_screenshots/HTML_validator_home_page_test.png)
-      - [Home Page - Final](documentation/images/validator_screenshots/HTML_validator_edit_resource_page_final.png)
+      - [Home Page - Test](/documentation/images/validator_screenshots/HTML_validator_home_page_test.png)
+      - [Home Page - Final](/documentation/images/validator_screenshots/HTML_validator_edit_resource_page_final.png)
    - Log In Page - No Errors in testing and finally
-      - [Log In Page - Final](documentation/images/validator_screenshots/HTML_validator_login_page_test.png)
+      - [Log In Page - Final](/documentation/images/validator_screenshots/HTML_validator_login_page_test.png)
    - Profile Page - Some errors in testing and no errors finally
-      - [Profile Page - Test](documentation/images/validator_screenshots/HTML_validator_profile_page_final.png)
-      - [Profile Page - Final](documentation/images/validator_screenshots/HTML_validator_profile_page_final.png)
+      - [Profile Page - Test](/documentation/images/validator_screenshots/HTML_validator_profile_page_final.png)
+      - [Profile Page - Final](/documentation/images/validator_screenshots/HTML_validator_profile_page_final.png)
    - Register Page - No Errors in testing and finally
-      - [Register Page - Final](documentation/images/validator_screenshots/HTML_validator_register_page_test.png)
+      - [Register Page - Final](/documentation/images/validator_screenshots/HTML_validator_register_page_test.png)
    - Resource Page - Some errors in testing and no errors finally
-      - [Resource Page - Test](documentation/images/validator_screenshots/HTML_validator_resource_page_final.png)
-      - [Resource Page - Final](documentation/images/validator_screenshots/HTML_validator_resource_page_test.png)
+      - [Resource Page - Test](/documentation/images/validator_screenshots/HTML_validator_resource_page_final.png)
+      - [Resource Page - Final](/documentation/images/validator_screenshots/HTML_validator_resource_page_test.png)
 
 ### Python
 - [Extendsclass](https://extendsclass.com/python-tester.html) - No syntax errors
-   - [Final Python Validated](documentation/images/validator_screenshots/python_extendsclass_final.png)
+   - [Final Python Validated](/documentation/images/validator_screenshots/python_extendsclass_final.png)
 - [PEP8 Online](http://pep8online.com/) - Pythoon file is PEP8 compliant
-   - [Final Python Validated](documentation/images/validator_screenshots/python_pep8online_final.png)
+   - [Final Python Validated](/documentation/images/validator_screenshots/python_pep8online_final.png)
 
 ### Google Dev Tool 
 - To check for errors in JavaScript code
 - Final version: no errors or warnings 
 
 ### Browser Compatibility
-To ensure a broad range of users can successfully use this site, I tested it across the 6 major browsers in both desktop and mobile configuration. See the [Browser Compatibility Table](documentation/images/validator_screenshots/browser_compatibility_table.png) for more detail. The following browsers were tested:
+To ensure a broad range of users can successfully use this site, I tested it across the 6 major browsers in both desktop and mobile configuration. See the [Browser Compatibility Table](/documentation/images/validator_screenshots/browser_compatibility_table.png) for more detail. The following browsers were tested:
 - Chrome
 - Firefox 
 - Safari
@@ -334,8 +334,8 @@ Manual testing of all elements and functionality on every page
 ## **Bugs and Fixes**
 ### Bugs
 - There were a few bugs during the development and deployment. A sheet was created to keep track of the bugs, the expected results and the solutions/fixes.
-   - [Bugs, Expected Results & Fixes during Development Phase](documentation/images/bugs_and_fixes_development.png)
-   - [Bugs, Expected Results & Fixes during Deployement Phase](documentation/images/bugs_and_fixes_deployment.png)
+   - [Bugs, Expected Results & Fixes during Development Phase](/documentation/images/bugs_and_fixes_development.png)
+   - [Bugs, Expected Results & Fixes during Deployement Phase](/documentation/images/bugs_and_fixes_deployment.png)
 
 ### Known Bugs
 - Firefox Browser: For all forms, if a cateogry or topic is selected, border-bottom does not change to green but red.
