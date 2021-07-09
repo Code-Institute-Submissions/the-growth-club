@@ -297,6 +297,9 @@ def admin_dashboard():
     if admin():
         categories = list(mongo.db.categories.find().sort("category_name", 1))
         topics = list(mongo.db.topics.find().sort("topic_name", 1))
+    else:
+        flash('You are not authorised to view this page')
+        return redirect(url_for("get_featured_resources"))
     # return the admin dashboard template
     return render_template("admin_dashboard.html", categories=categories,
                            topics=topics)
