@@ -350,29 +350,34 @@ def add_featured_resource():
     resources in the database and add the new items to the database. If this
     was successful, the user is notified and returned to the resources page.
     """
-    if request.method == "POST":
-        # find the collections and the keys
-        category = mongo.db.categories.find_one({'category_name':
-                                                request.form.get(
-                                                    "category_name")})
-        topic = mongo.db.topics.find_one({'topic_name': request.form.get(
-                                                    "topic_name")})
-        # create dictionary for items in form by ObjectId
-        featured_resource = {
-            "category_name": ObjectId(category['_id']),
-            "featured_name": request.form.get("featured_name"),
-            "featured_description": request.form.get("featured_description"),
-            "featured_date": request.form.get("featured_date"),
-            "featured_link": request.form.get("featured_link"),
-            "topic_name": ObjectId(topic['_id']),
-            "featured_img": request.form.get("featured_img"),
-            }
-        mongo.db.featured_resources.insert_one(featured_resource)
-        flash("Featured Resource Successfully Added")
+    if admin():
+        if request.method == "POST":
+            # find the collections and the keys
+            category = mongo.db.categories.find_one({'category_name':
+                                                    request.form.get(
+                                                        "category_name")})
+            topic = mongo.db.topics.find_one({'topic_name': request.form.get(
+                                                        "topic_name")})
+            # create dictionary for items in form by ObjectId
+            featured_resource = {
+                "category_name": ObjectId(category['_id']),
+                "featured_name": request.form.get("featured_name"),
+                "featured_description": request.form.get(
+                    "featured_description"),
+                "featured_date": request.form.get("featured_date"),
+                "featured_link": request.form.get("featured_link"),
+                "topic_name": ObjectId(topic['_id']),
+                "featured_img": request.form.get("featured_img"),
+                }
+            mongo.db.featured_resources.insert_one(featured_resource)
+            flash("Featured Resource Successfully Added")
+            return redirect(url_for("get_featured_resources"))
+        # find category & topic in database
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        topics = mongo.db.topics.find().sort("topic_name", 1)
+    else:
+        flash('You are not authorised to view this page')
         return redirect(url_for("get_featured_resources"))
-    # find category & topic in database
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    topics = mongo.db.topics.find().sort("topic_name", 1)
     # render the add_resources template
     return render_template("add_featured_resource.html", categories=categories,
                            topics=topics)
@@ -689,6 +694,16 @@ def delete_account(user_id):
 #                    ERROR HANDELING                  #
 # --------------------------------------------------- #
 
+# -- 401 ERROR --- #
+@app.errorhandler(401)
+def unauthorized_access(e):
+    """
+    Renders a custom 401 error page with a button
+    that takes the user back to the log in or register pages.
+    """
+    return render_template('errors/401.html'), 401
+
+
 # -- 404 ERROR --- #
 @app.errorhandler(404)
 def page_not_found(e):
@@ -706,7 +721,7 @@ def not_found_server(e):
     Renders a custom 500 error page with a button
     that takes the user back to the home page.
     """
-    return render_template("errors/500.html"), 500
+    return render_template('errors/500.html'), 500
 
 
 # --------------------------------------------------- #
