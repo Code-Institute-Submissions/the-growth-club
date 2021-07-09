@@ -1,6 +1,6 @@
 # The Growth Club Website - Testing details
 
-[Main README.md file](README.md)
+[Main README.md file](/README.md)
 
 [View live version of website via Heroku](https://the-growth-club.herokuapp.com/)
 ___
@@ -8,7 +8,7 @@ ___
 
 <a></a>
 ## Table of Contents 
-* [User Stories](#user-stories)
+* [Test User Stories](#test-user-stories)
 * [Testing and Validation](#testing-and-validation) 
 * [Manual testing](#manual-testing)
 * [Bugs and Fixes](#bugs-and-fixes)
@@ -16,9 +16,9 @@ ___
 ___
 <br>
 
-## **Testing user stories from the UX section**
-### **User Stories**
-#### *Guest User*
+## **Test User Stories**
+Testing user stories from the UX section
+### *Guest User*
 1. As a Guest User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
 - On the Home page landing section, it is clear what the site is about. In addition to this, the purpose of the site is in the Footer as well.
    - [Landing section on Home page](/documentation/images/test_screenshots/landing_section_landing_page.png)
@@ -38,7 +38,7 @@ ___
 - The user can get in contact or follow the created or the site on social media as their social links are in the footer on every page of the website.
    - [Footer](d/ocumentation/images/test_screenshots/footer.png)
 
-#### *Registered User*
+### *Registered User*
 1. As a Registered User, I want the main purpose of the site to be clear so that I immediately know what the site is intended for upon entering;
 - On the Home page landing section, it is clear what the site is about. In addition to this, the purpose of the site is in the Footer as well.
    - [Landing section on Home page](/documentation/images/test_screenshots/landing_section_landing_page.png)
@@ -97,7 +97,7 @@ ___
  - The user can get in contact or follow the created or the site on social media as their social links are in the footer on every page of the website.
    - [Footer](/documentation/images/test_screenshots/footer.png)
 
-#### *Admin User*
+### *Admin User*
 The Admin user the same user stories as the Registered user above with the additional extras below:
 1. As an Admin User, I would like the ability to **log in to an admin account** so that I can **create, edit and delete featured resources posts** for each month;
 - The login features are similar to the above, but if the admin user is logged in, they can see the Manage Resources Admin Dashboard. From here they can add & edit feature resources.
