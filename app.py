@@ -21,6 +21,13 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+def admin():
+    """
+    Set Admin to include
+    """
+    return session['user'] == 'admin'
+
+
 # ------------------------------------------- #
 #    USER: REGISTRATION | LOG IN | LOG OUT    #
 # ------------------------------------------- #
@@ -285,10 +292,11 @@ def search():
 # --- ADMIN DASHBOARD FUNCTIONALITY --- #
 @app.route("/admin_dashboard")
 def admin_dashboard():
-    """Get Categories from the database. Find the categories & topics,
-    then convert into a list and sort alphabetically the name."""
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    topics = list(mongo.db.topics.find().sort("topic_name", 1))
+    """Display Admin Dashboard. ."""
+    # check that someone isn't brute-forcing the url get admin functionalities
+    if admin():
+        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        topics = list(mongo.db.topics.find().sort("topic_name", 1))
     # return the admin dashboard template
     return render_template("admin_dashboard.html", categories=categories,
                            topics=topics)
