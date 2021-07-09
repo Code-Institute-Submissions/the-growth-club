@@ -41,7 +41,7 @@ def register():
     dictionary."""
     # check if a user is already logged in
     if session.get("user"):
-        # let user know he cannot access this page
+        # redirects the user to the get_resources page
         flash("You are already logged in, we will take you to the resources.")
         return redirect(url_for("get_resources"))
     # if the requested method is equal to "POST"
@@ -87,7 +87,7 @@ def login():
     to user and user is returned to the log in page."""
     # check if a user is already logged in
     if session.get("user"):
-        # let user know he cannot access this page
+        # redirects the user to the get_resources page
         flash("You are already logged in, we will take you to the resources.")
         return redirect(url_for("get_resources"))
     # if the requested method is equal to "POST"
@@ -144,30 +144,36 @@ def add_resource():
     """Add Resource. When user submits a new request, find the resources
     in the database and add the new items to the database. If this was
     successful, the user is notified and returned to the resources page. """
-    if request.method == "POST":
-        # find the collections and the keys
-        user = mongo.db.users.find_one({'username': session["user"]})
-        category = mongo.db.categories.find_one({'category_name':
-                                                request.form.get(
-                                                    "category_name")})
-        topic = mongo.db.topics.find_one({'topic_name': request.form.get(
-                                                    "topic_name")})
-        # create dictionary for items in form by ObjectId
-        resource = {
-            "category_name": ObjectId(category['_id']),
-            "resource_name": request.form.get("resource_name"),
-            "resource_description": request.form.get("resource_description"),
-            "resource_date": request.form.get("resource_date"),
-            "resource_link": request.form.get("resource_link"),
-            "topic_name": ObjectId(topic['_id']),
-            "created_by": ObjectId(user['_id'])
-            }
-        mongo.db.resources.insert_one(resource)
-        flash("The Resource was successfully added to the Growth Club!")
-        return redirect(url_for("get_resources"))
-    # find category & topic in database
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    topics = mongo.db.topics.find().sort("topic_name", 1)
+    if not session.get("user"):
+        # let user know they needs to register to access this page
+        flash("Please register to add a resource")
+        return redirect(url_for("register"))
+    else:
+        if request.method == "POST":
+            # find the collections and the keys
+            user = mongo.db.users.find_one({'username': session["user"]})
+            category = mongo.db.categories.find_one({'category_name':
+                                                    request.form.get(
+                                                        "category_name")})
+            topic = mongo.db.topics.find_one({'topic_name': request.form.get(
+                                                        "topic_name")})
+            # create dictionary for items in form by ObjectId
+            resource = {
+                "category_name": ObjectId(category['_id']),
+                "resource_name": request.form.get("resource_name"),
+                "resource_description": request.form.get(
+                    "resource_description"),
+                "resource_date": request.form.get("resource_date"),
+                "resource_link": request.form.get("resource_link"),
+                "topic_name": ObjectId(topic['_id']),
+                "created_by": ObjectId(user['_id'])
+                }
+            mongo.db.resources.insert_one(resource)
+            flash("The Resource was successfully added to the Growth Club!")
+            return redirect(url_for("get_resources"))
+        # find category & topic in database
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        topics = mongo.db.topics.find().sort("topic_name", 1)
     # render the add_resources template
     return render_template("add_resource.html", categories=categories,
                            topics=topics)
@@ -181,37 +187,42 @@ def get_resources():
     can be updated correctly. The ObjectId needs to be translated in a
     way so that it does not show the id number but the name.
     """
-    # find resources in the the database
-    resources = list(mongo.db.resources.find())
-    # loop through all resources
-    current_user = mongo.db.users.find_one({'username': session['user']})
-    for resource in resources:
-        try:
-            user = mongo.db.users.find_one({
-                '_id': ObjectId(resource['created_by'])
-            })
-            category = mongo.db.categories.find_one({
-                '_id': ObjectId(resource['category_name'])
-            })
-            topic = mongo.db.topics.find_one({
-                '_id': ObjectId(resource['topic_name'])
-            })
-            if user:
-                resource['created_by'] = user['username']
-            else:
-                resource['created_by'] = "Deleted user"
-            if category:
-                resource['category_name'] = category['category_name']
-            else:
-                resource['category_name'] = "Category deleted"
-            if topic:
-                resource['topic_name'] = topic['topic_name']
-            else:
-                resource['topic_name'] = "Topic deleted"
-            if ObjectId(resource['_id']) in current_user['bookmarks']:
-                resource['bookmarked'] = True
-        except Exception:
-            pass
+    if not session.get("user"):
+        # let user know they needs to register to access this page
+        flash("Please register to view the Growth Club resources")
+        return redirect(url_for("register"))
+    else:
+        # find resources in the the database
+        resources = list(mongo.db.resources.find())
+        # loop through all resources
+        current_user = mongo.db.users.find_one({'username': session['user']})
+        for resource in resources:
+            try:
+                user = mongo.db.users.find_one({
+                    '_id': ObjectId(resource['created_by'])
+                })
+                category = mongo.db.categories.find_one({
+                    '_id': ObjectId(resource['category_name'])
+                })
+                topic = mongo.db.topics.find_one({
+                    '_id': ObjectId(resource['topic_name'])
+                })
+                if user:
+                    resource['created_by'] = user['username']
+                else:
+                    resource['created_by'] = "Deleted user"
+                if category:
+                    resource['category_name'] = category['category_name']
+                else:
+                    resource['category_name'] = "Category deleted"
+                if topic:
+                    resource['topic_name'] = topic['topic_name']
+                else:
+                    resource['topic_name'] = "Topic deleted"
+                if ObjectId(resource['_id']) in current_user['bookmarks']:
+                    resource['bookmarked'] = True
+            except Exception:
+                pass
     # render the resources template
     return render_template("resources.html", resources=resources)
 
