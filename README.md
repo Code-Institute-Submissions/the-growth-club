@@ -21,11 +21,10 @@ ___
     * [User Flow](#user-flow)
     * [Log In Sign Up Flow](#log-in-sign-up-flow)
 * [UI Design](#ui-design) 
-    * [Design](#design)
-        * [Font](#font)
-        * [Colour Scheme](#colour-scheme)
-        * [Icons](#icons)
-        * [Structure](#structure)
+    * [Font](#font)
+    * [Colour Scheme](#colour-scheme)
+    * [Icons](#icons)
+    * [Structure](#structure)
 * [Wireframes](#wireframes)
 * [Data Structure](#data-structure)
 * [Existing Features](#existing-features)
@@ -242,9 +241,6 @@ ___
 - Python determines if the user is logged in or not by checking if 'user' in session and passes this data to Jinja to display the correct navbar for the user.
 - The navbar is collapsed into a burger icon on small screens.
 
-3. Floating to top button:
-- A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. This feature was added because the resources page can be quite long and the navbar is not fixed to the top of the page.
-
 #### Footer
 - The footer features:
  - A brief description of the purpose and mission of the site.
@@ -282,6 +278,7 @@ ___
 - If the user created the resource, they will see the edit button for the resource. If the user clicks on the "Edit" button it will take them to the Edit Resource Page.
 - If the user created the resource, they will see the delete button for the resource. If the user clicks on the "Delete" button, the resource will be deleted.
 - The user can bookmark a resource. If they click on the bookmark icon, this will confirm to them it has been added as a bookmark and appears on their profile.
+- A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. This feature was added because the resources page can be quite long and the navbar is not fixed to the top of the page.
 
 ### Registration & Sign Up Page
 - The sign-up page features a simple form, where the user can input a username, email address and password. The form was kept deliberately simple so that signup has minimum barriers.
