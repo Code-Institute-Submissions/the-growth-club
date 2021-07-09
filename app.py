@@ -638,7 +638,6 @@ def change_password(username):
     password on their profile page.
     """
     if request.method == "POST":
-        print("test")
         newPassword = generate_password_hash(request.form.get
                                              ("password_change"))
         mongo.db.users.update(
