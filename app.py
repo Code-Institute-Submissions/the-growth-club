@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 # --- ADMIN USER FUNCTION --- #
 def admin():
     """
-    Set admin user
+    Define admin user.
     """
     return session['user'] == 'admin'
 
@@ -36,10 +36,12 @@ def admin():
 # --- SIGN UP / REGISTER FUNCTIONALITY --- #
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """User Registration. Check if the username from the form element already
+    """
+    User Registration. Check if the username from the form element already
     exists within the Mongo database. If it does, then a message is sent to
     the user. If it does not exist then the new user is inserted in the
-    dictionary."""
+    dictionary.
+    """
     # check if a user is already logged in
     if session.get("user"):
         # redirects the user to the get_resources page
@@ -80,12 +82,14 @@ def register():
 # --- LOG IN FUNCTIONALITY --- #
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """User Log In. Check if the username from the form element already
+    """
+    User Log In. Check if the username from the form element already
     exists within the Mongo database. If it does, then the password is checked
     if it matches the user input. If the password matches then a success
     message is shown. If password does not match then message is shown and user
     is return to log in page. If username does not exist then message is shown
-    to user and user is returned to the log in page."""
+    to user and user is returned to the log in page.
+    """
     # check if a user is already logged in
     if session.get("user"):
         # redirects the user to the get_resources page
@@ -125,8 +129,10 @@ def login():
 # --- LOG OUT FUNCTIONALITY --- #
 @app.route("/logout")
 def logout():
-    """User Log Out. Send message to user, remove session and go back to the
-    log in page."""
+    """
+    User Log Out. Send message to user, remove session and go back to the
+    log in page.
+    """
     # show message to user
     flash("You have been logged out")
     # remove user from session cookies
@@ -142,9 +148,11 @@ def logout():
 # --- CREATE A RESOURCE FUNCTIONALITY --- #
 @app.route("/add_resource", methods=["GET", "POST"])
 def add_resource():
-    """Add Resource. When user submits a new request, find the resources
+    """
+    Add Resource. When user submits a new request, find the resources
     in the database and add the new items to the database. If this was
-    successful, the user is notified and returned to the resources page. """
+    successful, the user is notified and returned to the resources page.
+    """
     if not session.get("user"):
         # let user know they needs to register to access this page
         flash("Please register to add a resource")
@@ -183,7 +191,8 @@ def add_resource():
 # --- READ RESOURCE FUNCTIONALITY --- #
 @app.route("/get_resources")
 def get_resources():
-    """Get resources function. To find all the resources in the database
+    """
+    Get resources function. To find all the resources in the database
     and list them. The ObjectId is used to find the items to ensure it
     can be updated correctly. The ObjectId needs to be translated in a
     way so that it does not show the id number but the name.
@@ -234,7 +243,8 @@ def edit_resource(resource_id):
     """ Edit Resource. First, retrieve the resource from the database to be
     edited by using the id. Then the ID needs to be converted into a BSON
     data-type. Use the Post method to update the resource in the
-    database."""
+    database.
+    """
     if request.method == "POST":
         # find the collections and the keys
         user = mongo.db.users.find_one({'username': session["user"]})
@@ -270,8 +280,10 @@ def edit_resource(resource_id):
 # --- DELETE A RESOURCE FUNCTIONALITY --- #
 @app.route("/delete_resource/<resource_id>")
 def delete_resource(resource_id):
-    """Delete Resource. Find the resource by id and remove it from the
-    database. The present a message to confirm that it has been deleted."""
+    """
+    Delete Resource. Find the resource by id and remove it from the
+    database. The present a message to confirm that it has been deleted.
+    """
     mongo.db.resources.remove({"_id": ObjectId(resource_id)})
     flash("The Resource was successfully deleted")
     # return to the resources page
@@ -281,7 +293,9 @@ def delete_resource(resource_id):
 # --- SEARCH FOR A RESOURCE FUNCTIONALITY --- #
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    """ Search Functionality."""
+    """
+    Search Functionality.
+    """
     query = request.form.get("query")
     resources = list(mongo.db.resources.find({"$text": {"$search": query}}))
     for resource in resources:
@@ -314,7 +328,9 @@ def search():
 # --- ADMIN DASHBOARD FUNCTIONALITY --- #
 @app.route("/admin_dashboard")
 def admin_dashboard():
-    """Display Admin Dashboard. ."""
+    """
+    Display Admin Dashboard. This page is restricted to the admin user.
+    """
     # check that someone isn't brute-forcing the url get admin functionalities
     if admin():
         categories = list(mongo.db.categories.find().sort("category_name", 1))
@@ -331,7 +347,8 @@ def admin_dashboard():
 @app.route('/')
 @app.route("/get_featured_resources")
 def get_featured_resources():
-    """Get featured resources function. To find all the resources in the
+    """
+    Get featured resources function. To find all the resources in the
     database and list them. The ObjectId is used to find the items to ensure it
     can be updated correctly. The ObjectId needs to be translated in a
     way so that it does not show the id number but the name.
@@ -368,7 +385,8 @@ def get_featured_resources():
 # --- ADD A FEATURED RESOURCE FUNCTIONALITY --- #
 @app.route("/add_featured_resource", methods=["GET", "POST"])
 def add_featured_resource():
-    """Add Featured Resource. When user submits a new request, find the
+    """
+    Add Featured Resource. When user submits a new request, find the
     resources in the database and add the new items to the database. If this
     was successful, the user is notified and returned to the resources page.
     """
@@ -409,10 +427,11 @@ def add_featured_resource():
 @app.route("/edit_featured_resource/<featured_resource_id>",
            methods=["GET", "POST"])
 def edit_featured_resource(featured_resource_id):
-    """ Edit Featured Resource. First, retrieve the resource from the database
+    """
+    Edit Featured Resource. First, retrieve the resource from the database
     to be edited by using the id. Then the ID needs to be converted into a BSON
-    data-type. Use the Post method to update the resource in the
-    database."""
+    data-type. Use the Post method to update the resource in the database.
+    """
     if admin():
         if request.method == "POST":
             # find the collections and the keys
@@ -454,8 +473,10 @@ def edit_featured_resource(featured_resource_id):
 # --- DELETE A FEATURED RESOURCE FUNCTIONALITY --- #
 @app.route("/delete_featured_resource/<featured_resource_id>")
 def delete_featured_resource(featured_resource_id):
-    """Delete Featured Resource. Find the resource by id and remove it from the
-    database. The present a message to confirm that it has been deleted."""
+    """
+    Delete Featured Resource. Find the resource by id and remove it from the
+    database. The present a message to confirm that it has been deleted.
+    """
     mongo.db.featured_resources.remove({"_id": ObjectId(featured_resource_id)})
     flash("The Featured Resource was successfully deleted")
     # return to the resources page
@@ -465,9 +486,11 @@ def delete_featured_resource(featured_resource_id):
 # --- ADD A CATEGORY FUNCTIONALITY --- #
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    """ Add Category. If the function is called using the POST method, then
+    """
+    Add Category. If the function is called using the POST method, then
     the data from the form is retrieved, and inserted into the database.
-    Otherwise it will display the empty form."""
+    Otherwise it will display the empty form.
+    """
     if admin():
         if request.method == "POST":
             category = {
@@ -488,7 +511,8 @@ def add_category():
 # --- EDIT A CATEGORY FUNCTIONALITY --- #
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    """ Edit Category Functionality. If the user submits an edit request, then
+    """
+    Edit Category Functionality. If the user submits an edit request, then
     the Category is retrieved from the database, updated in the database and
     after the user receives a message, they are taken back to the manage page.
     """
@@ -514,9 +538,11 @@ def edit_category(category_id):
 # --- DELETE A CATEGORY FUNCTIONALITY --- #
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    """ Delete Category Functionality. If the user wants to delete a category,
+    """
+    Delete Category Functionality. If the user wants to delete a category,
     then using the remove() method, it is deleted in the database. Thereafter,
-    the user receives a message and they are taken back to the manage page. """
+    the user receives a message and they are taken back to the manage page.
+    """
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("admin_dashboard"))
@@ -525,9 +551,11 @@ def delete_category(category_id):
 # --- ADD A TOPIC FUNCTIONALITY --- #
 @app.route("/add_topic", methods=["GET", "POST"])
 def add_topic():
-    """ Add Topic. If the function is called using the POST method, then
+    """
+    Add Topic. If the function is called using the POST method, then
     the data from the form is retrieved, and inserted into the database.
-    Otherwise it will display the empty form."""
+    Otherwise it will display the empty form.
+    """
     if admin():
         if request.method == "POST":
             topic = {
@@ -548,7 +576,8 @@ def add_topic():
 # --- EDIT A TOPIC FUNCTIONALITY --- #
 @app.route("/edit_topic/<topic_id>", methods=["GET", "POST"])
 def edit_topic(topic_id):
-    """ Edit Topic Functionality. If the user submits an edit request, then
+    """
+    Edit Topic Functionality. If the user submits an edit request, then
     the Category is retrieved from the database, updated in the database and
     after the user receives a message, they are taken back to the manage page.
     """
@@ -574,10 +603,12 @@ def edit_topic(topic_id):
 # --- DELETE A TOPIC FUNCTIONALITY --- #
 @app.route("/delete_topic/<topic_id>")
 def delete_topic(topic_id):
-    """ Delete Topic Functionality. If the user wants to delete a topic,
+    """
+    Delete Topic Functionality. If the user wants to delete a topic,
     then using the remove() method, it is deleted in the database. Thereafter,
     the user receives a message and they are taken back to the admin dahboard
-    page. """
+    page.
+    """
     mongo.db.topics.remove({"_id": ObjectId(topic_id)})
     flash("Topic Successfully Deleted")
     return redirect(url_for("admin_dashboard"))
@@ -590,9 +621,11 @@ def delete_topic(topic_id):
 # --- PROFILE  FUNCTIONALITY --- #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """User Profile. Find username in the database and retrieve the
-    username. Then render the profile template with the user's name"""
-    if 'user' in session:
+    """
+    User Profile. Find username in the database and retrieve the
+    username. Then render the profile template with the user's name.
+    """
+    if session["user"] == username:
         # find the user in the database
         user = mongo.db.users.find_one(
             # take the session user's username from Mongo
@@ -643,6 +676,9 @@ def profile(username):
         # if the user has no bookmarks try render their profile
         except KeyError:
             pass
+    else:
+        flash('You are not authorised to view this page')
+        return redirect(url_for("get_featured_resources"))
     # return profile page with user's unique name
     return render_template("profile.html", username=username)
 
@@ -672,7 +708,9 @@ def bookmark(resource_id):
 # --- DELETE A BOOKMARK FUNCTIONALITY --- #
 @app.route("/delete_bookmark/<resource_id>")
 def delete_bookmark(resource_id):
-    """ Delete Bookmark Functionality."""
+    """
+    Delete Bookmark Functionality.
+    """
     try:
         mongo.db.users.find_one_and_update(
             {"username": session["user"].lower()},
