@@ -21,9 +21,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# --- ADMIN USER FUNCTION --- #
 def admin():
     """
-    Set Admin to include
+    Set admin user
     """
     return session['user'] == 'admin'
 
@@ -467,15 +468,19 @@ def add_category():
     """ Add Category. If the function is called using the POST method, then
     the data from the form is retrieved, and inserted into the database.
     Otherwise it will display the empty form."""
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name")
-        }
-        # insert the category in the database
-        mongo.db.categories.insert_one(category)
-        flash("The new Category was added")
-        # return to the admin dashboard page
-        return redirect(url_for("admin_dashboard"))
+    if admin():
+        if request.method == "POST":
+            category = {
+                "category_name": request.form.get("category_name")
+            }
+            # insert the category in the database
+            mongo.db.categories.insert_one(category)
+            flash("The new Category was added")
+            # return to the admin dashboard page
+            return redirect(url_for("admin_dashboard"))
+    else:
+        flash('You are not authorised to view this page')
+        return redirect(url_for("get_featured_resources"))
     # return to the add_category page
     return render_template("add_category.html")
 
@@ -487,18 +492,22 @@ def edit_category(category_id):
     the Category is retrieved from the database, updated in the database and
     after the user receives a message, they are taken back to the manage page.
     """
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
-        }
-        # update the category in the database
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-        flash("Category Successfully Updated")
-        # user returned to the admin dashboard page
-        return redirect(url_for("admin_dashboard"))
-    # Using the category ID being sent into this function, the .find_one()
-    # method is used on the categories collection
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    if admin():
+        if request.method == "POST":
+            submit = {
+                "category_name": request.form.get("category_name")
+            }
+            # update the category in the database
+            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+            flash("Category Successfully Updated")
+            # user returned to the admin dashboard page
+            return redirect(url_for("admin_dashboard"))
+        # Using the category ID being sent into this function, the .find_one()
+        # method is used on the categories collection
+        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    else:
+        flash('You are not authorised to view this page')
+        return redirect(url_for("get_featured_resources"))
     return render_template("edit_category.html", category=category)
 
 
@@ -519,15 +528,19 @@ def add_topic():
     """ Add Topic. If the function is called using the POST method, then
     the data from the form is retrieved, and inserted into the database.
     Otherwise it will display the empty form."""
-    if request.method == "POST":
-        topic = {
-            "topic_name": request.form.get("topic_name")
-        }
-        # insert the category in the database
-        mongo.db.topics.insert_one(topic)
-        flash("The new Topic was Added")
-        # return to the manage admin dashboard page
-        return redirect(url_for("admin_dashboard"))
+    if admin():
+        if request.method == "POST":
+            topic = {
+                "topic_name": request.form.get("topic_name")
+            }
+            # insert the category in the database
+            mongo.db.topics.insert_one(topic)
+            flash("The new Topic was Added")
+            # return to the manage admin dashboard page
+            return redirect(url_for("admin_dashboard"))
+    else:
+        flash('You are not authorised to view this page')
+        return redirect(url_for("get_featured_resources"))
     # return to the add_category page
     return render_template("add_topic.html")
 
@@ -539,18 +552,22 @@ def edit_topic(topic_id):
     the Category is retrieved from the database, updated in the database and
     after the user receives a message, they are taken back to the manage page.
     """
-    if request.method == "POST":
-        submit = {
-            "topic_name": request.form.get("topic_name")
-        }
-        # update the topic in the database
-        mongo.db.topics.update({"_id": ObjectId(topic_id)}, submit)
-        flash("Topic Successfully Updated")
-        # user returned to the admin dashboard page
-        return redirect(url_for("admin_dashboard"))
-    # Using the topic ID being sent into this function, the .find_one()
-    # method is used on the topics collection
-    topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+    if admin():
+        if request.method == "POST":
+            submit = {
+                "topic_name": request.form.get("topic_name")
+            }
+            # update the topic in the database
+            mongo.db.topics.update({"_id": ObjectId(topic_id)}, submit)
+            flash("Topic Successfully Updated")
+            # user returned to the admin dashboard page
+            return redirect(url_for("admin_dashboard"))
+        # Using the topic ID being sent into this function, the .find_one()
+        # method is used on the topics collection
+        topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+    else:
+        flash('You are not authorised to view this page')
+        return redirect(url_for("get_featured_resources"))
     return render_template("edit_topic.html", topic=topic)
 
 
