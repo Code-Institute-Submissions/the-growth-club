@@ -592,54 +592,57 @@ def delete_topic(topic_id):
 def profile(username):
     """User Profile. Find username in the database and retrieve the
     username. Then render the profile template with the user's name"""
-    # find the user in the database
-    user = mongo.db.users.find_one(
-        # take the session user's username from Mongo
-        {"username": session["user"]})
-    # if the user has a bookmark try the execute the below
-    try:
-        # check if session['user'] cookie is truthy
-        if session["user"]:
-            user_resources = []
-            for resource in user['bookmarks']:
-                user_resource = mongo.db.resources.find_one({'_id': resource})
-                if user_resource:
-                    user = mongo.db.users.find_one({
-                        '_id': ObjectId(user_resource['created_by'])
-                    })
-                    category = mongo.db.categories.find_one({
-                        '_id': ObjectId(user_resource['category_name'])
-                    })
-                    topic = mongo.db.topics.find_one({
-                        '_id': ObjectId(user_resource['topic_name'])
-                    })
-                    if user:
-                        user_resource['created_by'] = user[
-                            'username']
+    if 'user' in session:
+        # find the user in the database
+        user = mongo.db.users.find_one(
+            # take the session user's username from Mongo
+            {"username": session["user"]})
+        # if the user has a bookmark try the execute the below
+        try:
+            # check if session['user'] cookie is truthy
+            if session["user"]:
+                user_resources = []
+                for resource in user['bookmarks']:
+                    user_resource = mongo.db.resources.find_one({
+                        '_id': resource})
+                    if user_resource:
+                        user = mongo.db.users.find_one({
+                            '_id': ObjectId(user_resource['created_by'])
+                        })
+                        category = mongo.db.categories.find_one({
+                            '_id': ObjectId(user_resource['category_name'])
+                        })
+                        topic = mongo.db.topics.find_one({
+                            '_id': ObjectId(user_resource['topic_name'])
+                        })
+                        if user:
+                            user_resource['created_by'] = user[
+                                'username']
+                        else:
+                            user_resource['created_by'] = "No User"
+                        if category:
+                            user_resource['category_name'] = category[
+                                'category_name']
+                        else:
+                            user_resource['category_name'] = "No Category"
+                        if topic:
+                            user_resource['topic_name'] = topic['topic_name']
+                        else:
+                            user_resource['topic_name'] = "No Topic"
                     else:
-                        user_resource['created_by'] = "No User"
-                    if category:
-                        user_resource['category_name'] = category[
-                            'category_name']
-                    else:
-                        user_resource['category_name'] = "No Category"
-                    if topic:
-                        user_resource['topic_name'] = topic['topic_name']
-                    else:
-                        user_resource['topic_name'] = "No Topic"
-                else:
-                    user_resource = dict()
-                    user_resource['_id'] = resource
-                    user_resource['created_by'] = "N/A"
-                    user_resource['category_name'] = "N/A"
-                    user_resource['topic_name'] = "Resource deleted"
-                user_resources.append(user_resource)
-            # render appropriate profile template
-            return render_template("profile.html", username=username,
-                                   resources=user_resources)
-    # if the user has no bookmarks try render their profile
-    except KeyError:
-        pass
+                        user_resource = dict()
+                        user_resource['_id'] = resource
+                        user_resource['created_by'] = "N/A"
+                        user_resource['category_name'] = "N/A"
+                        user_resource['topic_name'] = "Resource deleted"
+                    user_resources.append(user_resource)
+                # render appropriate profile template
+                return render_template(
+                    "profile.html", username=username,
+                    resources=user_resources)
+        # if the user has no bookmarks try render their profile
+        except KeyError:
+            pass
     # return profile page with user's unique name
     return render_template("profile.html", username=username)
 
