@@ -294,7 +294,8 @@ def delete_resource(resource_id):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
-    Search Functionality.
+    Search Functionality. To loop through the resources in the database
+    and find the resources that match the query.
     """
     query = request.form.get("query")
     resources = list(mongo.db.resources.find({"$text": {"$search": query}}))
@@ -578,7 +579,7 @@ def add_topic():
 def edit_topic(topic_id):
     """
     Edit Topic Functionality. If the user submits an edit request, then
-    the Category is retrieved from the database, updated in the database and
+    the topic is retrieved from the database, updated in the database and
     after the user receives a message, they are taken back to the manage page.
     """
     if admin():
@@ -632,7 +633,7 @@ def profile(username):
             {"username": session["user"]})
         # if the user has a bookmark try the execute the below
         try:
-            # check if session['user'] cookie is truthy
+            # check if session user
             if session["user"]:
                 user_resources = []
                 for resource in user['bookmarks']:
@@ -686,7 +687,9 @@ def profile(username):
 # --- BOOKMARK A RESOURCE FUNCTIONALITY --- #
 @app.route("/bookmark/<resource_id>", methods=["POST"])
 def bookmark(resource_id):
-    """ Bookmark Functionality."""
+    """
+    Bookmark Functionality. To bookmark a resource on their profile.
+    """
     if request.method == "POST":
         user_bookmarks = list(mongo.db.users.find_one({"username": session
                                                       ["user"].lower()})
@@ -709,7 +712,7 @@ def bookmark(resource_id):
 @app.route("/delete_bookmark/<resource_id>")
 def delete_bookmark(resource_id):
     """
-    Delete Bookmark Functionality.
+    Delete Bookmark Functionality. To remove a bookmark from their profile.
     """
     try:
         mongo.db.users.find_one_and_update(
