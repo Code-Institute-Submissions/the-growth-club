@@ -1228,6 +1228,14 @@ i.left {
     border-radius: 5px;
     color: var(--Main-Text);
     text-transform:capitalize;
+    font-size: 15px;
+}
+
+/* Tablets and larger devices*/
+@media only screen and (min-width: 425px) {
+    .profile-h{
+        font-size: 24px;
+    }
 }
 
 .profile-header-row{
@@ -1336,7 +1344,28 @@ i.left {
 
 .modal-h{
     text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
 }
+
+/* Tablets and larger devices*/
+@media only screen and (min-width: 425px) {
+    .modal-h{
+        font-size: 24px;
+    }
+}
+
+.delete-modal-p{
+    font-size: 16px;
+}
+
+/* Tablets and larger devices*/
+@media only screen and (min-width: 425px) {
+    .delete-modal-p{
+        font-size: 18px;
+    }
+}
+
 
 #deletemodal{
     border-radius: 8px;
