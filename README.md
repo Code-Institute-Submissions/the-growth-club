@@ -370,12 +370,14 @@ ___
 
 <a></a>
 ## **Future Features**
+These are possible future features to be added to the project which was suggested by users during the usability tests. As these features were not part of a minimum viable products launch phase, they will be implemented in future releases.
 - Have a 'forgot password' functionality on the log in page.
-- Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc.
+- Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc. Have a profile feature to view the resources the user added to the club.
 - Events in the form of a calendar to visually represent events and not have it be part of the general resources.
-- User can search by category and topic.
+- User can search by category and topic. Also, have the searched word stay in the search box
 - User can filter resources by category or topic.
-- Currently the feedback for bookmarking appears on the profile page. In future the plan is to have the feedback to user about bookmarking a resource on the resources page.
+- Currently, the feedback for bookmarking appears on the profile page. In future, the plan is to have feedback to the user about bookmarking a resource on the resources page.
+- If a user adds a resource, it will be added to the top. Therefore, a user will always see the most recent resources added to the club.
 
 ___
 <br>
