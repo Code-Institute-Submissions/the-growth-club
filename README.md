@@ -4,7 +4,7 @@ This project is part of my Code Institute Full Stack Software Development studie
 
 [View live version of website via Heroku](https://the-growth-club.herokuapp.com/)
 
-![Mockup image](documentation/images/general_doc_images/mockup.png)
+![Mockup image](/documentation/images/general_doc_images/mockup.png)
 ___
 <br>
 
@@ -103,12 +103,12 @@ The Admin user the same user stories as the Registered user above with the addit
 <a></a>
 ### **User Flow**
 In the planning phase, I created a User flow to determine the main paths the user might take on the web app. 
-![User flow](documentation/images/general_doc_images/userflow.png)
+![User flow](/documentation/images/general_doc_images/userflow.png)
 
 <a></a>
 ### **Log In Sign Up Flow**
 In the planning phase, I created a Login and Sign up/Register flow to determine the main paths the user might take on the web app to manage their status on the website. The success and failure messages differ slightly on the deployed app as the copy was changed during testing with users to be more clear 
-![image](documentation/images/general_doc_images/login_signup_flow.png)
+![image](/documentation/images/general_doc_images/login_signup_flow.png)
 ___
 <br>
 
@@ -129,7 +129,7 @@ ___
 
 #### **Colour Palette**
 Coolors was used to map out my colour scheme.
-![Colour Palette](documentation/images/general_doc_images/coolors_colour_palette.png)
+![Colour Palette](/documentation/images/general_doc_images/coolors_colour_palette.png)
 - #00000: This colour is used for borders of buttons and where the text needed to stand out more because of the background.
 - #1A222D: This colour is used as the main text colour and where the background should completely black like the CTA buttons.
 - #FE9902: This colour is used as the primary colour and sets the tone for the website. It is used to show if something is important or show the user where they are.
@@ -155,29 +155,29 @@ I have used Balsamic to create low-fidelity wireframes and used Figma to create 
 ### **Wireframe Images**
 #### **Sketches**
 Sketches were part of the first phase of the design for this project. Sketches with pen and paper are used to roughly draft the flow and the structure of the project without having to focus on colour, fonts and the correct layout.
-- [Sketch](documentation/wireframes/sketch.png)
+- [Sketch](/documentation/wireframes/sketch.png)
 
 #### **Low Fidelity**
 [Balsamiq](https://balsamiq.com/) was used to create low-fidelity wireframes. Low-fidelity designs were utilised to make the design process simple and test low-tech concepts. When designing a low-fi prototype, the font types and colours are ignored to focus on the design of the project itself.
 
 *Guest User*
-- [Landing Page](documentation/wireframes/guest_user_landing_page.png)
-- [Log In Page](documentation/wireframes/guest_user_login_page.png)
-- [Registration Page](documentation/wireframes/guest_user_register_page.png)
+- [Landing Page](/documentation/wireframes/guest_user_landing_page.png)
+- [Log In Page](/documentation/wireframes/guest_user_login_page.png)
+- [Registration Page](/documentation/wireframes/guest_user_register_page.png)
 
 *Registered User*
-- [Landing Page](documentation/wireframes/registered_user_landing_page.png)
-- [Profile Page](documentation/wireframes/registered_user_profile_page.png)
-- [Resources Page](documentation/wireframes/registered_user_resources_page.png)
+- [Landing Page](/documentation/wireframes/registered_user_landing_page.png)
+- [Profile Page](/documentation/wireframes/registered_user_profile_page.png)
+- [Resources Page](/documentation/wireframes/registered_user_resources_page.png)
 
 *Admin User*
-- [Landing Page](documentation/wireframes/admin_user_landing_page.png)
-- [Manage Resources Admin Dashboard Page](documentation/wireframes/admin_user_manage_dashboard_page.png)
+- [Landing Page](/documentation/wireframes/admin_user_landing_page.png)
+- [Manage Resources Admin Dashboard Page](/documentation/wireframes/admin_user_manage_dashboard_page.png)
 
 #### **Medium Fidelity**
 [Figma](https://www.figma.com/) was used to create medium-fidelity wireframes. Medium-fidelity designs were utilised to start experimenting with colours, fonts and images.
-- [Mobile & Tablet](documentation/wireframes/mobile_design.png)
-- [Desktop](documentation/wireframes/desktop_design.png)
+- [Mobile & Tablet](/documentation/wireframes/mobile_design.png)
+- [Desktop](/documentation/wireframes/desktop_design.png)
 ___
 <br>
 
@@ -443,7 +443,7 @@ ___
     - To check if site is mobiole friendly
 - [Grammerly](https://www.grammarly.com/) 
     - To check spelling & grammer
--[AutoPrefixer](https://autoprefixer.github.io/)
+- [AutoPrefixer](https://autoprefixer.github.io/)
     - Autoprefixer to parse CSS and adds vendor prefixes
 
 ### **Design**
