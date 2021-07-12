@@ -159,53 +159,53 @@ ___
    - The Validator states there is an error with regards to the "text-decoration-thickness" but this is acceptable according to [w3.org](https://www.w3.org/TR/css-text-decor-4/#propdef-text-decoration-thickness) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness). This property, sets the stroke thickness of underlines, overlines, and line-throughs specified on the element with text-decoration-line, and affects all decorations originating from this element even if descendant boxes specify a different thickness. Therefore, it can be safely ignored.
    - 8 warnings relating to custom colour variables. The W3C CSS validator cannot parse :root variables. Therefore it can be safely ignored.
    - Warnings for vendor extensions suggested by AutoPrefixer is valid to ensure CSS styles can work across multiple browsers, can be safely ignored.
-- [Final CSS Validation](/documentation/images/validator_screenshots/CSS_validator_final.png)
+- [Final CSS Validation](/documentation/images/validator_screenshots/css_validator_final.png)
 
-### [HMTL: W3C Markup Validation](https://validator.w3.org/)
+### [HTML: W3C Markup Validation](https://validator.w3.org/)
 - To validate the HTML code of the project by pasting code in by direct input method. Note the W3C Validator for HTML does not understand the Jinja templating syntax therefore if there are warnings related to this, this can be safely ignored.
 - Final version: no errors or warnings
 - Testing and Final results per page:
    - Error Pages - No Errors in testing and finally
-      - [Error Pages Final](/documentation/images/validator_screenshots/HTML_validator_404_page_test.png)
+      - [Error Pages Final](/documentation/images/validator_screenshots/html_validator_404_page_test.png)
    - Add Category Page - No Errors in testing and finally
-      - [Add Category Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_category_page_test.png)
+      - [Add Category Page - Final](/documentation/images/validator_screenshots/html_validator_add_category_page_test.png)
    - Add Featured Resources Page - Some errors in testing and no errors finally
-      - [Add Featured Resources Page - Test](/documentation/images/validator_screenshots/HTML_validator_add_featured_resource_page_test.png)
-      - [Add Featured Resources Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_featured_resource_page_final.png)
+      - [Add Featured Resources Page - Test](/documentation/images/validator_screenshots/html_validator_add_featured_resource_page_test.png)
+      - [Add Featured Resources Page - Final](/documentation/images/validator_screenshots/html_validator_add_featured_resource_page_final.png)
    - Add Resources Page - Some errors in testing and no errors finally
-      - [Add Resources Page - Test](/documentation/images/validator_screenshots/HTML_validator_add_resource_page_test.png)
-      - [Add Resources Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_resource_page_final.png)
+      - [Add Resources Page - Test](/documentation/images/validator_screenshots/html_validator_add_resource_page_test.png)
+      - [Add Resources Page - Final](/documentation/images/validator_screenshots/html_validator_add_resource_page_final.png)
    - Add Resources Page - Some errors in testing and no errors finally
-      - [Add Resources Page - Test](/documentation/images/validator_screenshots/HTML_validator_add_resource_page_test.png)
-      - [Add Resources Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_resource_page_final.png)
+      - [Add Resources Page - Test](/documentation/images/validator_screenshots/html_validator_add_resource_page_test.png)
+      - [Add Resources Page - Final](/documentation/images/validator_screenshots/html_validator_add_resource_page_final.png)
    - Add Topic Page - No Errors in testing and finally
-      - [Add Topic Page - Final](/documentation/images/validator_screenshots/HTML_validator_add_topic_page_test.png)
+      - [Add Topic Page - Final](/documentation/images/validator_screenshots/html_validator_add_topic_page_test.png)
    - Add Admin Dashboard Page - Some errors in testing and no errors finally
-      - [Add Admin Dashboard Page - Test](/documentation/images/validator_screenshots/HTML_validator_admin_dashboard_page_test.png)
-      - [Add Admin Dashboard Page - Final](/documentation/images/validator_screenshots/HTML_validator_admin_dashboard_page_final.png)
+      - [Add Admin Dashboard Page - Test](/documentation/images/validator_screenshots/html_validator_admin_dashboard_page_test.png)
+      - [Add Admin Dashboard Page - Final](/documentation/images/validator_screenshots/html_validator_admin_dashboard_page_final.png)
    - Edit Category Page - No Errors in testing and finally
-      - [Edit Category Page  - Final](/documentation/images/validator_screenshots/HTML_validator_edit_category_page_test.png)
+      - [Edit Category Page  - Final](/documentation/images/validator_screenshots/html_validator_edit_category_page_test.png)
    - Edit Featured Resource Page - Some errors in testing and no errors finally
-      - [Edit Featured Resource Page - Test](/documentation/images/validator_screenshots/HTML_validator_edit_featured_resource_page_test.png)
-      - [Edit Featured Resource Page - Final](/documentation/images/validator_screenshots/HTML_validator_edit_featured_resource_page_final.png)
+      - [Edit Featured Resource Page - Test](/documentation/images/validator_screenshots/html_validator_edit_featured_resource_page_test.png)
+      - [Edit Featured Resource Page - Final](/documentation/images/validator_screenshots/html_validator_edit_featured_resource_page_final.png)
    - Edit Resource Page - Some errors in testing and no errors finally
-      - [Edit Resource Page - Test](/documentation/images/validator_screenshots/HTML_validator_edit_resource_page_test.png)
-      - [Edit Resource Page - Final](/documentation/images/validator_screenshots/HTML_validator_edit_resource_page_final.png)
+      - [Edit Resource Page - Test](/documentation/images/validator_screenshots/html_validator_edit_resource_page_test.png)
+      - [Edit Resource Page - Final](/documentation/images/validator_screenshots/html_validator_edit_resource_page_final.png)
    - Edit Topic Page - No Errors in testing and finally
-      - [Edit Topic Page  - Final](/documentation/images/validator_screenshots/HTML_validator_edit_topic_page_test.png)
+      - [Edit Topic Page  - Final](/documentation/images/validator_screenshots/html_validator_edit_topic_page_test.png)
    - Home Page - Some errors in testing and no errors finally
       - [Home Page - Test](/documentation/images/validator_screenshots/HTML_validator_home_page_test.png)
-      - [Home Page - Final](/documentation/images/validator_screenshots/HTML_validator_edit_resource_page_final.png)
+      - [Home Page - Final](/documentation/images/validator_screenshots/html_validator_edit_resource_page_final.png)
    - Log In Page - No Errors in testing and finally
-      - [Log In Page - Final](/documentation/images/validator_screenshots/HTML_validator_login_page_test.png)
+      - [Log In Page - Final](/documentation/images/validator_screenshots/html_validator_login_page_test.png)
    - Profile Page - Some errors in testing and no errors finally
-      - [Profile Page - Test](/documentation/images/validator_screenshots/HTML_validator_profile_page_final.png)
-      - [Profile Page - Final](/documentation/images/validator_screenshots/HTML_validator_profile_page_final.png)
+      - [Profile Page - Test](/documentation/images/validator_screenshots/html_validator_profile_page_final.png)
+      - [Profile Page - Final](/documentation/images/validator_screenshots/html_validator_profile_page_final.png)
    - Register Page - No Errors in testing and finally
-      - [Register Page - Final](/documentation/images/validator_screenshots/HTML_validator_register_page_test.png)
+      - [Register Page - Final](/documentation/images/validator_screenshots/html_validator_register_page_test.png)
    - Resource Page - Some errors in testing and no errors finally
-      - [Resource Page - Test](/documentation/images/validator_screenshots/HTML_validator_resource_page_final.png)
-      - [Resource Page - Final](/documentation/images/validator_screenshots/HTML_validator_resource_page_test.png)
+      - [Resource Page - Test](/documentation/images/validator_screenshots/html_validator_resource_page_final.png)
+      - [Resource Page - Final](/documentation/images/validator_screenshots/html_validator_resource_page_test.png)
 
 ### Python
 - [Extendsclass](https://extendsclass.com/python-tester.html) - No syntax errors
@@ -334,8 +334,8 @@ Manual testing of all elements and functionality on every page
 ## **Bugs and Fixes**
 ### Bugs
 - There were a few bugs during the development and deployment. A sheet was created to keep track of the bugs, the expected results and the solutions/fixes.
-   - [Bugs, Expected Results & Fixes during Development Phase](/documentation/images/bugs_and_fixes_development.png)
-   - [Bugs, Expected Results & Fixes during Deployement Phase](/documentation/images/bugs_and_fixes_deployment.png)
+   - [Bugs, Expected Results & Fixes during Development Phase](/documentation/images/general_doc_images/bugs_and_fixes_development.png)
+   - [Bugs, Expected Results & Fixes during Deployement Phase](/documentation/images/general_doc_images/bugs_and_fixes_deployment.png)
 
 ### Known Bugs
 - Firefox Browser: For all forms, if a cateogry or topic is selected, border-bottom does not change to green but red.
