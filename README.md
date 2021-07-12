@@ -4,7 +4,7 @@ This project is part of my Code Institute Full Stack Software Development studie
 
 [View live version of website via Heroku](https://the-growth-club.herokuapp.com/)
 
-![Mockup image](documentation/images/mockup.png)
+![Mockup image](documentation/images/general_doc_images/mockup.png)
 ___
 <br>
 
@@ -103,12 +103,12 @@ The Admin user the same user stories as the Registered user above with the addit
 <a></a>
 ### **User Flow**
 In the planning phase, I created a User flow to determine the main paths the user might take on the web app. 
-![User flow](documentation/images/userflow.png)
+![User flow](documentation/images/general_doc_images/userflow.png)
 
 <a></a>
 ### **Log In Sign Up Flow**
 In the planning phase, I created a Login and Sign up/Register flow to determine the main paths the user might take on the web app to manage their status on the website. The success and failure messages differ slightly on the deployed app as the copy was changed during testing with users to be more clear 
-![image](documentation/images/login_signup_flow.png)
+![image](documentation/images/general_doc_images/login_signup_flow.png)
 ___
 <br>
 
@@ -129,7 +129,7 @@ ___
 
 #### **Colour Palette**
 Coolors was used to map out my colour scheme.
-![Colour Palette](documentation/images/coolors_colour_palette.png)
+![Colour Palette](documentation/images/general_doc_images/coolors_colour_palette.png)
 - #00000: This colour is used for borders of buttons and where the text needed to stand out more because of the background.
 - #1A222D: This colour is used as the main text colour and where the background should completely black like the CTA buttons.
 - #FE9902: This colour is used as the primary colour and sets the tone for the website. It is used to show if something is important or show the user where they are.
@@ -188,7 +188,7 @@ A database structure was designed to be specifically suited for The Growth Club.
 [MongoDB](https://www.mongodb.com/) is utilised to store data for The Growth Club. It is a non-relational database-backed Flask web application that allows users to easily create, locate, display, edit and delete data records on the Growth Club web app.
 
 The data structure outline:
-[Data Structure](documentation/images/data_structure.png)
+[Data Structure](/documentation/images/general_doc_images/data_structure.png)
 
 ### **Collections**
 - **Categories collection**
