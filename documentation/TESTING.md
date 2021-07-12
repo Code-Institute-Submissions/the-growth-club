@@ -115,7 +115,7 @@ The Admin user the same user stories as the Registered user above with the addit
    - [Delete Featured Resource Confirmation](/documentation/images/test_screenshots/delete_featured_resource_confirmation.png)
 2. As an Admin User, I want to be able to view all **resource posts** added by other members of the community as well as the ability to **edit or delete any resource posts** so that I can **maintain the site to stay updated**
 - The admin user can view all resources and also the edit & delete buttons. They can edit or delete any resource regardless of who added the resource.
-    -[Admin User View of Resource Page](/documentation/images/test_screenshots/resource_page_view_admin.png)
+    - [Admin User View of Resource Page](/documentation/images/test_screenshots/resource_page_view_admin.png)
 ___
 <br>
 
@@ -130,8 +130,9 @@ ___
 
 ### Lighthouse (Google dev tool)
 - To test the accessibility and performance of the website. 
-- Final version: 
-[Lighthouse report ]()
+- Final versions: 
+   - [Lighthouse report desktop ](/documentation/images/validator_screenshots/lighthouse_desktop.png)
+   - [Lighthouse report mobile ](/documentation/images/validator_screenshots/lighthouse_mobile.png)
 
 ### [Responsinator](http://www.responsinator.com/)
 - To test the responsiveness of the live website and functionalities on different size mobile devices.
